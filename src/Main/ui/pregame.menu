@@ -1,0 +1,177 @@
+#include "ui/menudef.h"
+
+
+{
+
+	menuDef {
+    		name "pregame"
+    		background "ui/assets/backscreen"
+      		rect -120 0 900 480
+      		///scralign right
+    		fullScreen MENU_TRUE
+    		visible MENU_TRUE
+      		style WINDOW_STYLE_EMPTY
+
+			
+//
+// draw levelshot
+//
+
+			itemDef {
+					name background
+					rect -120 0 900 480
+					style WINDOW_STYLE_SHADER
+					ownerdraw UI_LEVELSHOT
+					forecolor 1 1 1 1
+					visible MENU_TRUE
+					decoration
+				}
+
+		// itemDef {
+		// name but2
+		// text "START"
+		// type 1
+		// textscale .25
+		// style 1
+		// rect 300 420 100 20
+		// textalign 1
+		// textalignx 50
+		// textfont UI_FONT_BIG
+		// textaligny 15
+		// forecolor 1 1 1 1
+		// backcolor .3 0.5 0.2 .25 
+		// visible 1
+		// border 1
+		// bordercolor .1 .1 .1 .3
+		// action { uiScript playerstart }
+		// mouseEnter { setitemcolor graphicsapply backcolor .3 .5 .2 .25 ; show but3 }
+      	// mouseExit { setitemcolor graphicsapply backcolor .1 .1 .1 .1 ; show but3 }
+		// }
+		
+		
+		// itemDef {
+		// name but3
+		// text "START"
+		// type 1	
+		// textscale .25
+		// style 1
+		// rect 300 420 100 20
+		// textalign 1
+		// textfont UI_FONT_BIG
+		// textalignx 50
+		// textaligny 15
+		// forecolor 1 1 1 1
+		// backcolor .3 0.5 0.2 .25 
+		// visible 1
+		// border 1
+		// bordercolor .1 .1 .1 .3
+		// action { uiScript playerstart }
+		// mouseEnter { setitemcolor graphicsapply backcolor .3 .5 .2 .25 ; show but2 }
+      	// mouseExit { setitemcolor graphicsapply backcolor .1 .1 .1 .1 ; show but2 }
+		// }
+
+
+		itemDef {
+		name but2
+		text ""
+		type 1
+		textscale .25
+		style 1
+		rect 300 420 128 20
+		textalign 1
+		textalignx 50
+		textfont UI_FONT_BIG
+		textaligny 15
+		forecolor 1 1 1 1
+		backcolor .3 0.5 0.2 .25 
+		visible 1
+		border 1
+		bordercolor .1 .1 .1 .3
+		action { uiScript playerstart }
+		mouseEnter { setitemcolor graphicsapply backcolor .3 .5 .2 .25 ; show but3 }
+      	mouseExit { setitemcolor graphicsapply backcolor .1 .1 .1 .1 ; show but3 }
+		}
+
+		
+	itemDef {	
+		name but2
+		group modmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/start.tga"
+		rect 302 422 128 20
+		visible 1
+		mouseEnter { setitemcolor graphicsapply backcolor .3 .5 .2 .25 ; show but3 ; show but2b } 
+		mouseExit { setitemcolor graphicsapply backcolor .1 .1 .1 .1 ; show but3 ; hide but2b } 
+		action { uiScript playerstart }
+		//decoration
+	}
+	
+	itemDef {	
+		name but2b
+		group modmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/startb.tga"
+		rect 302 422 128 20
+		visible 0
+		action { uiScript playerstart }
+		//decoration
+	}
+		
+
+		
+		itemDef {
+		name but3
+		text ""
+		type 1	
+		textscale .25
+		style 1
+		rect 300 420 128 20
+		textalign 1
+		textfont UI_FONT_BIG
+		textalignx 50
+		textaligny 15
+		forecolor 1 1 1 1
+		backcolor .3 0.5 0.2 .25 
+		visible 1
+		border 1
+		bordercolor .1 .1 .1 .3
+		action { uiScript playerstart }
+		mouseEnter { setitemcolor graphicsapply backcolor .3 .5 .2 .25 ; show but2 }
+      	mouseExit { setitemcolor graphicsapply backcolor .1 .1 .1 .1 ; show but2 }
+		}
+
+	itemDef {	
+		name but3
+		group modmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/start.tga"
+		rect 302 422 128 20
+		visible 1
+		mouseEnter { setitemcolor graphicsapply backcolor .3 .5 .2 .25 ; show but2 ; show but3b } 
+		mouseExit { setitemcolor graphicsapply backcolor .1 .1 .1 .1 ; show but2 ; hide but3b } 
+		action { uiScript playerstart }
+		//decoration
+	}
+	
+	itemDef {	
+		name but3b
+		group modmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/startb.tga"
+		rect 302 422 128 20
+		visible 0
+		action { uiScript playerstart }
+		//decoration
+	}
+	
+
+		
+		}
+
+
+
+
