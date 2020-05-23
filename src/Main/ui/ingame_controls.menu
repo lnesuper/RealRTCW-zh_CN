@@ -23,7 +23,7 @@ menuDef {
 itemDef {
 	name window
 	group ingamebox	
-	rect 0 2 443 300
+	rect 20 2 443 300
 	style WINDOW_STYLE_FILLED
 	border 1
 	bordercolor .5 .5 .5 .5
@@ -36,7 +36,7 @@ itemDef {
 
 itemDef {
       name keyBindStatus
-      rect 0 400 320 15 
+      rect 20 400 320 15 
 	ownerdraw UI_KEYBINDSTATUS
 	text " "      
 	forecolor 1 .75 0 1
@@ -53,7 +53,7 @@ itemDef {
 	{
 		name window
 		group ingamebox2
-		rect 2 4 439 20	
+		rect 22 4 439 20	
 		style WINDOW_STYLE_FILLED
 		border 1
 		bordercolor .1 .1 .1 .2
@@ -71,7 +71,7 @@ itemDef {
 	type 1
 	textscale .23
 	group grpControlbutton
-	rect 30 3.5 45 20
+	rect 50 3.5 45 20
 	textalign 1
 	textalignx 22
 	textfont UI_FONT_BIG
@@ -91,7 +91,7 @@ itemDef {
       		type ITEM_TYPE_BIND
 		text "Lookup:"
 		cvar "+lookup"
-		rect 82 30 290 12 
+		rect 102 30 290 12 
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10    
@@ -111,7 +111,7 @@ itemDef {
       		type ITEM_TYPE_BIND
 		text "Look Down:"
 		cvar "+lookdown"
-		rect 82 45 290 12 
+		rect 102 45 290 12 
 		textalign ITEM_ALIGN_RIGHT
 		textfont UI_FONT_BIG
 		textalignx 142 
@@ -132,7 +132,7 @@ itemDef {
 		textfont UI_FONT_BIG
 		text "Mouse Look:"
 		cvar "+mlook"
-		rect 82 60 290 12
+		rect 102 60 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -152,7 +152,7 @@ itemDef {
 	text "Centerview:"
 	cvar "centerview"
 	textfont UI_FONT_BIG
-		rect 82 75 290 12
+		rect 102 75 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -172,7 +172,7 @@ itemDef {
 	text "Binoculars:"
 	textfont UI_FONT_BIG
 	cvar "+zoom"
-		rect 82 90 290 12
+		rect 102 90 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -194,7 +194,7 @@ itemDef {
 	text "Zoom In:"
 	cvar "zoomin"
 	textfont UI_FONT_BIG
-		rect 82 105 290 12
+		rect 102 105 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -216,7 +216,7 @@ itemDef {
 	type ITEM_TYPE_BIND
 		text "Zoom Out:"
 		cvar "zoomout"
-		rect 82 120 290 12
+		rect 102 120 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -238,7 +238,7 @@ itemDef {
 	type ITEM_TYPE_YESNO
 	text "Free Look:"
 	cvar "cl_freelook"
-		rect 82 135 290 12
+		rect 102 135 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -263,7 +263,7 @@ itemDef {
 	textfont UI_FONT_BIG
 	type ITEM_TYPE_TEXT
 	text "Use Weapon Cycle"
-	rect 90 160 290 12
+	rect 110 160 290 12
 	textalign ITEM_ALIGN_RIGHT
 	textalignx 180
 	textaligny 10
@@ -280,7 +280,7 @@ itemDef {
 	text "For Zooming:"
 	cvar "cg_useWeapsForZoom"
 	cvarFloatList { "Off" 0 "On (normal)" 1 "On (reverse)" 2 }
-	rect 82 175 290 12
+	rect 102 175 290 12
 	textalign ITEM_ALIGN_RIGHT
 	textalignx 142
 	textaligny 10
@@ -299,7 +299,7 @@ itemDef {
 	textscale .23
 	textfont UI_FONT_BIG
 	group grpControlbutton
-	rect 146 3.5 45 20
+	rect 166 3.5 45 20
 	textalign 1
 	textalignx 22
 	textaligny 14
@@ -321,7 +321,7 @@ itemDef {
 		textfont UI_FONT_BIG
 		text "Always Run:"
 		cvar "cl_run"
-		rect 82 30 290 12
+		rect 102 30 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -340,7 +340,7 @@ itemDef {
 		textfont UI_FONT_BIG
 		text "Run / Walk:"
 		cvar "+speed"
-		rect 82 45 290 12
+		rect 102 45 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -358,7 +358,7 @@ itemDef {
 		textfont UI_FONT_BIG
 		text "Sprint:"
 		cvar "+sprint"
-		rect 82 60 290 12
+		rect 102 60 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -376,7 +376,7 @@ itemDef {
 		textfont UI_FONT_BIG
 		text "Forward:"
 		cvar "+forward"
-		rect 82 75 290 12
+		rect 102 75 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -395,7 +395,7 @@ itemDef {
 		type ITEM_TYPE_BIND
 		text "Backpedal:"
 		cvar "+back"
-		rect 82 90 290 12
+		rect 102 90 290 12
 		textfont UI_FONT_BIG
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
@@ -416,7 +416,7 @@ itemDef {
 		textfont UI_FONT_BIG
 		text "Move Left:"
 		cvar "+moveleft"
-		rect 82 105 290 12
+		rect 102 105 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -436,7 +436,7 @@ itemDef {
 		textfont UI_FONT_BIG
 		text "Move Right:"
 		cvar "+moveright"
-		rect 82 120 290 12
+		rect 102 120 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -456,7 +456,7 @@ itemDef {
 	textfont UI_FONT_BIG
 	text "Lean Left:"
 	cvar "+leanleft"
-		rect 82 135 290 12
+		rect 102 135 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -476,7 +476,7 @@ itemDef {
 	textfont UI_FONT_BIG
 	text "Lean Right:"
 	cvar "+leanright"
-		rect 82 150 290 12
+		rect 102 150 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -498,7 +498,7 @@ itemDef {
 		textfont UI_FONT_BIG
 		text "Jump:"
 		cvar "+moveup"
-		rect 82 165 290 12
+		rect 102 165 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -517,7 +517,7 @@ itemDef {
 		type ITEM_TYPE_BIND
 		text "Crouch:"
 		cvar "+movedown"
-		rect 82 180 290 12
+		rect 102 180 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textfont UI_FONT_BIG
 		textalignx 142
@@ -537,7 +537,7 @@ itemDef {
 		type ITEM_TYPE_BIND
 		text "Turn Left:"
 		cvar "+left"
-		rect 82 195 290 12
+		rect 102 195 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textfont UI_FONT_BIG
 		textalignx 142
@@ -557,7 +557,7 @@ itemDef {
 		type ITEM_TYPE_BIND
 		text "Turn Right:"
 		cvar "+right"
-		rect 82 210 290 12
+		rect 102 210 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -577,7 +577,7 @@ itemDef {
 		type ITEM_TYPE_BIND
 		text "Strafe:"
 		cvar "+strafe"
-		rect 82 225 290 12
+		rect 102 225 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -600,7 +600,7 @@ itemDef {
 	group grpControlbutton
 	textfont UI_FONT_BIG
 //	rect 200 3.5 45 20
-rect 260 3.5 47 20
+rect 280 3.5 47 20
 	textalign 1
 	textalignx 22
 	textaligny 14
@@ -620,7 +620,7 @@ rect 260 3.5 47 20
 		textfont UI_FONT_BIG
 		text "Attack:"
 		cvar "+attack"
-		rect 82 30 290 12
+		rect 102 30 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -640,7 +640,7 @@ rect 260 3.5 47 20
 		text "Reload Weapon:"
 		textfont UI_FONT_BIG
 		cvar "+reload"
-		rect 82 45 290 12
+		rect 102 45 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -660,7 +660,7 @@ rect 260 3.5 47 20
 		textfont UI_FONT_BIG
 		text "Next Weapon:"
 		cvar "weapnext"
-		rect 82 60 290 12
+		rect 102 60 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -680,7 +680,7 @@ rect 260 3.5 47 20
 		textfont UI_FONT_BIG
 		text "Previous Weapon:"
 		cvar "weapprev"
-		rect 82 75 290 12
+		rect 102 75 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -700,7 +700,7 @@ rect 260 3.5 47 20
 		textfont UI_FONT_BIG
 		text "Next Weapon In Bank:"
 		cvar "weapnextinbank"
-		rect 82 90 290 12
+		rect 102 90 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -720,7 +720,7 @@ rect 260 3.5 47 20
 		textfont UI_FONT_BIG
 		text "Previous Wpn In Bank:"
 		cvar "weapprevinbank"
-		rect 82 105 290 12
+		rect 102 105 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -739,7 +739,7 @@ rect 260 3.5 47 20
 //		type ITEM_TYPE_YESNO
 //		text "Cycle All Weaps:"
 //		cvar "cg_cycleAllWeaps"
-//		rect 82 120 290 12
+//		rect 102 120 290 12
 //		textalign ITEM_ALIGN_RIGHT
 //		textalignx 142 
 //		textaligny 10
@@ -758,7 +758,7 @@ rect 260 3.5 47 20
 		type ITEM_TYPE_BIND
 		text "Switch to Alternate:"
 		cvar "weapalt"
-		rect 82 120 290 12
+		rect 102 120 290 12
 		textfont UI_FONT_BIG
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
@@ -780,7 +780,7 @@ rect 260 3.5 47 20
 		textfont UI_FONT_BIG
 		cvar "cg_autoswitch"
 		cvarFloatList { "Off" 0 "Always Switch" 1 "If New" 2 "If Better" 3 "New or Better" 4 "New and Better" 5 }
-		rect 82 135 290 12
+		rect 102 135 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -798,7 +798,7 @@ rect 260 3.5 47 20
 		textfont UI_FONT_BIG
 		text "Knife:"
 		cvar "weaponbank 1"
-		rect 82 150 290 12
+		rect 102 150 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -818,7 +818,7 @@ rect 260 3.5 47 20
 		textfont UI_FONT_BIG
 		text "Pistols:"
 		cvar "weaponbank 2"
-		rect 82 165 290 12
+		rect 102 165 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -838,7 +838,7 @@ rect 260 3.5 47 20
 		text "SMGs:"
 		textfont UI_FONT_BIG
 		cvar "weaponbank 3"
-		rect 82 180 290 12
+		rect 102 180 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -858,7 +858,7 @@ rect 260 3.5 47 20
 		text "Rifles:"
 		cvar "weaponbank 4"
 		textfont UI_FONT_BIG
-		rect 82 195 290 12
+		rect 102 195 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -878,7 +878,7 @@ rect 260 3.5 47 20
 		type ITEM_TYPE_BIND
 		text "Automatic rifles:"
 		cvar "weaponbank 5"
-			rect 82 210 290 12
+			rect 102 210 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -898,7 +898,7 @@ rect 260 3.5 47 20
 		textfont UI_FONT_BIG
 		text "Assault rifles:"
 		cvar "weaponbank 6"
-		rect 82 225 290 12
+		rect 102 225 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -918,7 +918,7 @@ rect 260 3.5 47 20
 		textfont UI_FONT_BIG
 		text "Shotgun:"
 		cvar "weaponbank 7"
-		rect 82 240 290 12
+		rect 102 240 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -937,7 +937,7 @@ rect 260 3.5 47 20
 		type ITEM_TYPE_BIND
 		text "Grenades:"
 		cvar "weaponbank 8"
-		rect 82 255 290 12
+		rect 102 255 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -956,7 +956,7 @@ rect 260 3.5 47 20
 		type ITEM_TYPE_BIND
 		text "Heavy weapons:"
 		cvar "weaponbank 9"
-		rect 82 270 290 12
+		rect 102 270 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -976,7 +976,7 @@ rect 260 3.5 47 20
 		textfont UI_FONT_BIG
 		text "Secret weapons:"
 		cvar "weaponbank 10"
-		rect 82 285 290 12
+		rect 102 285 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -998,7 +998,7 @@ itemDef {
 	textscale .23
 	group grpControlbutton
 	textfont UI_FONT_BIG
-	rect 372 3.5 45 20
+	rect 392 3.5 45 20
 //	rect 280 3.5 45 20
 	textalign 1
 	textalignx 22
@@ -1020,7 +1020,7 @@ itemDef {
 		text "Cyanide(kill player):"
 		textfont UI_FONT_BIG
 		cvar "kill"
-		rect 82 30 290 12
+		rect 102 30 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -1039,7 +1039,7 @@ itemDef {
 		type ITEM_TYPE_BIND
 		text "Kick:"
 		cvar "+kick"
-		rect 82 45 290 12
+		rect 102 45 290 12
 		textfont UI_FONT_BIG
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
@@ -1061,7 +1061,7 @@ itemDef {
 		text "Toggle Notebook:"
 		textfont UI_FONT_BIG
 		cvar "notebook"
-		rect 82 60 290 12
+		rect 102 60 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -1083,7 +1083,7 @@ itemDef {
 		textfont UI_FONT_BIG
 		text "Auto Item Pickup:"
 		cvar "cg_autoactivate"
-		rect 82 75 290 12
+		rect 102 75 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -1102,7 +1102,7 @@ itemDef {
 		type ITEM_TYPE_BIND
 		text "Activate:"
 		cvar "+activate"
-		rect 82 90 290 12
+		rect 102 90 290 12
 		textfont UI_FONT_BIG
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
@@ -1123,7 +1123,7 @@ itemDef {
 	text "Use Item:"
 	cvar "+useitem"
 	textfont UI_FONT_BIG
-	rect 82 105 290 12
+	rect 102 105 290 12
 	textalign ITEM_ALIGN_RIGHT
 	textalignx 142 
 	textaligny 10
@@ -1143,7 +1143,7 @@ itemDef {
 	textfont UI_FONT_BIG
 	text "Next Item:"
 	cvar "itemnext"
-	rect 82 120 290 12
+	rect 102 120 290 12
 	textalign ITEM_ALIGN_RIGHT
 	textalignx 142 
 	textaligny 10
@@ -1163,7 +1163,7 @@ itemDef {
 	type ITEM_TYPE_BIND
 	text "Previous Item:"
 	cvar "itemprev"
-	rect 82 135 290 12
+	rect 102 135 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -1184,7 +1184,7 @@ itemDef {
 	textfont UI_FONT_BIG
 	text "Invert Mouse:"
 	cvar "ui_mousePitch"
-	rect 82 150 290 12
+	rect 102 150 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -1205,7 +1205,7 @@ itemDef {
 	textfont UI_FONT_BIG
 	text "Smooth Mouse:"
 	cvar "m_filter"
-	rect 82 165 290 12
+	rect 102 165 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -1227,7 +1227,7 @@ itemDef {
 		type ITEM_TYPE_BIND
 		text "Quicksave:"
 		cvar "savegame quicksave"
-		rect 82 180 290 12
+		rect 102 180 290 12
 		textfont UI_FONT_BIG
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
@@ -1248,7 +1248,7 @@ itemDef {
 		text "Quickload:"
 		textfont UI_FONT_BIG
 		cvar "loadgame quicksave"
-		rect 82 195 290 12
+		rect 102 195 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
@@ -1268,7 +1268,7 @@ itemDef {
 	textfont UI_FONT_BIG
 	text "Mouse Sensitivity:"
 	cvarfloat "sensitivity" 5 1 30
-	rect 82 210 290 12
+	rect 102 210 290 12
 	textalign ITEM_ALIGN_RIGHT
 	textalignx 142 
 	textaligny 10

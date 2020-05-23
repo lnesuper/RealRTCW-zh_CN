@@ -88,8 +88,6 @@
 		border 1
 		bordercolor .1 .1 .1 .3
 		action { uiScript playerstart }
-		mouseEnter { setitemcolor graphicsapply backcolor .3 .5 .2 .25 ; show but3 }
-      	mouseExit { setitemcolor graphicsapply backcolor .1 .1 .1 .1 ; show but3 }
 		}
 
 		
@@ -101,8 +99,8 @@
 		background "text/ChineseCHN/start.tga"
 		rect 302 422 128 20
 		visible 1
-		mouseEnter { setitemcolor graphicsapply backcolor .3 .5 .2 .25 ; show but3 ; show but2b } 
-		mouseExit { setitemcolor graphicsapply backcolor .1 .1 .1 .1 ; show but3 ; hide but2b } 
+		mouseEnter { show but2b ; setitemcolor but2b forecolor 0 .9 0 .8 } 
+		mouseExit { hide but2b ; setitemcolor but2b forecolor 1 1 1 1 } 
 		action { uiScript playerstart }
 		//decoration
 	}
@@ -138,8 +136,6 @@
 		border 1
 		bordercolor .1 .1 .1 .3
 		action { uiScript playerstart }
-		mouseEnter { setitemcolor graphicsapply backcolor .3 .5 .2 .25 ; show but2 }
-      	mouseExit { setitemcolor graphicsapply backcolor .1 .1 .1 .1 ; show but2 }
 		}
 
 	itemDef {	
@@ -150,8 +146,8 @@
 		background "text/ChineseCHN/start.tga"
 		rect 302 422 128 20
 		visible 1
-		mouseEnter { setitemcolor graphicsapply backcolor .3 .5 .2 .25 ; show but2 ; show but3b } 
-		mouseExit { setitemcolor graphicsapply backcolor .1 .1 .1 .1 ; show but2 ; hide but3b } 
+		mouseEnter { show but3b ; setitemcolor but3b forecolor 0 .9 0 .8 } 
+		mouseExit { hide but3b ; setitemcolor but3b forecolor 1 1 1 1 } 
 		action { uiScript playerstart }
 		//decoration
 	}
@@ -170,8 +166,4 @@
 	
 
 		
-		}
-
-
-
-
+}

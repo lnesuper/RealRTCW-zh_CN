@@ -21,7 +21,8 @@ itemDef
 	{
 	name window
 	group ingamebox
-	rect 0 2 443 300	
+	// rect 0 2 443 300	
+	rect 20 2 443 300	
 	style WINDOW_STYLE_FILLED
 	border 1
 	bordercolor .5 .5 .5 .5
@@ -35,7 +36,8 @@ itemDef
 	{
 		name window2
 		group grpControlbutton
-		rect 2 4 439 20	
+		// rect 2 4 439 20	
+		rect 22 4 439 20	
 		style WINDOW_STYLE_FILLED
 		border 1
 		bordercolor .1 .1 .1 .2
@@ -57,7 +59,7 @@ itemDef {
 	textscale .23
 	group grpControlbutton
 //	rect 50 10 100 12
-	rect 92 10 100 12
+	rect 112 10 100 12
 	textalign 1
 	textalignx 50
 	textfont UI_FONT_BIG
@@ -80,7 +82,7 @@ itemDef {
 	textfont UI_FONT_BIG
 	cvar "cg_markTime"
 	cvarFloatList { "Normal" 20000 "Short" 10000 "Off" 0 "Long" 30000 "Ultra" 100000 }
-		rect 82 30 290 12
+		rect 102 30 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -98,7 +100,7 @@ itemDef {
 //	type ITEM_TYPE_YESNO
 //	text "Show Floating Scores:"
 //	cvar "cg_scorePlums"
-//		rect 82 60 290 12
+//		rect 102 60 290 12
 //		textalign ITEM_ALIGN_RIGHT
 //		textalignx 142
 //		textaligny 10
@@ -117,7 +119,7 @@ itemDef {
 	textfont UI_FONT_BIG
 	cvar "cg_brassTime"
 	cvarFloatList { "Ultra" 10000 "High" 2500 "Med" 1250 "Off" 0 }
-		rect 82 45 290 12
+		rect 102 45 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -135,7 +137,7 @@ itemDef {
 	text "Dynamic Lights:"
 	textfont UI_FONT_BIG
 	cvar "r_dynamiclight"
-		rect 82 60 290 12
+		rect 102 60 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -153,7 +155,7 @@ itemDef {
 	text "Low Quality Sky:"
 	textfont UI_FONT_BIG
 	cvar "r_fastsky"
-		rect 82 75 290 12
+		rect 102 75 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -171,7 +173,7 @@ itemDef {
 	text "Draw Portal Skies:"
 	textfont UI_FONT_BIG
 	cvar "cg_skybox"
-		rect 82 90 290 12
+		rect 102 90 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -189,7 +191,7 @@ itemDef {
 	text "Sync Every Frame:"
 	textfont UI_FONT_BIG
 	cvar "r_finish"
-		rect 82 105 290 12
+		rect 102 105 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -206,7 +208,7 @@ itemDef {
 //	type ITEM_TYPE_YESNO
 //	text "Force Player Models:"
 //	cvar "cg_forceModel"
-//		rect 82 135 290 12
+//		rect 102 135 290 12
 //		textalign ITEM_ALIGN_RIGHT
 //		textalignx 142
 //		textaligny 10
@@ -226,7 +228,7 @@ itemDef {
 		cvar "cg_coronafardist"
 		textfont UI_FONT_BIG
 		cvarFloatList { "normal" 1536 "far" 4096 "very far" 16000 "Ultra" 64000 "off" 0 "near" 800 }
-		rect 82 120 290 12
+		rect 102 120 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -248,7 +250,7 @@ itemDef {
 		text "Particle Dist:"
 		cvar "cg_particleDist"
 		cvarFloatList { "normal" 1024 "far" 2048 "off" 0 "near" 512 }
-		rect 82 135 290 12
+		rect 102 135 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -278,7 +280,7 @@ itemDef {
 		cvar "r_nv_fogdist_mode"
 		cvarStrList { "NV Radial", "GL_EYE_RADIAL_NV", "NV Plane", "GL_EYE_PLANE_ABSOLUTE_NV" }
 
-		rect 82 165 290 12
+		rect 102 165 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -307,7 +309,7 @@ itemDef {
 	type 1
 	textscale .23
 	group grpControlbutton
-	rect 190 10 100 12
+	rect 210 10 100 12
 	textalign 1
 	textalignx 50
 	textfont UI_FONT_BIG
@@ -329,7 +331,7 @@ itemDef {
 		textfont UI_FONT_BIG
 		text "Atmospheric effects:  "
 		cvar "cg_atmosphericEffects"
-		rect 82 30 290 12
+		rect 102 30 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -349,7 +351,7 @@ itemDef {
 		cvar "cg_forceAtmosphericEffects"
 		cvarFloatList { "Off" 0 "Rain" 1 "Snow" 2 }
 		textalign ITEM_ALIGN_RIGHT
-		rect 82 45 290 12
+		rect 102 45 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -369,7 +371,7 @@ itemDef {
 		cvar "cg_lowAtmosphericEffects"
 		cvarFloatList { "High(not recommended)" 0 "Medium(recommended)" 1 "Low" 2 }
 		textalign ITEM_ALIGN_RIGHT
-		rect 82 60 290 12
+		rect 102 60 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -390,7 +392,7 @@ itemDef {
 		cvar "com_maxfps"
 		cvarFloatList { "30 FPS" 30 "60 FPS" 60 "90 FPS" 90 "100 FPS" 100 "144 FPS" 144 "240 FPS" 240 }
 		textalign ITEM_ALIGN_RIGHT
-		rect 82 75 290 12
+		rect 102 75 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -408,7 +410,7 @@ itemDef {
         textfont UI_FONT_BIG		
 		text "Show FPS:"
 		cvar "cg_drawfps"
-		rect 82 90 290 12
+		rect 102 90 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -426,7 +428,7 @@ itemDef {
         textfont UI_FONT_BIG		
 		text "Fixed aspect FOV:"
 		cvar "cg_fixedAspectFOV"
-		rect 82 105 290 12
+		rect 102 105 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -443,7 +445,7 @@ itemDef {
 		type ITEM_TYPE_SLIDER
 		text "Field of view:  "
 		cvarfloat "cg_fov" 90 65 120
-		rect 82 120 290 12
+		rect 102 120 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textfont UI_FONT_BIG
 		textalignx 142
@@ -463,7 +465,7 @@ itemDef {
 		type ITEM_TYPE_YESNO
 		text "Automatic reload:  "
 		cvar "cg_autoreload"
-		rect 82 135 290 12
+		rect 102 135 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textfont UI_FONT_BIG
 		textalignx 142
@@ -481,7 +483,7 @@ itemDef {
 		type ITEM_TYPE_YESNO
 		text "Third person view:  "
 		cvar "cg_thirdPerson"
-		rect 82 150 290 12
+		rect 102 150 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textfont UI_FONT_BIG
 		textalignx 142
@@ -499,7 +501,7 @@ itemDef {
 		type ITEM_TYPE_YESNO
 		text "Draw2D:  "
 		cvar "cg_draw2D"
-		rect 82 165 290 12
+		rect 102 165 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textfont UI_FONT_BIG
 		textalignx 142
@@ -517,7 +519,7 @@ itemDef {
 		type ITEM_TYPE_YESNO
 		text "Draw gun:  "
 		cvar "cg_drawGun"
-		rect 82 180 290 12
+		rect 102 180 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textfont UI_FONT_BIG
 		textalignx 142
@@ -542,7 +544,7 @@ itemDef {
 	type 1
 	textscale .23
 	group grpControlbutton
-	rect 270 10 100 12
+	rect 290 10 100 12
 	textalign 1
 	textalignx 50
 	textfont UI_FONT_BIG
@@ -563,7 +565,7 @@ itemDef {
 		cvar "cg_cursorHints"
 		cvarFloatList { "strobe pulse" 2 "alpha pulse" 3 "solid" 4 "off" 0 "size pulse" 1 }
 		textalign ITEM_ALIGN_RIGHT
-		rect 82 30 290 12
+		rect 102 30 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textfont UI_FONT_BIG
@@ -586,7 +588,7 @@ itemDef {
 		text "Crosshair Size:"
 		cvar "cg_crosshairsize"
 		cvarFloatList { "Small" 24 "Medium" 32 "Large" 48 "Huge" 64 "Tiny" 12 }
-		rect 82 45 290 12
+		rect 102 45 290 12
 		textfont UI_FONT_BIG
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
@@ -605,7 +607,7 @@ itemDef {
 		type ITEM_TYPE_SLIDER
 		text "Crosshair Alpha:"
 		cvarfloat "cg_crosshairAlpha" .6 .1 1
-		rect 82 65 290 12
+		rect 102 65 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -625,7 +627,7 @@ itemDef {
 		type ITEM_TYPE_SLIDER
 		text "HUD Alpha:"
 		cvarfloat "cg_hudAlpha" .6 .1 1
-		rect 82 85 290 12
+		rect 102 85 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
 		textfont UI_FONT_BIG
@@ -644,7 +646,7 @@ itemDef {
 		type ITEM_TYPE_SLIDER
 		text "Screen Size:"
 		cvarfloat "cg_viewsize" 100 30 100
-		rect 82 105 290 12
+		rect 102 105 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -680,7 +682,7 @@ itemDef {
 	itemDef {
 		name view				
 		group grpOptions
-		rect 194 150 50 50
+		rect 214 150 50 50
 		ownerdraw UI_CROSSHAIR
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 0 
@@ -703,7 +705,7 @@ itemDef {
 
 itemDef {
       name slider_message
-      rect 30 15 640 30 
+      rect 50 15 640 30 
 	text "Drag the Slider to Increase and Decrease"      
 	forecolor 1 .75 0 1
 	textscale .23

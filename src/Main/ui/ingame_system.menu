@@ -8,7 +8,7 @@ menuDef {
     	visible 0
     	fullscreen 0
 		outOfBoundsClick			// this closes the window if it gets a click out of the rectangle
-	rect 100 125 443 340
+		rect 100 125 443 350
     	focusColor 1 .75 0 1
     	style 1
     	border 1
@@ -20,7 +20,7 @@ itemDef {
 	name window
 	group ingamebox
 //	rect 0 46 300 340	
-	rect 0 2 443 300
+	rect 20 2 443 310
 	style WINDOW_STYLE_FILLED
 	border 1
 	bordercolor .5 .5 .5 .5
@@ -39,7 +39,7 @@ itemDef {
 	{
 		name window
 		group ingamebox2
-		rect 2 4 439 20	
+		rect 22 4 439 20	
 		style WINDOW_STYLE_FILLED
 		border 1
 		bordercolor .1 .1 .1 .2
@@ -58,7 +58,7 @@ itemDef {
 		textscale .23
 		group grpControlbutton
 		background "ui/assets/button_back.tga"
-		rect 56 10 100 12
+		rect 76 10 100 12
 		textfont UI_FONT_BIG
 		textalign 1
 		textalignx 50
@@ -84,7 +84,7 @@ itemDef {
 		cvarTest		"ui_glCustom"
 		hideCvar		{ "999" }	// 999 is 'recommended'
 
- 		rect 82 45 290 12
+ 		rect 102 45 290 12
    		textalign ITEM_ALIGN_RIGHT
    		textalignx 142 
    		textaligny 10
@@ -107,7 +107,7 @@ itemDef {
 		cvarTest		"ui_glCustom"
 		showCvar		{ "999" }	// 999 is 'recommended'
 
-		rect 82 45 290 12
+		rect 102 45 290 12
 		textalign ITEM_ALIGN_CENTER
 		textfont UI_FONT_BIG
 		textalignx 162 
@@ -129,7 +129,7 @@ itemDef {
 		text "GL Extensions:"
 		textfont UI_FONT_BIG
 		cvar "r_allowExtensions"
-		rect 82 60 290 12
+		rect 102 60 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -149,7 +149,7 @@ itemDef {
 		cvar "r_mode"
 		cvarFloatList {  "640x480" 3 "800x600" 4 "960x720" 5 "1024x768" 6 "1152x864" 7 "1280x1024" 8 "1600x1200" 9 "2048x1536" 10 "856x480 wide screen" 11 }
 //		"320x240" 0 "400x300" 1 "512x384" 2
-		rect 82 75 290 12
+		rect 102 75 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -170,7 +170,7 @@ itemDef {
 		text "Fixed Aspect:"
 		cvar "cg_fixedaspect"
 		cvarFloatList { "Off" 0 "4:3" 1 "Widescreen" 2  }
-		rect 82 90 290 12
+		rect 102 90 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -191,7 +191,7 @@ itemDef {
 		type ITEM_TYPE_SLIDER
 		text "Brightness:"
 		cvarfloat "r_gamma" 1.3 .5 3
-		rect 82 105 290 12
+		rect 102 105 290 12
       	textalign ITEM_ALIGN_RIGHT
 		textfont UI_FONT_BIG
       	textalignx 142 
@@ -212,7 +212,7 @@ itemDef {
       	type ITEM_TYPE_SLIDER
 		text "Brightness:"
 		cvarfloat "r_gamma" 1 0.5 2
-		rect 82 105 290 12
+		rect 102 105 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142 
       	textaligny 10
@@ -233,7 +233,7 @@ itemDef {
 		text "Color Depth:"
 		cvar "r_colorbits"
 		cvarFloatList { "Default" 0 "16 bit" 16 "32 bit" 32 }
-		rect 82 120 290 12
+		rect 102 120 290 12
       	textalign ITEM_ALIGN_RIGHT
 		textfont UI_FONT_BIG
       	textalignx 142
@@ -252,7 +252,7 @@ itemDef {
 		type ITEM_TYPE_YESNO
 		text "Fullscreen:"
 		cvar "r_fullscreen"
-		rect 82 135 290 12
+		rect 102 135 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
 		textfont UI_FONT_BIG
@@ -272,7 +272,7 @@ itemDef {
 		text "Lighting:"
 		cvar "r_vertexlight"
 		cvarFloatList { "Light Map (high)" 0 "Vertex (low)" 1  }
-		rect 82 150 290 12
+		rect 102 150 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -292,7 +292,7 @@ itemDef {
 		text "Geometric Detail:"
 		cvar "r_lodbias"
 		cvarFloatList { "High" 0 "Medium" 1 "Low" 2 }
-		rect 82 165 290 12
+		rect 102 165 290 12
       	textalign ITEM_ALIGN_RIGHT
 		textfont UI_FONT_BIG
       	textalignx 142
@@ -313,7 +313,7 @@ itemDef {
 		textfont UI_FONT_BIG
 		cvar "r_picmip"
 		cvarFloatList { "Low" 2 "Normal" 1 "High" 0 }
-		rect 82 180 290 12
+		rect 102 180 290 12
 
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
@@ -334,7 +334,7 @@ itemDef {
 		text "Character Textures:"
 		cvar "r_picmip2"
 		cvarFloatList { "Low" 3 "Normal" 2 "High" 1 "Extra" 0 }
-		rect 82 195 290 12
+		rect 102 195 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -356,7 +356,7 @@ itemDef {
 		text "Texture Filter:"
 		cvar "r_texturemode"
 		cvarStrList { "Bilinear", "GL_LINEAR_MIPMAP_NEAREST", "Trilinear", "GL_LINEAR_MIPMAP_LINEAR"  }
-		rect 82 210 290 12
+		rect 102 210 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -375,7 +375,7 @@ itemDef {
 		type ITEM_TYPE_YESNO
 		text "Compress Textures:"
 		cvar "r_ext_compressed_textures"
-		rect 82 225 290 12
+		rect 102 225 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -394,7 +394,7 @@ itemDef {
 		text "Texture Quality:"
 		cvar "r_texturebits"
 		cvarFloatList { "Default" 0 "16 bit" 16 "32 bit" 32 }
-		rect 82 240 290 12
+		rect 102 240 290 12
 		textfont UI_FONT_BIG
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
@@ -423,7 +423,7 @@ itemDef {
 // would be nice to be able to do an extension check from the menu
 //		extensionTest "GL_NV_fog_distance"
 
-		rect 82 255 290 12
+		rect 102 255 290 12
       	textalign ITEM_ALIGN_RIGHT
 		textfont UI_FONT_BIG
       	textalignx 142
@@ -450,7 +450,7 @@ itemDef {
 // would be nice to be able to do an extension check from the menu
 //		extensionTest "GL_ATIX_pn_triangles"
 
-		rect 82 270 290 12
+		rect 102 270 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -477,7 +477,7 @@ itemDef {
 		style WINDOW_STYLE_FILLED
 		textfont UI_FONT_BIG
 		group grpsystem
-		rect 181 280 100 20
+		rect 201 280 100 20
 		textalign 1
 		textalignx 50
 		textaligny 15
@@ -503,7 +503,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 		textfont UI_FONT_BIG
 	    textscale .23
 	    group grpControlbutton
-	    rect 180 10 100 12
+	    rect 200 10 100 12
 		background "ui/assets/button_back.tga"
 	    textalign 1
 	    textalignx 50
@@ -523,7 +523,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 		textfont UI_FONT_BIG
 		cvar "cl_renderer"
 		cvarstrList { "opengl1" opengl1 "rend2" rend2 }
-		rect 82 45 290 12
+		rect 102 45 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -542,7 +542,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 		type ITEM_TYPE_YESNO
 		text "HDR:"
 		cvar "r_hdr"
-		rect 82 60 290 12
+		rect 102 60 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -561,7 +561,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 		type ITEM_TYPE_YESNO
 		text "SSAO:"
 		cvar "r_ssao"
-		rect 82 75 290 12
+		rect 102 75 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -580,7 +580,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 		type ITEM_TYPE_YESNO
 		text "Draw sun rays:"
 		cvar "r_drawsunrays"
-		rect 82 90 290 12
+		rect 102 90 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -600,7 +600,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 		text "Texture compression:"
 		cvar "r_ext_compressed_textures"
 		cvarFloatList { "No compression" 0 "DXT compression" 1 "BPTC compression" 2 }
-		rect 82 105 290 12
+		rect 102 105 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -619,7 +619,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 		textfont UI_FONT_BIG
 		text "Multisample Anti-aliasing:"
 		cvarfloat "r_ext_framebuffer_multisample" 0 0 16
-		rect 82 120 290 12
+		rect 102 120 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142 
       	textaligny 10
@@ -637,7 +637,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 		type ITEM_TYPE_YESNO
 		text "Post-processing:"
 		cvar "r_postProcess"
-		rect 82 135 290 12
+		rect 102 135 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -656,7 +656,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 		type ITEM_TYPE_YESNO
 		text "Tone mapping:"
 		cvar "r_toneMap"
-		rect 82 150 290 12
+		rect 102 150 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -675,7 +675,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 		type ITEM_TYPE_YESNO
 		text "Auto exposure:"
 		cvar "r_autoExposure"
-		rect 82 165 290 12
+		rect 102 165 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -695,7 +695,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 		text "Texture interpolation:"
 		cvar "r_imageUpsample"
 		cvarFloatList { "No" 0 "2x" 1 "4x" 2 }
-		rect 82 180 290 12
+		rect 102 180 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -716,7 +716,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 		text "Size of upscaled textures:"
 		cvar "r_imageUpsampleMaxSize"
 		cvarstrList { "1024" 1024 "2048" 2048 4096 "4096" }
-		rect 82 195 290 12
+		rect 102 195 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -735,7 +735,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 		type ITEM_TYPE_YESNO
 		text "Generate normal maps:"
 		cvar "r_genNormalMaps"
-		rect 82 210 290 12
+		rect 102 210 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -755,7 +755,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 		text "Force Sun:"
 		cvar "r_forceSun"
 		cvarFloatList { "No" 0 "Yes" 1 "Sunrise,sunset" 2 }
-		rect 82 225 290 12
+		rect 102 225 290 12
       	textalign ITEM_ALIGN_RIGHT
       	textalignx 142
       	textaligny 10
@@ -793,7 +793,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 		type ITEM_TYPE_SLIDER
 		text "Effects Volume:"
 		cvarfloat "s_volume" 0.7 0 1
-		rect 82 50 290 12
+		rect 102 50 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -811,7 +811,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 		type ITEM_TYPE_SLIDER
 		text "Music Volume:"
 		cvarfloat "s_musicvolume" 0.25 0 1
-		rect 82 80 290 12
+		rect 102 80 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142
 		textaligny 10
@@ -830,7 +830,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 //		type ITEM_TYPE_YESNO	
 //		text "Doppler Sound:"
 //		cvar "s_doppler"
-//		rect 82 140 290 12
+//		rect 102 140 290 12
 //		textalign ITEM_ALIGN_RIGHT
 //		textalignx 142
 //		textaligny 10
@@ -854,7 +854,7 @@ open in_vid_restart_popmenu ; hide graphics ; hide graphicsapply ; hide iortcwgr
 		style WINDOW_STYLE_FILLED	
 		textscale .25
 		textfont UI_FONT_BIG
-		rect 181 140 100 20
+		rect 201 140 100 20
 		textalign 1
 		textalignx 50
 		textaligny 15

@@ -79,13 +79,34 @@ itemDef {
 		decoration
 	}
 
+	// itemDef 
+	// {
+		// name window
+		// text "Menu"
+		// type 1
+		// textscale .30
+		// group grpControlbutton
+		// rect 35 135 45 20
+		// textalign 1
+		// textalignx 22
+		// textfont UI_FONT_BIG
+		// textaligny 14
+		// border 1
+		// bordercolor .1 .1 .1 0
+		// forecolor 1 1 1 1
+		// visible 1
+		// decoration
+	// }
+
 	itemDef 
 	{
 		name window
-		text "Menu"
+		text ""
 		type 1
 		textscale .30
 		group grpControlbutton
+		style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/ingame/menu.tga"
 		rect 35 135 45 20
 		textalign 1
 		textalignx 22
@@ -98,11 +119,33 @@ itemDef {
 		decoration
 	}
 
+
+	// itemDef {
+	// name player
+	// text "SAVE"
+	// type 1
+	// textfont UI_FONT_BIG
+	// rect 30 170 58 20
+	// textstyle 6
+	// textalign 1	
+	// textalignx 29      
+	// textaligny 14
+	// textscale .28
+	// forecolor .8 .8 .8 1
+	// backcolor .4 .4 .4 .6  
+	// visible 1
+	// action { open ingame_save }
+	// mouseEnter { setitemcolor player backcolor .15 .1 .1 .7 }
+	// mouseExit { setitemcolor player backcolor .4 .4 .4 .6  }
+	// }
+
 	itemDef {
-	name player
-	text "SAVE"
+	name save
+	text ""
 	type 1
 	textfont UI_FONT_BIG
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/ingame/save.tga"
 	rect 30 170 58 20
 	textstyle 6
 	textalign 1	
@@ -113,16 +156,39 @@ itemDef {
 	backcolor .4 .4 .4 .6  
 	visible 1
 	action { open ingame_save }
-	mouseEnter { setitemcolor player backcolor .15 .1 .1 .7 }
-	mouseExit { setitemcolor player backcolor .4 .4 .4 .6  }
+	mouseEnter { setitemcolor save forecolor 1 .5 0 .8 }
+	mouseExit { setitemcolor save forecolor .8 .8 .8 1 }
 	}
 
+
+
+// itemDef {
+	// name player
+	// text "LOAD"
+	// type 1
+	// textfont UI_FONT_BIG
+
+	// rect 30 210 58 20
+	// textstyle 6
+	// textalign 1	
+	// textalignx 29      
+	// textaligny 14
+	// textscale .28
+	// forecolor .8 .8 .8 1
+	// backcolor .4 .4 .4 .6  
+	// visible 1
+	// action { open ingame_load }
+	// mouseEnter { setitemcolor player backcolor .15 .1 .1 .7 }
+	// mouseExit { setitemcolor player backcolor .4 .4 .4 .6  }
+	// }
+
 itemDef {
-	name player
-	text "LOAD"
+	name load
+	text ""
 	type 1
 	textfont UI_FONT_BIG
-
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/ingame/load.tga"
 	rect 30 210 58 20
 	textstyle 6
 	textalign 1	
@@ -133,17 +199,38 @@ itemDef {
 	backcolor .4 .4 .4 .6  
 	visible 1
 	action { open ingame_load }
-	mouseEnter { setitemcolor player backcolor .15 .1 .1 .7 }
-	mouseExit { setitemcolor player backcolor .4 .4 .4 .6  }
+	mouseEnter { setitemcolor load forecolor 1 .5 0 .8 }
+	mouseExit { setitemcolor load forecolor .8 .8 .8 1 }
 	}
 
 
 
+// itemDef {
+	// name controls
+	// text "CONTROLS"
+	// type 1
+	// textfont UI_FONT_BIG
+	// rect 30 250 58 20
+	// textstyle 6
+	// textalign 1	
+	// textalignx 29      
+	// textaligny 14
+	// textscale .28
+	// forecolor .8 .8 .8 1
+	// backcolor .4 .4 .4 .6  
+	// visible 1
+	// action { open ingame_controls }
+	// mouseEnter { setitemcolor controls backcolor .15 .1 .1 .7 ; setitemcolor controls forecolor .9 .9 .1 .8 }
+	// mouseExit { setitemcolor controls backcolor .4 .4 .4 .6 ; setitemcolor controls forecolor .9 .9 .1 .8 }
+	// }
+
 itemDef {
 	name controls
-	text "CONTROLS"
+	text ""
 	type 1
 	textfont UI_FONT_BIG
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/ingame/controls.tga"
 	rect 30 250 58 20
 	textstyle 6
 	textalign 1	
@@ -154,15 +241,39 @@ itemDef {
 	backcolor .4 .4 .4 .6  
 	visible 1
 	action { open ingame_controls }
-	mouseEnter { setitemcolor controls backcolor .15 .1 .1 .7 ; setitemcolor controls forecolor .9 .9 .1 .8 }
-	mouseExit { setitemcolor controls backcolor .4 .4 .4 .6 ; setitemcolor controls forecolor .9 .9 .1 .8 }
+	mouseEnter { setitemcolor controls forecolor 1 .5 0 .8 }
+	mouseExit { setitemcolor controls forecolor .8 .8 .8 1 }
 	}
+
+
+
+
+// itemDef {
+	// name options
+	// text "OPTIONS"
+	// type 1
+	// textfont UI_FONT_BIG
+	// rect 30 290 58 20
+	// textstyle 6
+	// textalign 1	
+	// textalignx 29      
+	// textaligny 14
+	// textscale .28
+	// forecolor .8 .8 .8 1
+	// backcolor .4 .4 .4 .6  
+	// visible 1
+	// action { open ingame_options }
+	// mouseEnter { setitemcolor options backcolor .15 .1 .1 .7 }
+	// mouseExit { setitemcolor options backcolor .4 .4 .4 .6  }
+	// }
 
 itemDef {
 	name options
-	text "OPTIONS"
+	text ""
 	type 1
 	textfont UI_FONT_BIG
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/ingame/options.tga"
 	rect 30 290 58 20
 	textstyle 6
 	textalign 1	
@@ -173,15 +284,38 @@ itemDef {
 	backcolor .4 .4 .4 .6  
 	visible 1
 	action { open ingame_options }
-	mouseEnter { setitemcolor options backcolor .15 .1 .1 .7 }
-	mouseExit { setitemcolor options backcolor .4 .4 .4 .6  }
+	mouseEnter { setitemcolor options forecolor 1 .5 0 .8 }
+	mouseExit { setitemcolor options forecolor .8 .8 .8 1 }
 	}
+
+
+
+// itemDef {
+	// name system
+	// text "SYSTEM"
+	// type 1
+	// textfont UI_FONT_BIG
+	// rect 30 330 58 20
+	// textstyle 6
+	// textalign 1	
+	// textalignx 29      
+	// textaligny 14
+	// textscale .28
+	// forecolor .8 .8 .8 1
+	// backcolor .4 .4 .4 .6
+	// visible 1 
+	// action { open ingame_system }
+	// mouseEnter { setitemcolor system backcolor .15 .1 .1 .7 }
+	// mouseExit { setitemcolor system backcolor .4 .4 .4 .6  }
+	// }
 
 itemDef {
 	name system
-	text "SYSTEM"
+	text ""
 	type 1
 	textfont UI_FONT_BIG
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/ingame/system.tga"
 	rect 30 330 58 20
 	textstyle 6
 	textalign 1	
@@ -192,18 +326,38 @@ itemDef {
 	backcolor .4 .4 .4 .6
 	visible 1 
 	action { open ingame_system }
-	mouseEnter { setitemcolor system backcolor .15 .1 .1 .7 }
-	mouseExit { setitemcolor system backcolor .4 .4 .4 .6  }
+	mouseEnter { setitemcolor system forecolor 1 .5 0 .8 }
+	mouseExit { setitemcolor system forecolor .8 .8 .8 1 }
 	}
-
 	
 	
+	
+// itemDef {
+	// name leave
+	// text "MAIN MENU"
+	// type 1
+	// textfont UI_FONT_BIG
+	// rect 30 370 58 20
+	// textstyle 6
+	// textalign 1	
+	// textalignx 29      
+	// textaligny 14
+	// textscale .28
+	// forecolor .8 .8 .8 1
+	// backcolor .4 .4 .4 .6 
+	// visible 1
+	// action { uiscript leave }
+	// mouseEnter { setitemcolor leave backcolor .15 .1 .1 .7 }
+	// mouseExit { setitemcolor leave backcolor .4 .4 .4 .6  }
+	// }
 	
 itemDef {
 	name leave
-	text "MAIN MENU"
+	text ""
 	type 1
 	textfont UI_FONT_BIG
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/ingame/mainmenu.tga"
 	rect 30 370 58 20
 	textstyle 6
 	textalign 1	
@@ -214,16 +368,37 @@ itemDef {
 	backcolor .4 .4 .4 .6 
 	visible 1
 	action { uiscript leave }
-	mouseEnter { setitemcolor leave backcolor .15 .1 .1 .7 }
-	mouseExit { setitemcolor leave backcolor .4 .4 .4 .6  }
-	}
+	mouseEnter { setitemcolor leave forecolor 1 .5 0 .8 }
+	mouseExit { setitemcolor leave forecolor .8 .8 .8 1 }
+	}	
 	
 	
+	// itemDef {
+	// name leave
+	// text "QUIT"
+	// type 1
+	// textfont UI_FONT_BIG
+	// rect 30 410 58 20
+	// textstyle 6
+	// textalign 1	
+	// textalignx 29      
+	// textaligny 14
+	// textscale .28
+	// forecolor .8 .8 .8 1
+	// backcolor .4 .4 .4 .6 
+	// visible 1
+	// action { uiscript quit }
+	// mouseEnter { setitemcolor leave backcolor .15 .1 .1 .7 }
+	// mouseExit { setitemcolor leave backcolor .4 .4 .4 .6  }
+	// }
+
 	itemDef {
-	name leave
-	text "QUIT"
+	name quit
+	text ""
 	type 1
 	textfont UI_FONT_BIG
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/ingame/quit.tga"
 	rect 30 410 58 20
 	textstyle 6
 	textalign 1	
@@ -234,8 +409,8 @@ itemDef {
 	backcolor .4 .4 .4 .6 
 	visible 1
 	action { uiscript quit }
-	mouseEnter { setitemcolor leave backcolor .15 .1 .1 .7 }
-	mouseExit { setitemcolor leave backcolor .4 .4 .4 .6  }
+	mouseEnter { setitemcolor quit forecolor 1 0 0 .8 }
+	mouseExit { setitemcolor quit forecolor .8 .8 .8 1 }
 	}
  
 

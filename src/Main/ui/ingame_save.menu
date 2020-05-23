@@ -16,7 +16,8 @@ menuDef {
    	visible 0
    	fullscreen 0
 	outOfBoundsClick			// this closes the window if it gets a click out of the rectangle
-	rect 80 125 503 300
+	// rect 80 125 503 300
+	rect 100 125 503 300
    	focusColor 1 .75 0 1
    	style 1
    	border 1
@@ -69,7 +70,7 @@ menuDef {
 	itemDef {
 		name window
 		group ingamebox3
-		rect 322 62 148 110
+		rect 322 55 148 110
 		ownerdraw UI_SAVEGAME_SHOT		// screenshot for savegame.  			//located in /save/images/<savegamename>.tga
 //		style WINDOW_STYLE_FILLED
 		border 1
@@ -115,10 +116,11 @@ menuDef {
 
 	itemDef {
 		name savegamelist
-		rect 20 50 300 200
+		rect 22 50 298 200
 //		rect 66 150 300 230
 		type ITEM_TYPE_LISTBOX
 		style WINDOW_STYLE_FILLED
+		textfont UI_FONT_BIG			  
 		elementwidth 120
 		elementheight 14
 		textscale .23
@@ -128,7 +130,7 @@ menuDef {
 
 		elementtype LISTBOX_TEXT
 		feeder FEEDER_SAVEGAMES
-		textfont UI_FONT_BIG
+
 //		doubleclick { uiScript Loadgame }
 		textalign 3
 		textaligny 10
@@ -142,16 +144,40 @@ menuDef {
 
 ///////////// name and date //////////////// 
 
+	// itemDef {
+		// name levelbar_name
+		// text "Name"
+		// textscale .23
+		// style 0	
+		// type ITEM_TYPE_BUTTON
+		// textalign ITEM_ALIGN_CENTER
+		// textfont UI_FONT_BIG
+		// textstyle 6
+		// rect 35 30 100 20 
+		// textalign 1	 
+		// textalignx 50  	
+		// textaligny 12        
+		// backcolor 0 0 0 0
+		// forecolor 1 1 1 1
+		// visible MENU_TRUE
+// //		decoration
+		// action {
+			// play "sound/misc/kcswish.wav";
+			// uiScript SavegameSort 0
+			// }
+		// }
+
 	itemDef {
-		name levelbar
-		text "Name"
+		name levelbar_name
+		text ""
 		textscale .23
-		style 0	
+		style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/ingame/save/name.tga"
 		type ITEM_TYPE_BUTTON
 		textalign ITEM_ALIGN_CENTER
 		textfont UI_FONT_BIG
 		textstyle 6
-		rect 30 34 100 20 
+		rect 35 30 100 20 
 		textalign 1	 
 		textalignx 50  	
 		textaligny 12        
@@ -159,6 +185,8 @@ menuDef {
 		forecolor 1 1 1 1
 		visible MENU_TRUE
 //		decoration
+		mouseEnter { setitemcolor levelbar_name forecolor .9 .9 .1 .8 }
+		mouseExit { setitemcolor levelbar_name forecolor 1 1 1 1 }
 		action {
 			play "sound/misc/kcswish.wav";
 			uiScript SavegameSort 0
@@ -167,16 +195,42 @@ menuDef {
 
 
 
+	// itemDef {
+		// name levelbar_date
+		// text "Date"
+		// textscale .23
+		// style 0
+		// textalign ITEM_ALIGN_CENTER	
+		// type ITEM_TYPE_BUTTON
+		// textfont UI_FONT_BIG
+		// textstyle 6
+		// rect 185 30 100 20 
+		// textalign 1	 
+		// textalignx 50  	
+		// textaligny 12        
+		// backcolor 0 0 0 0
+		// forecolor 1 1 1 1
+		// visible MENU_TRUE
+// //		decoration
+		// mouseEnter { setitemcolor levelbar_date forecolor .9 .9 .1 .8 }
+		// mouseExit { setitemcolor levelbar_date forecolor 1 1 1 1 }
+		// action {
+			// play "sound/misc/kcswish.wav";
+			// uiScript SavegameSort 1
+			// }
+		// }
+
 	itemDef {
-		name levelbar
-		text "Date"
+		name levelbar_date
+		text ""
 		textscale .23
-		style 0
+		style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/ingame/save/date.tga"
 		textalign ITEM_ALIGN_CENTER	
 		type ITEM_TYPE_BUTTON
 		textfont UI_FONT_BIG
 		textstyle 6
-		rect 180 34 100 20 
+		rect 185 30 100 20 
 		textalign 1	 
 		textalignx 50  	
 		textaligny 12        
@@ -184,6 +238,8 @@ menuDef {
 		forecolor 1 1 1 1
 		visible MENU_TRUE
 //		decoration
+		mouseEnter { setitemcolor levelbar_date forecolor .9 .9 .1 .8 }
+		mouseExit { setitemcolor levelbar_date forecolor 1 1 1 1 }
 		action {
 			play "sound/misc/kcswish.wav";
 			uiScript SavegameSort 1
@@ -192,12 +248,32 @@ menuDef {
 
 
 
+
+	// itemDef 
+	// {
+		// name window
+		// group ingamebox2
+		// text "Save"
+		// type 1
+		// textscale .23
+		// group grpControlbutton
+		// rect 220 3.5 45 20
+		// textalign 1
+		// textalignx 22
+		// textaligny 14
+		// border 1
+		// bordercolor .1 .1 .1 0
+		// forecolor 1 1 1 1
+		// visible 1
+	// }
+
 	itemDef 
 	{
 		name window
 		group ingamebox2
-		text "Save"
-		type 1
+		text ""
+		style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/ingame/save/save.tga"
 		textscale .23
 		group grpControlbutton
 		rect 220 3.5 45 20
@@ -211,10 +287,12 @@ menuDef {
 	}
 
 
+
+
 	itemDef {
 		name window
 		group ingamebox4
-		rect 322 62 148 168
+		rect 322 55 148 188
 		style WINDOW_STYLE_FILLED
 		border 1
 		bordercolor .5 .5 .5 .5
@@ -266,46 +344,101 @@ menuDef {
 
 
 
+	// itemDef {
+		// name savename
+		// group "loadsavegroup"
+// //		type ITEM_TYPE_EDITFIELD
+		// type ITEM_TYPE_VALIDFILEFIELD	// only take text that's valid for a savegame
+		// text "Save As:"
+		// cvar "ui_savegame"
+		// style 1
+		// maxchars 20			// (SA)
+		// maxPaintChars 20	// (SA)
+		// rect 30 270 240 20
+		// border 1
+		// bordercolor .5 .5 .5 .5
+		// textalign ITEM_ALIGN_LEFT
+		// textaligny 15
+		// textalignx 10
+		// textfont UI_FONT_BIG
+		// textscale .25        
+		// outlinecolor 1 .5 .5 .5
+		// backcolor 0 0 0 0
+		// forecolor 1 1 1 1
+		// backcolor 0 0 0 .25
+		// mouseEnter { setitemcolor loadname backcolor .3 .5 .2 .25 }
+		// mouseExit { setitemcolor loadname backcolor 0 0 0 .25 }
+		// action { uiScript Savegame }
+		// visible 1 
+	// }
+
 	itemDef {
 		name savename
 		group "loadsavegroup"
 //		type ITEM_TYPE_EDITFIELD
 		type ITEM_TYPE_VALIDFILEFIELD	// only take text that's valid for a savegame
-		text "Save As:"
+		text ""
 		cvar "ui_savegame"
-		style 1
+		style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/ingame/save/saveas.tga"
 		maxchars 20			// (SA)
 		maxPaintChars 20	// (SA)
-		rect 30 270 242 18
+		rect 30 270 240 20
 		border 1
 		bordercolor .5 .5 .5 .5
 		textalign ITEM_ALIGN_LEFT
 		textaligny 15
-		textalignx 10
+		textalignx 75
 		textfont UI_FONT_BIG
 		textscale .25        
 		outlinecolor 1 .5 .5 .5
 		backcolor 0 0 0 0
 		forecolor 1 1 1 1
 		backcolor 0 0 0 .25
-		mouseEnter { setitemcolor loadname backcolor .3 .5 .2 .25 }
-		mouseExit { setitemcolor loadname backcolor 0 0 0 .25 }
+		mouseEnter { setitemcolor savename backcolor .3 .5 .2 .25 }
+		mouseExit { setitemcolor savename backcolor 0 0 0 .25 }
 		action { uiScript Savegame }
 		visible 1 
 	}
+
+
+
+
 
 //
 
 //
 // save
 //
+	// itemDef {
+		// name save
+		// text "Save"
+		// type ITEM_TYPE_BUTTON
+   		// rect 322 270 148 18
+		// textscale .25
+		// style 1
+		// border 1
+		// bordercolor .5 .5 .5 .5        
+		// backcolor 0 0 0 .25
+		// textaligny 13
+		// textfont UI_FONT_BIG
+		// textalignx 74
+		// textalign ITEM_ALIGN_CENTER
+		// mouseEnter { setitemcolor save backcolor .3 .5 .2 .25 }
+      	// mouseExit { setitemcolor save backcolor 0 0 0 .25 }
+
+		// action { uiScript Savegame }
+		// visible 1
+	// }
+
 	itemDef {
 		name save
-		text "Save"
+		text ""
 		type ITEM_TYPE_BUTTON
    		rect 322 270 148 18
 		textscale .25
-		style 1
+		style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/ingame/save/savegame.tga"
 		border 1
 		bordercolor .5 .5 .5 .5        
 		backcolor 0 0 0 .25
@@ -313,22 +446,44 @@ menuDef {
 		textfont UI_FONT_BIG
 		textalignx 74
 		textalign ITEM_ALIGN_CENTER
-		mouseEnter { setitemcolor save backcolor .3 .5 .2 .25 }
-      	mouseExit { setitemcolor save backcolor 0 0 0 .25 }
+		mouseEnter { setitemcolor save backcolor .3 .5 .2 .25 ; setitemcolor save forecolor 0 .9 0 .8 }
+      	mouseExit { setitemcolor save backcolor 0 0 0 .25 ; setitemcolor save forecolor 1 1 1 1 }
 
 		action { uiScript Savegame }
 		visible 1
 	}
 
+
 //
 // delete
 //
 
+	// itemDef {
+		// name del
+		// text "Delete..."
+		// type ITEM_TYPE_BUTTON
+   		// rect 322 30 148 18
+		// textscale .25
+		// style 1
+		// border 1
+		// bordercolor .5 .5 .5 .5        
+		// backcolor 0 0 0 .25
+		// textfont UI_FONT_BIG
+		// textaligny 13
+		// textalignx 80
+		// textalign ITEM_ALIGN_CENTER
+		// mouseEnter { setitemcolor del backcolor .3 .5 .2 .25 }
+      	// mouseExit { setitemcolor del backcolor 0 0 0 .25 }
+
+		// action { open save_del_sure_popmenu }
+		// visible 1
+	// }
+
 	itemDef {
 		name del
-		text "Delete..."
+		text ""
 		type ITEM_TYPE_BUTTON
-   		rect 322 30 148 18
+   		rect 322 28 148 22
 		textscale .25
 		style 1
 		border 1
@@ -338,10 +493,20 @@ menuDef {
 		textaligny 13
 		textalignx 80
 		textalign ITEM_ALIGN_CENTER
-		mouseEnter { setitemcolor del backcolor .3 .5 .2 .25 }
+		mouseEnter { setitemcolor del backcolor .9 0 0 .25 }
       	mouseExit { setitemcolor del backcolor 0 0 0 .25 }
 
 		action { open save_del_sure_popmenu }
+		visible 1
+	}
+
+	itemDef {
+		name del
+		type ITEM_TYPE_BUTTON
+   		rect 322 31 148 18
+		style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/ingame/save/delete.tga"
+		action { open load_del_sure_popmenu }
 		visible 1
 	}
 
@@ -378,15 +543,32 @@ menuDef {
 
 
 
+	// itemDef {
+		// name confirm
+		// text "Delete Selected Savegame?" 
+		// style 0
+		// textscale .25
+		// textstyle 3
+		// rect 0 0 212 60
+		// textalign ITEM_ALIGN_CENTER
+		// textalignx 106
+		// textfont UI_FONT_BIG
+		// textaligny 20
+		// decoration
+// //		forecolor 1 1 1 1
+		// visible 1
+		// }
+
 	itemDef {
 		name confirm
-		text "Delete Selected Savegame?" 
-		style 0
+		text "" 
+		style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/ingame/save/deleteselect.tga"
 		textscale .25
 		textstyle 3
 		rect 0 0 212 60
 		textalign ITEM_ALIGN_CENTER
-		textalignx 106
+		textalignx 100
 		textfont UI_FONT_BIG
 		textaligny 20
 		decoration
@@ -395,13 +577,50 @@ menuDef {
 		}
 
 
+
+
+
+
+	// itemDef {
+		// name sdelsure_yes
+		// text "YES"
+		// type 1
+		// textfont UI_FONT_BIG
+		// textalign ITEM_ALIGN_CENTER
+		// style WINDOW_STYLE_FILLED
+		// textscale .25
+		// rect 18 30 60 44
+		// textalign 1
+		// textalignx 30
+		// textaligny 22
+		// forecolor 1 1 1 1
+		// backcolor .37 .1 .1 0 
+		// visible 1
+
+
+		// // delete the selected savegame and update the list
+		// action
+		// {
+			// play "sound/misc/nomenu.wav"; 
+			// close save_del_sure_popmenu ; 
+			// uiScript DelSavegame;
+// //			uiScript loadSavegames;
+			// open ingame_save
+		// }
+
+		// mouseEnter { setitemcolor sdelsure_yes backcolor .1 .37 .1 0 } 
+		// mouseExit { setitemcolor sdelsure_yes backcolor .37 .1 .1 0 } 	
+		// }
+
+
 	itemDef {
 		name sdelsure_yes
-		text "YES"
+		text ""
 		type 1
 		textfont UI_FONT_BIG
 		textalign ITEM_ALIGN_CENTER
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/ingame/save/yes.tga"
 		textscale .25
 		rect 18 30 60 44
 		textalign 1
@@ -422,18 +641,55 @@ menuDef {
 			open ingame_save
 		}
 
-		mouseEnter { setitemcolor sdelsure_yes backcolor .1 .37 .1 0 } 
-		mouseExit { setitemcolor sdelsure_yes backcolor .37 .1 .1 0 } 	
+		mouseEnter { setitemcolor sdelsure_yes forecolor .9 0 0 .8 } 
+		mouseExit { setitemcolor sdelsure_yes forecolor 1 1 1 1 } 	
 		}
 
 
+
+
+
+
+
+
+
+
+	// itemDef {
+		// name sdelsure_no
+		// text "NO"
+		// type 1
+		// textfont UI_FONT_BIG
+		// textalign ITEM_ALIGN_CENTER
+		// style WINDOW_STYLE_FILLED
+		// textscale .25
+		// rect 128 30 60 44
+		// textalign 1
+		// textalignx 30
+		// textaligny 22
+		// forecolor 1 1 1 1
+		// backcolor .37 .1 .1 0 
+		// visible 1
+
+		// action 
+		// { 
+			// play "sound/misc/nomenu.wav";
+			// close save_del_sure_popmenu;
+			// open ingame_save
+		// }
+
+		// mouseEnter { setitemcolor sdelsure_no backcolor .1 .37 .1 0 } 
+		// mouseExit { setitemcolor sdelsure_no backcolor .37 .1 .1 0 } 		
+
+		// }	// end item
+
 	itemDef {
 		name sdelsure_no
-		text "NO"
+		text ""
 		type 1
 		textfont UI_FONT_BIG
 		textalign ITEM_ALIGN_CENTER
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/ingame/save/no.tga"
 		textscale .25
 		rect 128 30 60 44
 		textalign 1
@@ -450,10 +706,12 @@ menuDef {
 			open ingame_save
 		}
 
-		mouseEnter { setitemcolor sdelsure_no backcolor .1 .37 .1 0 } 
-		mouseExit { setitemcolor sdelsure_no backcolor .37 .1 .1 0 } 		
+		mouseEnter { setitemcolor sdelsure_no forecolor .9 0 0 .8 } 
+		mouseExit { setitemcolor sdelsure_no forecolor 1 1 1 1 } 		
 
 		}	// end item
+
+
 
 	}	// end menudef
 
@@ -480,10 +738,27 @@ menuDef {
 
 
 
+	// itemDef {
+		// name confirm
+		// text "Overwrite existing file?"
+		// style 0
+		// textscale .24
+		// textfont UI_FONT_BIG
+		// textstyle 3
+		// rect 0 0 212 60
+		// textalign ITEM_ALIGN_CENTER
+		// textalignx 100
+		// textaligny 20
+		// decoration
+		// forecolor 1 1 1 1
+		// visible 1
+		// }
+
 	itemDef {
 		name confirm
-		text "Overwrite existing file?"
-		style 0
+		text ""
+		style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/ingame/save/overwrite.tga"
 		textscale .24
 		textfont UI_FONT_BIG
 		textstyle 3
@@ -498,10 +773,29 @@ menuDef {
 
 
 
+	// itemDef {
+		// name overwrite_ok
+		// text "OK"
+		// type 1
+		// textfont UI_FONT_BIG
+		// textscale .25
+		// rect 124 30 40 44
+		// textalign ITEM_ALIGN_CENTER
+		// textalignx 20
+		// textaligny 22
+		// forecolor 1 1 1 1
+		// visible 1
+		// action { uiScript Savegame2 }
+		// mouseEnter { setitemcolor overwrite_ok backcolor .1 .37 .1 0 } 
+		// mouseExit { setitemcolor overwrite_ok backcolor .37 .1 .1 0 } 		
+		// }
+
 	itemDef {
 		name overwrite_ok
-		text "OK"
+		text ""
 		type 1
+		style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/ingame/save/ok.tga"
 		textfont UI_FONT_BIG
 		textscale .25
 		rect 124 30 40 44
@@ -511,14 +805,37 @@ menuDef {
 		forecolor 1 1 1 1
 		visible 1
 		action { uiScript Savegame2 }
-		mouseEnter { setitemcolor overwrite_ok backcolor .1 .37 .1 0 } 
-		mouseExit { setitemcolor overwrite_ok backcolor .37 .1 .1 0 } 		
+		mouseEnter { setitemcolor overwrite_ok forecolor 0 .9 0 .8 } 
+		mouseExit { setitemcolor overwrite_ok forecolor 1 1 1 1 } 		
 		}
+
+
+	// itemDef {
+		// name overwrite_no
+		// text "NO"
+		// type 1
+		// textfont UI_FONT_BIG
+		// textscale .25
+		// rect 38 30 40 44
+		// textalign ITEM_ALIGN_CENTER
+		// textalignx 20
+		// textaligny 22
+		// forecolor 1 1 1 1
+		// visible 1
+		// action { 
+			// close save_overwrite_popmenu;
+			// open ingame_save
+		// }
+		// mouseEnter { setitemcolor overwrite_no backcolor .1 .37 .1 0 } 
+		// mouseExit { setitemcolor overwrite_no backcolor .37 .1 .1 0 } 		
+		// }
 
 	itemDef {
 		name overwrite_no
-		text "NO"
+		text ""
 		type 1
+		style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/ingame/save/nook.tga"
 		textfont UI_FONT_BIG
 		textscale .25
 		rect 38 30 40 44
@@ -531,8 +848,8 @@ menuDef {
 			close save_overwrite_popmenu;
 			open ingame_save
 		}
-		mouseEnter { setitemcolor overwrite_no backcolor .1 .37 .1 0 } 
-		mouseExit { setitemcolor overwrite_no backcolor .37 .1 .1 0 } 		
+		mouseEnter { setitemcolor overwrite_no forecolor 0 .9 0 .8 } 
+		mouseExit { setitemcolor overwrite_no forecolor 1 1 1 1 } 		
 		}
 
 
@@ -558,10 +875,27 @@ menuDef {
 
 
 
+	// itemDef {
+		// name confirm
+		// text "You must specify a filename!"
+		// style 0
+		// textscale .24
+		// textstyle 3
+		// textfont UI_FONT_BIG
+		// rect 0 0 212 60
+		// textalign ITEM_ALIGN_CENTER
+		// textalignx 100
+		// textaligny 20
+		// decoration
+		// forecolor 1 1 1 1
+		// visible 1
+		// }
+
 	itemDef {
 		name confirm
-		text "You must specify a filename!"
-		style 0
+		text ""
+		style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/ingame/save/filename.tga"
 		textscale .24
 		textstyle 3
 		textfont UI_FONT_BIG
@@ -576,11 +910,33 @@ menuDef {
 
 
 
+	// itemDef {
+		// name savename_ok
+		// text "OK"
+		// type 1
+		// textfont UI_FONT_BIG
+		// textscale .25
+		// textalign ITEM_ALIGN_CENTER
+		// rect 80 30 40 44
+		// textalign 1
+		// textalignx 20
+		// textaligny 22
+		// forecolor 1 1 1 1
+		// visible 1
+		// action { 
+			// close save_name_popmenu;
+			// open ingame_save
+		// }
+		// mouseEnter { setitemcolor savename_ok backcolor .1 .37 .1 0 } 
+		// mouseExit { setitemcolor savename_ok backcolor .37 .1 .1 0 } 		
+		// }
 
 	itemDef {
 		name savename_ok
-		text "OK"
+		text ""
 		type 1
+		style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/ingame/save/ok.tga"
 		textfont UI_FONT_BIG
 		textscale .25
 		textalign ITEM_ALIGN_CENTER
@@ -594,9 +950,10 @@ menuDef {
 			close save_name_popmenu;
 			open ingame_save
 		}
-		mouseEnter { setitemcolor savename_ok backcolor .1 .37 .1 0 } 
-		mouseExit { setitemcolor savename_ok backcolor .37 .1 .1 0 } 		
+		mouseEnter { setitemcolor savename_ok forecolor 0 .9 0 .8 } 
+		mouseExit { setitemcolor savename_ok forecolor 1 1 1 1 } 		
 		}
+
 
 
 	}	// end menudef
