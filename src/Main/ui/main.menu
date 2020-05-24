@@ -6827,7 +6827,7 @@ itemDef {
 		style WINDOW_STYLE_SHADER
 		backcolor 1 1 1 .07     
 		forecolor 1 1 1 1
-		background "text/ChineseCHN/options/system/sound/effectsvolume.tga"
+		background "text/ChineseCHN/options/system/sound/musicvolume.tga"
 		visible 0 
     }
 
@@ -6876,7 +6876,7 @@ itemDef {
 		bordercolor .5 .5 .5 .5
 		action { exec "snd_restart" ; hide sounds ; hide applysys }
 		mouseEnter { setitemcolor applysystem backcolor .3 .5 .2 .25 ; setitemcolor applysys forecolor .0 .9 .0 .8 }
-      	mouseExit { setitemcolor applysystem backcolor .1 .1 .1 .1 ; setitemcolor applysys forecolor .0 .9 .0 .8 }
+      	mouseExit { setitemcolor applysystem backcolor .1 .1 .1 .1 ; setitemcolor applysys forecolor 1 1 1 1 }
 	}	
 	
 	itemDef {

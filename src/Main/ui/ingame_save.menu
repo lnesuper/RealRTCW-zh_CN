@@ -527,7 +527,7 @@ menuDef {
 	visible 0
 	fullscreen 0
 
-	rect 240 220 200 80
+	rect 235 220 210 80
 
 	focusColor 1 .75 0 1
 
@@ -723,7 +723,7 @@ menuDef {
 	name save_overwrite_popmenu
 	visible 0
 	fullscreen 0
-	rect 240 220 200 80
+	rect 235 220 210 80
 	focusColor 1 .75 0 1
 
 	backcolor .1 .15 .1 1
@@ -860,7 +860,7 @@ menuDef {
 	name save_name_popmenu
 	visible 0
 	fullscreen 0
-	rect 240 220 200 80
+	rect 235 220 210 80
 	focusColor 1 .75 0 1
 
 	backcolor .1 .15 .1 1

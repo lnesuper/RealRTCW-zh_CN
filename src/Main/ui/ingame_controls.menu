@@ -38,7 +38,7 @@ itemDef {
       name keyBindStatus
       rect 20 400 320 15 
 	ownerdraw UI_KEYBINDSTATUS
-	text " "      
+	text ""      
 	forecolor 1 .75 0 1
 	textscale .230
 	textalignx 187
@@ -65,13 +65,33 @@ itemDef {
 
 
 
+// itemDef {
+	// name ctr_look
+	// text "Look"
+	// type 1
+	// textscale .23
+	// group grpControlbutton
+	// rect 50 3.5 45 20
+	// textalign 1
+	// textalignx 22
+	// textfont UI_FONT_BIG
+	// textaligny 14
+	// border 1
+	// bordercolor .1 .1 .1 0
+	// forecolor 1 1 1 1
+	// visible 1
+	// action { hide grpControls ; show look }
+	// mouseEnter { setitemcolor ctr_look backcolor .1 .37 .1 1 }
+      	// mouseExit { setitemcolor ctr_look backcolor .37 .1 .1 1 }
+	// }
+
 itemDef {
 	name ctr_look
-	text "Look"
+	text ""
 	type 1
 	textscale .23
 	group grpControlbutton
-	rect 50 3.5 45 20
+	rect 65 4 45 20
 	textalign 1
 	textalignx 22
 	textfont UI_FONT_BIG
@@ -79,37 +99,87 @@ itemDef {
 	border 1
 	bordercolor .1 .1 .1 0
 	forecolor 1 1 1 1
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/ingame/controls/lookbutton.tga"
 	visible 1
 	action { hide grpControls ; show look }
-	mouseEnter { setitemcolor ctr_look backcolor .1 .37 .1 1 }
-      	mouseExit { setitemcolor ctr_look backcolor .37 .1 .1 1 }
+	mouseEnter { setitemcolor ctr_look backcolor .1 .37 .1 1 ; setitemcolor ctr_look forecolor .9 .9 .1 .8 }
+    mouseExit { setitemcolor ctr_look backcolor .37 .1 .1 1 ; setitemcolor ctr_look forecolor 1 1 1 1 }
 	}
 
+
+
+	// itemDef {
+      		// name look
+		// group grpControls
+      		// type ITEM_TYPE_BIND
+		// text "Lookup:"
+		// cvar "+lookup"
+		// rect 102 30 290 12 
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10    
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// textfont UI_FONT_BIG
+		// backcolor 1 1 1 .07
+     		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
-      		name look
+      	name look
 		group grpControls
-      		type ITEM_TYPE_BIND
-		text "Lookup:"
+      	type ITEM_TYPE_BIND
+		text ""
 		cvar "+lookup"
 		rect 102 30 290 12 
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10    
 		textscale .23 
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/look/lookup.tga"
 		textfont UI_FONT_BIG
 		backcolor 1 1 1 .07
      		forecolor 1 1 1 1
 		visible 0 
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
-    		}
+    	}
+
+
+
+
+
+
+	// itemDef {
+      		// name look
+		// group grpControls
+      		// type ITEM_TYPE_BIND
+		// text "Look Down:"
+		// cvar "+lookdown"
+		// rect 102 45 290 12 
+		// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+		// textalignx 142 
+		// textaligny 10       
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
 
 	itemDef {
-      		name look
+      	name look
 		group grpControls
-      		type ITEM_TYPE_BIND
-		text "Look Down:"
+      	type ITEM_TYPE_BIND
+		text ""
 		cvar "+lookdown"
 		rect 102 45 290 12 
 		textalign ITEM_ALIGN_RIGHT
@@ -118,19 +188,42 @@ itemDef {
 		textaligny 10       
 		textscale .23           
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/look/lookdown.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
-    		}
+    	}
 
+
+
+	// itemDef {
+      		// name look
+		// group grpControls
+      		// type ITEM_TYPE_BIND
+		// textfont UI_FONT_BIG
+		// text "Mouse Look:"
+		// cvar "+mlook"
+		// rect 102 60 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0  
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+	
 	itemDef {
       		name look
 		group grpControls
       		type ITEM_TYPE_BIND
 		textfont UI_FONT_BIG
-		text "Mouse Look:"
+		text ""
 		cvar "+mlook"
 		rect 102 60 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -138,18 +231,41 @@ itemDef {
 		textaligny 10
 		textscale .23           
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/look/mouselook.tga"
 		backcolor 1 1 1 .07
 		visible 0  
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
-    		}
+    		}	
 	
+	
+	
+// itemDef {
+	// name look
+	// group grpControls
+	// type ITEM_TYPE_BIND
+	// text "Centerview:"
+	// cvar "centerview"
+	// textfont UI_FONT_BIG
+		// rect 102 75 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+	// mouseenter { show keyBindStatus }
+	// mouseexit { hide keyBindStatus }
+	// }
+
 itemDef {
 	name look
 	group grpControls
 	type ITEM_TYPE_BIND
-	text "Centerview:"
+	text ""
 	cvar "centerview"
 	textfont UI_FONT_BIG
 		rect 102 75 290 12
@@ -158,18 +274,41 @@ itemDef {
 		textaligny 10
 		textscale .23           
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/look/centerview.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 	mouseenter { show keyBindStatus }
 	mouseexit { hide keyBindStatus }
 	}
 
+
+
+// itemDef {
+	// name look
+	// group grpControls
+	// type ITEM_TYPE_BIND
+	// text "Binoculars:"
+	// textfont UI_FONT_BIG
+	// cvar "+zoom"
+		// rect 102 90 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+	// mouseenter { show keyBindStatus }
+	// mouseexit { hide keyBindStatus } 
+	// }
+
 itemDef {
 	name look
 	group grpControls
 	type ITEM_TYPE_BIND
-	text "Binoculars:"
+	text ""
 	textfont UI_FONT_BIG
 	cvar "+zoom"
 		rect 102 90 290 12
@@ -178,20 +317,47 @@ itemDef {
 		textaligny 10
 		textscale .23           
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/look/binoculars.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 	mouseenter { show keyBindStatus }
 	mouseexit { hide keyBindStatus } 
 	}
 
+
+
+
+
+
+
 //zoom in
+
+// itemDef {
+	// name look
+	// group grpControls
+	// type ITEM_TYPE_BIND
+	// text "Zoom In:"
+	// cvar "zoomin"
+	// textfont UI_FONT_BIG
+		// rect 102 105 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+	// mouseenter { show keyBindStatus }
+	// mouseexit { hide keyBindStatus } 
+	// }
 
 itemDef {
 	name look
 	group grpControls
 	type ITEM_TYPE_BIND
-	text "Zoom In:"
+	text ""
 	cvar "zoomin"
 	textfont UI_FONT_BIG
 		rect 102 105 290 12
@@ -200,21 +366,51 @@ itemDef {
 		textaligny 10
 		textscale .23           
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/look/zoomin.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 	mouseenter { show keyBindStatus }
 	mouseexit { hide keyBindStatus } 
 	}
 
+
+
+
+
+
+
+
+
+
 //zoom out
+
+// itemDef {
+	// name look
+	// group grpControls
+	// textfont UI_FONT_BIG
+	// type ITEM_TYPE_BIND
+		// text "Zoom Out:"
+		// cvar "zoomout"
+		// rect 102 120 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+	// mouseenter { show keyBindStatus }
+	// mouseexit { hide keyBindStatus } 
+	// }
 
 itemDef {
 	name look
 	group grpControls
 	textfont UI_FONT_BIG
 	type ITEM_TYPE_BIND
-		text "Zoom Out:"
+		text ""
 		cvar "zoomout"
 		rect 102 120 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -222,7 +418,8 @@ itemDef {
 		textaligny 10
 		textscale .23           
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/look/zoomout.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 	mouseenter { show keyBindStatus }
@@ -230,13 +427,32 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name look
+	// group grpControls
+	// textfont UI_FONT_BIG
+	// type ITEM_TYPE_YESNO
+	// text "Free Look:"
+	// cvar "cl_freelook"
+		// rect 102 135 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+	// mouseenter { show yesno_message }
+	// mouseexit { hide yesno_message }
+	// }
 
 itemDef {
 	name look
 	group grpControls
 	textfont UI_FONT_BIG
 	type ITEM_TYPE_YESNO
-	text "Free Look:"
+	text ""
 	cvar "cl_freelook"
 		rect 102 135 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -244,7 +460,8 @@ itemDef {
 		textaligny 10
 		textscale .23           
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/look/freelook.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 	mouseenter { show yesno_message }
@@ -252,32 +469,71 @@ itemDef {
 	}
 
 
+
+
 // cg_useWeapsForZoom option lets weapon scroll keys
 // operate zoom in/out when in a zoomed mode (binoc/scope)
 
 
+
+ // itemDef {
+	// name look
+	// group grpControls
+	// textfont UI_FONT_BIG
+	// type ITEM_TYPE_TEXT
+	// text "Use Weapon Cycle"
+	// rect 110 160 290 12
+	// textalign ITEM_ALIGN_RIGHT
+	// textalignx 180
+	// textaligny 10
+	// textscale .23           
+	// forecolor 1 1 1 1
+	// visible 0 
+	// }
 
  itemDef {
 	name look
 	group grpControls
 	textfont UI_FONT_BIG
 	type ITEM_TYPE_TEXT
-	text "Use Weapon Cycle"
+	text ""
 	rect 110 160 290 12
 	textalign ITEM_ALIGN_RIGHT
 	textalignx 180
 	textaligny 10
 	textscale .23           
 	forecolor 1 1 1 1
+	style WINDOW_STYLE_SHADER	
+	background "text/ChineseCHN/ingame/controls/look/uwc.tga"
 	visible 0 
 	}
+
+
+ // itemDef {
+	// name look
+	// group grpControls
+	// textfont UI_FONT_BIG
+	// type ITEM_TYPE_MULTI
+	// text "For Zooming:"
+	// cvar "cg_useWeapsForZoom"
+	// cvarFloatList { "Off" 0 "On (normal)" 1 "On (reverse)" 2 }
+	// rect 102 175 290 12
+	// textalign ITEM_ALIGN_RIGHT
+	// textalignx 142
+	// textaligny 10
+	// textscale .23           
+	// forecolor 1 1 1 1
+	// style WINDOW_STYLE_FILLED
+	// backcolor 1 1 1 .07
+	// visible 0 
+	// }
 
  itemDef {
 	name look
 	group grpControls
 	textfont UI_FONT_BIG
 	type ITEM_TYPE_MULTI
-	text "For Zooming:"
+	text ""
 	cvar "cg_useWeapsForZoom"
 	cvarFloatList { "Off" 0 "On (normal)" 1 "On (reverse)" 2 }
 	rect 102 175 290 12
@@ -286,20 +542,45 @@ itemDef {
 	textaligny 10
 	textscale .23           
 	forecolor 1 1 1 1
-	style WINDOW_STYLE_FILLED
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/ingame/controls/look/zooming.tga"
 	backcolor 1 1 1 .07
 	visible 0 
 	}
 
 
+
+// itemDef {
+	// name ctr_move
+	// text "Move"
+	// type 1
+	// textscale .23
+	// textfont UI_FONT_BIG
+	// group grpControlbutton
+	// rect 166 3.5 45 20
+	// textalign 1
+	// textalignx 22
+	// textaligny 14
+	// border 1
+	// bordercolor .1 .1 .1 0
+	// forecolor 1 1 1 1 
+	// backcolor .1 .1 .1 0
+	// visible 1
+	// action { hide grpControls ; show move }
+	// mouseEnter { setitemcolor ctr_move backcolor .1 .37 .1 1 }
+      // mouseExit { setitemcolor ctr_move backcolor .37 .1 .1 1 }
+	// }
+
 itemDef {
 	name ctr_move
-	text "Move"
+	text ""
 	type 1
 	textscale .23
 	textfont UI_FONT_BIG
 	group grpControlbutton
-	rect 166 3.5 45 20
+	style WINDOW_STYLE_SHADER
+    background "text/ChineseCHN/ingame/controls/movebutton.tga"
+	rect 165 4 45 20
 	textalign 1
 	textalignx 22
 	textaligny 14
@@ -309,17 +590,39 @@ itemDef {
 	backcolor .1 .1 .1 0
 	visible 1
 	action { hide grpControls ; show move }
-	mouseEnter { setitemcolor ctr_move backcolor .1 .37 .1 1 }
-      mouseExit { setitemcolor ctr_move backcolor .37 .1 .1 1 }
+	mouseEnter { setitemcolor ctr_move backcolor .1 .37 .1 1 ; setitemcolor ctr_move forecolor .9 .9 .1 .8 }
+    mouseExit { setitemcolor ctr_move backcolor .37 .1 .1 1 ; setitemcolor ctr_move forecolor 1 1 1 1 }
 	}
 
 
- 	itemDef {
+
+
+ 	// itemDef {
+		// name move
+		// group grpControls
+		// type ITEM_TYPE_YESNO
+		// textfont UI_FONT_BIG
+		// text "Always Run:"
+		// cvar "cl_run"
+		// rect 102 30 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+		// mouseenter { show yesno_message }
+		// mouseexit { hide yesno_message }
+    		// }
+			
+	itemDef {
 		name move
 		group grpControls
 		type ITEM_TYPE_YESNO
 		textfont UI_FONT_BIG
-		text "Always Run:"
+		text ""
 		cvar "cl_run"
 		rect 102 30 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -327,18 +630,39 @@ itemDef {
 		textaligny 10
 		textscale .23            
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/move/Alwaysrun.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 		mouseenter { show yesno_message }
 		mouseexit { hide yesno_message }
-    		}
+    		}			
+			
+			
+	// itemDef {
+		// name move
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// textfont UI_FONT_BIG
+		// text "Run / Walk:"
+		// cvar "+speed"
+		// rect 102 45 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+    		// }
+
 	itemDef {
 		name move
 		group grpControls
 		type ITEM_TYPE_BIND
 		textfont UI_FONT_BIG
-		text "Run / Walk:"
+		text ""
 		cvar "+speed"
 		rect 102 45 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -346,17 +670,38 @@ itemDef {
 		textaligny 10
 		textscale .23            
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/move/runwalk.tga"
 		backcolor 1 1 1 .07
 		visible 0 
     		}
+
+
+
+	// itemDef {
+		// name move
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// textfont UI_FONT_BIG
+		// text "Sprint:"
+		// cvar "+sprint"
+		// rect 102 60 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+    		// }
 
 	itemDef {
 		name move
 		group grpControls
 		type ITEM_TYPE_BIND
 		textfont UI_FONT_BIG
-		text "Sprint:"
+		text ""
 		cvar "+sprint"
 		rect 102 60 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -364,17 +709,40 @@ itemDef {
 		textaligny 10
 		textscale .23            
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/move/sprint.tga"
 		backcolor 1 1 1 .07
 		visible 0 
     		}
+
+
+
+	// itemDef {
+		// name move
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// textfont UI_FONT_BIG
+		// text "Forward:"
+		// cvar "+forward"
+		// rect 102 75 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
 
 	itemDef {
 		name move
 		group grpControls
 		type ITEM_TYPE_BIND
 		textfont UI_FONT_BIG
-		text "Forward:"
+		text ""
 		cvar "+forward"
 		rect 102 75 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -382,18 +750,41 @@ itemDef {
 		textaligny 10
 		textscale .23            
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/move/forward.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
 
+
+
+	// itemDef {
+		// name move
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// text "Backpedal:"
+		// cvar "+back"
+		// rect 102 90 290 12
+		// textfont UI_FONT_BIG
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23                   
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name move
 		group grpControls
 		type ITEM_TYPE_BIND
-		text "Backpedal:"
+		text ""
 		cvar "+back"
 		rect 102 90 290 12
 		textfont UI_FONT_BIG
@@ -402,19 +793,42 @@ itemDef {
 		textaligny 10
 		textscale .23                   
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/move/back.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
+
+
 	
+	// itemDef {
+		// name move
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// textfont UI_FONT_BIG
+		// text "Move Left:"
+		// cvar "+moveleft"
+		// rect 102 105 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name move
 		group grpControls
 		type ITEM_TYPE_BIND
 		textfont UI_FONT_BIG
-		text "Move Left:"
+		text ""
 		cvar "+moveleft"
 		rect 102 105 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -422,19 +836,42 @@ itemDef {
 		textaligny 10
 		textscale .23            
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/move/moveleft.tga"
 		backcolor 1 1 1 .07
 		visible 0
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
 
+
+
+	// itemDef {
+		// name move
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// textfont UI_FONT_BIG
+		// text "Move Right:"
+		// cvar "+moveright"
+		// rect 102 120 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name move
 		group grpControls
 		type ITEM_TYPE_BIND
 		textfont UI_FONT_BIG
-		text "Move Right:"
+		text ""
 		cvar "+moveright"
 		rect 102 120 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -442,19 +879,42 @@ itemDef {
 		textaligny 10
 		textscale .23           
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/move/moveright.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
 
+
+
+// itemDef {
+	// name move
+	// group grpControls
+	// type ITEM_TYPE_BIND
+	// textfont UI_FONT_BIG
+	// text "Lean Left:"
+	// cvar "+leanleft"
+		// rect 102 135 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+	// mouseenter { show keyBindStatus }
+	// mouseexit { hide keyBindStatus } 
+	// }
+
 itemDef {
 	name move
 	group grpControls
 	type ITEM_TYPE_BIND
 	textfont UI_FONT_BIG
-	text "Lean Left:"
+	text ""
 	cvar "+leanleft"
 		rect 102 135 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -462,19 +922,42 @@ itemDef {
 		textaligny 10
 		textscale .23           
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/move/leanleft.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 	mouseenter { show keyBindStatus }
 	mouseexit { hide keyBindStatus } 
 	}
 
+
+
+// itemDef {
+	// name move
+	// group grpControls
+	// type ITEM_TYPE_BIND
+	// textfont UI_FONT_BIG
+	// text "Lean Right:"
+	// cvar "+leanright"
+		// rect 102 150 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+	// mouseenter { show keyBindStatus }
+	// mouseexit { hide keyBindStatus } 
+	// }
+
 itemDef {
 	name move
 	group grpControls
 	type ITEM_TYPE_BIND
 	textfont UI_FONT_BIG
-	text "Lean Right:"
+	text ""
 	cvar "+leanright"
 		rect 102 150 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -482,21 +965,40 @@ itemDef {
 		textaligny 10
 		textscale .23           
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/move/leanright.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 	mouseenter { show keyBindStatus }
 	mouseexit { hide keyBindStatus } 
 	}
 
-
+	// itemDef {
+		// name move
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// textfont UI_FONT_BIG
+		// text "Jump:"
+		// cvar "+moveup"
+		// rect 102 165 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
 
 	itemDef {
 		name move
 		group grpControls
 		type ITEM_TYPE_BIND
 		textfont UI_FONT_BIG
-		text "Jump:"
+		text ""
 		cvar "+moveup"
 		rect 102 165 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -504,18 +1006,43 @@ itemDef {
 		textaligny 10
 		textscale .23           
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/move/jump.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
 
+
+
+
+
+	// itemDef {
+		// name move
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// text "Crouch:"
+		// cvar "+movedown"
+		// rect 102 180 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus } 
+    		// }
+
 	itemDef {
 		name move
 		group grpControls
 		type ITEM_TYPE_BIND
-		text "Crouch:"
+		text ""
 		cvar "+movedown"
 		rect 102 180 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -524,18 +1051,42 @@ itemDef {
 		textaligny 10
 		textscale .23           
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/move/crouch.tga"
 		backcolor 1 1 1 .07
 		visible 0
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus } 
     		}
 
+
+
+
+	// itemDef {
+		// name move
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// text "Turn Left:"
+		// cvar "+left"
+		// rect 102 195 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+		// textalignx 142
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name move
 		group grpControls
 		type ITEM_TYPE_BIND
-		text "Turn Left:"
+		text ""
 		cvar "+left"
 		rect 102 195 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -544,18 +1095,41 @@ itemDef {
 		textaligny 10
 		textscale .23            
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/move/turnleft.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
 
+
+
+	// itemDef {
+		// name move
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// text "Turn Right:"
+		// cvar "+right"
+		// rect 102 210 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// textfont UI_FONT_BIG
+		// backcolor 1 1 1 .07
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name move
 		group grpControls
 		type ITEM_TYPE_BIND
-		text "Turn Right:"
+		text ""
 		cvar "+right"
 		rect 102 210 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -563,19 +1137,42 @@ itemDef {
 		textaligny 10
 		textscale .23            
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/move/turnright.tga"
 		textfont UI_FONT_BIG
 		backcolor 1 1 1 .07
 		visible 0
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
-    		}
+    		}			
+			
+			
 	
+	// itemDef {
+		// name move
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// text "Strafe:"
+		// cvar "+strafe"
+		// rect 102 225 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// textfont UI_FONT_BIG
+		// backcolor 1 1 1 .07
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name move
 		group grpControls
 		type ITEM_TYPE_BIND
-		text "Strafe:"
+		text ""
 		cvar "+strafe"
 		rect 102 225 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -583,7 +1180,8 @@ itemDef {
 		textaligny 10
 		textscale .23            
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/move/strafe.tga"
 		textfont UI_FONT_BIG
 		backcolor 1 1 1 .07
 		visible 0
@@ -592,15 +1190,39 @@ itemDef {
     		}
 
 
+// itemDef {
+	// name ctr_shoot
+	// text "Shoot"
+	// type 1
+	// textscale .23
+	// group grpControlbutton
+	// textfont UI_FONT_BIG
+// //	rect 200 3.5 45 20
+	// rect 280 3.5 47 20
+	// textalign 1
+	// textalignx 22
+	// textaligny 14
+	// border 1
+	// bordercolor .1 .1 .1 0
+	// forecolor 1 1 1 1
+	// backcolor .1 .1 .1 0 
+	// visible 1
+	// action { hide grpControls ; show shoot }
+	// mouseEnter { setitemcolor ctr_shoot backcolor .1 .37 .1 1 }
+      // mouseExit { setitemcolor ctr_shoot backcolor .37 .1 .1 1 }
+	// }
+
 itemDef {
 	name ctr_shoot
-	text "Shoot"
+	text ""
 	type 1
 	textscale .23
 	group grpControlbutton
 	textfont UI_FONT_BIG
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/ingame/controls/shootbutton.tga"
 //	rect 200 3.5 45 20
-rect 280 3.5 47 20
+	rect 265 4 47 20
 	textalign 1
 	textalignx 22
 	textaligny 14
@@ -610,15 +1232,42 @@ rect 280 3.5 47 20
 	backcolor .1 .1 .1 0 
 	visible 1
 	action { hide grpControls ; show shoot }
-	mouseEnter { setitemcolor ctr_shoot backcolor .1 .37 .1 1 }
-      mouseExit { setitemcolor ctr_shoot backcolor .37 .1 .1 1 }
+	mouseEnter { setitemcolor ctr_shoot backcolor .1 .37 .1 1 ; setitemcolor ctr_shoot forecolor .9 .9 .1 .8 }
+    mouseExit { setitemcolor ctr_shoot backcolor .37 .1 .1 1 ; setitemcolor ctr_shoot forecolor 1 1 1 1 }
 	}
+
+
+
+
+
+
+
+	// itemDef {
+		// name shoot				
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// textfont UI_FONT_BIG
+		// text "Attack:"
+		// cvar "+attack"
+		// rect 102 30 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name shoot				
 		group grpControls
 		type ITEM_TYPE_BIND
 		textfont UI_FONT_BIG
-		text "Attack:"
+		text ""
 		cvar "+attack"
 		rect 102 30 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -626,18 +1275,40 @@ rect 280 3.5 47 20
 		textaligny 10
 		textscale .23        
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/attack.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
 
+
+	// itemDef {
+		// name shoot
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// text "Reload Weapon:"
+		// textfont UI_FONT_BIG
+		// cvar "+reload"
+		// rect 102 45 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name shoot
 		group grpControls
 		type ITEM_TYPE_BIND
-		text "Reload Weapon:"
+		text ""
 		textfont UI_FONT_BIG
 		cvar "+reload"
 		rect 102 45 290 12
@@ -646,19 +1317,22 @@ rect 280 3.5 47 20
 		textaligny 10
 		textscale .23        
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/reload.tga"
 		backcolor 1 1 1 .07
 		visible 0
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
 
+
+
 	itemDef {
 		name shoot
 		group grpControls
 		type ITEM_TYPE_BIND
 		textfont UI_FONT_BIG
-		text "Next Weapon:"
+		text ""
 		cvar "weapnext"
 		rect 102 60 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -678,7 +1352,50 @@ rect 280 3.5 47 20
 		group grpControls
 		type ITEM_TYPE_BIND
 		textfont UI_FONT_BIG
-		text "Previous Weapon:"
+		text ""
+		cvar "weapnext"
+		rect 102 60 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142 
+		textaligny 10
+		textscale .23        
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/next.tga"
+		backcolor 1 1 1 .07
+		visible 0
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    		}
+
+
+
+	// itemDef {
+		// name shoot
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// textfont UI_FONT_BIG
+		// text "Previous Weapon:"
+		// cvar "weapprev"
+		// rect 102 75 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
+	itemDef {
+		name shoot
+		group grpControls
+		type ITEM_TYPE_BIND
+		textfont UI_FONT_BIG
+		text ""
 		cvar "weapprev"
 		rect 102 75 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -686,19 +1403,42 @@ rect 280 3.5 47 20
 		textaligny 10
 		textscale .23        
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/previous.tga"
 		backcolor 1 1 1 .07
 		visible 0
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
 
+
+
+	// itemDef {
+		// name shoot
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// textfont UI_FONT_BIG
+		// text "Next Weapon In Bank:"
+		// cvar "weapnextinbank"
+		// rect 102 90 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name shoot
 		group grpControls
 		type ITEM_TYPE_BIND
 		textfont UI_FONT_BIG
-		text "Next Weapon In Bank:"
+		text ""
 		cvar "weapnextinbank"
 		rect 102 90 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -706,19 +1446,42 @@ rect 280 3.5 47 20
 		textaligny 10
 		textscale .23        
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/nwb.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
 
-	itemDef {
+
+
+	// itemDef {
+		// name shoot
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// textfont UI_FONT_BIG
+		// text "Previous Wpn In Bank:"
+		// cvar "weapprevinbank"
+		// rect 102 105 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+			
+		itemDef {
 		name shoot
 		group grpControls
 		type ITEM_TYPE_BIND
 		textfont UI_FONT_BIG
-		text "Previous Wpn In Bank:"
+		text ""
 		cvar "weapprevinbank"
 		rect 102 105 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -726,12 +1489,19 @@ rect 280 3.5 47 20
 		textaligny 10
 		textscale .23        
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/pwb.tga"
 		backcolor 1 1 1 .07
 		visible 0
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
-    		}
+    		}	
+			
+			
+			
+			
+			
+			
 
 //	itemDef {
 //		name shoot
@@ -752,11 +1522,31 @@ rect 280 3.5 47 20
 //		mouseexit { hide yesno_message }
   //  		}
 
+	// itemDef {
+		// name shoot
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// text "Switch to Alternate:"
+		// cvar "weapalt"
+		// rect 102 120 290 12
+		// textfont UI_FONT_BIG
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name shoot
 		group grpControls
 		type ITEM_TYPE_BIND
-		text "Switch to Alternate:"
+		text ""
 		cvar "weapalt"
 		rect 102 120 290 12
 		textfont UI_FONT_BIG
@@ -765,18 +1555,41 @@ rect 280 3.5 47 20
 		textaligny 10
 		textscale .23        
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/alternate.tga"
 		backcolor 1 1 1 .07
 		visible 0
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
+
+
+
 	
+	// itemDef {
+		// name shoot
+		// group grpControls
+		// type ITEM_TYPE_MULTI
+		// text "Autoswitch:"
+		// textfont UI_FONT_BIG
+		// cvar "cg_autoswitch"
+		// cvarFloatList { "Off" 0 "Always Switch" 1 "If New" 2 "If Better" 3 "New or Better" 4 "New and Better" 5 }
+		// rect 102 135 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0
+    		// }
+
 	itemDef {
 		name shoot
 		group grpControls
 		type ITEM_TYPE_MULTI
-		text "Autoswitch:"
+		text ""
 		textfont UI_FONT_BIG
 		cvar "cg_autoswitch"
 		cvarFloatList { "Off" 0 "Always Switch" 1 "If New" 2 "If Better" 3 "New or Better" 4 "New and Better" 5 }
@@ -786,17 +1599,41 @@ rect 280 3.5 47 20
 		textaligny 10
 		textscale .23        
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/autoswitch.tga"
 		backcolor 1 1 1 .07
 		visible 0
     		}
+
+
+
+
+	// itemDef {
+		// name shoot
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// textfont UI_FONT_BIG
+		// text "Knife:"
+		// cvar "weaponbank 1"
+		// rect 102 150 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
 
 	itemDef {
 		name shoot
 		group grpControls
 		type ITEM_TYPE_BIND
 		textfont UI_FONT_BIG
-		text "Knife:"
+		text ""
 		cvar "weaponbank 1"
 		rect 102 150 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -804,19 +1641,42 @@ rect 280 3.5 47 20
 		textaligny 10
 		textscale .23        
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/knife.tga"
 		backcolor 1 1 1 .07
 		visible 0
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
 
+
+
+	// itemDef {
+		// name shoot
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// textfont UI_FONT_BIG
+		// text "Pistols:"
+		// cvar "weaponbank 2"
+		// rect 102 165 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name shoot
 		group grpControls
 		type ITEM_TYPE_BIND
 		textfont UI_FONT_BIG
-		text "Pistols:"
+		text ""
 		cvar "weaponbank 2"
 		rect 102 165 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -824,18 +1684,41 @@ rect 280 3.5 47 20
 		textaligny 10
 		textscale .23        
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/pistols.tga"
 		backcolor 1 1 1 .07
 		visible 0
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
 
+
+
+	// itemDef {
+		// name shoot
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// text "SMGs:"
+		// textfont UI_FONT_BIG
+		// cvar "weaponbank 3"
+		// rect 102 180 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name shoot
 		group grpControls
 		type ITEM_TYPE_BIND
-		text "SMGs:"
+		text ""
 		textfont UI_FONT_BIG
 		cvar "weaponbank 3"
 		rect 102 180 290 12
@@ -844,18 +1727,41 @@ rect 280 3.5 47 20
 		textaligny 10
 		textscale .23        
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/smgs.tga"
 		backcolor 1 1 1 .07
 		visible 0
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
 
+
+
+	// itemDef {
+		// name shoot
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// text "Rifles:"
+		// cvar "weaponbank 4"
+		// textfont UI_FONT_BIG
+		// rect 102 195 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name shoot
 		group grpControls
 		type ITEM_TYPE_BIND
-		text "Rifles:"
+		text ""
 		cvar "weaponbank 4"
 		textfont UI_FONT_BIG
 		rect 102 195 290 12
@@ -864,19 +1770,41 @@ rect 280 3.5 47 20
 		textaligny 10
 		textscale .23        
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/rifles.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
 
+
+	// itemDef {
+		// name shoot
+		// group grpControls
+		// textfont UI_FONT_BIG
+		// type ITEM_TYPE_BIND
+		// text "Automatic rifles:"
+		// cvar "weaponbank 5"
+			// rect 102 210 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name shoot
 		group grpControls
 		textfont UI_FONT_BIG
 		type ITEM_TYPE_BIND
-		text "Automatic rifles:"
+		text ""
 		cvar "weaponbank 5"
 			rect 102 210 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -884,19 +1812,41 @@ rect 280 3.5 47 20
 		textaligny 10
 		textscale .23        
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/autorifles.tga"
 		backcolor 1 1 1 .07
 		visible 0
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
+
 	
+	// itemDef {
+		// name shoot
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// textfont UI_FONT_BIG
+		// text "Assault rifles:"
+		// cvar "weaponbank 6"
+		// rect 102 225 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name shoot
 		group grpControls
 		type ITEM_TYPE_BIND
 		textfont UI_FONT_BIG
-		text "Assault rifles:"
+		text ""
 		cvar "weaponbank 6"
 		rect 102 225 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -904,19 +1854,43 @@ rect 280 3.5 47 20
 		textaligny 10
 		textscale .23        
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/assarifles.tga"
 		backcolor 1 1 1 .07
 		visible 0
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
 
+
+
+
+	// itemDef {
+		// name shoot
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// textfont UI_FONT_BIG
+		// text "Shotgun:"
+		// cvar "weaponbank 7"
+		// rect 102 240 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name shoot
 		group grpControls
 		type ITEM_TYPE_BIND
 		textfont UI_FONT_BIG
-		text "Shotgun:"
+		text ""
 		cvar "weaponbank 7"
 		rect 102 240 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -924,18 +1898,43 @@ rect 280 3.5 47 20
 		textaligny 10
 		textscale .23        
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/shotgun.tga"
 		backcolor 1 1 1 .07
 		visible 0
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
+
+
+
+
+	// itemDef {
+		// name shoot
+		// group grpControls
+		// textfont UI_FONT_BIG
+		// type ITEM_TYPE_BIND
+		// text "Grenades:"
+		// cvar "weaponbank 8"
+		// rect 102 255 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name shoot
 		group grpControls
 		textfont UI_FONT_BIG
 		type ITEM_TYPE_BIND
-		text "Grenades:"
+		text ""
 		cvar "weaponbank 8"
 		rect 102 255 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -943,18 +1942,43 @@ rect 280 3.5 47 20
 		textaligny 10
 		textscale .23        
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/grenades.tga"
 		backcolor 1 1 1 .07
 		visible 0
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
+
+
+
+
+	// itemDef {
+		// name shoot
+		// group grpControls
+		// textfont UI_FONT_BIG
+		// type ITEM_TYPE_BIND
+		// text "Heavy weapons:"
+		// cvar "weaponbank 9"
+		// rect 102 270 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name shoot
 		group grpControls
 		textfont UI_FONT_BIG
 		type ITEM_TYPE_BIND
-		text "Heavy weapons:"
+		text ""
 		cvar "weaponbank 9"
 		rect 102 270 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -962,19 +1986,42 @@ rect 280 3.5 47 20
 		textaligny 10
 		textscale .23        
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/heavy.tga"
 		backcolor 1 1 1 .07
 		visible 0 
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
     		}
 
+
+
+	// itemDef {
+		// name shoot
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// textfont UI_FONT_BIG
+		// text "Secret weapons:"
+		// cvar "weaponbank 10"
+		// rect 102 285 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name shoot
 		group grpControls
 		type ITEM_TYPE_BIND
 		textfont UI_FONT_BIG
-		text "Secret weapons:"
+		text ""
 		cvar "weaponbank 10"
 		rect 102 285 290 12
 		textalign ITEM_ALIGN_RIGHT
@@ -982,7 +2029,8 @@ rect 280 3.5 47 20
 		textaligny 10
 		textscale .23        
 		forecolor 1 1 1 1
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/shoot/secret.tga"
 		backcolor 1 1 1 .07
 		visible 0
 		mouseenter { show keyBindStatus }
@@ -990,15 +2038,36 @@ rect 280 3.5 47 20
     		}
 
 
+// itemDef {
+	// name ctr_miscellaneous
+	// text "Misc"
+	// type 1
+	// textscale .23
+	// group grpControlbutton
+	// textfont UI_FONT_BIG
+	// rect 392 3.5 45 20
+// //	rect 280 3.5 45 20
+	// textalign 1
+	// textalignx 22
+	// textaligny 14
+	// border 1
+	// bordercolor .1 .1 .1 0
+	// forecolor 1 1 1 1
+	// backcolor .1 .1 .1 0 
+	// visible 1
+	// action { hide grpControls ; show misc }
+	// mouseEnter { setitemcolor ctr_miscellaneous backcolor .1 .37 .1 1 }
+      	// mouseExit { setitemcolor ctr_miscellaneous backcolor .37 .1 .1 1 }
+	// }
 
 itemDef {
 	name ctr_miscellaneous
-	text "Misc"
+	text ""
 	type 1
 	textscale .23
 	group grpControlbutton
 	textfont UI_FONT_BIG
-	rect 392 3.5 45 20
+	rect 365 4 45 20
 //	rect 280 3.5 45 20
 	textalign 1
 	textalignx 22
@@ -1007,17 +2076,42 @@ itemDef {
 	bordercolor .1 .1 .1 0
 	forecolor 1 1 1 1
 	backcolor .1 .1 .1 0 
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/ingame/controls/miscbutton.tga"
 	visible 1
 	action { hide grpControls ; show misc }
 	mouseEnter { setitemcolor ctr_miscellaneous backcolor .1 .37 .1 1 }
       	mouseExit { setitemcolor ctr_miscellaneous backcolor .37 .1 .1 1 }
 	}
 
+
+
+
+	// itemDef {
+		// name misc
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// text "Cyanide(kill player):"
+		// textfont UI_FONT_BIG
+		// cvar "kill"
+		// rect 102 30 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23  
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07                  
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name misc
 		group grpControls
 		type ITEM_TYPE_BIND
-		text "Cyanide(kill player):"
+		text ""
 		textfont UI_FONT_BIG
 		cvar "kill"
 		rect 102 30 290 12
@@ -1025,7 +2119,8 @@ itemDef {
 		textalignx 142 
 		textaligny 10
 		textscale .23  
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/misc/killme.tga"
 		backcolor 1 1 1 .07                  
 		forecolor 1 1 1 1
 		visible 0 
@@ -1033,11 +2128,34 @@ itemDef {
 		mouseexit { hide keyBindStatus }
     		}
 
+
+
+
+	// itemDef {
+		// name misc
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// text "Kick:"
+		// cvar "+kick"
+		// rect 102 45 290 12
+		// textfont UI_FONT_BIG
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23  
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07                  
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    		// }
+
 	itemDef {
 		name misc
 		group grpControls
 		type ITEM_TYPE_BIND
-		text "Kick:"
+		text ""
 		cvar "+kick"
 		rect 102 45 290 12
 		textfont UI_FONT_BIG
@@ -1045,7 +2163,8 @@ itemDef {
 		textalignx 142 
 		textaligny 10
 		textscale .23  
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/misc/kick.tga"
 		backcolor 1 1 1 .07                  
 		forecolor 1 1 1 1
 		visible 0 
@@ -1054,11 +2173,32 @@ itemDef {
     		}
 
 
+
+	// itemDef {
+		// name misc
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// text "Toggle Notebook:"
+		// textfont UI_FONT_BIG
+		// cvar "notebook"
+		// rect 102 60 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23  
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07                  
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+  	// }
+
 	itemDef {
 		name misc
 		group grpControls
 		type ITEM_TYPE_BIND
-		text "Toggle Notebook:"
+		text ""
 		textfont UI_FONT_BIG
 		cvar "notebook"
 		rect 102 60 290 12
@@ -1066,7 +2206,8 @@ itemDef {
 		textalignx 142 
 		textaligny 10
 		textscale .23  
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/misc/notebook.tga"
 		backcolor 1 1 1 .07                  
 		forecolor 1 1 1 1
 		visible 0 
@@ -1075,20 +2216,40 @@ itemDef {
   	}
 
 
+	// itemDef {
+		// name misc
+		// group grpControls
+		// type ITEM_TYPE_YESNO
+		// textfont UI_FONT_BIG
+		// text "Auto Item Pickup:"
+		// cvar "cg_autoactivate"
+		// rect 102 75 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23  
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07                  
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show yesno_message }
+		// mouseexit { hide yesno_message }
+   		// }
 
 	itemDef {
 		name misc
 		group grpControls
 		type ITEM_TYPE_YESNO
 		textfont UI_FONT_BIG
-		text "Auto Item Pickup:"
+		text ""
 		cvar "cg_autoactivate"
 		rect 102 75 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
 		textscale .23  
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/misc/autopickup.tga"
 		backcolor 1 1 1 .07                  
 		forecolor 1 1 1 1
 		visible 0 
@@ -1096,11 +2257,34 @@ itemDef {
 		mouseexit { hide yesno_message }
    		}
 
+
+
+
+	// itemDef {
+		// name misc
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// text "Activate:"
+		// cvar "+activate"
+		// rect 102 90 290 12
+		// textfont UI_FONT_BIG
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23  
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07                  
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+   		// }
+
 	itemDef {
 		name misc
 		group grpControls
 		type ITEM_TYPE_BIND
-		text "Activate:"
+		text ""
 		cvar "+activate"
 		rect 102 90 290 12
 		textfont UI_FONT_BIG
@@ -1108,7 +2292,8 @@ itemDef {
 		textalignx 142 
 		textaligny 10
 		textscale .23  
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/misc/activate.tga"
 		backcolor 1 1 1 .07                  
 		forecolor 1 1 1 1
 		visible 0 
@@ -1116,11 +2301,32 @@ itemDef {
 		mouseexit { hide keyBindStatus }
    		}
 
+
+// itemDef {
+	// name misc
+	// group grpControls
+	// type ITEM_TYPE_BIND
+	// text "Use Item:"
+	// cvar "+useitem"
+	// textfont UI_FONT_BIG
+	// rect 102 105 290 12
+	// textalign ITEM_ALIGN_RIGHT
+	// textalignx 142 
+	// textaligny 10
+	// textscale .23  
+	// style WINDOW_STYLE_FILLED
+	// backcolor 1 1 1 .07                  
+	// forecolor 1 1 1 1
+	// visible 0 
+	// mouseenter { show keyBindStatus }
+	// mouseexit { hide keyBindStatus }
+// }
+
 itemDef {
 	name misc
 	group grpControls
 	type ITEM_TYPE_BIND
-	text "Use Item:"
+	text ""
 	cvar "+useitem"
 	textfont UI_FONT_BIG
 	rect 102 105 290 12
@@ -1128,27 +2334,50 @@ itemDef {
 	textalignx 142 
 	textaligny 10
 	textscale .23  
-	style WINDOW_STYLE_FILLED
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/ingame/controls/misc/useitem.tga"
 	backcolor 1 1 1 .07                  
 	forecolor 1 1 1 1
 	visible 0 
 	mouseenter { show keyBindStatus }
 	mouseexit { hide keyBindStatus }
 }
+
+
+// itemDef {
+	// name misc
+	// group grpControls
+	// type ITEM_TYPE_BIND
+	// textfont UI_FONT_BIG
+	// text "Next Item:"
+	// cvar "itemnext"
+	// rect 102 120 290 12
+	// textalign ITEM_ALIGN_RIGHT
+	// textalignx 142 
+	// textaligny 10
+	// textscale .23  
+	// style WINDOW_STYLE_FILLED
+	// backcolor 1 1 1 .07                  
+	// forecolor 1 1 1 1
+	// visible 0 
+	// mouseenter { show keyBindStatus }
+	// mouseexit { hide keyBindStatus }
+// }
 
 itemDef {
 	name misc
 	group grpControls
 	type ITEM_TYPE_BIND
 	textfont UI_FONT_BIG
-	text "Next Item:"
+	text ""
 	cvar "itemnext"
 	rect 102 120 290 12
 	textalign ITEM_ALIGN_RIGHT
 	textalignx 142 
 	textaligny 10
 	textscale .23  
-	style WINDOW_STYLE_FILLED
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/ingame/controls/misc/nextitem.tga"
 	backcolor 1 1 1 .07                  
 	forecolor 1 1 1 1
 	visible 0 
@@ -1156,19 +2385,41 @@ itemDef {
 	mouseexit { hide keyBindStatus }
 }
 
+
+// itemDef {
+	// name misc	
+	// group grpControls
+	// textfont UI_FONT_BIG
+	// type ITEM_TYPE_BIND
+	// text "Previous Item:"
+	// cvar "itemprev"
+	// rect 102 135 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23  
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07                  
+		// forecolor 1 1 1 1
+		// visible 0 
+	// mouseenter { show keyBindStatus }
+	// mouseexit { hide keyBindStatus }
+// }
+
 itemDef {
 	name misc	
 	group grpControls
 	textfont UI_FONT_BIG
 	type ITEM_TYPE_BIND
-	text "Previous Item:"
+	text ""
 	cvar "itemprev"
 	rect 102 135 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
 		textscale .23  
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/misc/previousitem.tga"
 		backcolor 1 1 1 .07                  
 		forecolor 1 1 1 1
 		visible 0 
@@ -1177,19 +2428,41 @@ itemDef {
 }
 	
 
+// itemDef {
+	// name misc
+	// group grpControls
+	// type ITEM_TYPE_YESNO
+	// textfont UI_FONT_BIG
+	// text "Invert Mouse:"
+	// cvar "ui_mousePitch"
+	// rect 102 150 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23  
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07                  
+		// forecolor 1 1 1 1
+		// visible 0 
+	// action { uiScript update ui_mousePitch }
+	// mouseenter { show yesno_message }
+	// mouseexit { hide yesno_message }
+// }
+
 itemDef {
 	name misc
 	group grpControls
 	type ITEM_TYPE_YESNO
 	textfont UI_FONT_BIG
-	text "Invert Mouse:"
+	text ""
 	cvar "ui_mousePitch"
 	rect 102 150 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
 		textscale .23  
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/misc/invertmouse.tga"
 		backcolor 1 1 1 .07                  
 		forecolor 1 1 1 1
 		visible 0 
@@ -1198,34 +2471,76 @@ itemDef {
 	mouseexit { hide yesno_message }
 }
 
+
+
+// itemDef {
+	// name misc
+	// group grpControls
+	// type ITEM_TYPE_YESNO
+	// textfont UI_FONT_BIG
+	// text "Smooth Mouse:"
+	// cvar "m_filter"
+	// rect 102 165 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23  
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07                  
+		// forecolor 1 1 1 1
+		// visible 0 
+	// mouseenter { show yesno_message }
+	// mouseexit { hide yesno_message }
+	// }
+	
+
 itemDef {
 	name misc
 	group grpControls
 	type ITEM_TYPE_YESNO
 	textfont UI_FONT_BIG
-	text "Smooth Mouse:"
+	text ""
 	cvar "m_filter"
 	rect 102 165 290 12
 		textalign ITEM_ALIGN_RIGHT
 		textalignx 142 
 		textaligny 10
 		textscale .23  
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/misc/smoothmouse.tga"
 		backcolor 1 1 1 .07                  
 		forecolor 1 1 1 1
 		visible 0 
 	mouseenter { show yesno_message }
 	mouseexit { hide yesno_message }
-	}
-	
-	
+	}	
 
+
+	// itemDef {
+		// name misc
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// text "Quicksave:"
+		// cvar "savegame quicksave"
+		// rect 102 180 290 12
+		// textfont UI_FONT_BIG
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .22  
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07                  
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+  	// }
 
 	itemDef {
 		name misc
 		group grpControls
 		type ITEM_TYPE_BIND
-		text "Quicksave:"
+		text ""
 		cvar "savegame quicksave"
 		rect 102 180 290 12
 		textfont UI_FONT_BIG
@@ -1233,7 +2548,8 @@ itemDef {
 		textalignx 142 
 		textaligny 10
 		textscale .22  
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/misc/quicksave.tga"
 		backcolor 1 1 1 .07                  
 		forecolor 1 1 1 1
 		visible 0 
@@ -1241,11 +2557,32 @@ itemDef {
 		mouseexit { hide keyBindStatus }
   	}
 
+
+	// itemDef {
+		// name misc
+		// group grpControls
+		// type ITEM_TYPE_BIND
+		// text "Quickload:"
+		// textfont UI_FONT_BIG
+		// cvar "loadgame quicksave"
+		// rect 102 195 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .22  
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07                  
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+  	// }
+
 	itemDef {
 		name misc
 		group grpControls
 		type ITEM_TYPE_BIND
-		text "Quickload:"
+		text ""
 		textfont UI_FONT_BIG
 		cvar "loadgame quicksave"
 		rect 102 195 290 12
@@ -1253,7 +2590,8 @@ itemDef {
 		textalignx 142 
 		textaligny 10
 		textscale .22  
-		style WINDOW_STYLE_FILLED
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/ingame/controls/misc/quicksave.tga"
 		backcolor 1 1 1 .07                  
 		forecolor 1 1 1 1
 		visible 0 
@@ -1261,19 +2599,41 @@ itemDef {
 		mouseexit { hide keyBindStatus }
   	}
 
+
+// itemDef {
+	// name misc
+	// group grpControls
+	// type ITEM_TYPE_SLIDER
+	// textfont UI_FONT_BIG
+	// text "Mouse Sensitivity:"
+	// cvarfloat "sensitivity" 5 1 30
+	// rect 102 210 290 12
+	// textalign ITEM_ALIGN_RIGHT
+	// textalignx 142 
+	// textaligny 10
+	// textscale .23  
+	// style WINDOW_STYLE_FILLED
+	// backcolor 1 1 1 .07                  
+	// forecolor 1 1 1 1
+	// visible 0 
+	// mouseenter { show slider_message }
+	// mouseexit { hide slider_message }
+// }
+
 itemDef {
 	name misc
 	group grpControls
 	type ITEM_TYPE_SLIDER
 	textfont UI_FONT_BIG
-	text "Mouse Sensitivity:"
+	text ""
 	cvarfloat "sensitivity" 5 1 30
 	rect 102 210 290 12
 	textalign ITEM_ALIGN_RIGHT
 	textalignx 142 
 	textaligny 10
 	textscale .23  
-	style WINDOW_STYLE_FILLED
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/ingame/controls/misc/sensitivity.tga"
 	backcolor 1 1 1 .07                  
 	forecolor 1 1 1 1
 	visible 0 
@@ -1282,36 +2642,67 @@ itemDef {
 }
 
 
+// itemDef {
+      // name yesno_message
+      // rect 0 310 300 15 
+	// text "Select the Item to Toggle to Yes or No"
+// textfont UI_FONT_BIG	
+	// forecolor 1 .75 0 1
+	// textscale .230
+	// textalignx 221
+	// textalign 1
+	// textaligny 20
+	// visible 0
+      	// decoration 
+	// }
 
 itemDef {
       name yesno_message
-      rect 0 310 300 15 
-	text "Select the Item to Toggle to Yes or No"
+      rect 20 310 300 15 
+	text ""
 textfont UI_FONT_BIG	
 	forecolor 1 .75 0 1
 	textscale .230
 	textalignx 221
 	textalign 1
 	textaligny 20
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/ingame/controls/yesno.tga"
 	visible 0
       	decoration 
 	}
+
+
+// itemDef {
+      // name slider_message
+      // rect 0 310 300 15 
+	// text "Drag the Slider to Increase and Decrease"
+// textfont UI_FONT_BIG	
+	// forecolor 1 .75 0 1
+	// textscale .230
+	// textalignx 221
+	// textalign 1
+	// textaligny 20
+	// visible 0
+      	// decoration 
+	// }
+
 
 itemDef {
       name slider_message
-      rect 0 310 300 15 
-	text "Drag the Slider to Increase and Decrease"
-textfont UI_FONT_BIG	
+      rect 20 310 300 15 
+	text ""
+	textfont UI_FONT_BIG	
 	forecolor 1 .75 0 1
 	textscale .230
 	textalignx 221
 	textalign 1
 	textaligny 20
-	visible 0
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/ingame/gameoptions/slider.tga"
+	visible 1
       	decoration 
 	}
-
-
 
 
 

@@ -641,7 +641,7 @@ menuDef {
 	visible 0
 	fullscreen 0
 
-	rect 240 220 200 80
+	rect 235 220 210 80
 
 	focusColor 1 .75 0 1
 

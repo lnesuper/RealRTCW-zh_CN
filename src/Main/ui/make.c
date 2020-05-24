@@ -67,6 +67,7 @@
 		textalignx -25
 		textaligny 20
 		forecolor 1 1 1 1
+//		outlinecolor .3 .3 .3 .3  // grow
 		background "text/ChineseCHN/options/controls.tga"
 		rect 45 165 128 36
 		visible 0
@@ -142,6 +143,25 @@
 		autowrapped
 		decoration
 	}
+	
+	
+	//  提示信息
+itemDef {
+      name slider_message
+      rect 20 310 300 15 
+	text ""
+textfont UI_FONT_BIG	
+	forecolor 1 .75 0 1
+	textscale .230
+	textalignx 221
+	textalign 1
+	textaligny 20
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/ingame/controls/slider.tga"
+	visible 0
+      	decoration 
+	}
+
 	
 	
 1 - Red
