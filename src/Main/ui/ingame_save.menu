@@ -506,7 +506,7 @@ menuDef {
    		rect 322 31 148 18
 		style WINDOW_STYLE_SHADER
 	    background "text/ChineseCHN/ingame/save/delete.tga"
-		action { open load_del_sure_popmenu }
+		action { open save_del_sure_popmenu }
 		visible 1
 	}
 

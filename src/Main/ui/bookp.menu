@@ -48,23 +48,59 @@ menuDef {
 		mouseExit { setitemcolor button_next backcolor .37 .1 .1 1 } 
 	}
 
+	// itemDef {
+		// name page1a
+		// group page1
+		// rect 60 60 240 380
+		// textfile "text/EnglishUSA/res_p1.txt"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 1
+		// autowrapped
+		// decoration
+	// }
+
 	itemDef {
 		name page1a
 		group page1
 		rect 60 60 240 380
-		textfile "text/EnglishUSA/res_p1.txt"
+		// textfile "text/EnglishUSA/res_p1.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p1.tga"
 		textscale .16
 		forecolor .1 .1 .1 .9
 		visible 1
 		autowrapped
 		decoration
 	}
+
+
+
+
+
+
+
+
+// itemDef {
+		// name page1a
+		// group page1
+		// rect 60 60 240 380
+		// textfile "text/EnglishUSA/res_p1a.txt"
+		// textfont UI_FONT_HANDWRITING
+		// textscale .16
+		// forecolor .3 .1 .1 .9
+		// visible 1
+		// autowrapped
+		// decoration
+	// }
 
 itemDef {
 		name page1a
 		group page1
 		rect 60 60 240 380
-		textfile "text/EnglishUSA/res_p1a.txt"
+		// textfile "text/EnglishUSA/res_p1a.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p1a.tga"
 		textfont UI_FONT_HANDWRITING
 		textscale .16
 		forecolor .3 .1 .1 .9
@@ -73,11 +109,30 @@ itemDef {
 		decoration
 	}
 
+
+
+
+
+	// itemDef {
+		// name page1b
+		// group page1
+		// rect 360 60 240 380
+		// textfile "text/EnglishUSA/res_p2.txt"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 1
+		// autowrapped
+		// decoration
+	// }
+
+
 	itemDef {
 		name page1b
 		group page1
 		rect 360 60 240 380
-		textfile "text/EnglishUSA/res_p2.txt"
+		// textfile "text/EnglishUSA/res_p2.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p2.tga"
 		textscale .16
 		forecolor .1 .1 .1 .9
 		visible 1
@@ -85,11 +140,29 @@ itemDef {
 		decoration
 	}
 
+
+
+
+	// itemDef {
+		// name page1b
+		// group page1
+		// rect 360 60 240 380
+		// textfile "text/EnglishUSA/res_p2a.txt"
+		// textfont UI_FONT_HANDWRITING
+		// textscale .16
+		// forecolor .3 .1 .1 .9
+		// visible 1
+		// autowrapped
+		// decoration
+	// }
+
 	itemDef {
 		name page1b
 		group page1
 		rect 360 60 240 380
-		textfile "text/EnglishUSA/res_p2a.txt"
+		// textfile "text/EnglishUSA/res_p2a.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p2a.tga"
 		textfont UI_FONT_HANDWRITING
 		textscale .16
 		forecolor .3 .1 .1 .9
@@ -97,6 +170,8 @@ itemDef {
 		autowrapped
 		decoration
 	}
+
+
 
 // PAGE 2 ////////////////
 
@@ -130,11 +205,25 @@ itemDef {
 		mouseExit { setitemcolor button_next backcolor .37 .1 .1 1 } 
 	}
 
+	// itemDef {
+		// name page2a
+		// group page2
+		// rect 60 60 240 380
+		// textfile "text/EnglishUSA/res_p3.txt"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page2a
 		group page2
 		rect 60 60 240 380
-		textfile "text/EnglishUSA/res_p3.txt"
+		// textfile "text/EnglishUSA/res_p3.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p3.tga"
 		textscale .16
 		forecolor .1 .1 .1 .9
 		visible 0
@@ -142,11 +231,29 @@ itemDef {
 		autowrapped
 	}
 
+
+
+
+
+	// itemDef {
+		// name page2b
+		// group page2
+		// rect 360 60 240 380
+		// textfile "text/EnglishUSA/res_p4.txt"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page2b
 		group page2
 		rect 360 60 240 380
-		textfile "text/EnglishUSA/res_p4.txt"
+		// textfile "text/EnglishUSA/res_p4.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p4.tga"
 		textscale .16
 		forecolor .1 .1 .1 .9
 		visible 0
@@ -154,11 +261,28 @@ itemDef {
 		autowrapped
 	}
 
+
+
+	// itemDef {
+		// name page2b
+		// group page2
+		// rect 360 60 240 380
+		// textfile "text/EnglishUSA/res_p4a.txt"
+		// textfont UI_FONT_HANDWRITING
+		// textscale .16
+		// forecolor .3 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page2b
 		group page2
 		rect 360 60 240 380
-		textfile "text/EnglishUSA/res_p4a.txt"
+		// textfile "text/EnglishUSA/res_p4a.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p4a.tga"
 		textfont UI_FONT_HANDWRITING
 		textscale .16
 		forecolor .3 .1 .1 .9
@@ -166,6 +290,8 @@ itemDef {
 		decoration
 		autowrapped
 	}
+
+
 
 // PAGE 3 ////////////////
 
@@ -199,11 +325,25 @@ itemDef {
 		mouseExit { setitemcolor button_next backcolor .37 .1 .1 1 } 
 	}
 
+	// itemDef {
+		// name page3a
+		// group page3
+		// rect 60 60 240 380
+		// textfile "text/EnglishUSA/res_p5.txt"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page3a
 		group page3
 		rect 60 60 240 380
-		textfile "text/EnglishUSA/res_p5.txt"
+		// textfile "text/EnglishUSA/res_p5.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p5.tga"
 		textscale .16
 		forecolor .1 .1 .1 .9
 		visible 0
@@ -211,11 +351,30 @@ itemDef {
 		autowrapped
 	}
 
+
+
+
+
+	// itemDef {
+		// name page3a
+		// group page3
+		// rect 60 60 240 380
+		// textfile "text/EnglishUSA/res_p5a.txt"
+		// textfont UI_FONT_HANDWRITING
+		// textscale .16
+		// forecolor .3 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page3a
 		group page3
 		rect 60 60 240 380
-		textfile "text/EnglishUSA/res_p5a.txt"
+		// textfile "text/EnglishUSA/res_p5a.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p5a.tga"
 		textfont UI_FONT_HANDWRITING
 		textscale .16
 		forecolor .3 .1 .1 .9
@@ -223,11 +382,28 @@ itemDef {
 		decoration
 		autowrapped
 	}
+
+
+
+	// itemDef {
+		// name page3b
+		// group page3
+		// rect 360 60 240 380
+		// textfile "text/EnglishUSA/res_p6.txt"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page3b
 		group page3
 		rect 360 60 240 380
-		textfile "text/EnglishUSA/res_p6.txt"
+		// textfile "text/EnglishUSA/res_p6.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p6.tga"
 		textscale .16
 		forecolor .1 .1 .1 .9
 		visible 0
@@ -235,11 +411,28 @@ itemDef {
 		autowrapped
 	}
 
+
+
+	// itemDef {
+		// name page3b
+		// group page3
+		// rect 360 60 240 380
+		// textfile "text/EnglishUSA/res_p6a.txt"
+		// textfont UI_FONT_HANDWRITING
+		// textscale .16
+		// forecolor .3 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page3b
 		group page3
 		rect 360 60 240 380
-		textfile "text/EnglishUSA/res_p6a.txt"
+		// textfile "text/EnglishUSA/res_p6a.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p6a.tga"
 		textfont UI_FONT_HANDWRITING
 		textscale .16
 		forecolor .3 .1 .1 .9
@@ -247,6 +440,8 @@ itemDef {
 		decoration
 		autowrapped
 	}
+
+
 
 
 // PAGE 4 ////////////////
@@ -281,11 +476,26 @@ itemDef {
 		mouseExit { setitemcolor button_next backcolor .37 .1 .1 1 } 
 	}
 
+	// itemDef {
+		// name page4a
+		// group page4
+		// rect 60 60 240 380
+		// textfile "text/EnglishUSA/res_p7.txt"
+// //		text "res_p7"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page4a
 		group page4
 		rect 60 60 240 380
-		textfile "text/EnglishUSA/res_p7.txt"
+		// textfile "text/EnglishUSA/res_p7.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p7.tga"
 //		text "res_p7"
 		textscale .16
 		forecolor .1 .1 .1 .9
@@ -294,11 +504,31 @@ itemDef {
 		autowrapped
 	}
 
+
+
+
+
+	// itemDef {
+		// name page4a
+		// group page4
+		// rect 60 60 240 380
+		// textfile "text/EnglishUSA/res_p7a.txt"
+		// textfont UI_FONT_HANDWRITING
+// //		text "res_p7"
+		// textscale .16
+		// forecolor .3 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page4a
 		group page4
 		rect 60 60 240 380
-		textfile "text/EnglishUSA/res_p7a.txt"
+		// textfile "text/EnglishUSA/res_p7a.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p7a.tga"
 		textfont UI_FONT_HANDWRITING
 //		text "res_p7"
 		textscale .16
@@ -308,11 +538,31 @@ itemDef {
 		autowrapped
 	}
 
+
+
+
+
+
+	// itemDef {
+		// name page4b
+		// group page4
+		// rect 360 60 240 380
+		// textfile "text/EnglishUSA/res_p8.txt"
+// //		text "res_p8"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page4b
 		group page4
 		rect 360 60 240 380
-		textfile "text/EnglishUSA/res_p8.txt"
+		// textfile "text/EnglishUSA/res_p8.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p8.tga"
 //		text "res_p8"
 		textscale .16
 		forecolor .1 .1 .1 .9
@@ -321,11 +571,31 @@ itemDef {
 		autowrapped
 	}
 
+
+
+
+	// itemDef {
+		// name page4b
+		// group page4
+		// rect 360 60 240 380
+		// textfile "text/EnglishUSA/res_p8a.txt"
+	        // textfont UI_FONT_HANDWRITING
+// //		text "res_p8"
+		// textscale .16
+		// forecolor .3 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
+
 	itemDef {
 		name page4b
 		group page4
 		rect 360 60 240 380
-		textfile "text/EnglishUSA/res_p8a.txt"
+		// textfile "text/EnglishUSA/res_p8a.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p8a.tga"
 	        textfont UI_FONT_HANDWRITING
 //		text "res_p8"
 		textscale .16
@@ -334,6 +604,8 @@ itemDef {
 		decoration
 		autowrapped
 	}
+
+
 
 
 // PAGE 5 ////////////////
@@ -368,11 +640,27 @@ itemDef {
 		mouseExit { setitemcolor button_next backcolor .37 .1 .1 1 } 
 	}
 
+	// itemDef {
+		// name page5a
+		// group page5
+		// rect 60 60 240 380
+		// textfile "text/EnglishUSA/res_p9.txt"
+// //		text "res_p9"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
+
 	itemDef {
 		name page5a
 		group page5
 		rect 60 60 240 380
-		textfile "text/EnglishUSA/res_p9.txt"
+		// textfile "text/EnglishUSA/res_p9.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p9.tga"
 //		text "res_p9"
 		textscale .16
 		forecolor .1 .1 .1 .9
@@ -381,11 +669,28 @@ itemDef {
 		autowrapped
 	}
 
+
+
+	// itemDef {
+		// name page5b
+		// group page5
+		// rect 360 60 240 380
+		// textfile "text/EnglishUSA/res_p10.txt"
+// //		text "res_p10"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page5b
 		group page5
 		rect 360 60 240 380
-		textfile "text/EnglishUSA/res_p10.txt"
+		// textfile "text/EnglishUSA/res_p10.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p10.tga"
 //		text "res_p10"
 		textscale .16
 		forecolor .1 .1 .1 .9
@@ -394,11 +699,29 @@ itemDef {
 		autowrapped
 	}
 
+
+
+	// itemDef {
+		// name page5b
+		// group page5
+		// rect 360 60 240 380
+		// textfile "text/EnglishUSA/res_p10a.txt"
+		// textfont UI_FONT_HANDWRITING
+// //		text "res_p10"
+		// textscale .16
+		// forecolor .3 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page5b
 		group page5
 		rect 360 60 240 380
-		textfile "text/EnglishUSA/res_p10a.txt"
+		// textfile "text/EnglishUSA/res_p10a.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p10a.tga"
 		textfont UI_FONT_HANDWRITING
 //		text "res_p10"
 		textscale .16
@@ -407,6 +730,9 @@ itemDef {
 		decoration
 		autowrapped
 	}
+
+
+
 
 
 // PAGE 6 ////////////////
@@ -441,11 +767,26 @@ itemDef {
 		mouseExit { setitemcolor button_next backcolor .37 .1 .1 1 } 
 	}
 
+	// itemDef {
+		// name page6a
+		// group page6
+		// rect 60 60 215 380
+		// textfile "text/EnglishUSA/res_p11.txt"
+// //		text "res_p11"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page6a
 		group page6
-		rect 60 60 215 380
-		textfile "text/EnglishUSA/res_p11.txt"
+		rect 60 60 240 380
+		// textfile "text/EnglishUSA/res_p11.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p11.tga"
 //		text "res_p11"
 		textscale .16
 		forecolor .1 .1 .1 .9
@@ -454,11 +795,29 @@ itemDef {
 		autowrapped
 	}
 
+
+
+	// itemDef {
+		// name page6b
+		// group page6
+		// rect 360 60 215 380
+		// textfile "text/EnglishUSA/res_p12.txt"
+// //		text "res_p12"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
+
 	itemDef {
 		name page6b
 		group page6
-		rect 360 60 215 380
-		textfile "text/EnglishUSA/res_p12.txt"
+		rect 360 60 240 380
+		// textfile "text/EnglishUSA/res_p12.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p12.tga"
 //		text "res_p12"
 		textscale .16
 		forecolor .1 .1 .1 .9
@@ -466,6 +825,8 @@ itemDef {
 		decoration
 		autowrapped
 	}
+
+
 
 
 // PAGE 7 ////////////////
@@ -485,24 +846,56 @@ itemDef {
 		mouseExit { setitemcolor button_prev backcolor .37 .1 .1 1 } 
 	}
 
+	// itemDef {
+		// name page7a
+		// group page7
+		// rect 60 60 215 380
+		// textfile "text/EnglishUSA/res_p13.txt"
+// //		text "res_p13"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+	
 	itemDef {
 		name page7a
 		group page7
-		rect 60 60 215 380
-		textfile "text/EnglishUSA/res_p13.txt"
+		rect 60 60 240 380
+		// textfile "text/EnglishUSA/res_p13.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p13.tga"
 //		text "res_p13"
 		textscale .16
 		forecolor .1 .1 .1 .9
 		visible 0
 		decoration
 		autowrapped
-	}
+	}	
+	
+
+	// itemDef {
+		// name page7b
+		// group page7
+		// rect 360 60 215 380
+		// textfile "text/EnglishUSA/res_p14.txt"
+// //		text "res_p14"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 
 	itemDef {
 		name page7b
 		group page7
-		rect 360 60 215 380
-		textfile "text/EnglishUSA/res_p14.txt"
+		rect 360 60 240 380
+		// textfile "text/EnglishUSA/res_p14.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookp/res_p14.tga"
 //		text "res_p14"
 		textscale .16
 		forecolor .1 .1 .1 .9
@@ -510,8 +903,6 @@ itemDef {
 		decoration
 		autowrapped
 	}
-
-
 
 
 }	// end menudef
