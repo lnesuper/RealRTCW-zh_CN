@@ -1,0 +1,211 @@
+#include "ui/menudef.h"
+
+{
+\\ VID_RESTART POPUP MENU \\
+
+menuDef {
+	name "in_vid_restart_popmenu"
+	visible 0
+	fullscreen 0
+
+	//rect 217 200 210 85
+	rect 204 122 235 235
+
+	focusColor 1 .75 0 1
+	style 1
+	border 1
+	popup
+	onESC {
+		close vid_restart_popmenu ; 
+		open ingame_system
+		}
+
+
+
+
+
+
+
+	// VID_RESTART	//
+
+// itemDef {
+	// name confirm
+	// text "This will apply video"
+	// style 0
+	// textscale .23 
+	// textstyle 3
+	// rect 30 135 110 20
+	// textalign 1
+	// textalignx 100
+	// textaligny 15
+	// decoration
+	// forecolor 1 1 1 1
+	// visible 1
+	// }
+// itemDef {
+	// name confirm
+	// text "settings and return"
+	// style 0
+	// textscale .23 
+	// textstyle 3
+	// rect 30 150 110 20
+	// textalign 1
+	// textalignx 100
+	// textaligny 15
+	// decoration
+	// forecolor 1 1 1 1
+	// visible 1
+	// }
+// itemDef {
+	// name confirm
+	// text "to the Game." 
+	// style 0
+	// textscale .23 
+	// textstyle 3
+	// rect 30 165 110 20
+	// textalign 1
+	// textalignx 100
+	// textaligny 15
+	// decoration
+	// forecolor 1 1 1 1
+	// visible 1
+	// }
+
+	itemDef {
+		name confirm
+		style WINDOW_STYLE_FILLED
+		rect 40 110 185 125
+		backcolor .3 .5 .3 .2
+		border 1
+		bordercolor .3 .5 .3 .6
+		decoration
+		visible 1
+	}
+
+
+
+itemDef {
+	name confirm
+	text ""
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/vid_restart/in_apply.tga"
+	textscale .23 
+	textstyle 3
+	rect 80 120 110 60
+	textalign 1
+	textalignx 100
+	textaligny 15
+	decoration
+	forecolor 1 1 1 1
+	visible 1
+	}
+
+
+
+
+
+
+
+// itemDef {
+	// name yes
+	// text "YES"
+	// type 1
+	// textfont UI_FONT_NORMAL
+	// textscale .25
+	// style WINDOW_STYLE_FILLED
+	// rect 50 190 70 26
+	// textalign 1
+	// textalignx 32
+	// textaligny 20
+	// forecolor 1 1 1 1
+	// backcolor  .1 .1 .1 .1  
+	// visible 1
+	// border 1
+	// bordercolor .5 .5 .5 .5 
+	// action { play "sound/misc/nomenu.wav" ; 
+	// close in_vid_restart_popmenu ; 
+	// exec "vid_restart" }
+	// mouseEnter { setitemcolor yes backcolor .3 0.5 0.2 .25 } 
+	// mouseExit { setitemcolor yes backcolor  .1 .1 .1 .1  } 	
+	// }
+	
+itemDef {
+	name yes
+	text ""
+	type 1
+	textfont UI_FONT_NORMAL
+	textscale .25
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/vid_restart/yes.tga"
+	rect 50 195 70 26
+	textalign 1
+	textalignx 32
+	textaligny 20
+	forecolor 1 1 1 1
+	backcolor  .1 .1 .1 .1  
+	visible 1
+	border 1
+	bordercolor .5 .5 .5 .5 
+	action { play "sound/misc/nomenu.wav" ; 
+	close in_vid_restart_popmenu ; 
+	exec "vid_restart" }
+	mouseEnter { setitemcolor yes backcolor .3 0.5 0.2 .25 ; setitemcolor yes forecolor .9 0 0 .8 } 
+	mouseExit { setitemcolor yes backcolor  .1 .1 .1 .1 ; setitemcolor yes forecolor 1 1 1 1 } 
+	}
+	
+
+// itemDef {
+	// name no
+	// text "NO"
+	// type 1
+	// textfont UI_FONT_NORMAL
+	// textscale .25
+	// style WINDOW_STYLE_FILLED
+	// rect 140 190 70 26
+	// textalign 1
+	// textalignx 35
+	// textaligny 20
+	// forecolor 1 1 1 1
+	// backcolor  .1 .1 .1 .1  
+	// visible 1
+		// border 1
+		// bordercolor .5 .5 .5 .5 
+	// action { play "sound/misc/nomenu.wav" ;
+	// close in_vid_restart_popmenu ;  
+	// open ingame_system }
+	// mouseEnter { setitemcolor no backcolor .3 0.5 0.2 .25 } 
+	// mouseExit { setitemcolor no backcolor  .1 .1 .1 .1  } 		
+	// }
+
+itemDef {
+	name no
+	text ""
+	type 1
+	textfont UI_FONT_NORMAL
+	textscale .25
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/vid_restart/no.tga"
+	rect 145 195 70 26
+	textalign 1
+	textalignx 35
+	textaligny 20
+	forecolor 1 1 1 1
+	backcolor  .1 .1 .1 .1  
+	visible 1
+		border 1
+		bordercolor .5 .5 .5 .5 
+	action { play "sound/misc/nomenu.wav" ;
+	close in_vid_restart_popmenu ;  
+	open ingame_system }
+	mouseEnter { setitemcolor no backcolor .3 0.5 0.2 .25 ; setitemcolor no forecolor .9 0 0 .8 } 
+	mouseExit { setitemcolor no backcolor  .1 .1 .1 .1 ; setitemcolor no forecolor 1 1 1 1 } 		
+	}
+
+
+
+}
+
+
+}
+
+

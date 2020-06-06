@@ -34,28 +34,57 @@ itemDef {
 
 
 
+// itemDef {
+	// name test1_clipboard
+	// rect 18 78 280 322
+	// group clip_test
+	// text "no 'popup' or bad 'popup' specified in the entity"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// decoration
+	// }
+
 itemDef {
 	name test1_clipboard
 	rect 18 78 280 322
 	group clip_test
-	text "no 'popup' or bad 'popup' specified in the entity"
+	text ""
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/popup.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
 	decoration
 	}
+
+
+
+
+// itemDef {
+	// group clip_test
+	// name test1_clipboard
+	// rect 20 95 245 360
+	// text "there is no script set for this clipboard"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// decoration
+	// }
+
 
 itemDef {
 	group clip_test
 	name test1_clipboard
 	rect 20 95 245 360
-	text "there is no script set for this clipboard"
+	text ""
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/popup.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
 	decoration
 	}
-
 
 
 
@@ -77,11 +106,38 @@ itemDef {
 	decoration
 	}
 
+// itemDef {
+	// name clip_watch
+	// rect 18 78 280 322
+	// group clip_watch
+	// textfile "text/EnglishUSA/cl_1_watch.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// decoration
+	// autowrapped
+// }
+
+// itemDef {
+	// name clip_watch
+	// rect 18 78 280 322
+	// group clip_watch
+	// textfile "text/EnglishUSA/cl_1_watch.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// decoration
+	// autowrapped
+// }
+
+
 itemDef {
 	name clip_watch
 	rect 18 78 280 322
 	group clip_watch
-	textfile "text/EnglishUSA/cl_1_watch.txt"
+	// textfile "text/EnglishUSA/cl_1_watch.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_1_watch.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -93,13 +149,27 @@ itemDef {
 	name clip_watch
 	rect 18 78 280 322
 	group clip_watch
-	textfile "text/EnglishUSA/cl_1_watch.txt"
+	// textfile "text/EnglishUSA/cl_1_watch.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_1_watch.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	decoration
 	autowrapped
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 ////////////////////////////////    cl_2_interrogate    /////////////////////////////////// 
 
@@ -115,11 +185,38 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_interrogate
+	// rect 18 78 280 322
+	// group clip_interrogate
+	// textfile "text/EnglishUSA/cl_2_interrogate.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_interrogate
+	// rect 18 78 280 322
+	// group clip_interrogate
+	// textfile "text/EnglishUSA/cl_2_interrogate.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+
 itemDef {
 	name clip_interrogate
 	rect 18 78 280 322
 	group clip_interrogate
-	textfile "text/EnglishUSA/cl_2_interrogate.txt"
+	// textfile "text/EnglishUSA/cl_2_interrogate.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_2_interrogate.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -131,13 +228,27 @@ itemDef {
 	name clip_interrogate
 	rect 18 78 280 322
 	group clip_interrogate
-	textfile "text/EnglishUSA/cl_2_interrogate.txt"
+	// textfile "text/EnglishUSA/cl_2_interrogate.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_2_interrogate.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////    cl_3_bulow_blav    /////////////////////////////////// 
 
 
@@ -152,11 +263,37 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_bulow_blav
+	// rect 18 78 280 322
+	// group clip_bulow_blav
+	// textfile "text/EnglishUSA/cl_3_bulow_blav.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_bulow_blav
+	// rect 18 78 280 322
+	// group clip_bulow_blav
+	// textfile "text/EnglishUSA/cl_3_bulow_blav.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
 itemDef {
 	name clip_bulow_blav
 	rect 18 78 280 322
 	group clip_bulow_blav
-	textfile "text/EnglishUSA/cl_3_bulow_blav.txt"
+	// textfile "text/EnglishUSA/cl_3_bulow_blav.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_3_bulow_blav.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -168,13 +305,28 @@ itemDef {
 	name clip_bulow_blav
 	rect 18 78 280 322
 	group clip_bulow_blav
-	textfile "text/EnglishUSA/cl_3_bulow_blav.txt"
+	// textfile "text/EnglishUSA/cl_3_bulow_blav.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_3_bulow_blav.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ////////////////////////////////    cl_4_tram    /////////////////////////////////// 
 
@@ -190,11 +342,39 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_tram
+	// rect 18 78 280 322
+	// group clip_tram
+	// textfile "text/EnglishUSA/cl_4_tram.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+
+// itemDef {
+	// name clip_tram
+	// rect 18 78 280 322
+	// group clip_tram
+	// textfile "text/EnglishUSA/cl_4_tram.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+
 itemDef {
 	name clip_tram
 	rect 18 78 280 322
 	group clip_tram
-	textfile "text/EnglishUSA/cl_4_tram.txt"
+	// textfile "text/EnglishUSA/cl_4_tram.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_4_tram.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -207,13 +387,23 @@ itemDef {
 	name clip_tram
 	rect 18 78 280 322
 	group clip_tram
-	textfile "text/EnglishUSA/cl_4_tram.txt"
+	// textfile "text/EnglishUSA/cl_4_tram.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_4_tram.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
+
+
 ////////////////////////////////    cl_5_zemph_blav    /////////////////////////////////// 
 
 
@@ -228,11 +418,37 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_zemph_blav
+	// rect 18 78 280 322
+	// group clip_zemph_blav
+	// textfile "text/EnglishUSA/cl_5_zemph_blav.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_zemph_blav
+	// rect 18 78 280 322
+	// group clip_zemph_blav
+	// textfile "text/EnglishUSA/cl_5_zemph_blav.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
 itemDef {
 	name clip_zemph_blav
 	rect 18 78 280 322
 	group clip_zemph_blav
-	textfile "text/EnglishUSA/cl_5_zemph_blav.txt"
+	// textfile "text/EnglishUSA/cl_5_zemph_blav.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_5_zemph_blav.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -244,13 +460,20 @@ itemDef {
 	name clip_zemph_blav
 	rect 18 78 280 322
 	group clip_zemph_blav
-	textfile "text/EnglishUSA/cl_5_zemph_blav.txt"
+	// textfile "text/EnglishUSA/cl_5_zemph_blav.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_5_zemph_blav.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
 
 ////////////////////////////////    cl_6_rocket    /////////////////////////////////// 
 
@@ -266,11 +489,37 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_rocket
+	// rect 18 78 280 322
+	// group clip_rocket
+	// textfile "text/EnglishUSA/cl_6_rocket.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_rocket
+	// rect 18 78 280 322
+	// group clip_rocket
+	// textfile "text/EnglishUSA/cl_6_rocket.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
 itemDef {
 	name clip_rocket
 	rect 18 78 280 322
 	group clip_rocket
-	textfile "text/EnglishUSA/cl_6_rocket.txt"
+	// textfile "text/EnglishUSA/cl_6_rocket.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_6_rocket.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -282,13 +531,29 @@ itemDef {
 	name clip_rocket
 	rect 18 78 280 322
 	group clip_rocket
-	textfile "text/EnglishUSA/cl_6_rocket.txt"
+	// textfile "text/EnglishUSA/cl_6_rocket.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_6_rocket.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////    cl_7_germs    /////////////////////////////////// 
 
 
@@ -303,11 +568,37 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_germs
+	// rect 18 78 280 322
+	// group clip_germs
+	// textfile "text/EnglishUSA/cl_7_germs.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_germs
+	// rect 18 78 280 322
+	// group clip_germs
+	// textfile "text/EnglishUSA/cl_7_germs.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
 itemDef {
 	name clip_germs
 	rect 18 78 280 322
 	group clip_germs
-	textfile "text/EnglishUSA/cl_7_germs.txt"
+	// textfile "text/EnglishUSA/cl_7_germs.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_7_germs.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -319,13 +610,18 @@ itemDef {
 	name clip_germs
 	rect 18 78 280 322
 	group clip_germs
-	textfile "text/EnglishUSA/cl_7_germs.txt"
+	// textfile "text/EnglishUSA/cl_7_germs.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_7_germs.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
 
 ////////////////////////////////    cl_8_himm_death    /////////////////////////////////// 
 
@@ -341,11 +637,36 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_himm_death
+	// rect 18 78 280 322
+	// group clip_himm_death
+	// textfile "text/EnglishUSA/cl_8_himm_death.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+// itemDef {
+	// name clip_himm_death
+	// rect 18 78 280 322
+	// group clip_himm_death
+	// textfile "text/EnglishUSA/cl_8_himm_death.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
 itemDef {
 	name clip_himm_death
 	rect 18 78 280 322
 	group clip_himm_death
-	textfile "text/EnglishUSA/cl_8_himm_death.txt"
+	// textfile "text/EnglishUSA/cl_8_himm_death.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_8_himm_death.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -356,13 +677,22 @@ itemDef {
 	name clip_himm_death
 	rect 18 78 280 322
 	group clip_himm_death
-	textfile "text/EnglishUSA/cl_8_himm_death.txt"
+	// textfile "text/EnglishUSA/cl_8_himm_death.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_8_himm_death.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
+
 
 ////////////////////////////////    cl_9_radar    /////////////////////////////////// 
 
@@ -378,11 +708,37 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_radar
+	// rect 18 78 280 322
+	// group clip_radar
+	// textfile "text/EnglishUSA/cl_9_radar.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_radar
+	// rect 18 78 280 322
+	// group clip_radar
+	// textfile "text/EnglishUSA/cl_9_radar.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
 itemDef {
 	name clip_radar
 	rect 18 78 280 322
 	group clip_radar
-	textfile "text/EnglishUSA/cl_9_radar.txt"
+	// textfile "text/EnglishUSA/cl_9_radar.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_9_radar.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -394,13 +750,22 @@ itemDef {
 	name clip_radar
 	rect 18 78 280 322
 	group clip_radar
-	textfile "text/EnglishUSA/cl_9_radar.txt"
+	// textfile "text/EnglishUSA/cl_9_radar.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_9_radar.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
+
 
 ////////////////////////////////    cl_10_backup   /////////////////////////////////// 
 
@@ -416,11 +781,37 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_backup
+	// rect 18 78 280 322
+	// group clip_backup
+	// textfile "text/EnglishUSA/cl_10_backup.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_backup
+	// rect 18 78 280 322
+	// group clip_backup
+	// textfile "text/EnglishUSA/cl_10_backup.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
 itemDef {
 	name clip_backup
 	rect 18 78 280 322
 	group clip_backup
-	textfile "text/EnglishUSA/cl_10_backup.txt"
+	// textfile "text/EnglishUSA/cl_10_backup.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_10_backup.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -432,13 +823,18 @@ itemDef {
 	name clip_backup
 	rect 18 78 280 322
 	group clip_backup
-	textfile "text/EnglishUSA/cl_10_backup.txt"
+	// textfile "text/EnglishUSA/cl_10_backup.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_10_backup.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
 
 ////////////////////////////////    cl_11_coffee   /////////////////////////////////// 
 
@@ -454,11 +850,38 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_coffee
+	// rect 18 78 280 322
+	// group clip_coffee
+	// textfile "text/EnglishUSA/cl_11_coffee.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_coffee
+	// rect 18 78 280 322
+	// group clip_coffee
+	// textfile "text/EnglishUSA/cl_11_coffee.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+
 itemDef {
 	name clip_coffee
 	rect 18 78 280 322
 	group clip_coffee
-	textfile "text/EnglishUSA/cl_11_coffee.txt"
+	// textfile "text/EnglishUSA/cl_11_coffee.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_11_coffee.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -470,13 +893,24 @@ itemDef {
 	name clip_coffee
 	rect 18 78 280 322
 	group clip_coffee
-	textfile "text/EnglishUSA/cl_11_coffee.txt"
+	// textfile "text/EnglishUSA/cl_11_coffee.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_11_coffee.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
+
+
+
 
 ////////////////////////////////    cl_12_kobra_check    /////////////////////////////////// 
 
@@ -522,10 +956,56 @@ itemDef {
 	decoration
 	}
 
+// itemDef {
+	// name clip_kobra_check
+	// rect 18 78 280 322
+	// textfile "text/EnglishUSA/cl_12_kobra_checka.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_kobra_check
+	// rect 90 160 175 360
+	// textfile "text/EnglishUSA/cl_12_kobra_checkb.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_kobra_check
+	// rect 18 78 280 322
+	// textfile "text/EnglishUSA/cl_12_kobra_checka.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_kobra_check
+	// rect 90 160 175 360
+	// textfile "text/EnglishUSA/cl_12_kobra_checkb.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
 itemDef {
 	name clip_kobra_check
 	rect 18 78 280 322
-	textfile "text/EnglishUSA/cl_12_kobra_checka.txt"
+	// textfile "text/EnglishUSA/cl_12_kobra_checka.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_12_kobra_checka.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -536,7 +1016,9 @@ itemDef {
 itemDef {
 	name clip_kobra_check
 	rect 90 160 175 360
-	textfile "text/EnglishUSA/cl_12_kobra_checkb.txt"
+	// textfile "text/EnglishUSA/cl_12_kobra_checkb.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_12_kobra_checkb.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -547,7 +1029,9 @@ itemDef {
 itemDef {
 	name clip_kobra_check
 	rect 18 78 280 322
-	textfile "text/EnglishUSA/cl_12_kobra_checka.txt"
+	// textfile "text/EnglishUSA/cl_12_kobra_checka.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_12_kobra_checka.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
@@ -558,13 +1042,18 @@ itemDef {
 itemDef {
 	name clip_kobra_check
 	rect 90 160 175 360
-	textfile "text/EnglishUSA/cl_12_kobra_checkb.txt"
+	// textfile "text/EnglishUSA/cl_12_kobra_checkb.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_12_kobra_checkb.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
 ////////////////////////////////    cl_13_ladder   /////////////////////////////////// 
 
 
@@ -579,11 +1068,37 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_ladder
+	// rect 18 78 280 322
+	// group clip_ladder
+	// textfile "text/EnglishUSA/cl_13_ladder.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_ladder
+	// rect 18 78 280 322
+	// group clip_ladder
+	// textfile "text/EnglishUSA/cl_13_ladder.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
 itemDef {
 	name clip_ladder
 	rect 18 78 280 322
 	group clip_ladder
-	textfile "text/EnglishUSA/cl_13_ladder.txt"
+	// textfile "text/EnglishUSA/cl_13_ladder.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_13_ladder.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -595,13 +1110,28 @@ itemDef {
 	name clip_ladder
 	rect 18 78 280 322
 	group clip_ladder
-	textfile "text/EnglishUSA/cl_13_ladder.txt"
+	// textfile "text/EnglishUSA/cl_13_ladder.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_13_ladder.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////    cl_14_chocolate   /////////////////////////////////// 
 
 
@@ -616,11 +1146,38 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_chocolate
+	// rect 18 78 280 322
+	// group clip_chocolate
+	// textfile "text/EnglishUSA/cl_14_chocolate.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_chocolate
+	// rect 18 78 280 322
+	// group clip_chocolate
+	// textfile "text/EnglishUSA/cl_14_chocolate.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+
 itemDef {
 	name clip_chocolate
 	rect 18 78 280 322
 	group clip_chocolate
-	textfile "text/EnglishUSA/cl_14_chocolate.txt"
+	// textfile "text/EnglishUSA/cl_14_chocolate.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_14_chocolate.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -632,13 +1189,23 @@ itemDef {
 	name clip_chocolate
 	rect 18 78 280 322
 	group clip_chocolate
-	textfile "text/EnglishUSA/cl_14_chocolate.txt"
+	// textfile "text/EnglishUSA/cl_14_chocolate.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_14_chocolate.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
+
+
 ////////////////////////////////    cl_15_waste   /////////////////////////////////// 
 
 
@@ -653,11 +1220,37 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_waste
+	// rect 18 78 280 322
+	// group clip_waste
+	// textfile "text/EnglishUSA/cl_15_waste.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_waste
+	// rect 18 78 280 322
+	// group clip_waste
+	// textfile "text/EnglishUSA/cl_15_waste.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
 itemDef {
 	name clip_waste
 	rect 18 78 280 322
 	group clip_waste
-	textfile "text/EnglishUSA/cl_15_waste.txt"
+	// textfile "text/EnglishUSA/cl_15_waste.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_15_waste.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -669,13 +1262,23 @@ itemDef {
 	name clip_waste
 	rect 18 78 280 322
 	group clip_waste
-	textfile "text/EnglishUSA/cl_15_waste.txt"
+	// textfile "text/EnglishUSA/cl_15_waste.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_15_waste.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
+
+
 ////////////////////////////////    cl_16_village_doctor   /////////////////////////////////// 
 
 
@@ -690,11 +1293,37 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_village_doctor
+	// rect 18 78 280 322
+	// group clip_village_doctor
+	// textfile "text/EnglishUSA/cl_16_village_doctor.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_village_doctor
+	// rect 18 78 280 322
+	// group clip_village_doctor
+	// textfile "text/EnglishUSA/cl_16_village_doctor.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
 itemDef {
 	name clip_village_doctor
 	rect 18 78 280 322
 	group clip_village_doctor
-	textfile "text/EnglishUSA/cl_16_village_doctor.txt"
+	// textfile "text/EnglishUSA/cl_16_village_doctor.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_16_village_doctor.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -706,13 +1335,18 @@ itemDef {
 	name clip_village_doctor
 	rect 18 78 280 322
 	group clip_village_doctor
-	textfile "text/EnglishUSA/cl_16_village_doctor.txt"
+	// textfile "text/EnglishUSA/cl_16_village_doctor.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_16_village_doctor.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
 ////////////////////////////////    cl_17_blav_himm   /////////////////////////////////// 
 
 
@@ -726,11 +1360,38 @@ itemDef {
 	decoration
 	}
 
+// itemDef {
+	// name clip_blav_himm 
+	// rect 18 78 280 322
+	// group clip_blav_himm 
+	// textfile "text/EnglishUSA/cl_17_blav_himm.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_blav_himm 
+	// rect 18 78 280 322
+	// group clip_blav_himm 
+	// textfile "text/EnglishUSA/cl_17_blav_himm.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+
 itemDef {
 	name clip_blav_himm 
 	rect 18 78 280 322
 	group clip_blav_himm 
-	textfile "text/EnglishUSA/cl_17_blav_himm.txt"
+	// textfile "text/EnglishUSA/cl_17_blav_himm.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_17_blav_himm.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -742,13 +1403,20 @@ itemDef {
 	name clip_blav_himm 
 	rect 18 78 280 322
 	group clip_blav_himm 
-	textfile "text/EnglishUSA/cl_17_blav_himm.txt"
+	// textfile "text/EnglishUSA/cl_17_blav_himm.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_17_blav_himm.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
 ////////////////////////////////    cl_18_elec_display   /////////////////////////////////// 
 
 
@@ -763,11 +1431,38 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_elec_display 
+	// rect 18 78 280 322
+	// group clip_elec_display
+	// textfile "text/EnglishUSA/cl_18_elec_display.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_elec_display 
+	// rect 18 78 280 322
+	// group clip_elec_display
+	// textfile "text/EnglishUSA/cl_18_elec_display.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+
 itemDef {
 	name clip_elec_display 
 	rect 18 78 280 322
 	group clip_elec_display
-	textfile "text/EnglishUSA/cl_18_elec_display.txt"
+	// textfile "text/EnglishUSA/cl_18_elec_display.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_18_elec_display.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -779,13 +1474,22 @@ itemDef {
 	name clip_elec_display 
 	rect 18 78 280 322
 	group clip_elec_display
-	textfile "text/EnglishUSA/cl_18_elec_display.txt"
+	// textfile "text/EnglishUSA/cl_18_elec_display.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_18_elec_display.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
+
 
 ////////////////////////////////    cl_19_gold1   /////////////////////////////////// 
 
@@ -801,11 +1505,37 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_gold1
+	// rect 18 78 280 322
+	// group clip_gold1
+	// textfile "text/EnglishUSA/cl_19_gold1.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_gold1
+	// rect 18 78 280 322
+	// group clip_gold1
+	// textfile "text/EnglishUSA/cl_19_gold1.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
 itemDef {
 	name clip_gold1
 	rect 18 78 280 322
 	group clip_gold1
-	textfile "text/EnglishUSA/cl_19_gold1.txt"
+	// textfile "text/EnglishUSA/cl_19_gold1.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_19_gold1.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -817,13 +1547,24 @@ itemDef {
 	name clip_gold1
 	rect 18 78 280 322
 	group clip_gold1
-	textfile "text/EnglishUSA/cl_19_gold1.txt"
+	// textfile "text/EnglishUSA/cl_19_gold1.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_19_gold1.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
+
+
+
 
 ////////////////////////////////    cl_20_gold2   /////////////////////////////////// 
 
@@ -839,11 +1580,38 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_gold2
+	// rect 18 78 280 322
+	// group clip_gold2
+	// textfile "text/EnglishUSA/cl_20_gold2.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_gold2
+	// rect 18 78 280 322
+	// group clip_gold2
+	// textfile "text/EnglishUSA/cl_20_gold2.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+
 itemDef {
 	name clip_gold2
 	rect 18 78 280 322
 	group clip_gold2
-	textfile "text/EnglishUSA/cl_20_gold2.txt"
+	// textfile "text/EnglishUSA/cl_20_gold2.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_20_gold2.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -855,13 +1623,21 @@ itemDef {
 	name clip_gold2
 	rect 18 78 280 322
 	group clip_gold2
-	textfile "text/EnglishUSA/cl_20_gold2.txt"
+	// textfile "text/EnglishUSA/cl_20_gold2.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_20_gold2.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
 ////////////////////////////////    cl_21_traffic   /////////////////////////////////// 
 
 
@@ -876,11 +1652,37 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_traffic
+	// rect 18 78 280 322
+	// group clip_traffic
+	// textfile "text/EnglishUSA/cl_21_traffic.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_traffic
+	// rect 18 78 280 322
+	// group clip_traffic
+	// textfile "text/EnglishUSA/cl_21_traffic.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
 itemDef {
 	name clip_traffic
 	rect 18 78 280 322
 	group clip_traffic
-	textfile "text/EnglishUSA/cl_21_traffic.txt"
+	// textfile "text/EnglishUSA/cl_21_traffic.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_21_traffic.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -892,13 +1694,21 @@ itemDef {
 	name clip_traffic
 	rect 18 78 280 322
 	group clip_traffic
-	textfile "text/EnglishUSA/cl_21_traffic.txt"
+	// textfile "text/EnglishUSA/cl_21_traffic.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_21_traffic.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
 ////////////////////////////////    cl_22_radio   /////////////////////////////////// 
 
 
@@ -913,11 +1723,37 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_radio
+	// rect 18 78 280 322
+	// group clip_radio
+	// textfile "text/EnglishUSA/cl_22_radio.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_radio
+	// rect 18 78 280 322
+	// group clip_radio
+	// textfile "text/EnglishUSA/cl_22_radio.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
 itemDef {
 	name clip_radio
 	rect 18 78 280 322
 	group clip_radio
-	textfile "text/EnglishUSA/cl_22_radio.txt"
+	// textfile "text/EnglishUSA/cl_22_radio.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_22_radio.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -929,13 +1765,24 @@ itemDef {
 	name clip_radio
 	rect 18 78 280 322
 	group clip_radio
-	textfile "text/EnglishUSA/cl_22_radio.txt"
+	// textfile "text/EnglishUSA/cl_22_radio.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_22_radio.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
+
+
+
 ////////////////////////////////    cl_23_dagger1   /////////////////////////////////// 
 
 
@@ -950,11 +1797,38 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_dagger
+	// rect 18 78 280 322
+	// group clip_dagger
+	// textfile "text/EnglishUSA/cl_23_dagger1.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_dagger
+	// rect 18 78 280 322
+	// group clip_dagger
+	// textfile "text/EnglishUSA/cl_23_dagger1.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+
 itemDef {
 	name clip_dagger
 	rect 18 78 280 322
 	group clip_dagger
 	textfile "text/EnglishUSA/cl_23_dagger1.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_23_dagger1.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -966,13 +1840,19 @@ itemDef {
 	name clip_dagger
 	rect 18 78 280 322
 	group clip_dagger
-	textfile "text/EnglishUSA/cl_23_dagger1.txt"
+	// textfile "text/EnglishUSA/cl_23_dagger1.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_23_dagger1.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
 ////////////////////////////////    cl_24_himm_death2   /////////////////////////////////// 
 
 
@@ -987,11 +1867,37 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_himm_death2
+	// rect 18 78 280 322
+	// group clip_himm_death2
+	// textfile "text/EnglishUSA/cl_24_himm_death2.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_himm_death2
+	// rect 18 78 280 322
+	// group clip_himm_death2
+	// textfile "text/EnglishUSA/cl_24_himm_death2.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
 itemDef {
 	name clip_himm_death2
 	rect 18 78 280 322
 	group clip_himm_death2
-	textfile "text/EnglishUSA/cl_24_himm_death2.txt"
+	// textfile "text/EnglishUSA/cl_24_himm_death2.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_24_himm_death2.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -1003,13 +1909,19 @@ itemDef {
 	name clip_himm_death2
 	rect 18 78 280 322
 	group clip_himm_death2
-	textfile "text/EnglishUSA/cl_24_himm_death2.txt"
+	// textfile "text/EnglishUSA/cl_24_himm_death2.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_24_himm_death2.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
 ////////////////////////////////    cl_25_death_haupf   /////////////////////////////////// 
 
 
@@ -1024,11 +1936,37 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_death_haupf
+	// rect 18 78 280 322
+	// group clip_death_haupf
+	// textfile "text/EnglishUSA/cl_25_death_haupf.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_death_haupf
+	// rect 18 78 280 322
+	// group clip_death_haupf
+	// textfile "text/EnglishUSA/cl_25_death_haupf.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
 itemDef {
 	name clip_death_haupf
 	rect 18 78 280 322
 	group clip_death_haupf
-	textfile "text/EnglishUSA/cl_25_death_haupf.txt"
+	// textfile "text/EnglishUSA/cl_25_death_haupf.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_25_death_haupf.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -1040,13 +1978,21 @@ itemDef {
 	name clip_death_haupf
 	rect 18 78 280 322
 	group clip_death_haupf
-	textfile "text/EnglishUSA/cl_25_death_haupf.txt"
+	// textfile "text/EnglishUSA/cl_25_death_haupf.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_25_death_haupf.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
 ////////////////////////////////    cl_26_blav_stauff   /////////////////////////////////// 
 
 
@@ -1061,11 +2007,38 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_blav_stauff
+	// rect 18 78 280 322
+	// group clip_blav_stauff
+	// textfile "text/EnglishUSA/cl_26_blav_stauff.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_blav_stauff
+	// rect 18 78 280 322
+	// group clip_blav_stauff
+	// textfile "text/EnglishUSA/cl_26_blav_stauff.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+
 itemDef {
 	name clip_blav_stauff
 	rect 18 78 280 322
 	group clip_blav_stauff
-	textfile "text/EnglishUSA/cl_26_blav_stauff.txt"
+	// textfile "text/EnglishUSA/cl_26_blav_stauff.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_26_blav_stauff.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -1077,13 +2050,25 @@ itemDef {
 	name clip_blav_stauff
 	rect 18 78 280 322
 	group clip_blav_stauff
-	textfile "text/EnglishUSA/cl_26_blav_stauff.txt"
+	// textfile "text/EnglishUSA/cl_26_blav_stauff.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_26_blav_stauff.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////    cl_27_himm_burk   /////////////////////////////////// 
 
 
@@ -1098,11 +2083,37 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name clip_himm_burk
+	// rect 18 78 280 322
+	// group clip_himm_burk
+	// textfile "text/EnglishUSA/cl_27_himm_burk.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
+// itemDef {
+	// name clip_himm_burk
+	// rect 18 78 280 322
+	// group clip_himm_burk
+	// textfile "text/EnglishUSA/cl_27_himm_burk.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// autowrapped
+	// decoration
+// }
+
 itemDef {
 	name clip_himm_burk
 	rect 18 78 280 322
 	group clip_himm_burk
-	textfile "text/EnglishUSA/cl_27_himm_burk.txt"
+	// textfile "text/EnglishUSA/cl_27_himm_burk.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_27_himm_burk.tga"
 	textscale .18
 	forecolor .1 .1 .1 .9
 	visible 0
@@ -1114,13 +2125,25 @@ itemDef {
 	name clip_himm_burk
 	rect 18 78 280 322
 	group clip_himm_burk
-	textfile "text/EnglishUSA/cl_27_himm_burk.txt"
+	// textfile "text/EnglishUSA/cl_27_himm_burk.txt"
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard/cl_27_himm_burk.tga"
 	textscale .18
 	forecolor .1 .1 .1 .6
 	visible 0
 	autowrapped
 	decoration
 }
+
+
+
+
+
+
+
+
+
+
 ////////////////////////////////    training1   /////////////////////////////////// 
 
 

@@ -1,0 +1,20 @@
+Operational Specifics:
+
+The GP-VG MK2 Venom Gun is electrically operated and utilizes a locking-breech system with six barrels and six bolts. The barrels rotate counter clockwise and fire in turn when they reach the 12' o-clock position. The breech mechanism features a rotating bolt head with two locking surfaces (similar to MG34 GPMG).
+
+The bolt subassembly features a helical tang on the bolt head which mates with a helical groove on bolt body. Rotation into the battery is clockwise with the bolt rotating around the firing pin holding entire bolt assembly together.
+
+The bolt head itself locks into recesses in the rotor (the main structural component of the gun) while the barrel interfaces with the front of the rotor. A roller on top of the bolt subassembly, moving in an elliptical cam path in the receiver housing, drives the bolt forward. 
+
+
+
+操作细节:
+
+
+GP-VG MK2“毒液”喷枪是电动操作的，采用一个带有6个枪管和6个螺栓的锁紧枪口系统。当枪管到达12点位置时，它们会逆时针旋转并依次点火。后端机构具有一个旋转的螺栓头，带有两个锁紧面(类似于MG34 GPMG)。
+
+
+所述螺栓组件在螺栓头上具有与螺栓本体上的螺旋槽相配合的螺旋齿。旋转进入电池是顺时针与螺栓旋转周围的点火销保持整个螺栓组装在一起。
+
+
+螺栓头本身锁定在转子(枪的主要结构部件)的凹槽内，同时枪管与转子的前部连接。螺栓组件顶部的滚子在接收器外壳内沿椭圆凸轮路径移动，推动螺栓向前。

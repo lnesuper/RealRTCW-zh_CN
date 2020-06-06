@@ -1,0 +1,17 @@
+1) Elevation - the Platform Operator will elevate the rocket to the fueling position.
+
+
+2) Fueling - Upon completion of elevation, the Fueling Operator will initiate fueling.
+
+3) Tower Clearance - Upon completion of fueling, the Launch Tower Operator will open the tower doors.
+
+
+
+1)提升-平台操作员将火箭提升到加油位置。
+
+
+
+2)加油-当高度完成后，加油操作员将开始加油。
+
+
+3)发射塔开闸——燃料补给完成后，发射塔操作员将打开发射塔的门。

@@ -47,11 +47,25 @@ menuDef {
 		mouseExit { setitemcolor button_next backcolor .37 .1 .1 1 } 
 	}
 
+	// itemDef {
+		// name page1a
+		// group page1
+		// rect 65 65 240 380
+		// textfile "text/EnglishUSA/ven_p1.txt"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 1
+		// autowrapped
+		// decoration
+	// }
+
 	itemDef {
 		name page1a
 		group page1
 		rect 65 65 240 380
-		textfile "text/EnglishUSA/ven_p1.txt"
+		// textfile "text/EnglishUSA/ven_p1.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookv/ven_p1.tga"
 		textscale .16
 		forecolor .1 .1 .1 .9
 		visible 1
@@ -59,11 +73,27 @@ menuDef {
 		decoration
 	}
 
+
+	// itemDef {
+		// name page1b
+		// group page1
+		// rect 365 65 200 380
+		// textfile "text/EnglishUSA/ven_p2.txt"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 1
+		// autowrapped
+		// decoration
+	// }
+
+
 	itemDef {
 		name page1b
 		group page1
 		rect 365 65 200 380
-		textfile "text/EnglishUSA/ven_p2.txt"
+		// textfile "text/EnglishUSA/ven_p2.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookv/ven_p2.tga"
 		textscale .16
 		forecolor .1 .1 .1 .9
 		visible 1
@@ -175,11 +205,25 @@ menuDef {
 		mouseExit { setitemcolor button_next backcolor .37 .1 .1 1 } 
 	}
 
+	// itemDef {
+		// name page3a
+		// group page3
+		// rect 60 60 200 380
+		// textfile "text/EnglishUSA/ven_p3.txt"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page3a
 		group page3
 		rect 60 60 200 380
-		textfile "text/EnglishUSA/ven_p3.txt"
+		// textfile "text/EnglishUSA/ven_p3.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookv/ven_p3.tga"
 		textscale .16
 		forecolor .1 .1 .1 .9
 		visible 0
@@ -187,11 +231,27 @@ menuDef {
 		autowrapped
 	}
 
+
+
+	// itemDef {
+		// name page3b
+		// group page3
+		// rect 365 60 200 380
+		// textfile "text/EnglishUSA/ven_p4.txt"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page3b
 		group page3
 		rect 365 60 200 380
-		textfile "text/EnglishUSA/ven_p4.txt"
+		// textfile "text/EnglishUSA/ven_p4.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookv/ven_p4.tga"
 		textscale .16
 		forecolor .1 .1 .1 .9
 		visible 0
@@ -234,17 +294,33 @@ menuDef {
 		mouseExit { setitemcolor button_next backcolor .37 .1 .1 1 } 
 	}
 
+	// itemDef {
+		// name page4a
+		// group page4
+		// rect 60 60 240 380
+		// textfile "text/EnglishUSA/ven_p5.txt"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page4a
 		group page4
 		rect 60 60 240 380
-		textfile "text/EnglishUSA/ven_p5.txt"
+		// textfile "text/EnglishUSA/ven_p5.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookv/ven_p5.tga"
 		textscale .16
 		forecolor .1 .1 .1 .9
 		visible 0
 		decoration
 		autowrapped
 	}
+
+
 
 	itemDef {
 		name page4b

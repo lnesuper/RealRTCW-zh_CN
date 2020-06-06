@@ -48,11 +48,26 @@ menuDef {
 		mouseExit { setitemcolor button_next backcolor .37 .1 .1 1 } 
 	}
 
+	// itemDef {
+		// name page1a
+		// group page1
+		// rect 65 70 220 330
+		// textfile "text/EnglishUSA/zem_p1.txt"
+		// textfont UI_FONT_HANDWRITING
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 1
+		// autowrapped
+		// decoration
+	// }
+
 	itemDef {
 		name page1a
 		group page1
 		rect 65 70 220 330
-		textfile "text/EnglishUSA/zem_p1.txt"
+		// textfile "text/EnglishUSA/zem_p1.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookz/zem_p1.tga"
 		textfont UI_FONT_HANDWRITING
 		textscale .16
 		forecolor .1 .1 .1 .9
@@ -61,11 +76,31 @@ menuDef {
 		decoration
 	}
 
+
+
+
+
+	// itemDef {
+		// name page1b
+		// group page1
+		// rect 365 70 205 330
+		// textfile "text/EnglishUSA/zem_p2.txt"
+		// textfont UI_FONT_HANDWRITING
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 1
+		// autowrapped
+		// decoration
+	// }
+
+
 	itemDef {
 		name page1b
 		group page1
 		rect 365 70 205 330
-		textfile "text/EnglishUSA/zem_p2.txt"
+		// textfile "text/EnglishUSA/zem_p2.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookz/zem_p2.tga"
 		textfont UI_FONT_HANDWRITING
 		textscale .16
 		forecolor .1 .1 .1 .9
@@ -73,6 +108,8 @@ menuDef {
 		autowrapped
 		decoration
 	}
+
+
 
 
 // PAGE 2 ////////////////
@@ -108,11 +145,26 @@ menuDef {
 //		mouseExit { setitemcolor button_next backcolor .37 .1 .1 1 } 
 //	}
 
+	// itemDef {
+		// name page2a
+		// group page2
+		// rect 65 70 220 330
+		// textfile "text/EnglishUSA/zem_p3.txt"
+		// textfont UI_FONT_HANDWRITING
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page2a
 		group page2
 		rect 65 70 220 330
-		textfile "text/EnglishUSA/zem_p3.txt"
+		// textfile "text/EnglishUSA/zem_p3.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookz/zem_p3.tga"
 		textfont UI_FONT_HANDWRITING
 		textscale .16
 		forecolor .1 .1 .1 .9
@@ -120,6 +172,8 @@ menuDef {
 		decoration
 		autowrapped
 	}
+
+
 
 	itemDef {
 		name page2b
@@ -168,11 +222,25 @@ menuDef {
 		mouseExit { setitemcolor button_next backcolor .37 .1 .1 1 } 
 	}
 
+	// itemDef {
+		// name page3a
+		// group page3
+		// rect 60 60 240 330
+		// textfile "text/EnglishUSA/zbook1.txt"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
 	itemDef {
 		name page3a
 		group page3
 		rect 60 60 240 330
-		textfile "text/EnglishUSA/zbook1.txt"
+		// textfile "text/EnglishUSA/zbook1.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookz/zbook1.tga"
 		textscale .16
 		forecolor .1 .1 .1 .9
 		visible 0
@@ -180,19 +248,32 @@ menuDef {
 		autowrapped
 	}
 
-	itemDef {
+
+	// itemDef {
+		// name page3b
+		// group page3
+		// rect 380 60 240 330
+		// textfile "text/EnglishUSA/zbook1.txt"
+		// textscale .16
+		// forecolor .1 .1 .1 .9
+		// visible 0
+		// decoration
+		// autowrapped
+	// }
+
+itemDef {
 		name page3b
 		group page3
 		rect 380 60 240 330
-		textfile "text/EnglishUSA/zbook1.txt"
+		// textfile "text/EnglishUSA/zbook1.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/bookz/zbook1.tga"
 		textscale .16
 		forecolor .1 .1 .1 .9
 		visible 0
 		decoration
 		autowrapped
 	}
-
-
 
 
 

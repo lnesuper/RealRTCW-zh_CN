@@ -443,7 +443,7 @@
 	{
 		name newgamemenu1
 		group newgamemenugroup
-		rect 270 150 300 200	
+		rect 270 150 300 220	
 		style WINDOW_STYLE_FILLED
 		border 1
 		bordercolor .5 .5 .5 .5
@@ -488,7 +488,7 @@
 	
 	
 	
-	
+	// Can I play, Daddy?
 	
 	
 	// itemDef {
@@ -540,11 +540,11 @@
 		textfont UI_FONT_BIG
 		style 0	
 		textstyle 6
-		rect 320 163 256 45
+		rect 320 160 256 45
 		textalign 0
 		textscale .25		
 		textalignx 6
-		textaligny 12
+		textaligny 15
 		forecolor 0 1 0 1
 		visible 0
 		decoration
@@ -589,6 +589,7 @@
 
 
 
+// Don't hurt me.
 	
     // itemDef {
 	    // name medium
@@ -621,7 +622,7 @@
 		style WINDOW_STYLE_SHADER
 		background "text/ChineseCHN/skill/medium.tga"
 		forecolor 1 1 1 1
-		rect 350 200 256 45
+		rect 350 205 256 45
 		visible 0
 		mouseEnter { show mediumtip ; show selectmedium ; setitemcolor medium forecolor 0.5 1 0 1 }
 		mouseExit { hide mediumtip ; hide selectmedium ; setitemcolor medium forecolor 1 1 1 1 }
@@ -638,11 +639,11 @@
 		textfont UI_FONT_BIG
 		style 0	
 		textstyle 6
-		rect 320 203 256 45
+		rect 320 205 256 45
 		textalign 0
 		textscale .25		
 		textalignx 6
-		textaligny 12
+		textaligny 15
 		forecolor 0.5 1 0 1
 		visible 0
 		decoration
@@ -686,7 +687,7 @@
 
 
 
-
+// Bring'em on!
 
 
     // itemDef {
@@ -719,13 +720,13 @@
 		style WINDOW_STYLE_SHADER
 		background "text/ChineseCHN/skill/hard.tga"
 		forecolor 1 1 1 1
-		rect 350 242 256 45
+		rect 350 250 256 45
 		visible 0
 		mouseEnter { show hardtip ; show selecthard ; setitemcolor hard forecolor 1 1 0 1 }
 		mouseExit { hide hardtip ; hide selecthard ; setitemcolor hard forecolor 1 1 1 1 }
 		visible 0
 		action { setCvar g_gameskill "2"; exec "spmap cutscene1" }
-		decoration
+		// decoration
 	}
 	
 	itemDef {
@@ -736,11 +737,11 @@
 		textfont UI_FONT_BIG
 		style 0	
 		textstyle 6
-		rect 320 245 256 45
+		rect 320 250 256 45
 		textalign 0
 		textscale .25		
 		textalignx 6
-		textaligny 12
+		textaligny 15
 		forecolor 1 1 0 1
 		visible 0
 		decoration
@@ -780,7 +781,7 @@
 		decoration
 	}
 
-
+// I am Death incarnate!
 
     // itemDef {
 	    // name expert
@@ -812,13 +813,13 @@
 		style WINDOW_STYLE_SHADER
 		background "text/ChineseCHN/skill/expert.tga"
 		forecolor 1 1 1 1
-		rect 350 280 256 45
+		rect 350 295 256 45
 		visible 0
 		mouseEnter { show maxtip ; show selectexpert ; setitemcolor expert forecolor 1 0.5 0 1 }
 		mouseExit { hide maxtip ; hide selectexpert ; setitemcolor expert forecolor 1 1 1 1 }
 		visible 0
 		action { setCvar g_gameskill "3"; exec "spmap cutscene1" }
-		decoration
+		// decoration
 	}
 	
 	itemDef {
@@ -829,11 +830,11 @@
 		textfont UI_FONT_BIG
 		style 0	
 		textstyle 6
-		rect 320 283 256 45
+		rect 320 295 256 45
 		textalign 0
 		textscale .25		
 		textalignx 6
-		textaligny 12
+		textaligny 15
 		forecolor 1 0.5 0 1
 		visible 0
 		decoration
@@ -874,7 +875,7 @@
 		decoration
 	}	
 	
-	
+// Realism	
 	    // itemDef {
 	    // name realismmode1
 	    // group newgamemenugroup
@@ -906,13 +907,13 @@
 		style WINDOW_STYLE_SHADER
 		background "text/ChineseCHN/skill/max.tga"
 		forecolor 1 1 1 1
-		rect 350 320 256 45
+		rect 350 340 256 45
 		visible 0
 		mouseEnter { show realismtip ; show selectrealism ; setitemcolor realismmode1 forecolor 1 0 0 1 }
 		mouseExit { hide realismtip ; hide selectrealism ; setitemcolor realismmode1 forecolor 1 1 1 1 }
 		visible 0
 		action { setCvar g_gameskill "4"; exec "spmap cutscene1" }
-		decoration
+		// decoration
 	}
 	
 	itemDef {
@@ -923,11 +924,11 @@
 		textfont UI_FONT_BIG
 		style 0	
 		textstyle 6
-		rect 320 322 256 45
+		rect 320 340 256 45
 		textalign 0
 		textscale .25		
 		textalignx 6
-		textaligny 12
+		textaligny 15
 		forecolor 1 0 0 1
 		visible 0
 		decoration
@@ -5176,7 +5177,7 @@ itemDef {
 		style WINDOW_STYLE_SHADER
 		backcolor 1 1 1 .07                  
 		forecolor 1 1 1 1
-		background "text/ChineseCHN/options/controls/misc/quicksave.tga"
+		background "text/ChineseCHN/options/controls/misc/quickload.tga"
 		visible 0 
 		mouseenter { show keyBindStatus }
 		mouseexit { hide keyBindStatus }
@@ -5225,7 +5226,50 @@ itemDef {
 		mouseexit { hide slider_message }
     }
 	
+/*	
+	// Knightmare- added screenshot bind
+	itemDef {
+		name misc
+		group controls
+		type ITEM_TYPE_BIND
+		text "Screenshot:"
+		cvar "screenshotjpeg"
+		rect 300 360 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+		textalignx 142 
+		textaligny 10
+		textscale .23  
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07                  
+		forecolor 1 1 1 1
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+  	}
+*/
 
+	
+/*
+	// Knightmare- added screenshot format
+	itemDef {
+		name misc
+		group grpControls
+		type ITEM_TYPE_MULTI
+		text "Screenshot Format:  "
+		cvar "r_screenshotFormat"
+		cvarFloatList { "JPEG" jpg "TGA" tga }
+		rect 82 240 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23        
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 0
+    }
+*/
 
 ///////System//////////
 
@@ -6120,7 +6164,7 @@ itemDef {
 		visible 0
 		border 1
 		bordercolor .5 .5 .5 .5
-		action { exec "vid_restart"  }
+		action { exec "vid_restart" }
 		mouseEnter { setitemcolor graphicsapply backcolor .3 .5 .2 .25 ; setitemcolor graphicsapply forecolor .0 .9 .0 .8 }
       	mouseExit { setitemcolor graphicsapply backcolor .1 .1 .1 .1 ; setitemcolor graphicsapply forecolor 1 1 1 1 }
 	}

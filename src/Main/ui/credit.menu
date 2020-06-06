@@ -185,40 +185,80 @@ itemDef {
 
 ///////////////
 
+// itemDef {
+	// name GMIcredit
+	// group grpGMIcredit
+	// rect 170 100 300 20
+	// style 1
+	// textalign 1
+	// textalignx 150
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// textalign ITEM_ALIGN_CENTER
+	// text "DEVELOPED BY"
+	// forecolor 1 1 1 1
+	// decoration 
+	// visible 0
+	// }
+
 itemDef {
 	name GMIcredit
 	group grpGMIcredit
 	rect 170 100 300 20
-	style 1
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/developed.tga"
 	textalign 1
 	textalignx 150
 	textaligny 10
 	textstyle 6
 	textscale .2
 	textalign ITEM_ALIGN_CENTER
-	text "DEVELOPED BY"
+	text ""
 	forecolor 1 1 1 1
 	decoration 
 	visible 0
 	}
 
+
+
+
+
+
+// itemDef {
+	// name GMIcredit
+	// group grpGMIcredit
+	// rect 170 112 300 20
+	// style 1
+	// textalign 1
+	// textalignx 150
+	// textaligny 10
+	// textstyle 6
+	// textscale .22
+	// textalign ITEM_ALIGN_CENTER
+	// text "GRAY MATTER STUDIOS INC"
+	// forecolor 1 1 1 1
+	// decoration 
+	// visible 0
+	// }
+
 itemDef {
 	name GMIcredit
 	group grpGMIcredit
 	rect 170 112 300 20
-	style 1
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/gmsi.tga"
 	textalign 1
 	textalignx 150
 	textaligny 10
 	textstyle 6
 	textscale .22
 	textalign ITEM_ALIGN_CENTER
-	text "GRAY MATTER STUDIOS INC"
+	text ""
 	forecolor 1 1 1 1
 	decoration 
 	visible 0
 	}
-
 
 
 itemDef {
@@ -420,12 +460,46 @@ itemDef {
 	}
 
 
+// itemDef {
+		// name win1
+		// group grpGMIcredit
+		// style 1 
+		// rect 130 94 400 400
+		// textfile "text/EnglishUSA/credits.txt"
+		// textfont UI_FONT_SMALL
+		// textscale .2
+		// textstyle 6
+		// forecolor .9 .9 .9 1
+		// visible MENU_TRUE
+		// autowrapped
+		// decoration
+		// visible 0
+	// }
+
+
+// itemDef {
+		// name win1
+		// group grpGMIcredit
+		// style 1 
+		// rect 367 94 280 200
+		// textfile "text/EnglishUSA/credits2.txt"
+		// textfont UI_FONT_SMALL
+		// textstyle 6
+		// textscale .2
+		// forecolor .9 .9 .9 1
+		// visible MENU_TRUE
+		// autowrapped
+		// decoration
+		// visible 0
+	// }
+
 itemDef {
 		name win1
 		group grpGMIcredit
-		style 1 
-		rect 130 94 400 400
-		textfile "text/EnglishUSA/credits.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/credit/credits.tga"
+		rect 130 94 680 400
+		// textfile "text/EnglishUSA/credits.txt"
 		textfont UI_FONT_SMALL
 		textscale .2
 		textstyle 6
@@ -437,28 +511,11 @@ itemDef {
 	}
 
 
-itemDef {
-		name win1
-		group grpGMIcredit
-		style 1 
-		rect 367 94 280 200
-		textfile "text/EnglishUSA/credits2.txt"
-		textfont UI_FONT_SMALL
-		textstyle 6
-		textscale .2
-		forecolor .9 .9 .9 1
-		visible MENU_TRUE
-		autowrapped
-		decoration
-		visible 0
-	}
 
 
 
 
-
-
-
+// 
 
 itemDef {
 		name nextcreditbttn
@@ -484,22 +541,41 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name GMIcredit
+	// group grpnervecredit
+	// rect 170 100 300 20
+	// style 1
+	// textalign 1
+	// textalignx 150
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// textalign ITEM_ALIGN_CENTER
+	// text "MULTIPLAYER BY"
+	// forecolor 1 1 1 1
+	// decoration 
+	// visible 0
+	// }
+
 itemDef {
 	name GMIcredit
 	group grpnervecredit
 	rect 170 100 300 20
-	style 1
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/multiplayer.tga"
 	textalign 1
 	textalignx 150
 	textaligny 10
 	textstyle 6
 	textscale .2
 	textalign ITEM_ALIGN_CENTER
-	text "MULTIPLAYER BY"
+	text ""
 	forecolor 1 1 1 1
 	decoration 
 	visible 0
 	}
+
 
 itemDef {
 	name GMIcredit
@@ -520,114 +596,234 @@ itemDef {
 
 
 
+// itemDef {
+	// name win1
+	// group grpnervecredit
+ 	// rect 120 137 440 10
+	// style 1
+	// textalign 1
+	// textalignx 260
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// text "President / Game Director"
+	// textalign ITEM_ALIGN_LEFT
+ 	// style WINDOW_STYLE_FILLED
+	// backcolor 1 1 1 .1         
+   	// forecolor 1 1 1 1
+   	// visible 0 
+	// decoration
+	// }
+
 itemDef {
 	name win1
 	group grpnervecredit
  	rect 120 137 440 10
-	style 1
 	textalign 1
 	textalignx 260
 	textaligny 10
 	textstyle 6
 	textscale .2
-	text "President / Game Director"
+	text ""
 	textalign ITEM_ALIGN_LEFT
- 	style WINDOW_STYLE_FILLED
+ 	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/president.tga"
 	backcolor 1 1 1 .1         
    	forecolor 1 1 1 1
    	visible 0 
 	decoration
 	}
+
+
+// itemDef {
+	// name win1
+	// group grpnervecredit
+ 	// rect 120 150 440 10
+	// style 1
+	// textalign 1
+	// textalignx 260
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// text "Vice-President / Content Director"
+	// textalign ITEM_ALIGN_LEFT
+ 	// style WINDOW_STYLE_FILLED
+	// backcolor 1 1 1 .1         
+   	// forecolor 1 1 1 1
+   	// visible 0 
+	// decoration
+	// }
 
 itemDef {
 	name win1
 	group grpnervecredit
  	rect 120 150 440 10
-	style 1
 	textalign 1
 	textalignx 260
 	textaligny 10
 	textstyle 6
 	textscale .2
-	text "Vice-President / Content Director"
+	text ""
 	textalign ITEM_ALIGN_LEFT
- 	style WINDOW_STYLE_FILLED
+ 	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/vice-president.tga"
 	backcolor 1 1 1 .1         
    	forecolor 1 1 1 1
    	visible 0 
 	decoration
 	}
 
+// itemDef {
+	// name win1
+	// group grpnervecredit
+ 	// rect 120 163 440 10
+	// style 1
+	// textalign 1
+	// textalignx 166
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// text "Programming"
+	// textalign ITEM_ALIGN_LEFT
+ 	// style WINDOW_STYLE_FILLED
+// //	backcolor 1 1 1 .1         
+   	// forecolor 1 1 1 1
+   	// visible 0 
+	// decoration
+	// }
+
 itemDef {
 	name win1
 	group grpnervecredit
  	rect 120 163 440 10
-	style 1
 	textalign 1
 	textalignx 166
 	textaligny 10
 	textstyle 6
 	textscale .2
-	text "Programming"
+	text ""
 	textalign ITEM_ALIGN_LEFT
- 	style WINDOW_STYLE_FILLED
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/programming.tga"
 //	backcolor 1 1 1 .1         
    	forecolor 1 1 1 1
    	visible 0 
 	decoration
 	}
 
+
+
+// itemDef {
+	// name win1
+	// group grpnervecredit
+ 	// rect 120 176 440 10
+	// style 1
+	// textalign 1
+	// textalignx 260
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// text "Technical Director"
+	// textalign ITEM_ALIGN_LEFT
+ 	// style WINDOW_STYLE_FILLED
+	// backcolor 1 1 1 .1         
+   	// forecolor 1 1 1 1
+   	// visible 0 
+	// decoration
+	// }
+
+
 itemDef {
 	name win1
 	group grpnervecredit
  	rect 120 176 440 10
-	style 1
 	textalign 1
 	textalignx 260
 	textaligny 10
 	textstyle 6
 	textscale .2
-	text "Technical Director"
+	text ""
 	textalign ITEM_ALIGN_LEFT
- 	style WINDOW_STYLE_FILLED
+ 	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/technical.tga"
 	backcolor 1 1 1 .1         
    	forecolor 1 1 1 1
    	visible 0 
 	decoration
 	}
+
+
+// itemDef {
+	// name win1
+	// group grpnervecredit
+ 	// rect 120 189 440 10
+	// style 1
+	// textalign 1
+	// textalignx 260
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// text "Senior Engineer"
+	// textalign ITEM_ALIGN_LEFT
+ 	// style WINDOW_STYLE_FILLED
+	// backcolor 1 1 1 .1         
+   	// forecolor 1 1 1 1
+   	// visible 0 
+	// decoration
+	// }
 
 itemDef {
 	name win1
 	group grpnervecredit
  	rect 120 189 440 10
-	style 1
 	textalign 1
 	textalignx 260
 	textaligny 10
 	textstyle 6
 	textscale .2
-	text "Senior Engineer"
+	text ""
 	textalign ITEM_ALIGN_LEFT
- 	style WINDOW_STYLE_FILLED
+ 	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/seniorengineer.tga"
 	backcolor 1 1 1 .1         
    	forecolor 1 1 1 1
    	visible 0 
 	decoration
 	}
+
+
+// itemDef {
+	// name win1
+	// group grpnervecredit
+ 	// rect 120 202 440 10
+	// style 1
+	// textalign 1
+	// textalignx 260
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// text "Engineer"
+	// textalign ITEM_ALIGN_LEFT
+ 	// style WINDOW_STYLE_FILLED
+	// backcolor 1 1 1 .1         
+   	// forecolor 1 1 1 1
+   	// visible 0 
+	// decoration
+	// }
 
 itemDef {
 	name win1
 	group grpnervecredit
  	rect 120 202 440 10
-	style 1
 	textalign 1
 	textalignx 260
 	textaligny 10
 	textstyle 6
 	textscale .2
-	text "Engineer"
+	text ""
 	textalign ITEM_ALIGN_LEFT
- 	style WINDOW_STYLE_FILLED
+ 	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/seniorengineer.tga"
 	backcolor 1 1 1 .1         
    	forecolor 1 1 1 1
    	visible 0 
@@ -635,19 +831,38 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name win1
+	// group grpnervecredit
+	// rect 120 215 440 10
+	// style 1
+	// textalign 1
+	// textalignx 168
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// text "Art & Design"
+	// textalign ITEM_ALIGN_LEFT
+	// style WINDOW_STYLE_FILLED
+// //      backcolor 1 1 1 .1         
+   	// forecolor 1 1 1 1
+   	// visible 0 
+	// decoration
+	// }
+
 itemDef {
 	name win1
 	group grpnervecredit
 	rect 120 215 440 10
-	style 1
 	textalign 1
 	textalignx 168
 	textaligny 10
 	textstyle 6
 	textscale .2
-	text "Art & Design"
+	text ""
 	textalign ITEM_ALIGN_LEFT
-	style WINDOW_STYLE_FILLED
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/art.tga"
 //      backcolor 1 1 1 .1         
    	forecolor 1 1 1 1
    	visible 0 
@@ -655,22 +870,22 @@ itemDef {
 	}
 
 
-itemDef {
-		name win1
-		group grpnervecredit
-		style 1 
-		rect 130 94 280 400
-		textfile "text/EnglishUSA/credits_nerve.txt"
-		textfont UI_FONT_SMALL
-		textscale .2
-		textstyle 6
-		forecolor .9 .9 .9 1
+// itemDef {
+		// name win1
+		// group grpnervecredit
+		// style 1 
+		// rect 130 94 280 400
+		// textfile "text/EnglishUSA/credits_nerve.txt"
+		// textfont UI_FONT_SMALL
+		// textscale .2
+		// textstyle 6
+		// forecolor .9 .9 .9 1
 		
-		visible MENU_TRUE
-		autowrapped
-		decoration
-		visible 0
-	}
+		// visible MENU_TRUE
+		// autowrapped
+		// decoration
+		// visible 0
+	// }
 
 
 //itemDef {
@@ -689,21 +904,57 @@ itemDef {
 //		visible 0
 //	}
 
+itemDef {
+		name win1
+		group grpnervecredit
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/credit/credits_nerve.tga"
+		rect 130 114 680 400
+		// textfile "text/EnglishUSA/credits2_nerve.txt"
+		textfont UI_FONT_SMALL
+		textstyle 6
+		textscale .2
+		forecolor .9 .9 .9 1
+		visible MENU_TRUE
+		autowrapped
+		decoration
+		visible 0
+	}
 
 
+
+
+// itemDef {
+	// name win1
+	// group grpnervecredit
+ 	// rect 120 228 440 10
+ 	// style WINDOW_STYLE_FILLED
+	// style 1
+	// textalign 1
+	// textalignx 260
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// text "Content Director"
+	// textalign ITEM_ALIGN_LEFT
+	// backcolor 1 1 1 .1         
+   	// forecolor 1 1 1 1
+   	// visible 0 
+	// decoration
+	// }
 
 itemDef {
 	name win1
 	group grpnervecredit
  	rect 120 228 440 10
- 	style WINDOW_STYLE_FILLED
-	style 1
+ 	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/content.tga"
 	textalign 1
 	textalignx 260
 	textaligny 10
 	textstyle 6
 	textscale .2
-	text "Content Director"
+	text ""
 	textalign ITEM_ALIGN_LEFT
 	backcolor 1 1 1 .1         
    	forecolor 1 1 1 1
@@ -809,12 +1060,29 @@ itemDef {
 	visible 0
 	}
 
+// itemDef {
+		// name win1
+		// group grpIDcredit
+		// style 0 
+		// rect 48 160 600 200
+		// textfile "text/EnglishUSA/credit_id.txt"
+		// textfont UI_FONT_SMALL
+		// textstyle 6
+		// textscale .24
+		// forecolor .9 .9 .9 1
+		// visible MENU_TRUE
+		// autowrapped
+		// decoration
+		// visible 0
+	// }
+
 itemDef {
 		name win1
 		group grpIDcredit
-		style 0 
 		rect 48 160 600 200
-		textfile "text/EnglishUSA/credit_id.txt"
+		// textfile "text/EnglishUSA/credit_id.txt"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/credit/credit_id.tga"
 		textfont UI_FONT_SMALL
 		textstyle 6
 		textscale .24
@@ -824,7 +1092,6 @@ itemDef {
 		decoration
 		visible 0
 	}
-
 
 
 /////////////////
@@ -861,22 +1128,41 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name GMIcredit
+	// group grpATVIcredit
+	// rect 170 100 300 20
+	// style 1
+	// textalign 1
+	// textalignx 150
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// textalign ITEM_ALIGN_CENTER
+	// text "PRODUCED BY"
+	// forecolor 1 1 1 1
+	// decoration 
+	// visible 0
+	// }
+
 itemDef {
 	name GMIcredit
 	group grpATVIcredit
 	rect 170 100 300 20
-	style 1
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/produced.tga"
 	textalign 1
 	textalignx 150
 	textaligny 10
 	textstyle 6
 	textscale .2
 	textalign ITEM_ALIGN_CENTER
-	text "PRODUCED BY"
+	text ""
 	forecolor 1 1 1 1
 	decoration 
 	visible 0
 	}
+
 
 itemDef {
 	name GMIcredit
@@ -900,14 +1186,48 @@ itemDef {
 
 
 
+// 
 
+// itemDef {
+		// name win1
+		// group grpatvicredit
+		// style 1 
+		// rect 130 94 400 400
+		// textfile "text/EnglishUSA/credits_atvi.txt"
+		// textfont UI_FONT_SMALL
+		// textscale .2
+		// textstyle 6
+		// forecolor .9 .9 .9 1
+		// visible MENU_TRUE
+		// autowrapped
+		// decoration
+		// visible 0
+	// }
+
+
+// itemDef {
+		// name win1
+		// group grpatvicredit
+		// style 1 
+		// rect 367 94 280 400
+		// textfile "text/EnglishUSA/credits2_atvi.txt"
+		// textfont UI_FONT_SMALL
+		// textstyle 6
+		// textscale .2
+		// forecolor .9 .9 .9 1
+		// visible MENU_TRUE
+		// autowrapped
+		// decoration
+		// visible 0
+	// }
 
 itemDef {
 		name win1
 		group grpatvicredit
-		style 1 
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/credit/credits_atvi.tga"
 		rect 130 94 400 400
-		textfile "text/EnglishUSA/credits_atvi.txt"
+		// textfile "text/EnglishUSA/credits_atvi.txt"
 		textfont UI_FONT_SMALL
 		textscale .2
 		textstyle 6
@@ -919,21 +1239,13 @@ itemDef {
 	}
 
 
-itemDef {
-		name win1
-		group grpatvicredit
-		style 1 
-		rect 367 94 280 400
-		textfile "text/EnglishUSA/credits2_atvi.txt"
-		textfont UI_FONT_SMALL
-		textstyle 6
-		textscale .2
-		forecolor .9 .9 .9 1
-		visible MENU_TRUE
-		autowrapped
-		decoration
-		visible 0
-	}
+
+
+
+
+
+
+
 
 
 itemDef {
@@ -1131,15 +1443,39 @@ itemDef {
 
 ///////////////////////////////////////////////////////////////////// 
 
+// itemDef {
+      	// name backcreditbttn
+		// group grpatvicredit
+		// type 1
+		// textfont UI_FONT_NORMAL
+      	// rect 520 450 100 26
+  		// text "QUALITY ASSURANCE"
+		// style WINDOW_STYLE_FILLED
+		// background "ui/assets/button_back.tga"
+		// textalign 1   	
+		// textscale .23
+		// textalignx 50
+		// textaligny 12 
+      	// visible 0
+		// backcolor .37 .1 .1 0
+      	// forecolor 1 1 1 1
+		// action { play "sound/misc/kcaction.wav" ; 
+		// hide grpATVIcredit ; 
+		// show grpQAcredit }
+		// mouseEnter { setitemcolor idcreditbttn backcolor .1 .37 .1 0 ; show message_credits }
+      	// mouseExit { setitemcolor idcreditbttn backcolor .37 .1 .1 0 ; hide message_credits }	  	  
+	// }
+
+
 itemDef {
       	name backcreditbttn
 		group grpatvicredit
 		type 1
 		textfont UI_FONT_NORMAL
       	rect 520 450 100 26
-  		text "QUALITY ASSURANCE"
-		style WINDOW_STYLE_FILLED
-		background "ui/assets/button_back.tga"
+  		text ""
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/credit/qa.tga"
 		textalign 1   	
 		textscale .23
 		textalignx 50
@@ -1156,25 +1492,41 @@ itemDef {
 
 
 
+// itemDef {
+	// name GMIcredit
+	// group grpqacredit
+	// rect 170 112 300 20
+	// style 1
+	// textalign 1
+	// textalignx 150
+	// textaligny 10
+	// textstyle 6
+	// textscale .22
+	// textalign ITEM_ALIGN_CENTER
+	// text "QUALITY ASSURANCE"
+	// forecolor 1 1 1 1
+	// decoration 
+	// visible 0
+	// }
+
 
 itemDef {
 	name GMIcredit
 	group grpqacredit
 	rect 170 112 300 20
-	style 1
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/qa.tga"
 	textalign 1
 	textalignx 150
 	textaligny 10
 	textstyle 6
 	textscale .22
 	textalign ITEM_ALIGN_CENTER
-	text "QUALITY ASSURANCE"
+	text ""
 	forecolor 1 1 1 1
 	decoration 
 	visible 0
 	}
-
-
 
 
 
@@ -1199,62 +1551,124 @@ itemDef {
 
 /////////////////////////////
 
+// itemDef {
+	// name win1
+	// group grpqacredit
+ 	// rect 120 137 440 10
+	// style 1
+	// textalign 1
+	// textalignx 260
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// text "QA Project Lead"
+	// textalign ITEM_ALIGN_LEFT
+ 	// style WINDOW_STYLE_FILLED
+	// backcolor 1 1 1 .1         
+   	// forecolor 1 1 1 1
+   	// visible 0 
+	// decoration
+	// }
+
 itemDef {
 	name win1
 	group grpqacredit
  	rect 120 137 440 10
-	style 1
 	textalign 1
 	textalignx 260
 	textaligny 10
 	textstyle 6
 	textscale .2
-	text "QA Project Lead"
+	text ""
 	textalign ITEM_ALIGN_LEFT
- 	style WINDOW_STYLE_FILLED
+ 	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/qapl.tga"
 	backcolor 1 1 1 .1         
    	forecolor 1 1 1 1
    	visible 0 
 	decoration
 	}
+
+// itemDef {
+	// name win1
+	// group grpqacredit
+ 	// rect 120 150 440 10
+	// style 1
+	// textalign 1
+	// textalignx 260
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// text "QA Senior Project Lead"
+	// textalign ITEM_ALIGN_LEFT
+ 	// style WINDOW_STYLE_FILLED
+	// backcolor 1 1 1 .1         
+   	// forecolor 1 1 1 1
+   	// visible 0 
+	// decoration
+	// }
 
 itemDef {
 	name win1
 	group grpqacredit
  	rect 120 150 440 10
-	style 1
 	textalign 1
 	textalignx 260
 	textaligny 10
 	textstyle 6
 	textscale .2
-	text "QA Senior Project Lead"
+	text ""
 	textalign ITEM_ALIGN_LEFT
- 	style WINDOW_STYLE_FILLED
+ 	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/qaspl.tga"
 	backcolor 1 1 1 .1         
    	forecolor 1 1 1 1
    	visible 0 
 	decoration
 	}
 
+
+
+// itemDef {
+	// name win1
+	// group grpqacredit
+	// rect 120 176 440 10
+	// style 1
+	// textalign 1
+	// textalignx 184
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// text "Testers"
+	// textalign ITEM_ALIGN_LEFT
+	// style WINDOW_STYLE_FILLED
+// //      backcolor 1 1 1 .1         
+   	// forecolor 1 1 1 1
+   	// visible 0 
+	// decoration
+	// }
+
 itemDef {
 	name win1
 	group grpqacredit
 	rect 120 176 440 10
-	style 1
 	textalign 1
 	textalignx 184
 	textaligny 10
 	textstyle 6
 	textscale .2
-	text "Testers"
+	text ""
 	textalign ITEM_ALIGN_LEFT
-	style WINDOW_STYLE_FILLED
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/testers.tga"
 //      backcolor 1 1 1 .1         
    	forecolor 1 1 1 1
    	visible 0 
 	decoration
 	}
+
+
+
 
 itemDef {
 	name win1
@@ -1335,38 +1749,77 @@ itemDef {
 
 
 
+// itemDef {
+	// name win1
+	// group grpqacredit
+ 	// rect 120 293 440 10	
+	// style 1
+	// textalign 1
+	// textalignx 260
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// text "Night Crew Lead"
+	// textalign ITEM_ALIGN_LEFT
+ 	// style WINDOW_STYLE_FILLED
+	// backcolor 1 1 1 .1         
+   	// forecolor 1 1 1 1
+   	// visible 0 
+	// decoration
+	// }
+
 itemDef {
 	name win1
 	group grpqacredit
  	rect 120 293 440 10	
-	style 1
 	textalign 1
 	textalignx 260
 	textaligny 10
 	textstyle 6
 	textscale .2
-	text "Night Crew Lead"
+	text ""
 	textalign ITEM_ALIGN_LEFT
- 	style WINDOW_STYLE_FILLED
+ 	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/night.tga"
 	backcolor 1 1 1 .1         
    	forecolor 1 1 1 1
    	visible 0 
 	decoration
 	}
+
+
+// itemDef {
+	// name win1
+	// group grpqacredit
+ 	// rect 120 306 440 10
+	// style 1
+	// textalign 1
+	// textalignx 260
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// text "Code Release Group"
+	// textalign ITEM_ALIGN_LEFT
+ 	// style WINDOW_STYLE_FILLED
+	// backcolor 1 1 1 .1         
+   	// forecolor 1 1 1 1
+   	// visible 0 
+	// decoration
+	// }
 
 itemDef {
 	name win1
 	group grpqacredit
  	rect 120 306 440 10
-	style 1
 	textalign 1
 	textalignx 260
 	textaligny 10
 	textstyle 6
 	textscale .2
-	text "Code Release Group"
+	text ""
 	textalign ITEM_ALIGN_LEFT
- 	style WINDOW_STYLE_FILLED
+ 	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/code.tga"
 	backcolor 1 1 1 .1         
    	forecolor 1 1 1 1
    	visible 0 
@@ -1374,77 +1827,158 @@ itemDef {
 	}
 
 
+// itemDef {
+	// name win1
+	// group grpqacredit
+ 	// rect 120 332 440 10
+	// style 1
+	// textalign 1
+	// textalignx 260
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// text "Network"
+	// textalign ITEM_ALIGN_LEFT
+ 	// style WINDOW_STYLE_FILLED
+	// backcolor 1 1 1 .1         
+   	// forecolor 1 1 1 1
+   	// visible 0 
+	// decoration
+	// }
 
 itemDef {
 	name win1
 	group grpqacredit
  	rect 120 332 440 10
-	style 1
 	textalign 1
 	textalignx 260
 	textaligny 10
 	textstyle 6
 	textscale .2
-	text "Network"
+	text ""
 	textalign ITEM_ALIGN_LEFT
- 	style WINDOW_STYLE_FILLED
+ 	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/network.tga"
 	backcolor 1 1 1 .1         
    	forecolor 1 1 1 1
    	visible 0 
 	decoration
 	}
+
+
+// itemDef {
+	// name win1
+	// group grpqacredit
+ 	// rect 120 345 440 10
+	// style 1
+	// textalign 1
+	// textalignx 260
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// text "Compatibility"
+	// textalign ITEM_ALIGN_LEFT
+ 	// style WINDOW_STYLE_FILLED
+	// backcolor 1 1 1 .1         
+   	// forecolor 1 1 1 1
+   	// visible 0 
+	// decoration
+	// }
 
 itemDef {
 	name win1
 	group grpqacredit
  	rect 120 345 440 10
-	style 1
 	textalign 1
 	textalignx 260
 	textaligny 10
 	textstyle 6
 	textscale .2
-	text "Compatibility"
+	text ""
 	textalign ITEM_ALIGN_LEFT
- 	style WINDOW_STYLE_FILLED
+ 	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/compatibility.tga"
 	backcolor 1 1 1 .1         
    	forecolor 1 1 1 1
    	visible 0 
 	decoration
 	}
+
+
+// itemDef {
+	// name win1
+	// group grpqacredit
+ 	// rect 120 371 440 10
+	// style 1
+	// textalign 1
+	// textalignx 260
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// text "QA Manager, PC Testing"
+	// textalign ITEM_ALIGN_LEFT
+ 	// style WINDOW_STYLE_FILLED
+	// backcolor 1 1 1 .1         
+   	// forecolor 1 1 1 1
+   	// visible 0 
+	// decoration
+	// }
+
 
 itemDef {
 	name win1
 	group grpqacredit
  	rect 120 371 440 10
-	style 1
 	textalign 1
 	textalignx 260
 	textaligny 10
 	textstyle 6
 	textscale .2
-	text "QA Manager, PC Testing"
+	text ""
 	textalign ITEM_ALIGN_LEFT
- 	style WINDOW_STYLE_FILLED
+ 	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/qmpc.tga"
 	backcolor 1 1 1 .1         
    	forecolor 1 1 1 1
    	visible 0 
 	decoration
 	}
 
+
+// itemDef {
+	// name win1
+	// group grpqacredit
+ 	// rect 120 384 440 10
+	// style 1
+	// textalign 1
+	// textalignx 260
+	// textaligny 10
+	// textstyle 6
+	// textscale .2
+	// text "QA Manager, Customer Support"
+	// textalign ITEM_ALIGN_LEFT
+ 	// style WINDOW_STYLE_FILLED
+	// backcolor 1 1 1 .1         
+   	// forecolor 1 1 1 1
+   	// visible 0 
+	// decoration
+	// }
+
+
+
 itemDef {
 	name win1
 	group grpqacredit
  	rect 120 384 440 10
-	style 1
 	textalign 1
 	textalignx 260
 	textaligny 10
 	textstyle 6
 	textscale .2
-	text "QA Manager, Customer Support"
+	text ""
 	textalign ITEM_ALIGN_LEFT
- 	style WINDOW_STYLE_FILLED
+ 	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/qmcs.tga"
 	backcolor 1 1 1 .1         
    	forecolor 1 1 1 1
    	visible 0 
@@ -1517,10 +2051,11 @@ itemDef {
 
 itemDef {
       name back
-      text "BACK"
+      text ""
  	type 1
 	textfont UI_FONT_NORMAL
-	style 0	
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/back.tga"
 	textstyle 6
 	rect 30 450 40 14 
 	textalign 0
@@ -1535,10 +2070,11 @@ itemDef {
 
 itemDef {
      name back_alt
-     text "BACK"
+     text ""
  	type 1
 	textfont UI_FONT_NORMAL
-	style 0	
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/back.tga"
 	textstyle 6
 	rect 30 450 40 14 
 	textalign 0
@@ -1560,37 +2096,75 @@ itemDef {
 
 
 
+// itemDef {
+	// name message_back
+	// group grpmessage
+	// style 0 
+	// rect 320 437 128 30
+	// textstyle 1
+	// textalign 1
+	// textalignx 0
+	// textaligny 25
+	// textscale .18
+	// text "EXIT TO MAIN MENU"
+	// forecolor 1 1 1 1
+	// decoration 
+	// visible 0
+	// }
+
 itemDef {
 	name message_back
 	group grpmessage
-	style 0 
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/exittomain.tga"
 	rect 320 437 128 30
 	textstyle 1
 	textalign 1
 	textalignx 0
 	textaligny 25
 	textscale .18
-	text "EXIT TO MAIN MENU"
+	text ""
 	forecolor 1 1 1 1
 	decoration 
 	visible 0
 	}
 
+
+
+// itemDef {
+	// name message_credits
+	// group grpmessage
+	// style 0 
+	// rect 320 437 128 30
+	// textstyle 1
+	// textalign 1
+	// textalignx 0
+	// textaligny 25
+	// textscale .18
+	// text "ADDITIONAL CREDITS"
+	// forecolor 1 1 1 1
+	// decoration 
+	// visible 0
+	// }
+
 itemDef {
 	name message_credits
 	group grpmessage
-	style 0 
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/credit/additional.tga"
 	rect 320 437 128 30
 	textstyle 1
 	textalign 1
 	textalignx 0
 	textaligny 25
 	textscale .18
-	text "ADDITIONAL CREDITS"
+	text ""
 	forecolor 1 1 1 1
 	decoration 
 	visible 0
 	}
+
+
 
 itemDef {
       	name fadebox

@@ -208,10 +208,26 @@ itemDef {
 */
    
 
+	// itemDef {
+		// name errorinfo
+		// rect 0 50 320 20	
+		// text "Error:"
+		// textalign 1
+		// textstyle 6
+		// textscale .333
+		// textalignx 160
+		// textaligny 23
+		// forecolor 1 1 1 1
+		// visible 1
+		// decoration
+	// }
+
 	itemDef {
 		name errorinfo
 		rect 0 50 320 20	
-		text "Error:"
+		text ""
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/error/error.tga"
 		textalign 1
 		textstyle 6
 		textscale .333
@@ -221,6 +237,7 @@ itemDef {
 		visible 1
 		decoration
 	}
+
 	
 	itemDef {
 		name errorinfo
@@ -250,15 +267,39 @@ itemDef {
 //	BUTTON	//
 
 
+	// itemDef {
+		// name exit
+		// text "Exit"
+		// type 1
+		// textscale .25
+		// group grpControlbutton
+		// type ITEM_TYPE_BUTTON
+		// style WINDOW_STYLE_FILLED
+		// background "ui/assets/button_back.tga"
+		// rect 138 295 45 26
+		// textalign 1
+		// textalignx 22
+		// textaligny 20
+		// forecolor 1 1 1 1
+		// backcolor .37 .1 .1 1
+		// visible 1
+		// action {	play "sound/misc/nomenu.wav";
+					// close error_popmenu;
+					// open main }
+		// mouseEnter { setitemcolor exit backcolor .1 .37 .1 1 } 
+		// mouseExit { setitemcolor exit backcolor .37 .1 .1 1 } 
+	// }
+
+
 	itemDef {
 		name exit
-		text "Exit"
+		text ""
 		type 1
 		textscale .25
 		group grpControlbutton
 		type ITEM_TYPE_BUTTON
-		style WINDOW_STYLE_FILLED
-		background "ui/assets/button_back.tga"
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/error/exit.tga"
 		rect 138 295 45 26
 		textalign 1
 		textalignx 22
@@ -272,6 +313,11 @@ itemDef {
 		mouseEnter { setitemcolor exit backcolor .1 .37 .1 1 } 
 		mouseExit { setitemcolor exit backcolor .37 .1 .1 1 } 
 	}
+
+
+
+
+
 
 	itemDef {
 		name exit

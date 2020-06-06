@@ -1,0 +1,13 @@
+ 
+Originally a 1/4 inch steel bolt was threaded to a self-locking nut. This nut all too frequently wore so badly that the clamp was shot off the gun. We now use a 5/16 inch bolt screwed into a castellated nut, locked in place by a cotter pin. 
+
+Off-center firing pin strikes were also a major problem in the beginning. As the bolt head moves forward into battery, just prior to rotation it looses all alignment guidance, which was provided by machined lobes on the rotor. This allowed the bolt head to wander off-center, resulting in off-center firing pin strikes. We have recently manufactured a new rotor which holds it's tolerances much closer than encountered on the original version.
+
+The feeder/delinker represented the single greatest problem in the original design. Whenever a belt restriction occurred (a rather common event) the belt would slew sideways while entering the delinker and one of the stripper teeth would literally pierce the
+
+
+最初，将1/4英寸的钢螺栓拧到自锁螺母上。螺母经常磨损得太厉害，以至于夹具从枪上射出。现在，我们使用5/16英寸的螺栓拧入带齿的螺母中，并用开口销将其锁定在适当的位置。
+
+偏心的撞针撞击在开始时也是一个主要问题。当螺栓头向前移动到电池中时，就在旋转之前，它松开了所有对准向导，该对准向导是由转子上的机加工凸角提供的。这使螺栓头偏离中心，从而导致撞针撞到中心。我们最近制造了一种新的转子，它的公差比原始版本要小得多。
+
+馈线/解链器是原始设计中最大的问题。每当发生皮带限制（这是很常见的事件）时，皮带会在进入解链器时侧向倾斜，并且其中一个脱模器齿会从字面上刺穿墨盒匣，从而导致严重的停机。

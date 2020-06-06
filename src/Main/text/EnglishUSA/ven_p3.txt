@@ -1,0 +1,22 @@
+
+A flat dwell profile in the cam path holds the bolt locked briefly until the bullet has traveled past the muzzle and the pressure has dropped to a safe level.
+
+Pins in the bolt head interface with the cam surfaces on the firing pin and cause the striker to rotate with the head.
+
+After the extraction and ejection, the bolt has completed a 360-degree cycle and is positioned to pick up another round. All six bolts repeat this identical process in sequence.
+
+Original Design Problems and Construction Notes:
+
+The six barrels are held to the front of the rotor by an integral interrupted flange on one side of each barrel that requires a 180-degree turn for retention All of the barrels are prevented from rotating out of their retained positions by a barrel clamp which mates with four flanges on the front of each barrel. This clamp is held in place by a single bolt.
+
+
+
+凸轮路径上的平坦止动轮廓使螺栓短暂锁定，直到子弹经过枪口并且压力降至安全水平为止。
+
+螺栓头中的销钉与撞针上的凸轮表面相接，并使撞针随头一起旋转。
+
+抽出和弹出后，螺栓完成了360度的旋转，并定位成可以拾取另一轮。 所有六个螺栓依次重复相同的过程。
+
+原始设计问题和施工注意事项：
+
+六个发条盒通过每个发条盒一侧上的一体式中断凸缘固定在转子的前部，该凸缘需要旋转180度以进行固定，所有发条盒都可以通过配合的发条盒夹防止其旋转出其保留位置，每个枪管的前部有四个法兰盘。 该夹具通过单个螺栓固定在适当的位置。
