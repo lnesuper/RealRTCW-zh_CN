@@ -583,6 +583,7 @@
 		style WINDOW_STYLE_SHADER
 		background "text/ChineseCHN/skill/easytip.tga"
 		rect 160 440 512 32
+		forecolor 0 1 0 1
 		visible 0
 		decoration
 	}
@@ -644,7 +645,7 @@
 		textscale .25		
 		textalignx 6
 		textaligny 15
-		forecolor 0.5 1 0 1
+		forecolor .5 1 0 1
 		visible 0
 		decoration
 	}	
@@ -680,6 +681,7 @@
 		style WINDOW_STYLE_SHADER
 		background "text/ChineseCHN/skill/mediumtip.tga"
 		rect 160 440 512 32
+		forecolor .5 1 0 1
 		visible 0
 		decoration
 	}
@@ -777,6 +779,7 @@
 		style WINDOW_STYLE_SHADER
 		background "text/ChineseCHN/skill/hardtip.tga"
 		rect 160 440 512 32
+		forecolor 1 1 0 1
 		visible 0
 		decoration
 	}
@@ -835,7 +838,7 @@
 		textscale .25		
 		textalignx 6
 		textaligny 15
-		forecolor 1 0.5 0 1
+		forecolor 1 .5 0 1
 		visible 0
 		decoration
 	}	
@@ -871,6 +874,7 @@
 		style WINDOW_STYLE_SHADER
 		background "text/ChineseCHN/skill/experttip.tga"
 		rect 160 440 512 32
+		forecolor 1 .5 0 1
 		visible 0
 		decoration
 	}	
@@ -963,6 +967,7 @@
 		style WINDOW_STYLE_SHADER
 		background "text/ChineseCHN/skill/maxtip.tga"
 		rect 160 440 512 32
+		forecolor 1 0 0 1
 		visible 0
 		decoration
 	}	
