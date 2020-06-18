@@ -1,0 +1,35 @@
+
+
+
+
+
+
+
+^1
+Thanks for playing Wotan, hope u enjoyed it.^1
+
+To replay please click the back button and load the savegame >wotan_0<.
+Or simply check out and restart from the Wotan-icon.
+
+Thanks to Kos, Wils, Dolo for all the help, and to nightwulf for the best scriptingtutorial i know.
+
+
+
+
+感谢您玩耍《沃坦》，希望您喜欢它。
+
+要重新开始，请单击“后退”按钮并加载> wotan_0 <的保存游戏。
+或者直接退出并从《沃坦》图标重新启动。
+
+感谢Kos，Wils，Dolo的所有帮助，并感谢nightwulf提供了我所知道的最佳脚本教程。
+
+
+
+
+
+感謝您玩耍《沃坦》，希望您喜歡它。
+
+要重新開始，請單擊“後退”按鈕並加載> wotan_0 <的保存遊戲。
+或者直接退出並從《沃坦》圖標重新啟動。
+
+感謝Kos，Wils，Dolo的所有幫助，並感謝nightwulf提供了我所知道的最佳腳本教程。

@@ -1048,9 +1048,9 @@
 		background "text/ChineseCHN/options/controls.tga"
 		rect 45 165 128 36
 		visible 0
-		action { show controlsmenus ; show controlbuttons ; show look ; hide gomenus ; hide performance ; hide realrtcw ; hide view ; hide systemmenus ; hide graphics ; hide iortcwgraphics ; hide graphicsapply ; hide applysys ; hide sounds ; hide shoot ; hide move ; hide misc ; setitemcolor controlsmenu forecolor .9 .9 .1 .8 ; setitemcolor systemmenu forecolor 1 1 1 1 ; setitemcolor gameoptionsmenu forecolor 1 1 1 1 ; setitemcolor defaultsmenu forecolor 1 1 1 1 ; setitemcolor backmenu forecolor 1 1 1 1 }
+		action { show controlsmenus ; show controlbuttons ; show look ; hide gomenus ; hide performance ; hide realrtcw ; hide view ; hide systemmenus ; hide graphics ; hide iortcwgraphics ; hide graphicsapply ; hide applysys ; hide sounds ; hide shoot ; hide move ; hide misc }
 		mouseEnter { setitemcolor controlsmenu forecolor .9 .9 .1 .8 }
-		// mouseExit { setitemcolor controlsmenu forecolor 1 1 1 1 }
+		mouseExit { setitemcolor controlsmenu forecolor 1 1 1 1 }
 	}
 	
 	
@@ -1095,9 +1095,9 @@
 		background "text/ChineseCHN/options/system.tga"
 		rect 45 201 128 36
 		visible 0 
-		action { show graphics ; show systemmenus ; show graphicsapply ; hide iortcwgraphics ; hide gomenus ; hide performance ; hide realrtcw ; hide view ; hide controlsmenus ; hide controlbuttons ; hide look ; hide shoot ; hide misc ; hide shoot_advanced ; hide move ; hide advancedshootbutton ; hide sounds ; hide applysys ; setitemcolor systemmenu forecolor .0 .9 .0 .8 ; setitemcolor controlsmenu forecolor 1 1 1 1 ; setitemcolor gameoptionsmenu forecolor 1 1 1 1 ; setitemcolor defaultsmenu forecolor 1 1 1 1 ; setitemcolor backmenu forecolor 1 1 1 1 }
+		action { show graphics ; show systemmenus ; show graphicsapply ; hide iortcwgraphics ; hide gomenus ; hide performance ; hide realrtcw ; hide view ; hide controlsmenus ; hide controlbuttons ; hide look ; hide shoot ; hide misc ; hide shoot_advanced ; hide move ; hide advancedshootbutton ; hide sounds ; hide applysys }
 		mouseEnter { setitemcolor systemmenu forecolor .0 .9 .0 .8 }
-		// mouseExit { setitemcolor systemmenu forecolor 1 1 1 1 }
+		mouseExit { setitemcolor systemmenu forecolor 1 1 1 1 }
 	}
 
 	
@@ -1140,9 +1140,9 @@
 		background "text/ChineseCHN/options/gameoptions.tga"
 		rect 45 237 128 36
 		visible 0
-		action { show gomenus ; show performance ; hide graphics ; hide iortcwgraphics ; hide systemmenus ; hide graphicsapply ; hide controlsmenus ; hide controlbuttons ; hide look ; hide shoot ; hide move ; hide misc ; hide shoot_advanced ; hide advancedshootbutton ; hide sounds ; hide view ; hide applysys ; setitemcolor gameoptionsmenu forecolor .0 .5 .9 .8 ; setitemcolor systemmenu forecolor 1 1 1 1 ; setitemcolor controlsmenu forecolor 1 1 1 1 ; setitemcolor defaultsmenu forecolor 1 1 1 1 ; setitemcolor backmenu forecolor 1 1 1 1 }
+		action { show gomenus ; show performance ; hide graphics ; hide iortcwgraphics ; hide systemmenus ; hide graphicsapply ; hide controlsmenus ; hide controlbuttons ; hide look ; hide shoot ; hide move ; hide misc ; hide shoot_advanced ; hide advancedshootbutton ; hide sounds ; hide view ; hide applysys }
 		mouseEnter { setitemcolor gameoptionsmenu forecolor .0 .5 .9 .8 }
-		// mouseExit { setitemcolor gameoptionsmenu forecolor 1 1 1 1 }
+		mouseExit { setitemcolor gameoptionsmenu forecolor 1 1 1 1 }
 	}
 
 	
@@ -1181,9 +1181,9 @@
 		background "text/ChineseCHN/options/default.tga"
 		rect 45 273 128 36
 		visible 0
-		action { setitemcolor defaultsmenu forecolor .9 .0 .0 .8 ; setitemcolor gameoptionsmenu forecolor 1 1 1 1 ; setitemcolor systemmenu forecolor 1 1 1 1 ; setitemcolor controlsmenu forecolor 1 1 1 1 ; setitemcolor backmenu forecolor 1 1 1 1 ; uiScript resetDefaults }
+		action { uiScript resetDefaults }
 		mouseEnter { setitemcolor defaultsmenu forecolor .9 .0 .0 .8 }
-		// mouseExit { setitemcolor defaultsmenu forecolor 1 1 1 1 }
+		mouseExit { setitemcolor defaultsmenu forecolor 1 1 1 1 }
 	}
 
 	
@@ -1224,9 +1224,9 @@
 		background "text/ChineseCHN/options/back.tga"
 		rect 45 309 128 36
 		visible 0
-		action { hide optionsmenugroup ; show mainmenus ;  hide gomenus ; hide performance ; hide realrtcw ; hide view ; hide systemmenus ; hide graphics ; hide iortcwgraphics ; hide graphicsapply ; hide controlsmenus ; hide controlbuttons ; hide look ; hide shoot ; hide move ; hide shoot_advanced ; hide advancedshootbutton ; hide misc ; hide sounds ; hide applysys ; setitemcolor backmenu forecolor .9 .9 .9 .9 ; setitemcolor defaultsmenu forecolor 1 1 1 1 ; setitemcolor gameoptionsmenu forecolor 1 1 1 1 ; setitemcolor systemmenu forecolor 1 1 1 1 ; setitemcolor controlsmenu forecolor 1 1 1 1 }
+		action { hide optionsmenugroup ; show mainmenus ;  hide gomenus ; hide performance ; hide realrtcw ; hide view ; hide systemmenus ; hide graphics ; hide iortcwgraphics ; hide graphicsapply ; hide controlsmenus ; hide controlbuttons ; hide look ; hide shoot ; hide move ; hide shoot_advanced ; hide advancedshootbutton ; hide misc ; hide sounds ; hide applysys }
 		mouseEnter { setitemcolor backmenu forecolor .9 .9 .9 .9 }
-		// mouseExit { setitemcolor backmenu forecolor 1 1 1 1 }
+		mouseExit { setitemcolor backmenu forecolor 1 1 1 1 }
 	}
 
 

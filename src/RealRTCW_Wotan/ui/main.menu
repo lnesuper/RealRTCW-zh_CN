@@ -1,0 +1,8170 @@
+#include "ui/menudef.h"
+
+{
+	assetGlobalDef {
+		font "fonts/normal" 16			
+		smallFont "fonts/smallFont" 12			
+		bigFont "fonts/bigFont" 24			
+		cursor "ui/assets/3_cursor3"			
+		gradientBar "ui/assets/gradientbar2.tga"	
+		itemFocusSound "sound/misc/menu2.wav"
+		fadeClamp 1.0				
+		fadeCycle 1				
+		fadeAmount 0.1				
+		shadowColor 0.1 0.1 0.1 0.25			
+		}
+				
+		
+	// menuDef {
+	// name "main"
+	// fullScreen MENU_TRUE				
+	// rect -120 0 900 480			// Size and position of the menu
+	// visible MENU_TRUE				// Visible on open
+	// focusColor .9 .85 1 .8			// Menu focus color for text and items
+	// onEsc { hide newgamemenugroup ; hide gomenus ; hide performance ; hide realrtcw; hide view ; hide modmenus ; hide load_menu ; hide optionsmenugroup ; hide tips ; hide graphics ; hide iortcwgraphics ; hide graphicsapply ; hide sounds ; hide credits ; hide applysys ; hide controlsmenus ; hide look ; hide move ; hide shoot ; hide shoot_advanced ; hide misc ; hide advancedshootbutton ; hide controlbuttons ; hide systemmenus ; show mainmenus   }
+
+	menuDef {
+	name "main"
+	fullScreen MENU_TRUE				
+	rect -120 0 900 480			// Size and position of the menu
+	visible MENU_TRUE				// Visible on open
+	focusColor .9 .85 1 .8			// Menu focus color for text and items
+	onEsc { hide newgamemenugroup ; hide selectskill ; hide gomenus ; hide options ; hide modmenus ; hide load_menu ; hide optionsmenugroup ; hide tips ; hide system ; hide credits ; hide controlsmenus ; hide controls ; hide controlbuttons ; hide systemmenus ; show mainmenus   }
+
+
+	
+	onOpen { 
+		setitemcolor fadebox backcolor 0 0 0 1 ;
+	 	playlooped "sound/music/l_theme.wav" ;    
+		uiScript stopRefresh ;
+	}
+		itemDef {
+		name backimage2					// newbackimage
+		style WINDOW_STYLE_SHADER
+		rect -120 0 900 480
+		background "ui/assets/newback.tga"
+		visible 1
+		decoration
+	}
+	
+	
+//2 BLACK BARS
+	
+		itemDef 
+	{
+		name main_top_bar
+		style WINDOW_STYLE_FILLED
+		rect -150 -10 900 60 // was -150 -10 900 93
+		backcolor 0 0 0 0.80
+		visible 1
+		decoration
+	}
+	itemDef 
+	{
+		name main_bottom_bar
+		style WINDOW_STYLE_FILLED
+		rect -150 435 900 60 // was -150 416 900 90
+		backcolor 0 0 0 0.80
+		visible 1
+		decoration
+	}
+	
+	//3 WHITE LINES
+	
+		itemDef 
+	{
+		style			WINDOW_STYLE_FILLED
+		rect			-128 50 896 1 // was -128 64 896 1
+		backcolor		1 1 1 0.5
+		visible			1
+		decoration
+	}
+	itemDef 
+	{
+		style			WINDOW_STYLE_FILLED
+		rect			-128 435 896 1 // was -128 416 896 1
+		backcolor		1 1 1 0.5
+		visible			1
+		decoration
+	}
+	
+	
+
+		
+		/////////MAINMENU////////
+		
+	// itemDef {
+	    // name newgamemenu
+	    // group mainmenus
+	    // text "NEW GAME"
+	    // type 1
+	    // style 0
+        // backcolor .3 0.5 0.2 .90	
+	    // textstyle 6
+	    // rect 45 170 197 30 // 30 150 72 14
+	    // textalign 0
+	    // textfont	UI_FONT_BIG
+	    // textscale .38		
+	    // textalignx 2
+	    // textaligny 12
+	    // forecolor .9 .9 .9 .9
+	    // visible 1 
+	    // action { show newgamemenugroup ; hide modmenus ; hide load_menu ; hide optionsmenugroup ; hide credits }	
+	// }
+	
+	itemDef {	/// newgame
+		name newgamemenu
+		group mainmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/newgame.tga"
+		rect 45 165 128 36
+		visible 1
+		action { show newgamemenugroup ; hide modmenus ; hide load_menu ; hide optionsmenugroup ; hide credits }
+		mouseEnter { show newgamemenub } 
+		mouseExit { hide newgamemenub } 
+	}
+	
+	itemDef {	/// newgame
+		name newgamemenub
+		group mainmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/newgameb.tga"
+		rect 45 165 128 36
+		visible 0
+		action { show newgamemenugroup ; hide modmenus ; hide load_menu ; hide optionsmenugroup ; hide credits }	
+	}
+	
+	
+	// itemDef {
+		// name loadgamemenu
+		// text "LOAD GAME"
+		// group mainmenus
+		// type 1
+		// style 0	
+		// textstyle 6
+		// rect 47 200 197 30 // 30 200 72 14 
+		// textalign 0
+		// textscale .38		
+		// textalignx 0
+		// textaligny 14
+		// forecolor .9 .9 .9 .9
+		// visible 1 
+		// textfont UI_FONT_BIG
+		// action { open load_menu ; hide modmenus ; hide newgamemenugroup ; hide optionsmenugroup ; hide credits }
+    // }
+	
+	itemDef {	/// loadgame
+		name loadgamemenu
+		group mainmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/loadgame.tga"
+		rect 45 201 128 36
+		visible 1
+		action { open load_menu ; hide modmenus ; hide newgamemenugroup ; hide optionsmenugroup ; hide credits }
+		mouseEnter { show loadgamemenub } 
+		mouseExit { hide loadgamemenub } 
+	}
+	
+	itemDef {	/// loadgame
+		name loadgamemenub
+		group mainmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/loadgameb.tga"
+		rect 45 201 128 36
+		visible 0
+		action { open load_menu ; hide modmenus ; hide newgamemenugroup ; hide optionsmenugroup ; hide credits }
+	}
+
+	
+		
+	// itemDef {
+		// name optionsmenu
+		// text "OPTIONS"
+		// group mainmenus
+		// type 1
+		// style 0	
+		// textstyle 6
+		// rect 45 230 197 30 // 30 250 72 14 
+		// textalign 0
+		// textscale .38
+		// textalignx 2
+		// textaligny 14
+		// forecolor .9 .9 .9 1
+		// visible 1
+		// textfont UI_FONT_BIG
+		// action { hide mainmenus ; show optionsmenugroup ; hide modmenus ; hide newgamemenugroup ; hide load_menu ; hide credits } 
+    // }
+
+
+
+	itemDef {	/// options
+		name optionsmenu
+		group mainmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/options.tga"
+		rect 45 237 128 36
+		visible 1
+		action { hide mainmenus ; show optionsmenugroup ; hide modmenus ; hide newgamemenugroup ; hide load_menu ; hide credits } 
+		mouseEnter { show optionsmenub } 
+		mouseExit { hide optionsmenub } 
+	}
+	
+	itemDef {	/// options
+		name optionsmenub
+		group mainmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/optionsb.tga"
+		rect 45 237 128 36
+		visible 0
+		action { hide mainmenus ; show optionsmenugroup ; hide modmenus ; hide newgamemenugroup ; hide load_menu ; hide credits } 
+
+	}
+
+
+
+
+	// itemDef {
+        // name modmenu
+        // text "ADDONS"
+		// group mainmenus
+ 	    // type 1
+	    // style 0
+        // border 0
+        // bordercolor .1 .1 .1 .3
+        // backcolor .3 0.5 0.2 .25	
+	    // textstyle 6
+	    // rect 45 260 197 30 // 30 300 72 14
+	    // textalign 0
+	    // textfont	UI_FONT_BIG
+	    // textscale .38	
+	    // textalignx 2
+	    // textaligny 12
+	    // forecolor .9 .9 .9 .9
+	    // visible 1
+	    // action { uiScript loadMods ; hide newgamemenugroup ; hide optionsmenugroup ; hide load_menu ; show modmenus ; hide credits }	
+	// }
+	
+	
+	itemDef {	/// addons
+		name modmenu
+		group mainmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/addons.tga"
+		rect 45 273 128 36
+		visible 1
+		action { uiScript loadMods ; hide newgamemenugroup ; hide optionsmenugroup ; hide load_menu ; show modmenus ; hide credits }	
+		mouseEnter { show addonsmenub } 
+		mouseExit { hide addonsmenub } 
+	}
+	
+	itemDef {	/// loadgame
+		name addonsmenub
+		group mainmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/addonsb.tga"
+		rect 45 273 128 36
+		visible 0
+		action { uiScript loadMods ; hide newgamemenugroup ; hide optionsmenugroup ; hide load_menu ; show modmenus ; hide credits }	
+
+	}
+	
+	
+	
+/*	
+	
+		// itemDef {
+        // name modmenu
+        // text "TRAINING"
+		// group mainmenus
+ 	    // type 1
+	    // style 0
+        // border 0
+        // bordercolor .1 .1 .1 .3
+        // backcolor .3 0.5 0.2 .25	
+	    // textstyle 6
+	    // rect 45 290 197 30 // 30 300 72 14
+	    // textalign 0
+	    // textfont	UI_FONT_BIG
+	    // textscale .38	
+	    // textalignx 2
+	    // textaligny 12
+	    // forecolor .9 .9 .9 .9
+	    // visible 1
+	    // action { setCvar g_gameskill "0"; exec "spdevmap trainingday"  }	
+		// }
+	
+	
+	itemDef {	/// training
+		name modmenu
+		group mainmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/training.tga"
+		rect 45 309 128 36
+		visible 1
+		action { setCvar g_gameskill "0"; exec "spdevmap trainingday"  }	
+		mouseEnter { show modmenub } 
+		mouseExit { hide modmenub } 
+	}
+	
+	itemDef {	/// training
+		name modmenub
+		group mainmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/trainingb.tga"
+		rect 45 309 128 36
+		visible 0
+		action { setCvar g_gameskill "0"; exec "spdevmap trainingday"  }	
+
+	}
+	
+		
+*/	
+	
+	
+		// itemDef {
+        // name creditsmenu
+        // text "CREDITS"
+		// group mainmenus
+ 	    // type 1
+	    // style 0
+        // border 0
+        // bordercolor .1 .1 .1 .3
+        // backcolor .3 0.5 0.2 .25	
+	    // textstyle 6
+	    // rect 45 320 197 30 // 30 350 72 14
+	    // textalign 0
+	    // textfont	UI_FONT_BIG
+	    // textscale .38	
+	    // textalignx 2
+	    // textaligny 12
+	    // forecolor .9 .9 .9 .9
+	    // visible 1
+	    // action { hide newgamemenugroup ; hide optionsmenugroup ; hide load_menu ; hide modmenus ; show credits1 }	
+	// }
+	
+	
+	itemDef {	// credits
+		name creditsmenu
+		group mainmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/credits.tga"
+		// rect 45 344 128 36
+		rect 45 309 128 36
+		visible 1
+		action { hide newgamemenugroup ; hide optionsmenugroup ; hide load_menu ; hide modmenus ; show credits1 }	
+		mouseEnter { show creditsb } 
+		mouseExit { hide creditsb } 
+	}
+	
+	itemDef {	/// credits
+		name creditsb
+		group mainmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/creditsb.tga"
+		// rect 45 344 128 36
+		rect 45 309 128 36
+		visible 0
+		action { hide newgamemenugroup ; hide optionsmenugroup ; hide load_menu ; hide modmenus ; show credits1 }	
+
+	}	
+	
+	
+	
+	// itemDef {
+		// name quit
+		// text "QUIT"
+		// group mainmenus
+		// type 1
+		// style 0	
+		// textstyle 6
+		// rect 47 350 197 30 // 30 390 72 14 
+		// textalign 0
+		// textscale .38	
+		// textalignx 0
+		// textaligny 14
+		// textfont UI_FONT_BIG
+		// forecolor .9 .9 .9 .9
+		// visible 1 
+		// action { uiScript "quit" }
+    // }
+	
+	
+	
+	
+	itemDef {	/// quit
+		name quit
+		group mainmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		text ""
+		background "text/ChineseCHN/quit.tga"
+		rect 45 344 128 36
+		visible 1
+		action { uiScript "quit" }
+		mouseEnter { show quitb } 
+		mouseExit { hide quitb } 
+	}
+	
+	itemDef {	/// credits
+		name quitb
+		group mainmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/quitb.tga"
+		rect 45 344 128 36
+		visible 0
+		action { uiScript "quit" }
+
+	}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	///////NEWGAMEMENU////////
+	
+	   itemDef 
+	{
+		name newgamemenu1
+		group newgamemenugroup
+		rect 270 150 300 220	
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .5 .5 .5 .5
+		forecolor 1 1 1 1
+		backcolor 0 0 0 .8
+		visible 0
+		decoration
+	}
+	
+	// itemDef {
+	    // name  selectskill
+	    // group newgamemenugroup
+	    // text "SELECT A SKILL LEVEL"
+	    // textscale .40
+	    // style 0	
+	    // type 1
+	    // textfont UI_FONT_BIG
+	    // textstyle 6
+	    // rect 400 0 200 20 
+	    // textalign 1	 
+	    // textalignx 10  	
+        // textaligny 32        
+	    // backcolor 0 0 0 0
+	    // forecolor 1 1 1 1
+	    // visible 0 
+	    // decoration
+	// }
+	
+	itemDef {	
+		name selectskill
+		group newgamemenugroup
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/skill.tga"
+		rect 400 10 256 36
+		visible 0
+		decoration
+	}
+	
+	
+	
+	
+	
+	
+	// Can I play, Daddy?
+	
+	
+	// itemDef {
+	    // name easy
+	    // group newgamemenugroup
+	    // text "Can I play, Daddy?"
+	    // textscale .30
+	    // style 0	
+	    // type 1
+	    // textstyle 6
+	    // rect 300 160 240 20 
+		// textfont UI_FONT_BIG
+	    // textalign 0	 
+	    // textalignx 60  	
+	    // textaligny 16   
+		// mouseEnter { show easytip }
+		// mouseExit { hide easytip }
+        // //style WINDOW_STYLE_FILLED     
+	    // forecolor 1 1 1 .9
+	    // backcolor 0 0 0 .8
+	    // visible 0 
+	    // action { setCvar g_gameskill "0" ; exec "spmap wotan" }
+	// }
+	
+	
+	
+	
+	itemDef {	
+		name easy
+		group newgamemenugroup
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/skill/easy.tga"
+		forecolor 1 1 1 1
+		rect 350 160 256 45
+		visible 0
+		mouseEnter { show easytip ; show selecteasy ; setitemcolor easy forecolor 0 1 0 1 }
+		mouseExit { hide easytip ; hide selecteasy ; setitemcolor easy forecolor 1 1 1 1 }
+		visible 0
+		action { setCvar g_gameskill "0" ; exec "spmap wotan" }
+		// decoration
+	}
+		
+	itemDef {
+		name selecteasy
+		group selectskill
+		text "[*]"
+		type 1
+		textfont UI_FONT_BIG
+		style 0	
+		textstyle 6
+		rect 320 160 256 45
+		textalign 0
+		textscale .25		
+		textalignx 6
+		textaligny 15
+		forecolor 0 1 0 1
+		visible 0
+		decoration
+	}	
+	
+	
+	
+	
+	
+	
+	
+		// itemDef {
+	    // name easytip
+		// group tips
+	    // text "Full health, increased ammo capacity, increased pickups values, low AI accuracy, low AI health"
+	    // textscale .25
+	    // style 0	
+	    // type 1
+	    // textstyle 1
+	    // rect 100 440 240 20 
+		// textfont UI_FONT_BIG
+	    // textalign 0	 
+	    // textalignx 60  	
+	    // textaligny 16    
+	    // forecolor 1 1 1 .9
+	    // backcolor 0 0 0 .8
+	    // visible 0 
+		// decoration
+	// }
+	
+
+	itemDef {	
+		name easytip
+		group tips
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/skill/easytip.tga"
+		rect 160 440 512 32
+		forecolor 0 1 0 1
+		visible 0
+		decoration
+	}
+
+
+
+// Don't hurt me.
+	
+    // itemDef {
+	    // name medium
+	    // group newgamemenugroup
+	    // text "Don't hurt me."
+	    // textscale .30
+	    // style 0	
+	    // type 1
+	    // textstyle 6
+	    // rect 300 200 240 20 
+	    // textalign 0	 
+	    // textalignx 60  	
+		// textfont UI_FONT_BIG
+	    // textaligny 16        
+	    // //style WINDOW_STYLE_FILLED
+	    // backcolor 0 0 0 .8
+		// mouseEnter { show mediumtip }
+		// mouseExit { hide mediumtip }
+	    // forecolor 1 1 1 .9
+	    // visible 0 
+	    // action { setCvar g_gameskill "1" ; exec "spmap wotan" }
+	// }
+	
+	
+	
+	itemDef {	
+		name medium
+		group newgamemenugroup
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/skill/medium.tga"
+		forecolor 1 1 1 1
+		rect 350 205 256 45
+		visible 0
+		mouseEnter { show mediumtip ; show selectmedium ; setitemcolor medium forecolor 0.5 1 0 1 }
+		mouseExit { hide mediumtip ; hide selectmedium ; setitemcolor medium forecolor 1 1 1 1 }
+		visible 0
+		action { setCvar g_gameskill "1"; exec "spmap wotan" }
+		// decoration
+	}
+		
+	itemDef {
+		name selectmedium
+		group selectskill
+		text "[*]"
+		type 1
+		textfont UI_FONT_BIG
+		style 0	
+		textstyle 6
+		rect 320 205 256 45
+		textalign 0
+		textscale .25		
+		textalignx 6
+		textaligny 15
+		forecolor .5 1 0 1
+		visible 0
+		decoration
+	}	
+		
+
+	
+	
+	
+		// itemDef {
+	    // name mediumtip
+		// group tips
+	    // text "Full health, standard ammo capacity, standard pickups values, medium AI accuracy, medium AI health"
+	    // textscale .25
+	    // style 0	
+	    // type 1
+	    // textstyle 1
+	    // rect 100 440 240 20 
+		// textfont UI_FONT_BIG
+	    // textalign 0	 
+	    // textalignx 60  	
+	    // textaligny 16    
+	    // forecolor 1 1 1 .9
+	    // backcolor 0 0 0 .8
+	    // visible 0 
+		// decoration
+	// }
+
+
+	itemDef {	
+		name mediumtip
+		group tips
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/skill/mediumtip.tga"
+		rect 160 440 512 32
+		forecolor .5 1 0 1
+		visible 0
+		decoration
+	}
+
+
+
+
+// Bring'em on!
+
+
+    // itemDef {
+	    // name hard
+	    // group newgamemenugroup
+	    // text "Bring'em on!"
+	    // textscale .30
+	    // style 0	
+	    // type 1
+	    // textstyle 6
+	    // rect 300 240 240 20 
+		// textfont UI_FONT_BIG
+	    // textalign 0	 
+	    // textalignx 60 	
+	    // textaligny 16        
+	    // //style WINDOW_STYLE_FILLED
+	    // backcolor 0 0 0 .8
+		// mouseEnter { show hardtip }
+		// mouseExit { hide hardtip }
+	    // forecolor 1 1 1 .9
+	    // visible 0 
+	    // action { setCvar g_gameskill "2" ; exec "spmap wotan" }
+	// }
+	
+
+	itemDef {	
+		name hard
+		group newgamemenugroup
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/skill/hard.tga"
+		forecolor 1 1 1 1
+		rect 350 250 256 45
+		visible 0
+		mouseEnter { show hardtip ; show selecthard ; setitemcolor hard forecolor 1 1 0 1 }
+		mouseExit { hide hardtip ; hide selecthard ; setitemcolor hard forecolor 1 1 1 1 }
+		visible 0
+		action { setCvar g_gameskill "2"; exec "spmap wotan" }
+		// decoration
+	}
+	
+	itemDef {
+		name selecthard
+		group selectskill
+		text "[*]"
+		type 1
+		textfont UI_FONT_BIG
+		style 0	
+		textstyle 6
+		rect 320 250 256 45
+		textalign 0
+		textscale .25		
+		textalignx 6
+		textaligny 15
+		forecolor 1 1 0 1
+		visible 0
+		decoration
+	}	
+	
+
+
+
+		// itemDef {
+	    // name hardtip
+		// group tips
+	    // text "Full health, lowered ammo capacity, low pickups values, increased AI accuracy, medium AI health"
+	    // textscale .25
+	    // style 0	
+	    // type 1
+	    // textstyle 1
+	    // rect 100 440 240 20 
+		// textfont UI_FONT_BIG
+	    // textalign 0	 
+	    // textalignx 60  	
+	    // textaligny 16    
+	    // forecolor 1 1 1 .9
+	    // backcolor 0 0 0 .8
+	    // visible 0 
+		// decoration
+	// }
+
+
+	itemDef {	
+		name hardtip
+		group tips
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/skill/hardtip.tga"
+		rect 160 440 512 32
+		forecolor 1 1 0 1
+		visible 0
+		decoration
+	}
+
+// I am Death incarnate!
+
+    // itemDef {
+	    // name expert
+	    // group newgamemenugroup
+	    // text "I am Death incarnate!"
+	    // textscale .30
+	    // style 0	
+	    // type 1
+	    // textstyle 6
+	    // rect 300 280 240 20 
+	    // textalign 0	 
+		// textfont UI_FONT_BIG
+	    // textalignx 60  	
+	    // textaligny 16        
+	    // // style WINDOW_STYLE_FILLED
+	    // backcolor 0 0 0 .8
+		// mouseEnter { show maxtip }
+		// mouseExit { hide maxtip }
+	    // forecolor 1 1 1 .9
+	    // visible 0 
+	    // action { setCvar g_gameskill "3"; exec "spmap wotan" }
+	// }
+	
+
+	itemDef {	
+		name expert
+		group newgamemenugroup
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/skill/expert.tga"
+		forecolor 1 1 1 1
+		rect 350 295 256 45
+		visible 0
+		mouseEnter { show maxtip ; show selectexpert ; setitemcolor expert forecolor 1 0.5 0 1 }
+		mouseExit { hide maxtip ; hide selectexpert ; setitemcolor expert forecolor 1 1 1 1 }
+		visible 0
+		action { setCvar g_gameskill "3"; exec "spmap wotan" }
+		// decoration
+	}
+	
+	itemDef {
+		name selectexpert
+		group selectskill
+		text "[*]"
+		type 1
+		textfont UI_FONT_BIG
+		style 0	
+		textstyle 6
+		rect 320 295 256 45
+		textalign 0
+		textscale .25		
+		textalignx 6
+		textaligny 15
+		forecolor 1 .5 0 1
+		visible 0
+		decoration
+	}	
+	
+	
+
+
+	
+	    // itemDef {
+	    // name maxtip
+		// group tips
+	    // text "1/2 health, low ammo capacity, low pickups values, insane AI accuracy, increased AI health"
+	    // textscale .25
+	    // style 0	
+	    // type 1
+	    // textstyle 1
+	    // rect 100 440 240 20 
+		// textfont UI_FONT_BIG
+	    // textalign 0	 
+	    // textalignx 60  	
+	    // textaligny 16    
+	    // forecolor 1 1 1 .9
+	    // backcolor 0 0 0 .8
+	    // visible 0 
+		// decoration
+	// }
+	
+	
+	itemDef {	
+		name maxtip
+		group tips
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/skill/experttip.tga"
+		rect 160 440 512 32
+		forecolor 1 .5 0 1
+		visible 0
+		decoration
+	}	
+	
+// Realism	
+	    // itemDef {
+	    // name realismmode1
+	    // group newgamemenugroup
+	    // text "Realism"
+	    // textscale .30
+	    // style 0	
+	    // type 1 
+	    // textstyle 6
+	    // rect 300 320 240 20 
+	    // textalign 0	 
+		// textfont UI_FONT_BIG
+	    // textalignx 60  	
+	    // textaligny 16        
+	    // // style WINDOW_STYLE_FILLED
+	    // backcolor 0 0 0 .8
+		// mouseEnter { show realismtip }
+		// mouseExit { hide realismtip }
+	    // forecolor 1 1 1 .9
+	    // visible 0 
+	    // action { setCvar g_gameskill "4"; exec "spmap wotan" }
+	// }
+	
+
+
+	itemDef {	
+		name realismmode1
+		group newgamemenugroup
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/skill/max.tga"
+		forecolor 1 1 1 1
+		rect 350 340 256 45
+		visible 0
+		mouseEnter { show realismtip ; show selectrealism ; setitemcolor realismmode1 forecolor 1 0 0 1 }
+		mouseExit { hide realismtip ; hide selectrealism ; setitemcolor realismmode1 forecolor 1 1 1 1 }
+		visible 0
+		action { setCvar g_gameskill "4"; exec "spmap wotan" }
+		// decoration
+	}
+	
+	itemDef {
+		name selectrealism
+		group selectskill
+		text "[*]"
+		type 1
+		textfont UI_FONT_BIG
+		style 0	
+		textstyle 6
+		rect 320 340 256 45
+		textalign 0
+		textscale .25		
+		textalignx 6
+		textaligny 15
+		forecolor 1 0 0 1
+		visible 0
+		decoration
+	}	
+	
+
+
+		// itemDef {
+	    // name realismtip
+		// group tips
+	    // text "Death Incarnate but with no manual saves. Certain enemies will have increased speed. Player is slower."
+	    // textscale .25
+	    // style 0	
+	    // type 1
+	    // textstyle 1
+	    // rect 100 440 240 20 
+		// textfont UI_FONT_BIG
+	    // textalign 0	 
+	    // textalignx 60  	
+	    // textaligny 16    
+	    // forecolor 1 1 1 .9
+	    // backcolor 0 0 0 .8
+	    // visible 0 
+		// decoration
+	// }
+
+
+	itemDef {	
+		name realismtip
+		group tips
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/skill/maxtip.tga"
+		rect 160 440 512 32
+		forecolor 1 0 0 1
+		visible 0
+		decoration
+	}	
+
+
+
+
+
+
+	
+	////////OPTIONSMENU////////
+	
+		// itemDef {
+		// name optionsmenu2
+		// text "OPTIONS"
+		// group optionsmenugroup
+ 		// type 1
+		// style 0	
+		// textstyle 6
+		// rect 400 0 200 20  
+		// textfont UI_FONT_BIG
+		// textscale .40		
+	    // textalign 1	 
+	    // textalignx 10  	
+        // textaligny 32
+		// forecolor .9 .9 .9 1
+		// visible 0 
+		// decoration
+	// }
+
+	itemDef {	/// modmenu2
+		name optionsmenu2
+		group optionsmenugroup
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/options.tga"
+		rect 400 10 128 36
+		visible 0
+		decoration
+	}
+
+
+	
+	// itemDef {
+	    // name controlsmenu
+	    // text "CONTROLS"
+		// group optionsmenugroup
+ 	    // type 1
+	    // textfont UI_FONT_BIG
+	    // style 0	
+	    // textstyle 6
+	    // rect 45 170 197 30 // 30 150 72 14
+	    // textalign 0
+	    // textscale .38		
+	    // textalignx 2
+	    // textaligny 12
+	    // forecolor .9 .9 .9 .9
+	    // visible 0 
+	    // action { show controlsmenus ; show controlbuttons ; show look ; hide gomenus ; hide performance ; hide realrtcw ; hide view ; hide systemmenus ; hide graphics ; hide iortcwgraphics ; hide graphicsapply ; hide applysys ; hide sounds ; hide shoot ; hide move ; hide misc  }
+	// }
+
+
+
+	itemDef {	// CONTROLS
+		name controlsmenu
+		group optionsmenugroup
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		text "[+]"
+	    textfont UI_FONT_BIG
+	    textstyle 6
+	    textalign 0
+	    textscale .30
+	    textalignx -25
+	    textaligny 20
+	    // forecolor .9 .9 .1 .8
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/controls.tga"
+		rect 45 165 128 36
+		visible 0
+		action { show controlsmenus ; show controlbuttons ; show look ; hide gomenus ; hide performance ; hide realrtcw ; hide view ; hide systemmenus ; hide graphics ; hide iortcwgraphics ; hide graphicsapply ; hide applysys ; hide sounds ; hide shoot ; hide move ; hide misc }
+		mouseEnter { setitemcolor controlsmenu forecolor .9 .9 .1 .8 }
+		mouseExit { setitemcolor controlsmenu forecolor 1 1 1 1 }
+	}
+	
+	
+	
+
+
+
+
+	// itemDef {
+        // name systemmenu
+        // text "SYSTEM"
+		// group optionsmenugroup
+ 	    // type 1
+	    // textfont UI_FONT_BIG
+	    // style 0	
+	    // textstyle 6
+	    // rect 42 200 197 30 // 30 200 72 14
+	    // textalign 0
+	    // textscale .38	
+	    // textalignx 4
+	    // textaligny 12
+	    // forecolor .9 .9 .9 .9
+	    // visible 0 
+	    // action { show graphics ; show systemmenus ; show graphicsapply ; hide gomenus ; hide performance ; hide realrtcw ; hide view ; hide controlsmenus ; hide controlbuttons ; hide look ; hide shoot ; hide misc ; hide shoot_advanced ; hide move ; hide advancedshootbutton ; hide sounds ; hide applysys }
+	// }
+
+	
+	itemDef {	// SYSTEM
+		name systemmenu
+		group optionsmenugroup
+		text "[+]"
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+	    textfont UI_FONT_BIG
+	    textstyle 6
+	    textalign 0
+	    textscale .30
+	    textalignx -25
+	    textaligny 20
+	    // forecolor .0 .9 .0 .8
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system.tga"
+		rect 45 201 128 36
+		visible 0 
+		action { show graphics ; show systemmenus ; show graphicsapply ; hide iortcwgraphics ; hide gomenus ; hide performance ; hide realrtcw ; hide view ; hide controlsmenus ; hide controlbuttons ; hide look ; hide shoot ; hide misc ; hide shoot_advanced ; hide move ; hide advancedshootbutton ; hide sounds ; hide applysys }
+		mouseEnter { setitemcolor systemmenu forecolor .0 .9 .0 .8 }
+		mouseExit { setitemcolor systemmenu forecolor 1 1 1 1 }
+	}
+
+	
+	
+	
+	
+	// itemDef {
+        // name gameoptionsmenu
+        // text "GAME OPTIONS"
+		// group optionsmenugroup
+ 	    // type 1
+	    // textfont UI_FONT_BIG
+	    // style 0	
+	    // textstyle 6
+	    // rect 45 230 197 30 // 30 250 72 14 
+	    // textalign 0
+	    // textscale .38		
+	    // textalignx 2
+	    // textaligny 12
+	    // forecolor .9 .9 .9 .9
+	    // visible 0 
+	    // action { show gomenus ; show performance ; hide graphics ; hide iortcwgraphics ; hide systemmenus ; hide graphicsapply ; hide controlsmenus ; hide controlbuttons ; hide look ; hide shoot ; hide move ; hide misc ; hide shoot_advanced ; hide advancedshootbutton ; hide sounds ; hide view ; hide applysys }	
+	// }
+
+
+	itemDef {	// GAME OPTIONS
+		name gameoptionsmenu
+		group optionsmenugroup
+		text "[+]"
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+	    textfont UI_FONT_BIG
+	    textstyle 6
+	    textalign 0
+	    textscale .30
+	    textalignx -25
+	    textaligny 20
+	    // forecolor .0 .5 .9 .8
+	    forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions.tga"
+		rect 45 237 128 36
+		visible 0
+		action { show gomenus ; show performance ; hide graphics ; hide iortcwgraphics ; hide systemmenus ; hide graphicsapply ; hide controlsmenus ; hide controlbuttons ; hide look ; hide shoot ; hide move ; hide misc ; hide shoot_advanced ; hide advancedshootbutton ; hide sounds ; hide view ; hide applysys }
+		mouseEnter { setitemcolor gameoptionsmenu forecolor .0 .5 .9 .8 }
+		mouseExit { setitemcolor gameoptionsmenu forecolor 1 1 1 1 }
+	}
+
+	
+	// itemDef {
+      	// name defaultsmenu
+      	// text "DEFAULTS"
+		// group optionsmenugroup
+ 	    // type 1
+	    // textfont UI_FONT_BIG
+	    // style 0	
+	    // textstyle 6
+	    // rect 45 260 197 30 // 30 300 72 14
+	    // textalign 0
+	    // textscale .38	
+	    // textalignx 2
+	    // textaligny 12
+	    // forecolor .9 .9 .9 .9
+	    // visible 0 
+	    // action { uiScript resetDefaults  }
+	// }
+
+	itemDef {	// DEFAULTS
+		name defaultsmenu
+		group optionsmenugroup
+		text "[*]"
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+	    textfont UI_FONT_BIG
+	    textstyle 6
+	    textalign 0
+	    textscale .30
+	    textalignx -25
+	    textaligny 20
+	    // forecolor .9 .0 .0 .8
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/default.tga"
+		rect 45 273 128 36
+		visible 0
+		action { uiScript resetDefaults }
+		mouseEnter { setitemcolor defaultsmenu forecolor .9 .0 .0 .8 }
+		mouseExit { setitemcolor defaultsmenu forecolor 1 1 1 1 }
+	}
+
+	
+	// itemDef {
+        // name backmenu
+        // text "BACK"
+		// group optionsmenugroup
+ 	    // type 1
+	    // textfont UI_FONT_BIG
+	    // style 0	
+	    // textstyle 6
+        // rect 42 290 197 30 // 30 350 72 14
+	    // textalign 0
+	    // textscale .38		
+	    // textalignx 6
+	    // textaligny 12
+	    // forecolor .9 .9 .9 .9
+	    // visible 0 
+        // action { hide optionsmenugroup ; show mainmenus ;  hide gomenus ; hide performance ; hide realrtcw ; hide view ; hide systemmenus ; hide graphics ; hide iortcwgraphics ; hide graphicsapply ; hide controlsmenus ; hide controlbuttons ; hide look ; hide shoot ; hide move ; hide shoot_advanced ; hide advancedshootbutton ; hide misc ; hide sounds ; hide applysys }
+    // }
+
+
+
+	itemDef {	// BACK
+		name backmenu
+		group optionsmenugroup
+		text "[-]"
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+	    textfont UI_FONT_BIG
+	    textstyle 6
+	    textalign 0
+	    textscale .30
+	    textalignx -25
+	    textaligny 20
+	    // forecolor .9 .9 .9 .9
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/back.tga"
+		rect 45 309 128 36
+		visible 0
+		action { hide optionsmenugroup ; show mainmenus ;  hide gomenus ; hide performance ; hide realrtcw ; hide view ; hide systemmenus ; hide graphics ; hide iortcwgraphics ; hide graphicsapply ; hide controlsmenus ; hide controlbuttons ; hide look ; hide shoot ; hide move ; hide shoot_advanced ; hide advancedshootbutton ; hide misc ; hide sounds ; hide applysys }
+		mouseEnter { setitemcolor backmenu forecolor .9 .9 .9 .9 }
+		mouseExit { setitemcolor backmenu forecolor 1 1 1 1 }
+	}
+
+
+
+
+
+
+
+
+
+	/////////MODSMENU/////////
+	
+		
+	// itemDef {
+		// name modmenu2
+		// text "ADDONS"
+		// group modmenus
+ 		// type 1
+		// style 0	
+		// textstyle 6
+		// rect 400 0 200 20 
+		// textfont UI_FONT_BIG
+		// textscale .40		
+	    // textalign 1	 
+	    // textalignx 10  	
+        // textaligny 32
+		// forecolor .9 .9 .9 1
+		// visible 0 
+		// decoration
+	// }
+
+
+	itemDef {	/// modmenu2
+		name modmenu2
+		group modmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/addons.tga"
+		rect 400 10 128 36
+		visible 0
+		decoration
+	}
+
+	itemDef {
+		name modmenu3
+		group modmenus
+		rect 200 120 437 249 //200 110 437 249
+		type ITEM_TYPE_LISTBOX
+		style WINDOW_STYLE_FILLED
+		elementwidth 120
+		elementheight 20
+		textscale .25
+		elementtype LISTBOX_TEXT
+		feeder FEEDER_MODS
+		textalign 1
+		textfont UI_FONT_BIG
+		textalignx 0
+		textaligny -8
+		border 1
+		bordercolor .5 .5 .5 .5
+		forecolor 1 1 1 1
+		backcolor 0 0 0 0.8
+		outlinecolor .25 .45 .15 .20
+		visible 0
+		doubleClick { uiScript RunMod }
+	}
+
+	// itemDef {
+		// name modmenu4
+		// text "Launch"
+		// type 1
+	    // group modmenus
+		// textscale .3
+		// style WINDOW_STYLE_FILLED		
+		// rect 350 370 100 20
+		// textalign 1
+		// textalignx 48
+		// textfont UI_FONT_BIG
+		// textaligny 14
+		// backcolor 0 0 0 0.8
+		// border 1
+		// bordercolor .1 .1 .1 .3
+		// visible 0
+		// action { uiScript RunMod }		
+	// }
+
+	itemDef {
+		name modmenu4
+		text ""
+		type 1
+	    group modmenus
+		textscale .3
+		style WINDOW_STYLE_FILLED		
+		rect 350 370 128 20
+		textalign 1
+		textalignx 48
+		textfont UI_FONT_BIG
+		textaligny 14
+		backcolor 0 0 0 0.8
+		border 1
+		bordercolor .1 .1 .1 .3
+		visible 0
+		action { uiScript RunMod }		
+	}
+	itemDef {	
+		name modmenu4
+		group modmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/addons/launch.tga"
+		rect 352 372 128 20
+		visible 0
+		mouseEnter { show modmenu4b } 
+		mouseExit { hide modmenu4b } 
+		action { uiScript RunMod }	
+		//decoration
+	}
+	
+	itemDef {	
+		name modmenu4b
+		group modmenus
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/addons/launchb.tga"
+		rect 352 372 128 20
+		visible 0
+		action { uiScript RunMod }	
+		//decoration
+	}
+
+
+
+
+
+
+
+
+	
+		//////CREDITSMENU//////
+	
+	
+		
+		itemDef 
+	{
+		name credits1
+		group credits
+		rect 155 102 500 300	
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .5 .5 .5 .5
+		forecolor 1 1 1 1
+		backcolor 0 0 0 .8
+		visible 0
+		decoration
+	}
+	
+			itemDef 
+	{
+		name credits2
+		group credits
+		rect 155 102 500 300	
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .5 .5 .5 .5
+		forecolor 1 1 1 1
+		backcolor 0 0 0 .8
+		visible 0
+		decoration
+	}
+	
+			itemDef 
+	{
+		name credits3
+		group credits
+		rect 155 102 500 300	
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .5 .5 .5 .5
+		forecolor 1 1 1 1
+		backcolor 0 0 0 .8
+		visible 0
+		decoration
+	}
+	
+				itemDef 
+	{
+		name credits4
+		group credits
+		rect 155 102 500 300	
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .5 .5 .5 .5
+		forecolor 1 1 1 1
+		backcolor 0 0 0 .8
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits1
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 170 130 50 50
+		background "ui/assets/credits/wolfetplayer.jpg"
+		visible 0
+		decoration
+	}
+	
+		// itemDef {
+		// name credits1
+		// text "CREDITS"
+		// group credits
+ 		// type 1
+		// style 0	
+		// textstyle 6
+		// rect 400 0 200 20 
+		// textfont UI_FONT_BIG
+		// textscale .40		
+	    // textalign 1	 
+	    // textalignx 10  	
+        // textaligny 32
+		// forecolor .9 .9 .9 1
+		// visible 0 
+		// decoration
+	// }
+	
+	itemDef {	
+		name credits1
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/credits.tga"
+		rect 400 10 128 36
+		visible 0
+		decoration
+	}	
+	
+	
+		// itemDef {
+		// name credits2
+		// text "CREDITS"
+		// group credits
+ 		// type 1
+		// style 0	
+		// textstyle 6
+		// rect 400 0 200 20 
+		// textfont UI_FONT_BIG
+		// textscale .40		
+	    // textalign 1	 
+	    // textalignx 10  	
+        // textaligny 32
+		// forecolor .9 .9 .9 1
+		// visible 0 
+		// decoration
+	// }
+
+	itemDef {	
+		name credits2
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/credits.tga"
+		rect 400 10 128 36
+		visible 0
+		decoration
+	}
+
+	
+		// itemDef {
+		// name credits3
+		// text "CREDITS"
+		// group credits
+ 		// type 1
+		// style 0	
+		// textstyle 6
+		// rect 400 0 200 20 
+		// textfont UI_FONT_BIG
+		// textscale .40		
+	    // textalign 1	 
+	    // textalignx 10  	
+        // textaligny 32
+		// forecolor .9 .9 .9 1
+		// visible 0 
+		// decoration
+	// }
+
+
+	itemDef {	
+		name credits3
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/credits.tga"
+		rect 400 10 128 36
+		visible 0
+		decoration
+	}
+
+	
+		// itemDef {
+		// name credits4
+		// text "CREDITS"
+		// group credits
+ 		// type 1
+		// style 0	
+		// textstyle 6
+		// rect 400 0 200 20 
+		// textfont UI_FONT_BIG
+		// textscale .40		
+	    // textalign 1	 
+	    // textalignx 10  	
+        // textaligny 32
+		// forecolor .9 .9 .9 1
+		// visible 0 
+		// decoration
+	// }
+
+	itemDef {	
+		name credits4
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/credits.tga"
+		rect 400 10 128 36
+		visible 0
+		decoration
+	}
+
+
+	
+		// itemDef {
+		// name credits1
+		// text "NEXT"
+		// type 1
+	    // group credits
+		// textscale .3
+		// style WINDOW_STYLE_FILLED		
+		// rect 530 360 100 20
+		// textalign 1
+		// textalignx 48
+		// textfont UI_FONT_BIG
+		// textaligny 14
+		// backcolor .3 0.5 0.2 .25
+		// border 1
+		// bordercolor .1 .1 .1 .3
+		// visible 0
+		// action { hide credits1 ; show credits2 }		
+	// }
+
+		itemDef {
+		name credits1
+		text ""
+		type 1
+	    group credits
+		textscale .3
+		style WINDOW_STYLE_FILLED		
+		rect 530 360 100 20
+		textalign 1
+		textalignx 48
+		textfont UI_FONT_BIG
+		textaligny 14
+		backcolor .3 0.5 0.2 .25
+		border 1
+		bordercolor .1 .1 .1 .3
+		visible 0
+		action { hide credits1 ; hide credits1b ; show credits2 }		
+	}
+
+	itemDef {	/// credits1
+		name credits1
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/next.tga"
+		rect 530 360 100 22
+		visible 0
+		action { hide credits1 ; hide credits1b ; show credits2 }		
+		mouseEnter { show credits1b } 
+		mouseExit { hide credits1b } 
+	}
+	
+	itemDef {	/// newgame
+		name credits1b
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/nextb.tga"
+		rect 530 360 100 22
+		visible 0
+		action { hide credits1 ; hide credits1b ; show credits2 }		
+	}
+
+	
+		// itemDef {
+		// name credits2
+		// text "NEXT"
+		// type 1
+	    // group credits
+		// textscale .3
+		// style WINDOW_STYLE_FILLED		
+		// rect 530 360 100 20
+		// textalign 1
+		// textalignx 48
+		// textfont UI_FONT_BIG
+		// textaligny 14
+		// backcolor .3 0.5 0.2 .25
+		// border 1
+		// bordercolor .1 .1 .1 .3
+		// visible 0
+		// action { hide credits2 ; show credits3 }		
+	// }
+
+
+		itemDef {
+		name credits2
+		text ""
+		type 1
+	    group credits
+		textscale .3
+		style WINDOW_STYLE_FILLED		
+		rect 530 360 100 20
+		textalign 1
+		textalignx 48
+		textfont UI_FONT_BIG
+		textaligny 14
+		backcolor .3 0.5 0.2 .25
+		border 1
+		bordercolor .1 .1 .1 .3
+		visible 0
+		action { hide credits2 ; hide credits2b ; show credits3 }		
+	}
+
+	itemDef {	/// credits1
+		name credits2
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/next.tga"
+		rect 530 360 100 22
+		visible 0
+		action { hide credits2 ; hide credits2b ; show credits3 }		
+		mouseEnter { show credits2b } 
+		mouseExit { hide credits2b } 
+	}
+	
+	itemDef {	/// newgame
+		name credits2b
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/nextb.tga"
+		rect 530 360 100 22
+		visible 0
+		action { hide credits2 ; hide credits2b ; show credits3 }		
+	}
+
+
+
+
+
+
+	
+		// itemDef {
+		// name credits3
+		// text "NEXT"
+		// type 1
+	    // group credits
+		// textscale .3
+		// style WINDOW_STYLE_FILLED		
+		// rect 530 360 100 20
+		// textalign 1
+		// textalignx 48
+		// textfont UI_FONT_BIG
+		// textaligny 14
+		// backcolor .3 0.5 0.2 .25
+		// border 1
+		// bordercolor .1 .1 .1 .3
+		// visible 0
+		// action { hide credits3 ; show credits4 }		
+	// }
+
+
+		itemDef {
+		name credits3
+		text ""
+		type 1
+	    group credits
+		textscale .3
+		style WINDOW_STYLE_FILLED		
+		rect 530 360 100 20
+		textalign 1
+		textalignx 48
+		textfont UI_FONT_BIG
+		textaligny 14
+		backcolor .3 0.5 0.2 .25
+		border 1
+		bordercolor .1 .1 .1 .3
+		visible 0
+		action { hide credits3 ; hide credits3b ; show credits4 }		
+	}
+
+	itemDef {	/// credits1
+		name credits3
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/next.tga"
+		rect 530 360 100 22
+		visible 0
+		action { hide credits3 ; hide credits3b ; show credits4 }		
+		mouseEnter { show credits3b } 
+		mouseExit { hide credits3b } 
+	}
+	
+	itemDef {	/// newgame
+		name credits3b
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/nextb.tga"
+		rect 530 360 100 22
+		visible 0
+		action { hide credits3 ; hide credits3b ; show credits4 }		
+	}
+
+
+
+	
+	
+		// itemDef {
+		// name credits2
+		// text "BACK"
+		// type 1
+	    // group credits
+		// textscale .3
+		// style WINDOW_STYLE_FILLED		
+		// rect 400 360 100 20
+		// textalign 1
+		// textalignx 48
+		// textfont UI_FONT_BIG
+		// textaligny 14
+		// backcolor .3 0.5 0.2 .25
+		// border 1
+		// bordercolor .1 .1 .1 .3
+		// visible 0
+		// action { hide credits2 ; show credits1 }		
+	// }
+
+		itemDef {
+		name credits2
+		text ""
+		type 1
+	    group credits
+		textscale .3
+		style WINDOW_STYLE_FILLED		
+		rect 400 360 100 20
+		textalign 1
+		textalignx 48
+		textfont UI_FONT_BIG
+		textaligny 14
+		backcolor .3 0.5 0.2 .25
+		border 1
+		bordercolor .1 .1 .1 .3
+		visible 0
+		action { hide credits2 ; hide credits2b ; show credits1 }		
+	}
+
+	itemDef {	/// credits1
+		name credits2
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/back.tga"
+		rect 400 360 100 22
+		visible 0
+		action { hide credits2 ; hide credits2b ; show credits1 }		
+		mouseEnter { show credits2b } 
+		mouseExit { hide credits2b } 
+	}
+	
+	itemDef {	/// newgame
+		name credits2b
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/backb.tga"
+		rect 400 360 100 22
+		visible 0
+		action { hide credits2 ; hide credits2b ; show credits1 }		
+	}
+
+
+
+	
+		// itemDef {
+		// name credits3
+		// text "BACK"
+		// type 1
+	    // group credits
+		// textscale .3
+		// style WINDOW_STYLE_FILLED		
+		// rect 400 360 100 20
+		// textalign 1
+		// textalignx 48
+		// textfont UI_FONT_BIG
+		// textaligny 14
+		// backcolor .3 0.5 0.2 .25
+		// border 1
+		// bordercolor .1 .1 .1 .3
+		// visible 0
+		// action { hide credits3 ; show credits2 }		
+	// }
+
+		itemDef {
+		name credits3
+		text ""
+		type 1
+	    group credits
+		textscale .3
+		style WINDOW_STYLE_FILLED		
+		rect 400 360 100 20
+		textalign 1
+		textalignx 48
+		textfont UI_FONT_BIG
+		textaligny 14
+		backcolor .3 0.5 0.2 .25
+		border 1
+		bordercolor .1 .1 .1 .3
+		visible 0
+		action { hide credits3 ; hide credits3b ; show credits2 }		
+	}
+
+	itemDef {	/// credits1
+		name credits3
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/back.tga"
+		rect 400 360 100 22
+		visible 0
+		action { hide credits3 ; hide credits3b ; show credits2 }		
+		mouseEnter { show credits3b } 
+		mouseExit { hide credits3b } 
+	}
+	
+	itemDef {	/// newgame
+		name credits3b
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/backb.tga"
+		rect 400 360 100 22
+		visible 0
+		action { hide credits3 ; hide credits3b ; show credits2 }		
+	}
+
+
+
+
+
+	
+			// itemDef {
+		// name credits4
+		// text "BACK"
+		// type 1
+	    // group credits
+		// textscale .3
+		// style WINDOW_STYLE_FILLED		
+		// rect 400 360 100 20
+		// textalign 1
+		// textalignx 48
+		// textfont UI_FONT_BIG
+		// textaligny 14
+		// backcolor .3 0.5 0.2 .25
+		// border 1
+		// bordercolor .1 .1 .1 .3
+		// visible 0
+		// action { hide credits4 ; show credits3 }		
+	// }
+
+		itemDef {
+		name credits4
+		text ""
+		type 1
+	    group credits
+		textscale .3
+		style WINDOW_STYLE_FILLED		
+		rect 400 360 100 20
+		textalign 1
+		textalignx 48
+		textfont UI_FONT_BIG
+		textaligny 14
+		backcolor .3 0.5 0.2 .25
+		border 1
+		bordercolor .1 .1 .1 .3
+		visible 0
+		action { hide credits4 ; hide credits4b ; show credits3 }		
+	}
+
+	itemDef {	/// credits1
+		name credits4
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/back.tga"
+		rect 400 360 100 22
+		visible 0
+		action { hide credits4 ; hide credits4b ; show credits3 }		
+		mouseEnter { show credits4b } 
+		mouseExit { hide credits4b } 
+	}
+	
+	itemDef {	/// newgame
+		name credits4b
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/backb.tga"
+		rect 400 360 100 22
+		visible 0
+		action { hide credits4 ; hide credits4b ; show credits3 }		
+	}
+
+
+
+
+
+	
+		// itemDef {
+		// name credits4
+		// text "GET PSYCHED!"
+		// type 1
+	    // group credits
+		// textscale .3
+		// style WINDOW_STYLE_FILLED		
+		// rect 530 360 100 20
+		// textalign 1
+		// textalignx 48
+		// textfont UI_FONT_BIG
+		// textaligny 14
+		// backcolor .3 0.5 0.2 .25
+		// border 1
+		// bordercolor .1 .1 .1 .3
+		// visible 0
+		// action { setCvar g_gameskill "1" ; exec "spmap w3d" }		
+	// }
+
+		itemDef {
+		name credits4
+		text ""
+		type 1
+	    group credits
+		textscale .3
+		style WINDOW_STYLE_FILLED		
+		rect 530 360 100 20
+		textalign 1
+		textalignx 48
+		textfont UI_FONT_BIG
+		textaligny 14
+		backcolor .3 0.5 0.2 .25
+		border 1
+		bordercolor .1 .1 .1 .3
+		visible 0
+		action { setCvar g_gameskill "1" ; exec "spmap w3d" }		
+	}
+
+	itemDef {	/// credits1
+		name credits4
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/PSYCHED.tga"
+		rect 530 360 100 22
+		visible 0
+		action { setCvar g_gameskill "1" ; exec "spmap w3d" }		
+		mouseEnter { show credits4b } 
+		mouseExit { hide credits4b } 
+	}
+	
+	itemDef {	/// newgame
+		name credits4b
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/PSYCHEDb.tga"
+		rect 530 360 100 22
+		visible 0
+		action { setCvar g_gameskill "1" ; exec "spmap w3d" }		
+	}
+
+
+
+
+	
+	// itemDef {
+	// name credits1
+	// group credits
+	// rect 165 125 500 500 
+	// textfile "text/EnglishUSA/creditsp1.txt"
+	// textscale .20
+	// textfont UI_FONT_BIG
+	// forecolor 1 1 1 1
+	// visible 0
+	// decoration
+	// autowrapped
+	// }
+
+	itemDef {	
+		name credits1
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/credits/creditsp1.tga"
+		rect 160 105 500 128
+		visible 0
+		decoration
+		autowrapped
+	}
+
+	// itemDef {
+	// name credits1
+	// group credits
+	// rect 165 245 500 500 
+	// textfile "text/EnglishUSA/creditsp2.txt"
+	// textscale .20
+	// textfont UI_FONT_BIG
+	// forecolor 1 1 1 1
+	// visible 0
+	// decoration
+	// autowrapped
+// }
+
+	itemDef {	
+		name credits1
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/credits/creditsp2.tga"
+		rect 160 225 500 128
+		visible 0
+		decoration
+		autowrapped
+	}
+
+		itemDef {
+		name credits1
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 270 130 50 50
+		background "ui/assets/credits/manatarms.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits1
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 370 130 50 50
+		background "ui/assets/credits/hellbaron89.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits1
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 470 130 50 50
+		background "ui/assets/credits/eugeny.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits1
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 570 130 50 50
+		background "ui/assets/credits/aidendemon.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits1
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 170 250 50 50
+		background "ui/assets/credits/kemon.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits1
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 270 250 50 50
+		background "ui/assets/credits/titeuf.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits1
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 370 250 50 50
+		background "ui/assets/credits/deanbk90.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits1
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 470 250 50 50
+		background "ui/assets/credits/osjc.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits1
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 570 250 50 50
+		background "ui/assets/credits/ronboy.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits2
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 170 130 50 50
+		background "ui/assets/credits/depro777.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits2
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 270 130 50 50
+		background "ui/assets/credits/web.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits2
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 370 130 50 50
+		background "ui/assets/credits/ss.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits2
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 470 130 50 50
+		background "ui/assets/credits/noavatar.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits2
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 570 130 50 50
+		background "ui/assets/credits/jbird.jpg"
+		visible 0
+		decoration
+	}
+
+
+
+    	itemDef {
+		name credits2
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 170 250 50 50
+		background "ui/assets/credits/noavatar.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits2
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 270 250 50 50
+		background "ui/assets/credits/noavatar.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits2
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 370 250 50 50
+		background "ui/assets/credits/yoshik.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits2
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 470 250 50 50
+		background "ui/assets/credits/kirill.jpg"
+		visible 0
+		decoration
+	}
+	
+	    itemDef {
+		name credits2
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 570 250 50 50
+		background "ui/assets/credits/dan.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits3
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 170 130 50 50
+		background "ui/assets/credits/chaos.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits3
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 270 130 50 50
+		background "ui/assets/credits/sidney.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits3
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 370 130 50 50
+		background "ui/assets/credits/splashdamage.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits3
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 470 130 50 50
+		background "ui/assets/credits/noavatar.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits3
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 570 130 50 50
+		background "ui/assets/credits/iw.jpg"
+		visible 0
+		decoration
+	}
+	
+	    itemDef {
+		name credits3
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 170 250 50 50
+		background "ui/assets/credits/marcomix.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits3
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 270 250 50 50
+		background "ui/assets/credits/bers.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits3
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 370 250 50 50
+		background "ui/assets/credits/nwi.jpg"
+		visible 0
+		decoration
+	}
+	
+		itemDef {
+		name credits3
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 470 250 50 50
+		background "ui/assets/credits/maksimg.jpg"
+		visible 0
+		decoration
+	}
+	
+	    itemDef {
+		name credits3
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 570 250 50 50
+		background "ui/assets/credits/wolfrtcw.jpg"
+		visible 0
+		decoration
+	}
+	
+	    itemDef {
+		name credits4
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 180 210 50 50
+		background "ui/assets/credits/lnesuper.jpg"
+		visible 0
+		decoration
+	}
+	
+	    itemDef {
+		name credits4
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 250 200 80 80
+		background "ui/assets/credits/qr/weixin.jpg"
+		visible 0
+		decoration
+	}	
+	
+		itemDef {
+		name credits4
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 350 200 80 80
+		background "ui/assets/credits/qr/zanshang.jpg"
+		visible 0
+		decoration
+	}	
+	
+		itemDef {
+		name credits4
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 450 200 80 80
+		background "ui/assets/credits/qr/alipay.jpg"
+		visible 0
+		decoration
+	}	
+		
+
+		itemDef {
+		name credits4
+        group credits		
+		style WINDOW_STYLE_SHADER
+		rect 550 200 80 80
+		background "ui/assets/credits/qr/hongbao.jpg"
+		visible 0
+		decoration
+	}	
+		
+	
+	// itemDef {
+	// name credits2
+	// group credits
+	// rect 165 125 500 500 
+	// textfile "text/EnglishUSA/creditsp3.txt"
+	// textscale .20
+	// textfont UI_FONT_BIG
+	// forecolor 1 1 1 1
+	// visible 0
+	// decoration
+	// autowrapped
+// }
+
+	itemDef {	
+		name credits2
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/credits/creditsp3.tga"
+		rect 160 105 500 128
+		visible 0
+		decoration
+		autowrapped
+	}
+
+
+
+	// itemDef {
+	// name credits2
+	// group credits
+	// rect 165 245 500 500 
+	// textfile "text/EnglishUSA/creditsp4.txt"
+	// textscale .20
+	// textfont UI_FONT_BIG
+	// forecolor 1 1 1 1
+	// visible 0
+	// decoration
+	// autowrapped
+// }
+
+	itemDef {	
+		name credits2
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/credits/creditsp4.tga"
+		rect 160 225 500 128
+		visible 0
+		decoration
+		autowrapped
+	}
+
+
+	// itemDef {
+	// name credits3
+	// group credits
+	// rect 165 125 500 500 
+	// textfile "text/EnglishUSA/creditsp5.txt"
+	// textscale .20
+	// textfont UI_FONT_BIG
+	// forecolor 1 1 1 1
+	// visible 0
+	// decoration
+	// autowrapped
+// }
+
+	itemDef {	
+		name credits3
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/credits/creditsp5.tga"
+		rect 160 105 500 128
+		visible 0
+		decoration
+		autowrapped
+	}
+
+
+	// itemDef {
+	// name credits3
+	// group credits
+	// rect 165 245 500 500 
+	// textfile "text/EnglishUSA/creditsp6.txt"
+	// textscale .20
+	// textfont UI_FONT_BIG
+	// forecolor 1 1 1 1
+	// visible 0
+	// decoration
+	// autowrapped
+// }
+
+	itemDef {	
+		name credits3
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/credits/creditsp6.tga"
+		rect 160 225 500 128
+		visible 0
+		decoration
+		autowrapped
+	}
+
+
+
+	// itemDef {
+	// name credits4
+	// group credits
+	// rect 165 150 500 500 
+	// textfile "text/EnglishUSA/creditsp7.txt"
+	// textscale .24
+	// textfont UI_FONT_BIG
+	// forecolor 1 1 1 1
+	// visible 0
+	// decoration
+	// autowrapped
+// }
+	
+
+	itemDef {	
+		name credits4
+		group credits
+		type ITEM_TYPE_BUTTON
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/credits/creditsp7.tga"
+		rect 160 120 500 256
+		visible 0
+		decoration
+		autowrapped
+	}
+
+
+	
+	
+	///////CONTROLSMENU///////
+	
+	
+	itemDef {
+		name controlsmenu1
+		group controlsmenus
+		rect 220 102 443 300	
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .5 .5 .5 .5
+		forecolor 1 1 1 1
+		backcolor 0 0 0 .8
+		visible 0
+		decoration
+	}
+
+	itemDef {
+		name controlsmenu2
+		group controlsmenus
+		rect 222 104 439 20	
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .1 .1 .1 .2
+		forecolor 1 1 1 1
+		backcolor .3 0.5 0.2 .25
+		visible 0
+		decoration
+	}
+
+
+
+	//////LOOK////////
+
+
+
+    // itemDef {
+	    // name lookbutton
+	    // text "Look"
+	    // type 1
+	    // textscale .23
+	    // group controlbuttons
+	    // type ITEM_TYPE_BUTTON
+	    // style WINDOW_STYLE_FILLED
+	    // rect 250 105 45 20
+	    // textalign 1
+		// textfont UI_FONT_BIG
+	    // textalignx 22
+	    // textaligny 14
+	    // border 1
+	    // bordercolor .1 .1 .1 0
+	    // forecolor 1 1 1 1
+	    // visible 0
+	    // action { hide controls ; show look }
+	    // mouseEnter { setitemcolor ctr_look backcolor .3 .6 .3 .0 } 
+	    // mouseExit { setitemcolor ctr_look backcolor .1 .1 .1 0 } 
+	// }
+
+    itemDef {
+	    name lookbutton
+	    text "[              ]"
+		type 1
+	    textscale .23
+	    group controlbuttons
+	    type ITEM_TYPE_BUTTON
+	    style WINDOW_STYLE_SHADER
+	    rect 270 104 45 20
+	    textalign 1
+		textfont UI_FONT_BIG
+	    textalignx 22
+	    textaligny 14
+	    border 1
+	    bordercolor .1 .1 .1 0
+	    forecolor 1 1 1 1
+		background "text/ChineseCHN/options/controls/lookbutton.tga"
+	    visible 0
+	    action { hide controls ; show look }
+	    mouseEnter { setitemcolor ctr_look backcolor .3 .6 .3 .0 ; setitemcolor lookbutton forecolor .9 .9 .1 .8 } 
+	    mouseExit { setitemcolor ctr_look backcolor .1 .1 .1 0 ; setitemcolor lookbutton forecolor 1 1 1 1 } 
+	}
+
+
+
+
+
+
+
+
+    itemDef {
+	    name look
+	    text "CONTROLS"
+ 	    type 1
+	    textfont UI_FONT_BIG
+	    style 0	
+	    textstyle 6
+	    rect 222.5 -12 64 14 
+	    textalign ITEM_ALIGN_CENTER
+	    textscale .23		
+	    textalignx 2
+	    textaligny 12
+	    forecolor .9 .9 .9 1
+	    visible 0 
+	    decoration
+    }
+
+	// itemDef {
+		// name look
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Lookup:  "
+		// cvar "+lookup"
+		// rect 300 135 290 12 
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10    
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+     	// forecolor 1 1 1 1
+		// textfont UI_FONT_BIG
+		// visible 0
+	// }
+
+	itemDef {
+		name look
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+lookup"
+		rect 300 135 290 12 
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142 
+		textaligny 10    
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+     	forecolor 1 1 1 1
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/look/lookup.tga"
+		visible 0
+	}
+	
+
+
+
+	// itemDef {
+		// name look
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Look Down:  "
+		// cvar "+lookdown"
+		// rect 300 150 290 12 
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10       
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+	// }
+
+	itemDef {
+		name look
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+lookdown"
+		rect 300 150 290 12 
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142 
+		textaligny 10       
+		textscale .23           
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/look/lookdown.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+	}
+
+
+
+
+	// itemDef {
+		// name look
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Mouse Look:  "
+		// cvar "+mlook"
+		// rect 300 165 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+	// }
+
+	itemDef {
+		name look
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+mlook"
+		rect 300 165 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23           
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/look/mouselook.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+	}
+	
+
+	
+	
+	
+	// itemDef {
+		// name look
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Centerview:  "
+		// cvar "centerview"
+		// rect 300 180 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name look
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "centerview"
+		rect 300 180 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23           
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/look/centerview.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+
+
+	// itemDef {
+		// name look
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Binoculars:  "
+		// cvar "+zoom"
+		// rect 300 195 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+
+	itemDef {
+		name look
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+zoom"
+		rect 300 195 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23           
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/look/binoculars.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+	
+
+
+
+
+
+	// itemDef {
+		// name look
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Zoom In:  "
+		// cvar "zoomin"
+		// rect 300 210 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+	
+
+
+	itemDef {
+		name look
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "zoomin"
+		rect 300 210 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23           
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/look/zoomin.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+	
+
+	// itemDef {
+		// name look
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Zoom Out:  "
+		// cvar "zoomout"
+		// rect 300 225 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0 
+		// textfont UI_FONT_BIG
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+	
+
+	itemDef {
+		name look
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "zoomout"
+		rect 300 225 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23           
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		background "text/ChineseCHN/options/controls/look/zoomout.tga"
+		visible 0 
+		textfont UI_FONT_BIG
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+	
+		
+
+
+	// itemDef {
+		// name look
+		// group controls
+		// type ITEM_TYPE_YESNO
+		// text "Free Look:  "
+		// cvar "cl_freelook"
+		// rect 300 240 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show yesno_message }
+		// mouseexit { hide yesno_message }
+    // }
+
+	itemDef {
+		name look
+		group controls
+		type ITEM_TYPE_YESNO
+		text ""
+		cvar "cl_freelook"
+		rect 300 240 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23           
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/look/freelook.tga"
+		visible 0 
+		mouseenter { show yesno_message }
+		mouseexit { hide yesno_message }
+    }
+
+
+	
+
+
+
+	
+////move///////
+
+    // itemDef {
+	    // name movebutton
+	    // text "Move"
+	    // type 1
+	    // textscale .23
+	    // group controlbuttons
+	    // type ITEM_TYPE_BUTTON
+	    // style WINDOW_STYLE_FILLED
+	    // background "ui/assets/button_back.tga"
+	    // rect 350 105 45 20
+	    // textalign 1
+	    // textalignx 22
+		// textfont UI_FONT_BIG
+	    // textaligny 14
+	    // border 1
+	    // bordercolor .1 .1 .1 0
+	    // forecolor 1 1 1 1 
+	    // backcolor .1 .1 .1 0
+	    // visible 0
+	    // action { hide controls ; show move }
+	    // mouseEnter { show message_move ; setitemcolor ctr_move backcolor .3 .3 .3 0  } 
+	    // mouseExit { hide message_move ; setitemcolor ctr_move backcolor .1 .1 .1 0 } 
+	// }
+
+    itemDef {
+	    name movebutton
+	    text "[              ]"
+		type 1
+	    textscale .23
+	    group controlbuttons
+	    type ITEM_TYPE_BUTTON
+	    style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/options/controls/movebutton.tga"
+	    rect 370 104 45 20
+	    textalign 1
+	    textalignx 22
+		textfont UI_FONT_BIG
+	    textaligny 14
+	    border 1
+	    bordercolor .1 .1 .1 0
+	    forecolor 1 1 1 1 
+	    backcolor .1 .1 .1 0
+	    visible 0
+	    action { hide controls ; show move }
+	    mouseEnter { show message_move ; setitemcolor ctr_move backcolor .3 .3 .3 0 ; setitemcolor movebutton forecolor .9 .9 .1 .8 } 
+	    mouseExit { hide message_move ; setitemcolor ctr_move backcolor .1 .1 .1 0 ; setitemcolor movebutton forecolor 1 1 1 1 } 
+	}
+
+
+
+
+
+
+
+	// itemDef {
+		// name move
+		// group controls
+		// type ITEM_TYPE_YESNO
+		// text "Always Run:  "
+		// cvar "cl_run"
+		// rect 300 135 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show yesno_message }
+		// mouseexit { hide yesno_message }
+    // }
+
+	itemDef {
+		name move
+		group controls
+		type ITEM_TYPE_YESNO
+		text ""
+		cvar "cl_run"
+		rect 300 135 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142 
+		textaligny 10
+		textscale .23            
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/move/Alwaysrun.tga"
+		visible 0 
+		mouseenter { show yesno_message }
+		mouseexit { hide yesno_message }
+    }
+
+
+	// itemDef {
+		// name move
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Run / Walk:  "
+		// cvar "+speed"
+		// rect 300 330 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+    // }
+
+	itemDef {
+		name move
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+speed"
+		rect 300 330 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142 
+		textaligny 10
+		textscale .23            
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/move/runwalk.tga"
+		visible 0 
+    }
+
+
+	// itemDef {
+		// name move
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Sprint:  "
+		// cvar "+sprint"
+		// rect 300 150 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+    // }
+
+	itemDef {
+		name move
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+sprint"
+		rect 300 150 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142 
+		textaligny 10
+		textscale .23            
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/move/sprint.tga"
+		visible 0 
+    }
+
+
+	// itemDef {
+		// name move
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Forward:  "
+		// cvar "+forward"
+		// rect 300 165 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    	// }
+
+
+	itemDef {
+		name move
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+forward"
+		rect 300 165 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23            
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/move/forward.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+	// itemDef {
+		// name move
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Backpedal:  "
+		// cvar "+back"
+		// rect 300 180 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23                   
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+	
+	itemDef {
+		name move
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+back"
+		rect 300 180 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23                   
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/move/back.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }	
+	
+	
+	// itemDef {
+		// name move
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Move Left:  "
+		// cvar "+moveleft"
+		// rect 300 195 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+
+	itemDef {
+		name move
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+moveleft"
+		rect 300 195 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23            
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/move/moveleft.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+
+
+	// itemDef {
+		// name move
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Move Right:  "
+		// cvar "+moveright"
+		// rect 300 210 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name move
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+moveright"
+		rect 300 210 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23           
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/move/moveright.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+	// itemDef {
+		// name move
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Lean Left:  "
+		// cvar "+leanleft"
+		// rect 300 225 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name move
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+leanleft"
+		rect 300 225 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23           
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/move/leanleft.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+	// itemDef {
+		// name move
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Lean Right:  "
+		// cvar "+leanright"
+		// rect 300 240 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23           
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+	
+	itemDef {
+		name move
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+leanright"
+		rect 300 240 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23           
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/move/leanright.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+	
+	// itemDef {
+		// name move
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Jump:  "
+		// cvar "+moveup"
+		// rect 300 255 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name move
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+moveup"
+		rect 300 255 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23            
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/move/jump.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+	// itemDef {
+		// name move
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Crouch:  "
+		// cvar "+movedown"
+		// rect 300 270 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name move
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+movedown"
+		rect 300 270 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23            
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/move/crouch.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+	// itemDef {
+		// name move
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Turn Left:  "
+		// cvar "+left"
+		// rect 300 285 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+	// }
+
+	itemDef {
+		name move
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+left"
+		rect 300 285 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23            
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/move/turnleft.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+	}
+
+
+
+	// itemDef {
+		// name move
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Turn Right:  "
+		// cvar "+right"
+		// rect 300 300 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus } 
+	// }
+
+	itemDef {
+		name move
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+right"
+		rect 300 300 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23            
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/move/turnright.tga"
+		visible 0
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus } 
+	}
+
+
+	// itemDef {
+		// name move
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Strafe:  "
+		// cvar "+strafe"
+		// rect 300 315 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23            
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+	// }
+
+	itemDef {
+		name move
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+strafe"
+		rect 300 315 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23            
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/move/strafe.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+	}
+
+
+//////shoot///////
+
+    // itemDef {
+	    // name shootbutton
+	    // text "Shoot"
+	    // type 1
+	    // textscale .23
+	    // group controlbuttons
+	    // type ITEM_TYPE_BUTTON
+	    // style WINDOW_STYLE_FILLED
+	    // background "ui/assets/button_back.tga"
+	    // rect 470 105 47 20
+	    // textalign 1
+	    // textalignx 22
+	    // textaligny 14
+		// textfont UI_FONT_BIG
+	    // border 1
+	    // bordercolor .1 .1 .1 0
+	    // forecolor 1 1 1 1
+	    // backcolor .1 .1 .1 0 
+	    // visible 0
+	    // action { hide controls ; show shoot ; show advancedshootbutton }
+	    // mouseEnter { show message_shoot ; setitemcolor ctr_shoot backcolor .3 .3 .3 0 } 
+	    // mouseExit { hide message_shoot ; setitemcolor ctr_shoot backcolor .1 .1 .1 0 }
+	// }
+
+    itemDef {
+	    name shootbutton
+	    text "[              ]"
+	    textscale .23
+	    group controlbuttons
+	    type ITEM_TYPE_BUTTON
+	    style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/options/controls/shootbutton.tga"
+	    rect 470 104 47 20
+	    textalign 1
+	    textalignx 22
+	    textaligny 14
+		textfont UI_FONT_BIG
+	    border 1
+	    bordercolor .1 .1 .1 0
+	    forecolor 1 1 1 1
+	    backcolor .1 .1 .1 0 
+	    visible 0
+	    action { hide controls ; show shoot ; show advancedshootbutton }
+	    mouseEnter { show message_shoot ; setitemcolor ctr_shoot backcolor .3 .3 .3 0 ; setitemcolor shootbutton forecolor .9 .9 .1 .8 } 
+	    mouseExit { hide message_shoot ; setitemcolor ctr_shoot backcolor .1 .1 .1 0 ; setitemcolor shootbutton forecolor 1 1 1 1 }
+	}
+	
+
+
+
+
+
+
+
+
+	
+	// itemDef {
+		// name shoot				
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Attack:  "
+		// cvar "+attack"
+		// rect 300 135 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name shoot				
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+attack"
+		rect 300 135 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142 
+		textaligny 10
+		textscale .23        
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/shoot/attack.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+
+	// itemDef {
+		// name shoot				
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Reload Weapon:  "
+		// cvar "+reload"
+		// rect 300 150 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name shoot				
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+reload"
+		rect 300 150 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142 
+		textaligny 10
+		textscale .23        
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/shoot/reload.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+	// itemDef {
+		// name shoot
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Next Weapon:  "
+		// cvar "weapnext"
+		// rect 300 165 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_SHADER
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// background "text/ChineseCHN/options/controls/shoot/reload.tga"
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name shoot
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "weapnext"
+		rect 300 165 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23        
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/shoot/next.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+	
+	// itemDef {
+		// name shoot
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Previous Weapon:  "
+		// cvar "weapprev"
+		// rect 300 180 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name shoot
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "weapprev"
+		rect 300 180 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23        
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/shoot/previous.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+	// itemDef {
+		// name shoot
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Switch to Alternate:  "
+		// cvar "weapalt"
+		// rect 300 195 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name shoot
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "weapalt"
+		rect 300 195 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23        
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/shoot/alternate.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+
+	// itemDef {
+		// name shoot
+		// group controls
+		// type ITEM_TYPE_MULTI
+		// text "Autoswitch:  "
+		// cvar "cg_autoswitch"
+		// cvarFloatList { "Off" 0 "Always Switch" 1 "If New" 2 "If Better" 3 "New or Better" 4 "New and Better" 5 }
+		// rect 300 210 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0
+    // }
+
+itemDef {
+		name shoot
+		group controls
+		type ITEM_TYPE_MULTI
+		text ""
+		cvar "cg_autoswitch"
+		cvarFloatList { "Off" 0 "Always Switch" 1 "If New" 2 "If Better" 3 "New or Better" 4 "New and Better" 5 }
+		rect 300 210 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23        
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/shoot/autoswitch.tga"
+		visible 0
+    }
+	
+
+	// itemDef {
+		// name shoot
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Knife:  "
+		// cvar "weaponbank 1"
+		// rect 300 225 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name shoot
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "weaponbank 1"
+		rect 300 225 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23        
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/shoot/knife.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+	// itemDef {
+		// name shoot
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Pistols:  "
+		// cvar "weaponbank 2"
+		// rect 300 240 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name shoot
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "weaponbank 2"
+		rect 300 240 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23        
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/shoot/pistols.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+	// itemDef {
+		// name shoot
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "SMGs:  "
+		// cvar "weaponbank 3"
+		// rect 300 255 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name shoot
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "weaponbank 3"
+		rect 300 255 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23        
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/shoot/smgs.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+	// itemDef {
+		// name shoot
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Rifles:  "
+		// cvar "weaponbank 4"
+		// rect 300 270 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+	
+	itemDef {
+		name shoot
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "weaponbank 4"
+		rect 300 270 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23        
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/shoot/rifles.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+	// itemDef {
+		// name shoot
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Automatic rifles:  "
+		// cvar "weaponbank 5"
+		// rect 300 285 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name shoot
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "weaponbank 5"
+		rect 300 285 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23        
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/shoot/autorifles.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+	
+	// itemDef {
+		// name shoot
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Assault rifles:  "
+		// cvar "weaponbank 6"
+		// rect 300 300 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name shoot
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "weaponbank 6"
+		rect 300 300 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23        
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/shoot/assarifles.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+	// itemDef {
+		// name shoot
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Shotgun:  "
+		// cvar "weaponbank 7"
+		// rect 300 315 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+			
+	itemDef {
+		name shoot
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "weaponbank 7"
+		rect 300 315 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23        
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/shoot/shotgun.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }			
+			
+	// itemDef {
+		// name shoot
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Grenades:  "
+		// cvar "weaponbank 8"
+		// rect 300 330 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name shoot
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "weaponbank 8"
+		rect 300 330 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23        
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/shoot/grenades.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }		
+
+		
+	// itemDef {
+		// name shoot
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Heavy weapons:  "
+		// cvar "weaponbank 9"
+		// rect 300 345 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23                
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// textfont UI_FONT_BIG
+		// visible 0
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus } 
+    // }
+
+	itemDef {
+		name shoot
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "weaponbank 9"
+		rect 300 345 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23                
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/shoot/heavy.tga"
+		visible 0
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus } 
+    }	
+
+	
+	// itemDef {
+		// name shoot
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Secret weapons:  "
+		// cvar "weaponbank 10"
+		// rect 300 360 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23        
+		// forecolor 1 1 1 1
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// visible 0
+        // textfont UI_FONT_BIG		
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name shoot
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "weaponbank 10"
+		rect 300 360 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23        
+		forecolor 1 1 1 1
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		visible 0
+        textfont UI_FONT_BIG		
+		background "text/ChineseCHN/options/controls/shoot/secret.tga"
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+
+/////shootadvanced/////
+
+    // itemDef {
+	    // name advancedshootbutton
+	    // text "Advanced..."
+	    // type 1
+	    // textscale .25
+	    // group controls
+	    // style WINDOW_STYLE_FILLED
+	    // rect 400 385 80 18
+	    // textalign 1
+	    // textalignx 36
+	    // textaligny 12
+	    // forecolor 1 1 1 1
+	    // backcolor .1 .1 .1 0 
+	    // visible 0
+		// textfont UI_FONT_BIG
+	    // action { hide controls ; show shoot_advanced }
+	    // mouseEnter { setitemcolor advancedshootbutton backcolor .3 .3 .3 0 } 
+	    // mouseExit { setitemcolor advancedshootbutton backcolor .1 .1 .1 0 } 
+	// }
+	
+    itemDef {
+	    name advancedshootbutton
+	    text ""
+	    type 1
+	    textscale .25
+	    group controls
+	    style WINDOW_STYLE_SHADER
+	    rect 400 380 80 18
+	    textalign 1
+	    textalignx 36
+	    textaligny 12
+	    forecolor 1 1 1 1
+	    backcolor .1 .1 .1 0 
+		background "text/ChineseCHN/options/controls/shoot/advanced.tga"
+	    visible 0
+		textfont UI_FONT_BIG
+	    action { hide controls ; show shoot_advanced }
+	    mouseEnter { setitemcolor advancedshootbutton backcolor .3 .3 .3 0 ; setitemcolor advancedshootbutton forecolor .9 .9 .1 .8 } 
+	    mouseExit { setitemcolor advancedshootbutton backcolor .1 .1 .1 0 ; setitemcolor advancedshootbutton forecolor 1 1 1 1 } 
+	}	
+
+	// itemDef {
+		// name shoot_advanced
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Last Weap Used:  "
+		// cvar "weaplastused"
+		// rect 300 135 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 176
+		// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07        
+		// forecolor 1 1 1 1
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+	
+	itemDef {
+		name shoot_advanced
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "weaplastused"
+		rect 300 135 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07        
+		forecolor 1 1 1 1
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/shoot/lwu.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }	
+	
+	
+	// itemDef {
+		// name shoot_advanced
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Next Weapon In Bank:  "
+		// cvar "weapnextinbank"
+		// rect 300 150 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 176
+		// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+		// forecolor 1 1 1 1
+		// textfont UI_FONT_BIG
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+	
+	itemDef {
+		name shoot_advanced
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "weapnextinbank"
+		rect 300 150 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+		forecolor 1 1 1 1
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/controls/shoot/nwb.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }	
+	
+	// itemDef {
+		// name shoot_advanced
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Previous Wpn In Bank:  "
+		// cvar "weapprevinbank"
+		// rect 300 165 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 176
+		// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// textfont UI_FONT_BIG
+		// backcolor 1 1 1 .07        
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name shoot_advanced
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "weapprevinbank"
+		rect 300 165 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		textfont UI_FONT_BIG
+		backcolor 1 1 1 .07        
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/controls/shoot/pwb.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+    // itemDef {
+	    // name shoot_advanced
+	    // group controls
+	    // type ITEM_TYPE_TEXT
+	    // text "Use Weapon Cycle"
+	    // rect 300 195 290 12
+	    // textalign ITEM_ALIGN_RIGHT
+	    // textalignx 180
+	    // textaligny 10
+	    // textscale .23
+        // textfont UI_FONT_BIG		
+	    // forecolor 1 1 1 1
+	    // decoration
+	    // visible 0 
+	// }
+
+    itemDef {
+	    name shoot_advanced
+	    group controls
+	    type ITEM_TYPE_TEXT
+	    text ""
+	    rect 300 195 290 12
+	    textalign ITEM_ALIGN_RIGHT
+	    textalignx 180
+	    textaligny 10
+	    textscale .23
+        textfont UI_FONT_BIG	
+		style WINDOW_STYLE_SHADER		
+	    forecolor 1 1 1 1
+		background "text/ChineseCHN/options/controls/shoot/uwc.tga"
+	    decoration
+	    visible 0 
+	}
+
+
+    // itemDef {
+	    // name shoot_advanced
+	    // group controls
+	    // type ITEM_TYPE_MULTI
+	    // text "For Zooming:"
+	    // cvar "cg_useWeapsForZoom"
+	    // cvarFloatList { "Off" 0 "On (normal)" 1 "On (reverse)" 2 }
+	    // rect 300 210 290 12
+	    // textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+	    // textalignx 142
+	    // textaligny 10
+	    // textscale .23           
+	    // forecolor 1 1 1 1
+	    // style WINDOW_STYLE_FILLED
+	    // backcolor 1 1 1 .07
+	    // visible 0 
+	// }
+
+    itemDef {
+	    name shoot_advanced
+	    group controls
+	    type ITEM_TYPE_MULTI
+	    text ""
+	    cvar "cg_useWeapsForZoom"
+	    cvarFloatList { "Off" 0 "On (normal)" 1 "On (reverse)" 2 }
+	    rect 300 210 290 12
+	    textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+	    textalignx 142
+	    textaligny 10
+	    textscale .23           
+	    forecolor 1 1 1 1
+	    style WINDOW_STYLE_SHADER
+	    backcolor 1 1 1 .07
+		background "text/ChineseCHN/options/controls/shoot/zooming.tga"
+	    visible 0 
+	}
+
+
+///////misc////////
+
+    // itemDef {
+	    // name miscbutton
+	    // text "Misc"
+	    // type 1
+	    // textscale .23
+	    // group controlbuttons
+	    // style WINDOW_STYLE_FILLED
+		// textfont UI_FONT_BIG
+	    // rect 590 105 45 20
+	    // textalign 1
+	    // textalignx 22
+	    // textaligny 14
+	    // border 1
+	    // bordercolor .1 .1 .1 0
+	    // forecolor 1 1 1 1
+	    // backcolor .1 .1 .1 0 
+	    // visible 0
+	    // action { hide controls ; show misc }
+	    // mouseEnter { show message_misc ; setitemcolor miscbutton backcolor .3 .3 .3 0 } 
+	    // mouseExit { hide message_misc ; setitemcolor miscbutton backcolor .1 .1 .1 0} 
+	// }
+
+   itemDef {
+	    name miscbutton
+	    text "[              ]"
+	    type 1
+	    textscale .23
+	    group controlbuttons
+	    style WINDOW_STYLE_SHADER
+		textfont UI_FONT_BIG
+	    rect 570 104 45 20
+	    textalign 1
+	    textalignx 22
+	    textaligny 14
+	    border 1
+	    bordercolor .1 .1 .1 0
+	    forecolor 1 1 1 1
+	    backcolor .1 .1 .1 0 
+		background "text/ChineseCHN/options/controls/miscbutton.tga"
+	    visible 0
+	    action { hide controls ; show misc }
+	    mouseEnter { show message_misc ; setitemcolor miscbutton forecolor .3 .3 .3 1 ; setitemcolor miscbutton forecolor .9 .9 .1 .8 } 
+	    mouseExit { hide message_misc ; setitemcolor miscbutton forecolor 1 1 1 1 ; setitemcolor miscbutton forecolor 1 1 1 1 } 
+	}
+
+
+
+
+
+
+
+
+	// itemDef {
+		// name misc
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Cyanide(kill player):  "
+		// cvar "kill"
+		// rect 300 135 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textfont UI_FONT_BIG
+		// textaligny 10
+		// textscale .23  
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07                  
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+  	// }
+
+
+	itemDef {
+		name misc
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "kill"
+		rect 300 135 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142 
+		textfont UI_FONT_BIG
+		textaligny 10
+		textscale .23  
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07                  
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/controls/misc/killme.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+  	}
+
+
+	// itemDef {
+		// name misc
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Kick:  "
+		// cvar "+kick"
+		// rect 300 150 290 12
+		// textfont UI_FONT_BIG
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07                    
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+  	// }
+
+	itemDef {
+		name misc
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+kick"
+		rect 300 150 290 12
+		textfont UI_FONT_BIG
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142 
+		textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07                    
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/controls/misc/kick.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+  	}
+
+
+	// itemDef {
+		// name misc
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Toggle Notebook:  "
+		// cvar "notebook"
+		// rect 300 165 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142 
+		// textaligny 10
+		// textfont UI_FONT_BIG
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07                   
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+	// }
+
+	itemDef {
+		name misc
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "notebook"
+		rect 300 165 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142 
+		textaligny 10
+		textfont UI_FONT_BIG
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07                   
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/controls/misc/notebook.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+	}
+
+
+	// itemDef {
+		// name misc
+		// group controls
+		// type ITEM_TYPE_YESNO
+		// text "Auto Item Pickup:  "
+		// cvar "cg_autoactivate"
+		// rect 300 180 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textfont UI_FONT_BIG
+		// textscale .23  
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07          
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show yesno_message }
+		// mouseexit { hide yesno_message }
+   	// }
+
+	itemDef {
+		name misc
+		group controls
+		type ITEM_TYPE_YESNO
+		text ""
+		cvar "cg_autoactivate"
+		rect 300 180 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textfont UI_FONT_BIG
+		textscale .23  
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07          
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/controls/misc/autopickup.tga"
+		visible 0 
+		mouseenter { show yesno_message }
+		mouseexit { hide yesno_message }
+   	}
+
+	// itemDef {
+		// name misc
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Activate:  "
+		// cvar "+activate"
+		// rect 300 195 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+		// textalignx 142
+		// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07           
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name misc
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+activate"
+		rect 300 195 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+		textalignx 142
+		textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07           
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/controls/misc/activate.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+	// itemDef {
+		// name misc
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Use Item:  "
+		// cvar "+useitem"
+		// rect 300 210 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+		// textalignx 142
+		// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07            
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name misc
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "+useitem"
+		rect 300 210 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+		textalignx 142
+		textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07            
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/controls/misc/useitem.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+	// itemDef {
+		// name misc
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Next Item:  "
+		// cvar "itemnext"
+		// rect 300 225 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+		// textalignx 142
+		// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07           
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name misc
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "itemnext"
+		rect 300 225 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+		textalignx 142
+		textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07           
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/controls/misc/nextitem.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+
+	// itemDef {
+		// name misc
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Previous Item:  "
+		// cvar "itemprev"
+		// rect 300 240 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+		// textalignx 142
+		// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07           
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+    // }
+
+	itemDef {
+		name misc
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "itemprev"
+		rect 300 240 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+		textalignx 142
+		textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07           
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/controls/misc/previousitem.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+    }
+
+
+	// itemDef {
+		// name misc
+		// group controls
+		// type ITEM_TYPE_YESNO
+		// text "Invert Mouse:  "
+		// cvar "ui_mousePitch"
+		// rect 300 255 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// textfont UI_FONT_BIG
+		// backcolor 1 1 1 .07           
+		// forecolor 1 1 1 1
+		// visible 0 
+		// action { uiScript update ui_mousePitch }
+		// mouseenter { show yesno_message }
+		// mouseexit { hide yesno_message }
+    // }
+
+	itemDef {
+		name misc
+		group controls
+		type ITEM_TYPE_YESNO
+		text ""
+		cvar "ui_mousePitch"
+		rect 300 255 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		textfont UI_FONT_BIG
+		backcolor 1 1 1 .07           
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/controls/misc/invertmouse.tga"
+		visible 0 
+		action { uiScript update ui_mousePitch }
+		mouseenter { show yesno_message }
+		mouseexit { hide yesno_message }
+    }
+
+
+
+
+
+	// itemDef {
+		// name misc
+		// group controls
+		// type ITEM_TYPE_YESNO
+		// text "Smooth Mouse:  "
+		// cvar "m_filter"
+		// rect 300 270 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+		// textalignx 142
+		// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07           
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show yesno_message }
+		// mouseexit { hide yesno_message }
+    // }
+	
+
+	itemDef {
+		name misc
+		group controls
+		type ITEM_TYPE_YESNO
+		text ""
+		cvar "m_filter"
+		rect 300 270 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+		textalignx 142
+		textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07           
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/controls/misc/smoothmouse.tga"
+		visible 0 
+		mouseenter { show yesno_message }
+		mouseexit { hide yesno_message }
+    }
+		
+	
+	
+
+	// itemDef {
+		// name misc
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Quicksave:  "
+		// cvar "savegame quicksave"
+		// rect 300 300 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23  
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07                  
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+  	// }
+
+	itemDef {
+		name misc
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "savegame quicksave"
+		rect 300 300 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+		textalignx 142 
+		textaligny 10
+		textscale .23  
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07                  
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/controls/misc/quicksave.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+  	}
+
+
+
+
+	// itemDef {
+		// name misc
+		// group controls
+		// type ITEM_TYPE_BIND
+		// text "Quickload:  "
+		// cvar "loadgame quicksave"
+		// rect 300 315 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+		// textalignx 142 
+		// textaligny 10
+		// textscale .23  
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07                  
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show keyBindStatus }
+		// mouseexit { hide keyBindStatus }
+  	// }
+
+itemDef {
+		name misc
+		group controls
+		type ITEM_TYPE_BIND
+		text ""
+		cvar "loadgame quicksave"
+		rect 300 315 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+		textalignx 142 
+		textaligny 10
+		textscale .23  
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07                  
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/controls/misc/quickload.tga"
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+  	}
+
+
+
+	// itemDef {
+		// name misc
+		// group controls
+		// type ITEM_TYPE_SLIDER
+		// text "Mouse Sensitivity:  "
+		// cvarfloat "sensitivity" 5 1 30
+		// rect 300 330 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+		// textalignx 142
+		// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07            
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show slider_message }
+		// mouseexit { hide slider_message }
+    // }
+	
+	itemDef {
+		name misc
+		group controls
+		type ITEM_TYPE_SLIDER
+		text ""
+		cvarfloat "sensitivity" 5 1 30
+		rect 300 330 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+		textalignx 142
+		textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07            
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/controls/misc/sensitivity.tga"
+		visible 0 
+		mouseenter { show slider_message }
+		mouseexit { hide slider_message }
+    }
+	
+/*	
+	// Knightmare- added screenshot bind
+	itemDef {
+		name misc
+		group controls
+		type ITEM_TYPE_BIND
+		text "Screenshot:"
+		cvar "screenshotjpeg"
+		rect 300 360 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+		textalignx 142 
+		textaligny 10
+		textscale .23  
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07                  
+		forecolor 1 1 1 1
+		visible 0 
+		mouseenter { show keyBindStatus }
+		mouseexit { hide keyBindStatus }
+  	}
+*/
+
+	
+/*
+	// Knightmare- added screenshot format
+	itemDef {
+		name misc
+		group grpControls
+		type ITEM_TYPE_MULTI
+		text "Screenshot Format:  "
+		cvar "r_screenshotFormat"
+		cvarFloatList { "JPEG" jpg "TGA" tga }
+		rect 82 240 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23        
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		visible 0
+    }
+*/
+
+///////System//////////
+
+	itemDef 
+	{
+		name sysmenu
+		group systemmenus
+		rect 220 102 443 315	
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .5 .5 .5 .5
+		forecolor 1 1 1 1
+		backcolor 0 0 0 .8
+		visible 0
+		decoration
+	}
+
+
+    // itemDef {
+	    // name systembutton
+	    // text "Graphics"
+	    // type ITEM_TYPE_BUTTON
+		// textfont UI_FONT_BIG
+	    // textscale .22
+	    // group systemmenus
+	    // style WINDOW_STYLE_FILLED
+	    // rect 250 109 100 12
+	    // textalign 1
+	    // textalignx 50
+	    // textaligny 10
+	    // forecolor 1 1 1 1
+ 	    // visible 0
+	    // action { hide system ; show graphics ; show graphicsapply }
+	// }
+
+    itemDef {
+	    name graphicsbutton
+	    text "[              ]"
+	    type ITEM_TYPE_BUTTON
+		textfont UI_FONT_BIG
+	    textscale .23
+	    group systemmenus
+	    style WINDOW_STYLE_SHADER
+	    rect 250 105 100 20
+	    textalign 1
+	    textalignx 50
+	    textaligny 14
+	    forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/graphicsbutton.tga"
+ 	    visible 0
+	    action { hide system ; show graphics ; show graphicsapply }
+		mouseEnter { setitemcolor graphicsbutton forecolor .0 .9 .0 .8 }
+		mouseExit { setitemcolor graphicsbutton forecolor 1 1 1 1 }
+	}
+
+
+	itemDef 
+	{
+		name systembutton1
+		group systemmenus
+		rect 222 104 439 20	
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .1 .1 .1 .2
+		forecolor 1 1 1 1
+		backcolor .3 0.5 0.2 .25
+		visible 0
+		decoration
+	}
+
+    itemDef {
+	    name ctr_graphics
+	    text "SYSTEM"
+		group systemmenus
+ 	    type 1
+	    textfont UI_FONT_BIG
+	    style 0	
+	    textstyle 6
+	    rect 222.5 -12 64 14 
+	    textalign ITEM_ALIGN_CENTER
+	    textscale .22		
+	    textalignx 2
+	    textaligny 12
+	    forecolor .9 .9 .9 .8
+	    visible 0 
+	    decoration
+	}
+
+    // itemDef {
+    	// name graphics				
+	    // group system
+	    // text "Quality:"
+   	    // type ITEM_TYPE_MULTI
+	    // textfont UI_FONT_BIG
+	    // cvar "ui_glCustom"
+	    // cvarFloatList { "High Quality" 0 "Normal" 1 "Fast" 2 "Fastest" 3 "Custom" 4 }
+	    // cvarTest		"ui_glCustom"
+	    // hideCvar		{ "999" }	// 999 is 'recommended'
+	    // rect 300 140 290 12
+   	    // textalign ITEM_ALIGN_RIGHT
+   	    // textalignx 142 
+   	    // textaligny 10
+	    // textscale .22
+	    // style WINDOW_STYLE_FILLED
+	    // backcolor 1 1 1 .07         
+   	    // forecolor 1 1 1 1
+   	    // visible 0 
+	    // action { uiScript update "ui_glCustom" }
+	// }
+
+    itemDef {
+    	name graphics				
+	    group system
+	    text ""
+   	    type ITEM_TYPE_MULTI
+	    textfont UI_FONT_BIG
+	    cvar "ui_glCustom"
+	    cvarFloatList { "High Quality" 0 "Normal" 1 "Fast" 2 "Fastest" 3 "Custom" 4 }
+	    cvarTest		"ui_glCustom"
+	    hideCvar		{ "999" }	// 999 is 'recommended'
+	    rect 300 140 290 12
+   	    textalign ITEM_ALIGN_RIGHT
+   	    textalignx 142 
+   	    textaligny 10
+	    textscale .22
+	    style WINDOW_STYLE_SHADER
+	    backcolor 1 1 1 .07         
+   	    forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/graphics/quality.tga"
+   	    visible 0 
+	    action { uiScript update "ui_glCustom" }
+	}
+
+
+
+
+
+	// itemDef {
+		// name graphics				
+		// group system
+		// text "Quality:  Recommended"
+		// textfont UI_FONT_BIG
+		// type ITEM_TYPE_BUTTON	
+		// cvarTest		"ui_glCustom"
+		// showCvar		{ "999" }	// 999 is 'recommended'
+		// rect 300 150 290 12
+		// textalign ITEM_ALIGN_CENTER
+		// textalignx 162 
+		// textaligny 10
+		// textscale .22
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// forecolor 1 1 1 1
+		// visible 0
+		// action {setcvar ui_glCustom 0; uiScript update "ui_glCustom" }
+	// }
+
+	itemDef {
+		name graphics
+		group system
+		text ""
+		textfont UI_FONT_BIG
+		type ITEM_TYPE_BUTTON	
+		cvarTest		"ui_glCustom"
+		showCvar		{ "999" }	// 999 is 'recommended'
+		rect 300 150 290 12
+		textalign ITEM_ALIGN_CENTER
+		textalignx 162 
+		textaligny 10
+		textscale .22
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/graphics/recommend.tga"
+		visible 0
+		action {setcvar ui_glCustom 0 ; uiScript update "ui_glCustom" ; }
+	}
+
+
+	// itemDef {
+   		// name graphics
+		// group system
+      	// type ITEM_TYPE_YESNO
+		// text "GL Extensions:"
+		// cvar "r_allowExtensions"
+		// textfont UI_FONT_BIG
+		// rect 300 165 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .22  
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07     
+      	// forecolor 1 1 1 1
+      	// visible 0
+		// action { uiScript glCustom }
+	// }
+
+	itemDef {
+   		name graphics
+		group system
+      	type ITEM_TYPE_YESNO
+		text ""
+		cvar "r_allowExtensions"
+		textfont UI_FONT_BIG
+		rect 300 165 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .22  
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07     
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/graphics/glextensions.tga"
+      	visible 0
+		action { uiScript glCustom }
+	}
+
+	
+	// itemDef {
+   		// name graphics
+		// group system
+   		// type ITEM_TYPE_MULTI	
+		// text "Video Mode:"
+		// cvar "r_mode"
+		// cvarFloatList {  "640*480" 3 "800*600" 4 "960*720" 5 "1024*768" 6 "1152*864" 7 "1280*1024" 8 "1600*1200" 9 "2048*1536" 10 "856*480 Wide Screen" 11 }
+// //		"320*240" 0 "400*300" 1 "512*384" 2
+		// rect 300 180 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .22 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+	// }
+	
+	itemDef {
+   		name graphics
+		group system
+   		type ITEM_TYPE_MULTI	
+		text ""
+		cvar "r_mode"
+		cvarFloatList {  "640*480" 3 "800*600" 4 "960*720" 5 "1024*768" 6 "1152*864" 7 "1280*1024" 8 "1600*1200" 9 "2048*1536" 10 "856*480 Wide Screen" 11 }
+//		"320*240" 0 "400*300" 1 "512*384" 2
+		rect 300 180 290 12
+      	textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+      	textalignx 142
+      	textaligny 10
+		textscale .22 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/graphics/videomode.tga"
+      	visible 0 
+		action { uiScript glCustom }
+	}	
+	
+	
+	
+	// itemDef {
+      	// name graphics
+		// group system
+      	// type ITEM_TYPE_MULTI			
+		// text "Fixed Aspect:"
+		// cvar "cg_fixedaspect"
+		// cvarFloatList { "Off" 0 "4:3" 1 "Widescreen" 2  }
+		// rect 300 195 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .22   
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07     
+      	// forecolor 1 1 1 1
+		// textfont UI_FONT_BIG
+      	// visible 0 
+		// action { uiScript glCustom }
+	// }
+
+	
+	itemDef {
+      	name graphics
+		group system
+      	type ITEM_TYPE_MULTI			
+		text ""
+		cvar "cg_fixedaspect"
+		cvarFloatList { "Off" 0 "4:3" 1 "Widescreen" 2  }
+		rect 300 195 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .22   
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07     
+      	forecolor 1 1 1 1
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/system/graphics/fixedaspect.tga"
+      	visible 0 
+		action { uiScript glCustom }
+	}
+
+
+	
+	// itemDef {
+   		// name graphics
+		// group system
+      	// type ITEM_TYPE_YESNO
+		// text "Fullscreen:"
+		// cvar "r_fullscreen"
+		// rect 300 210 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .22
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+        // textfont UI_FONT_BIG        
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+	// }
+	
+	itemDef {
+   		name graphics
+		group system
+      	type ITEM_TYPE_YESNO
+		text ""
+		cvar "r_fullscreen"
+		rect 300 210 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .22
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+        textfont UI_FONT_BIG        
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/graphics/fullscreen.tga"
+      	visible 0 
+		action { uiScript glCustom }
+	}
+
+	// itemDef {
+      	// name graphics
+		// group system
+      	// type ITEM_TYPE_MULTI			
+		// text "Lighting:"
+		// cvar "r_vertexlight"
+		// cvarFloatList { "Light Map (high)" 0 "Vertex (low)" 1  }
+		// rect 300 225 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .22   
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07     
+      	// forecolor 1 1 1 1
+		// textfont UI_FONT_BIG
+      	// visible 0 
+		// action { uiScript glCustom }
+	// }
+
+	itemDef {
+      	name graphics
+		group system
+      	type ITEM_TYPE_MULTI			
+		text ""
+		cvar "r_vertexlight"
+		cvarFloatList { "Light Map (high)" 0 "Vertex (low)" 1  }
+		rect 300 225 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .22   
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07     
+      	forecolor 1 1 1 1
+		textfont UI_FONT_BIG
+		background "text/ChineseCHN/options/system/graphics/lighting.tga"
+      	visible 0 
+		action { uiScript glCustom }
+	}
+
+
+
+	// itemDef {
+   		// name graphics
+		// group system
+    	// type ITEM_TYPE_MULTI
+		// text "Geometric Detail:"
+		// cvar "r_lodbias"
+		// cvarFloatList { "High" 0 "Medium" 1 "Low" 2 }
+		// rect 300 240 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .22 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom ; uiScript update "r_lodbias" }
+	// }
+
+	itemDef {
+   		name graphics
+		group system
+    	type ITEM_TYPE_MULTI
+		text ""
+		cvar "r_lodbias"
+		cvarFloatList { "High" 0 "Medium" 1 "Low" 2 }
+		rect 300 240 290 12
+      	textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+      	textalignx 142
+      	textaligny 10
+		textscale .22 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/graphics/geometric.tga"
+      	visible 0 
+		action { uiScript glCustom ; uiScript update "r_lodbias" }
+	}
+
+
+
+
+	// itemDef {
+		// name graphics
+		// group system
+		// type ITEM_TYPE_MULTI
+		// text "Character Textures:"
+		// cvar "r_picmip2"
+		// cvarFloatList { "Low" 3 "Normal" 2 "High" 1 "Extra" 0 }
+		// rect 300 255 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+   	// }
+	
+	itemDef {
+		name graphics
+		group system
+		type ITEM_TYPE_MULTI
+		text ""
+		cvar "r_picmip2"
+		cvarFloatList { "Low" 3 "Normal" 2 "High" 1 "Extra" 0 }
+		rect 300 255 290 12
+      	textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+      	textalignx 142
+      	textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/graphics/character.tga"
+      	visible 0 
+		action { uiScript glCustom }
+   	}
+		
+	
+	
+	// itemDef {
+		// name graphics
+		// group system
+		// type ITEM_TYPE_MULTI
+		// text "General Textures:"
+		// textfont UI_FONT_BIG
+		// cvar "r_picmip"
+		// cvarFloatList { "Low" 2 "Normal" 1 "High" 0 }
+		// rect 300 270 290 12
+	    // textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+ 		// action { uiScript glCustom }
+   	// }
+
+	itemDef {
+		name graphics
+		group system
+		type ITEM_TYPE_MULTI
+		text ""
+		textfont UI_FONT_BIG
+		cvar "r_picmip"
+		cvarFloatList { "Low" 2 "Normal" 1 "High" 0 }
+		rect 300 270 290 12
+	    textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/graphics/general.tga"
+      	visible 0 
+ 		action { uiScript glCustom }
+   	}
+
+
+
+	// itemDef {
+      	// name graphics
+		// group system
+      	// type ITEM_TYPE_MULTI
+		// text "Texture Filter:"
+		// textfont UI_FONT_BIG
+		// cvar "r_texturemode"
+		// cvarStrList { "Bilinear", "GL_LINEAR_MIPMAP_NEAREST", "Trilinear", "GL_LINEAR_MIPMAP_LINEAR"  }
+		// rect 300 285 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .22  
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07      
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+	// }
+
+	itemDef {
+      	name graphics
+		group system
+      	type ITEM_TYPE_MULTI
+		text ""
+		textfont UI_FONT_BIG
+		cvar "r_texturemode"
+		cvarStrList { "Bilinear", "GL_LINEAR_MIPMAP_NEAREST", "Trilinear", "GL_LINEAR_MIPMAP_LINEAR"  }
+		rect 300 285 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .22  
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07      
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/graphics/filter.tga"
+      	visible 0 
+		action { uiScript glCustom }
+	}
+
+
+
+	// itemDef {
+   		// name graphics
+		// group system
+   		// type ITEM_TYPE_MULTI
+		// textfont UI_FONT_BIG
+		// text "Color Depth:"
+		// cvar "r_colorbits"
+		// cvarFloatList { "Desktop Default" 0 "16-bit" 16 "32-bit" 32 }
+		// rect 300 300 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .22 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07      
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom ; uiScript update "r_colorbits" }
+	// }
+
+	itemDef {
+   		name graphics
+		group system
+   		type ITEM_TYPE_MULTI
+		textfont UI_FONT_BIG
+		text ""
+		cvar "r_colorbits"
+		cvarFloatList { "Desktop Default" 0 "16-bit" 16 "32-bit" 32 }
+		rect 300 300 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .22 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07      
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/graphics/colordepth.tga"
+      	visible 0 
+		action { uiScript glCustom ; uiScript update "r_colorbits" }
+	}
+
+
+
+
+	// itemDef {
+      	// name graphics
+		// group system
+      	// type ITEM_TYPE_YESNO
+		// text "Compress Textures:"
+		// textfont UI_FONT_BIG
+		// cvar "r_ext_compressed_textures"
+		// rect 300 315 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .22 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+	// }
+
+	itemDef {
+      	name graphics
+		group system
+      	type ITEM_TYPE_YESNO
+		text ""
+		textfont UI_FONT_BIG
+		cvar "r_ext_compressed_textures"
+		rect 300 315 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .22 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/graphics/compress.tga"
+      	visible 0 
+		action { uiScript glCustom }
+	}
+		
+
+
+
+
+
+
+
+		
+	// itemDef {
+		// name graphics
+		// group system
+		// type ITEM_TYPE_MULTI
+		// text "Texture Quality:"
+		// textfont UI_FONT_BIG
+		// cvar "r_texturebits"
+		// cvarFloatList { "Default" 0 "16 bit" 16 "32 bit" 32 }
+		// rect 300 330 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+    // }
+
+		
+	itemDef {
+		name graphics
+		group system
+		type ITEM_TYPE_MULTI
+		text ""
+		textfont UI_FONT_BIG
+		cvar "r_texturebits"
+		cvarFloatList { "Default" 0 "16 bit" 16 "32 bit" 32 }
+		rect 300 330 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/graphics/texturequality.tga"
+      	visible 0 
+		action { uiScript glCustom }
+    }
+
+
+
+
+
+
+
+
+	// itemDef {
+ 		// cvarTest "r_ignorehwgamma"
+		// textfont UI_FONT_BIG
+		// showcvar { "1" }
+ 		// name graphics
+		// group system
+      	// type ITEM_TYPE_SLIDER
+		// text "Brightness:"
+		// cvarfloat "r_gamma" 1.3 0.5 3
+		// rect 300 345 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142 
+      	// textaligny 10
+		// textscale .22 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+    // }
+    		
+	// itemDef {
+ 		// cvarTest "r_ignorehwgamma"
+		// showcvar { "0" }
+ 		// name graphics
+		// group system
+      	// type ITEM_TYPE_SLIDER
+		// textfont UI_FONT_BIG
+		// text "Brightness:"
+		// cvarfloat "r_gamma" 1 0.5 2
+		// rect 300 345 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142 
+      	// textaligny 10
+		// textscale .22 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+    // }
+
+	itemDef {
+ 		cvarTest "r_ignorehwgamma"
+		showcvar { "0" }
+ 		name graphics
+		group system
+      	type ITEM_TYPE_SLIDER
+		textfont UI_FONT_BIG
+		text ""
+		cvarfloat "r_gamma" 1 0.5 2
+		rect 300 345 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142 
+      	textaligny 10
+		textscale .22 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/graphics/brightness.tga"
+      	visible 0 
+		action { uiScript glCustom }
+    }
+
+
+
+
+	// itemDef {
+		// name graphics
+		// group system
+		// type ITEM_TYPE_YESNO
+		// textfont UI_FONT_BIG
+		// text "Nvidia Distance Fog:"
+		// cvar "r_ext_NV_fog_dist"
+		// rect 300 360 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+    // }
+
+	itemDef {
+		name graphics
+		group system
+		type ITEM_TYPE_YESNO
+		textfont UI_FONT_BIG
+		text ""
+		cvar "r_ext_NV_fog_dist"
+		rect 300 360 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/graphics/fog.tga"
+      	visible 0 
+		action { uiScript glCustom }
+    }
+
+
+
+
+	// itemDef {
+		// name graphics
+		// textfont UI_FONT_BIG
+		// group system
+		// type ITEM_TYPE_YESNO
+		// text "ATI Truform:"
+		// cvar "r_ext_ATI_pntriangles"
+		// rect 300 375 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .22 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+   	// }
+
+	itemDef {
+		name graphics
+		textfont UI_FONT_BIG
+		group system
+		type ITEM_TYPE_YESNO
+		text ""
+		cvar "r_ext_ATI_pntriangles"
+		rect 300 375 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .22 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/graphics/ati.tga"
+      	visible 0 
+		action { uiScript glCustom }
+   	}
+
+
+
+
+	// itemDef {
+		// name graphicsapply
+		// textfont UI_FONT_BIG
+		// text "Apply"
+		// type 1	
+		// textscale .25
+		// style WINDOW_STYLE_FILLED
+		// group system
+		// rect 400 390 100 20
+		// textalign 1
+		// textalignx 50
+		// textaligny 15
+		// forecolor 1 1 1 1
+		// backcolor .1 .1 .1 .1 
+		// visible 0
+		// border 1
+		// bordercolor .5 .5 .5 .5
+		// action { exec "vid_restart"  }
+		// mouseEnter { setitemcolor graphicsapply backcolor .3 .5 .2 .25 }
+      	// mouseExit { setitemcolor graphicsapply backcolor .1 .1 .1 .1 }
+	// }
+	
+		itemDef {
+		name graphicsapply
+		textfont UI_FONT_BIG
+		text ""
+		type 1	
+		textscale .25
+		style WINDOW_STYLE_SHADER
+		group system
+		rect 400 390 100 20
+		textalign 1
+		textalignx 50
+		textaligny 15
+		forecolor 1 1 1 1
+		backcolor .1 .1 .1 .1 
+		background "text/ChineseCHN/options/system/apply.tga"
+		visible 0
+		border 1
+		bordercolor .5 .5 .5 .5
+		action { exec "vid_restart" }
+		mouseEnter { setitemcolor graphicsapply backcolor .3 .5 .2 .25 ; setitemcolor graphicsapply forecolor .0 .9 .0 .8 }
+      	mouseExit { setitemcolor graphicsapply backcolor .1 .1 .1 .1 ; setitemcolor graphicsapply forecolor 1 1 1 1 }
+	}
+	
+	
+	    // itemDef {
+	    // name systembutton
+	    // text "ioRTCW"
+	    // type ITEM_TYPE_BUTTON
+		// textfont UI_FONT_BIG
+	    // textscale .22
+	    // group systemmenus
+	    // style WINDOW_STYLE_FILLED
+	    // rect 385 109 100 12
+	    // textalign 1
+	    // textalignx 50
+	    // textaligny 10
+	    // forecolor 1 1 1 1
+ 	    // visible 0
+	    // action { hide system ; show iortcwgraphics ; show graphicsapply }
+	// }
+
+	    itemDef {
+	    name iortcwbutton
+	    text "[                        ]"
+	    type ITEM_TYPE_BUTTON
+		textfont UI_FONT_BIG
+	    textscale .23
+	    group systemmenus
+	    style WINDOW_STYLE_SHADER
+	    rect 395 105 100 20
+	    textalign 1
+	    textalignx 50
+	    textaligny 14
+	    forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/iortcwbutton.tga"
+ 	    visible 0
+	    action { hide system ; show iortcwgraphics ; show graphicsapply }
+		mouseEnter { setitemcolor iortcwbutton forecolor .0 .9 .0 .8 }
+		mouseExit { setitemcolor iortcwbutton forecolor 1 1 1 1 }
+	}
+
+
+	
+	// itemDef {
+		// name iortcwgraphics
+		// group system
+		// type ITEM_TYPE_MULTI
+		// text "Renderer:"
+		// textfont UI_FONT_BIG
+		// cvar "cl_renderer"
+		// cvarstrList { "opengl1" opengl1 "rend2" rend2 }
+		// rect 300 130 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+    // }
+	
+	itemDef {
+		name iortcwgraphics
+		group system
+		type ITEM_TYPE_MULTI
+		text ""
+		textfont UI_FONT_BIG
+		cvar "cl_renderer"
+		cvarstrList { "opengl1" opengl1 "rend2" rend2 }
+		rect 300 130 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/iortcw/renderer.tga"
+      	visible 0 
+		action { uiScript glCustom }
+    }	
+	
+	
+	
+	// itemDef {
+		// name iortcwgraphics
+		// textfont UI_FONT_BIG
+		// group system
+		// type ITEM_TYPE_YESNO
+		// text "HDR:"
+		// cvar "r_hdr"
+		// rect 300 145 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+   	// }
+	
+	itemDef {
+		name iortcwgraphics
+		textfont UI_FONT_BIG
+		group system
+		type ITEM_TYPE_YESNO
+		text ""
+		cvar "r_hdr"
+		rect 300 145 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/iortcw/hdr.tga"
+      	visible 0 
+		action { uiScript glCustom }
+   	}	
+	
+	
+	
+	// itemDef {
+		// name iortcwgraphics
+		// textfont UI_FONT_BIG
+		// group system
+		// type ITEM_TYPE_YESNO
+		// text "SSAO:"
+		// cvar "r_ssao"
+		// rect 300 160 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+   	// }
+
+	itemDef {
+		name iortcwgraphics
+		textfont UI_FONT_BIG
+		group system
+		type ITEM_TYPE_YESNO
+		text ""
+		cvar "r_ssao"
+		rect 300 160 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/iortcw/ssao.tga"
+      	visible 0 
+		action { uiScript glCustom }
+   	}
+
+
+
+	
+	// itemDef {
+		// name iortcwgraphics
+		// textfont UI_FONT_BIG
+		// group system
+		// type ITEM_TYPE_YESNO
+		// text "Draw sun rays:"
+		// cvar "r_drawsunrays"
+		// rect 300 175 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+   	// }
+	
+	itemDef {
+		name iortcwgraphics
+		textfont UI_FONT_BIG
+		group system
+		type ITEM_TYPE_YESNO
+		text ""
+		cvar "r_drawsunrays"
+		rect 300 175 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/iortcw/drawsunrays.tga"
+      	visible 0 
+		action { uiScript glCustom }
+   	}	
+	
+	
+	// itemDef {
+		// name iortcwgraphics
+		// textfont UI_FONT_BIG
+		// group system
+		// type ITEM_TYPE_MULTI
+		// text "Texture compression:"
+		// cvar "r_ext_compressed_textures"
+		// cvarFloatList { "No compression" 0 "DXT compression" 1 "BPTC compression" 2 }
+		// rect 300 190 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+   	// }
+
+	itemDef {
+		name iortcwgraphics
+		textfont UI_FONT_BIG
+		group system
+		type ITEM_TYPE_MULTI
+		text ""
+		cvar "r_ext_compressed_textures"
+		cvarFloatList { "No compression" 0 "DXT compression" 1 "BPTC compression" 2 }
+		rect 300 190 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/iortcw/compression.tga"
+      	visible 0 
+		action { uiScript glCustom }
+   	}	
+	
+	
+	
+		// itemDef {
+ 		// name iortcwgraphics
+		// group system
+      	// type ITEM_TYPE_SLIDER
+		// textfont UI_FONT_BIG
+		// text "Multisample Anti-aliasing:"
+		// cvarfloat "r_ext_framebuffer_multisample" 0 0 16
+		// rect 300 205 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142 
+      	// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+    // }
+
+	itemDef {
+ 		name iortcwgraphics
+		group system
+      	type ITEM_TYPE_SLIDER
+		textfont UI_FONT_BIG
+		text ""
+		cvarfloat "r_ext_framebuffer_multisample" 0 0 16
+		rect 300 205 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142 
+      	textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/iortcw/msaa.tga"
+      	visible 0 
+    }
+	
+
+	
+		// itemDef {
+		// name iortcwgraphics
+		// textfont UI_FONT_BIG
+		// group system
+		// type ITEM_TYPE_YESNO
+		// text "Post-processing:"
+		// cvar "r_postProcess"
+		// rect 300 220 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+   	// }
+	
+	itemDef {
+		name iortcwgraphics
+		textfont UI_FONT_BIG
+		group system
+		type ITEM_TYPE_YESNO
+		text ""
+		cvar "r_postProcess"
+		rect 300 220 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/iortcw/postprocess.tga"
+      	visible 0 
+		action { uiScript glCustom }
+   	}	
+	
+	
+	// itemDef {
+		// name iortcwgraphics
+		// textfont UI_FONT_BIG
+		// group system
+		// type ITEM_TYPE_YESNO
+		// text "Tone mapping:"
+		// cvar "r_toneMap"
+		// rect 300 235 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+   	// }
+
+	itemDef {
+		name iortcwgraphics
+		textfont UI_FONT_BIG
+		group system
+		type ITEM_TYPE_YESNO
+		text ""
+		cvar "r_toneMap"
+		rect 300 235 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/iortcw/tonemapping.tga"
+      	visible 0 
+		action { uiScript glCustom }
+   	}
+
+
+	
+	// itemDef {
+		// name iortcwgraphics
+		// textfont UI_FONT_BIG
+		// group system
+		// type ITEM_TYPE_YESNO
+		// text "Auto exposure:"
+		// cvar "r_autoExposure"
+		// rect 300 250 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+   	// }
+
+	itemDef {
+		name iortcwgraphics
+		textfont UI_FONT_BIG
+		group system
+		type ITEM_TYPE_YESNO
+		text ""
+		cvar "r_autoExposure"
+		rect 300 250 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/iortcw/autoexposure.tga"
+      	visible 0 
+		action { uiScript glCustom }
+   	}	
+	
+	
+	
+	// itemDef {
+		// name iortcwgraphics
+		// textfont UI_FONT_BIG
+		// group system
+		// type ITEM_TYPE_MULTI
+		// text "Texture interpolation:"
+		// cvar "r_imageUpsample"
+		// cvarFloatList { "No" 0 "2x" 1 "4x" 2 }
+		// rect 300 265 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+   	// }
+	
+	itemDef {
+		name iortcwgraphics
+		textfont UI_FONT_BIG
+		group system
+		type ITEM_TYPE_MULTI
+		text ""
+		cvar "r_imageUpsample"
+		cvarFloatList { "No" 0 "2x" 1 "4x" 2 }
+		rect 300 265 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/iortcw/interpolation.tga"
+      	visible 0 
+		action { uiScript glCustom }
+   	}	
+	
+	
+	// itemDef {
+		// name iortcwgraphics
+		// textfont UI_FONT_BIG
+		// group system
+		// type ITEM_TYPE_MULTI
+		// text "Size of upscaled textures:"
+		// cvar "r_imageUpsampleMaxSize"
+		// cvarstrList { "1024" 1024 "2048" 2048 4096 "4096" }
+		// rect 300 280 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+   	// }
+
+	itemDef {
+		name iortcwgraphics
+		textfont UI_FONT_BIG
+		group system
+		type ITEM_TYPE_MULTI
+		text ""
+		cvar "r_imageUpsampleMaxSize"
+		cvarstrList { "1024" 1024 "2048" 2048 4096 "4096" }
+		rect 300 280 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/iortcw/upscaled.tga"
+      	visible 0 
+		action { uiScript glCustom }
+   	}
+
+	
+	// itemDef {
+		// name iortcwgraphics
+		// textfont UI_FONT_BIG
+		// group system
+		// type ITEM_TYPE_YESNO
+		// text "Generate normal maps:"
+		// cvar "r_genNormalMaps"
+		// rect 300 295 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+   	// }
+
+	itemDef {
+		name iortcwgraphics
+		textfont UI_FONT_BIG
+		group system
+		type ITEM_TYPE_YESNO
+		text ""
+		cvar "r_genNormalMaps"
+		rect 300 295 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/iortcw/maps.tga"
+      	visible 0 
+		action { uiScript glCustom }
+   	}
+
+
+
+
+
+
+
+	
+	// itemDef {
+		// name iortcwgraphics
+		// textfont UI_FONT_BIG
+		// group system
+		// type ITEM_TYPE_MULTI
+		// text "Force Sun:"
+		// cvar "r_forceSun"
+		// cvarFloatList { "No" 0 "Yes" 1 "Sunrise,sunset" 2 }
+		// rect 300 310 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07       
+      	// forecolor 1 1 1 1
+      	// visible 0 
+		// action { uiScript glCustom }
+   	// }
+
+	
+	itemDef {
+		name iortcwgraphics
+		textfont UI_FONT_BIG
+		group system
+		type ITEM_TYPE_MULTI
+		text ""
+		cvar "r_forceSun"
+		cvarFloatList { "No" 0 "Yes" 1 "Sunrise,sunset" 2 }
+		rect 300 310 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07       
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/iortcw/sun.tga"
+      	visible 0 
+		action { uiScript glCustom }
+   	}
+	
+
+
+	
+	
+    // itemDef {
+	    // name soundbutton
+	    // text "Sound"
+		// textfont UI_FONT_BIG
+	    // type 1
+	    // textscale .22
+	    // group systemmenus
+	    // style WINDOW_STYLE_FILLED
+	    // rect 520 109 100 12
+	    // textalign 1
+	    // textalignx 50
+	    // textaligny 10
+	    // forecolor .9 .9 .9 .8
+	    // backcolor .1 .1 .1 0 
+	    // visible 0
+	    // action { hide system ; show sounds ; show applysys }
+	    // mouseEnter { show message_other ; setitemcolor ctr_other backcolor .3 .3 .3 0 } 
+	    // mouseExit { hide message_other ; setitemcolor ctr_other backcolor .1 .1 .1 0} 	
+	// }
+
+    itemDef {
+	    name soundbutton
+	    text "[              ]"
+		textfont UI_FONT_BIG
+	    type 1
+	    textscale .23
+	    group systemmenus
+	    style WINDOW_STYLE_SHADER
+	    rect 540 105 100 20
+	    textalign 1
+	    textalignx 50
+	    textaligny 14
+	    forecolor .9 .9 .9 .8
+	    backcolor .1 .1 .1 0 
+		background "text/ChineseCHN/options/system/soundbutton.tga"
+	    visible 0
+	    action { hide system ; show sounds ; show applysys }
+	    mouseEnter { show message_other ; setitemcolor ctr_other backcolor .3 .3 .3 0 ; setitemcolor soundbutton forecolor .0 .9 .0 .8 } 
+	    mouseExit { hide message_other ; setitemcolor ctr_other backcolor .1 .1 .1 0 ; setitemcolor soundbutton forecolor 1 1 1 1 } 	
+	}
+
+
+
+
+	// itemDef {
+		// name sounds
+		// group system
+		// type ITEM_TYPE_SLIDER
+		// textfont UI_FONT_BIG
+		// text "Effects Volume:  "
+		// cvarfloat "s_volume" 0.7 0 1
+		// rect 300 135 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .22    
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07   
+		// forecolor 1 1 1 1
+		// visible 0 
+    // }
+
+	itemDef {
+		name sounds
+		group system
+		type ITEM_TYPE_SLIDER
+		textfont UI_FONT_BIG
+		text ""
+		cvarfloat "s_volume" 0.7 0 1
+		rect 300 135 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .22    
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07   
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/sound/effectsvolume.tga"
+		visible 0 
+    }
+
+
+	
+	// itemDef {
+		// name sounds
+		// group system
+		// type ITEM_TYPE_SLIDER
+		// textfont UI_FONT_BIG
+		// text "Music Volume:  "
+		// cvarfloat "s_musicvolume" 0.25 0 1
+		// rect 300 160 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .22   
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07     
+		// forecolor 1 1 1 1
+		// visible 0 
+    // }
+
+	itemDef {
+		name sounds
+		group system
+		type ITEM_TYPE_SLIDER
+		textfont UI_FONT_BIG
+		text ""
+		cvarfloat "s_musicvolume" 0.25 0 1
+		rect 300 160 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .22   
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07     
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/system/sound/musicvolume.tga"
+		visible 0 
+    }
+
+
+
+
+	// itemDef {
+		// name applysys
+		// group system
+		// text "Apply"
+		// textfont UI_FONT_BIG
+		// type 1
+		// style WINDOW_STYLE_FILLED	
+		// textscale .25
+		// rect 410 210 100 20
+		// textalign 1
+		// textalignx 50
+		// textaligny 15
+		// forecolor 1 1 1 1
+		// backcolor .1 .1 .1 .1 
+		// visible 0
+		// border 1
+		// bordercolor .5 .5 .5 .5
+		// action { exec "snd_restart" ; hide sounds ; hide applysys }
+		// mouseEnter { setitemcolor applysystem backcolor .3 .5 .2 .25 }
+      	// mouseExit { setitemcolor applysystem backcolor .1 .1 .1 .1 }
+	// }
+	
+	itemDef {
+		name applysys
+		group system
+		text ""
+		textfont UI_FONT_BIG
+		type 1
+		style WINDOW_STYLE_SHADER
+		textscale .25
+		rect 410 210 100 20
+		textalign 1
+		textalignx 50
+		textaligny 15
+		forecolor 1 1 1 1
+		backcolor .1 .1 .1 .1 
+		background "text/ChineseCHN/options/system/apply.tga"
+		visible 0
+		border 1
+		bordercolor .5 .5 .5 .5
+		action { exec "snd_restart" ; hide sounds ; hide applysys }
+		mouseEnter { setitemcolor applysystem backcolor .3 .5 .2 .25 ; setitemcolor applysys forecolor .0 .9 .0 .8 }
+      	mouseExit { setitemcolor applysystem backcolor .1 .1 .1 .1 ; setitemcolor applysys forecolor 1 1 1 1 }
+	}	
+	
+	itemDef {
+	    name gowindow
+	    group gomenus
+	    rect 220 102 443 300	
+	    style WINDOW_STYLE_FILLED
+	    border 1
+	    bordercolor .5 .5 .5 .5
+	    forecolor 1 1 1 1
+	    backcolor 0 0 0 .8
+	    visible 0
+	    decoration
+	}
+	
+	itemDef {
+		name gowindow2
+		group gomenus
+		rect 222 104 439 20	
+		style WINDOW_STYLE_FILLED
+		border 1
+		bordercolor .1 .1 .1 .2
+		forecolor 1 1 1 1
+		backcolor .3 0.5 0.2 .25
+		visible 0
+		decoration
+	}
+	
+    // itemDef {
+	    // name performancebutton
+	    // text "Performance"
+	    // type 1
+	    // textscale .22
+	    // group gomenus
+		// textfont UI_FONT_BIG
+	    // style WINDOW_STYLE_FILLED
+	    // rect 250 110 100 12
+	    // textalign 1
+	    // textalignx 50
+	    // textaligny 10
+	    // forecolor 1 1 1 1
+	    // backcolor .1 .1 .1 0 
+	    // visible 0
+	    // action { hide options ; show performance }
+	// }
+
+    itemDef {
+	    name performancebutton
+	    text "[              ]"
+	    type 1
+	    textscale .22
+	    group gomenus
+		textfont UI_FONT_BIG
+	    style WINDOW_STYLE_SHADER
+	    rect 250 105 100 20
+	    textalign 1
+	    textalignx 50
+	    textaligny 14
+	    forecolor 1 1 1 1
+	    backcolor .1 .1 .1 0 
+		background "text/ChineseCHN/options/gameoptions/performancebutton.tga"
+	    visible 0
+	    action { hide options ; show performance }
+		mouseEnter { setitemcolor performancebutton forecolor .0 .5 .9 .8 }
+		mouseExit { setitemcolor performancebutton forecolor 1 1 1 1 }
+	}
+
+
+
+	
+	// itemDef {
+	    // name realrtcwbutton
+	    // text "RealRTCW"
+	    // type 1
+	    // textscale .22
+	    // group gomenus
+		// textfont UI_FONT_BIG
+	    // style WINDOW_STYLE_FILLED
+	    // rect 400 110 100 12
+	    // textalign 1
+	    // textalignx 50
+	    // textaligny 10
+	    // forecolor 1 1 1 1
+	    // backcolor .1 .1 .1 0 
+	    // visible 0
+	    // action { hide options ; show realrtcw }
+	// }
+
+	itemDef {
+	    name realrtcwbutton
+	    text "[                              ]"
+	    type 1
+	    textscale .22
+	    group gomenus
+		textfont UI_FONT_BIG
+	    style WINDOW_STYLE_SHADER
+	    rect 395 105 100 20
+	    textalign 1
+	    textalignx 50
+	    textaligny 14
+	    forecolor 1 1 1 1
+	    backcolor .1 .1 .1 0 
+		background "text/ChineseCHN/options/gameoptions/realrtcwbutton.tga"
+	    visible 0
+	    action { hide options ; show realrtcw }
+		mouseEnter { setitemcolor realrtcwbutton forecolor .0 .5 .9 .8 }
+		mouseExit { setitemcolor realrtcwbutton forecolor 1 1 1 1 }
+	}
+
+
+
+
+
+	
+	// itemDef {
+	    // name viewbutton
+	    // text "View"
+	    // type 1
+	    // textscale .22
+	    // group gomenus
+		// textfont UI_FONT_BIG
+	    // style WINDOW_STYLE_FILLED
+	    // rect 530 110 100 12
+	    // textalign 1
+	    // textalignx 50
+	    // textaligny 10
+	    // forecolor 1 1 1 1
+	    // backcolor .1 .1 .1 0 
+	    // visible 0
+	    // action { hide options ; show view }
+	// }
+
+	itemDef {
+	    name viewbutton
+	    text "[              ]"
+	    type 1
+	    textscale .22
+	    group gomenus
+		textfont UI_FONT_BIG
+	    style WINDOW_STYLE_SHADER
+	    rect 540 105 100 20
+	    textalign 1
+	    textalignx 50
+	    textaligny 14
+	    forecolor 1 1 1 1
+	    backcolor .1 .1 .1 0 
+		background "text/ChineseCHN/options/gameoptions/viewbutton.tga"
+	    visible 0
+	    action { hide options ; show view }
+		mouseEnter { setitemcolor viewbutton forecolor .0 .5 .9 .8 }
+		mouseExit { setitemcolor viewbutton forecolor 1 1 1 1 }
+	}
+
+
+
+
+
+	
+	// itemDef {
+		// name performance
+		// group options
+		// text "Wall Mark Lifetime:  "
+		// type ITEM_TYPE_MULTI
+        // textfont UI_FONT_BIG		
+		// cvar "cg_markTime"
+		// cvarFloatList {"Normal" 20000 "Short" 10000 "Off" 0 "Long" 30000 "Ultra" 100000  }
+		// rect 300 135 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .22
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// forecolor 1 1 1 1
+		// visible 0 
+    // }
+
+	itemDef {
+		name performance
+		group options
+		text ""
+		type ITEM_TYPE_MULTI
+        textfont UI_FONT_BIG		
+		cvar "cg_markTime"
+		cvarFloatList {"Normal" 20000 "Short" 10000 "Off" 0 "Long" 30000 "Ultra" 100000  }
+		rect 300 135 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .22
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/performance/mark.tga"
+		visible 0 
+    }
+
+
+
+
+
+
+
+	// itemDef {
+		// name performance
+		// group options
+		// text "Ejecting Brass:  "
+		// type ITEM_TYPE_MULTI
+        // textfont UI_FONT_BIG		
+		// cvar "cg_brassTime"
+		// cvarFloatList { "Ultra" 10000 "High" 2500 "Med" 1250 "Off" 0 }
+		// rect 300 150 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .22
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// forecolor 1 1 1 1
+		// visible 0 
+    // }
+
+	itemDef {
+		name performance
+		group options
+		text ""
+		type ITEM_TYPE_MULTI
+        textfont UI_FONT_BIG		
+		cvar "cg_brassTime"
+		cvarFloatList { "Ultra" 10000 "High" 2500 "Med" 1250 "Off" 0 }
+		rect 300 150 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .22
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/performance/brass.tga"
+		visible 0 
+    }
+
+
+
+
+	// itemDef {
+		// name performance
+		// group options
+		// type ITEM_TYPE_YESNO
+		// textfont UI_FONT_BIG
+		// text "Dynamic Lights:  "
+		// cvar "r_dynamiclight"
+		// rect 300 165 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .22
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// forecolor 1 1 1 1
+		// visible 0 
+    // }
+
+	itemDef {
+		name performance
+		group options
+		type ITEM_TYPE_YESNO
+		textfont UI_FONT_BIG
+		text ""
+		cvar "r_dynamiclight"
+		rect 300 165 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .22
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/performance/lights.tga"
+		visible 0 
+    }
+
+
+
+
+
+
+
+
+
+	// itemDef {
+		// name performance
+		// group options
+		// type ITEM_TYPE_YESNO
+		// textfont UI_FONT_BIG
+		// text "Low Quality Sky:  "
+		// cvar "r_fastsky"
+		// rect 300 180 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .22
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// forecolor 1 1 1 1
+		// visible 0 
+    // }
+
+
+	itemDef {
+		name performance
+		group options
+		type ITEM_TYPE_YESNO
+		textfont UI_FONT_BIG
+		text ""
+		cvar "r_fastsky"
+		rect 300 180 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .22
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/performance/fastsky.tga"
+		visible 0 
+    }
+
+
+
+
+
+
+
+    // itemDef {
+	    // name performance
+	    // group options
+	    // type ITEM_TYPE_YESNO
+		// textfont UI_FONT_BIG
+	    // text "Draw Portal Skies:"
+	    // cvar "cg_skybox"
+		// rect 300 195 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// forecolor 1 1 1 1
+		// visible 0  
+	// }
+
+   itemDef {
+	    name performance
+	    group options
+	    type ITEM_TYPE_YESNO
+		textfont UI_FONT_BIG
+	    text ""
+	    cvar "cg_skybox"
+		rect 300 195 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/performance/skybox.tga"
+		visible 0  
+	}	
+	
+	
+
+	// itemDef {
+		// name performance
+		// group options
+		// type ITEM_TYPE_YESNO
+		// textfont UI_FONT_BIG
+		// text "Sync Every Frame:  "
+		// cvar "r_finish"
+		// rect 300 210 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .22
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// forecolor 1 1 1 1
+		// visible 0 
+    // }
+	
+	itemDef {
+		name performance
+		group options
+		type ITEM_TYPE_YESNO
+		textfont UI_FONT_BIG
+		text ""
+		cvar "r_finish"
+		rect 300 210 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .22
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/performance/sync.tga"
+		visible 0 
+    }	
+	
+	
+	// itemDef {
+		// name performance
+		// type ITEM_TYPE_MULTI
+        // textfont UI_FONT_BIG		
+		// group options
+		// text "Corona Dist:  "
+		// rect 300 225 290 12
+		// cvar "cg_coronafardist"
+		// cvarFloatList { "normal" 1536 "far" 4096 "very far" 16000 "Ultra" 64000 "off" 0 "near" 800 }
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .22
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// forecolor 1 1 1 1
+		// visible 0
+	// }
+
+	itemDef {
+		name performance
+		type ITEM_TYPE_MULTI
+        textfont UI_FONT_BIG		
+		group options
+		text ""
+		rect 300 225 290 12
+		cvar "cg_coronafardist"
+		cvarFloatList { "normal" 1536 "far" 4096 "very far" 16000 "Ultra" 64000 "off" 0 "near" 800 }
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .22
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/performance/coronadist.tga"
+		visible 0
+	}
+
+
+
+
+	// itemDef {
+		// name performance
+		// group options
+		// type ITEM_TYPE_YESNO
+		// textfont UI_FONT_BIG
+		// text "Particles:  "
+		// cvar "cg_wolfparticles"
+		// rect 300 240 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .22
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// forecolor 1 1 1 1
+		// visible 0 
+    // }
+
+	itemDef {
+		name performance
+		group options
+		type ITEM_TYPE_YESNO
+		textfont UI_FONT_BIG
+		text ""
+		cvar "cg_wolfparticles"
+		rect 300 240 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .22
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/performance/particles.tga"
+		visible 0 
+    }
+
+
+
+
+
+
+
+
+
+	// itemDef {
+		// name performance
+		// group options
+		// type ITEM_TYPE_MULTI
+        // textfont UI_FONT_BIG		
+		// text "Nvidia fog type:  "
+		// cvarTest "r_ext_NV_fog_dist"
+		// showcvar { "1" }
+		// cvar "r_nv_fogdist_mode"
+		// cvarStrList { "NV Radial", "GL_EYE_RADIAL_NV", "NV Plane", "GL_EYE_PLANE_ABSOLUTE_NV" }
+		// rect 300 255 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// forecolor 1 1 1 1
+		// visible 0 
+	// }
+	
+	itemDef {
+		name performance
+		group options
+		type ITEM_TYPE_MULTI
+        textfont UI_FONT_BIG		
+		text ""
+		cvarTest "r_ext_NV_fog_dist"
+		showcvar { "1" }
+		cvar "r_nv_fogdist_mode"
+		cvarStrList { "NV Radial", "GL_EYE_RADIAL_NV", "NV Plane", "GL_EYE_PLANE_ABSOLUTE_NV" }
+		rect 300 255 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/performance/fog.tga"
+		visible 0 
+	}
+	
+	
+	
+		// itemDef {
+		// name realrtcw
+		// group options
+		// type ITEM_TYPE_YESNO
+		// textfont UI_FONT_BIG
+		// text "Atmospheric effects:  "
+		// cvar "cg_atmosphericEffects"
+		// rect 300 135 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .22
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// forecolor 1 1 1 1
+		// visible 0 
+    // }
+
+		itemDef {
+		name realrtcw
+		group options
+		type ITEM_TYPE_YESNO
+		textfont UI_FONT_BIG
+		text ""
+		cvar "cg_atmosphericEffects"
+		rect 300 135 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .22
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/realrtcw/atmospheric.tga"
+		visible 0 
+    }
+
+
+
+
+
+
+
+
+
+	
+		// itemDef {
+		// name realrtcw				
+		// type ITEM_TYPE_MULTI
+        // textfont UI_FONT_BIG		
+		// group options
+		// text "Force atmospheric effects:"
+		// cvar "cg_forceAtmosphericEffects"
+		// cvarFloatList { "Off" 0 "Rain" 1 "Snow" 2 }
+		// textalign ITEM_ALIGN_RIGHT
+		// rect 300 150 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// forecolor 1 1 1 1
+		// visible 0
+	// }
+	
+		itemDef {
+		name realrtcw				
+		type ITEM_TYPE_MULTI
+        textfont UI_FONT_BIG		
+		group options
+		text ""
+		cvar "cg_forceAtmosphericEffects"
+		cvarFloatList { "Off" 0 "Rain" 1 "Snow" 2 }
+		textalign ITEM_ALIGN_RIGHT
+		rect 300 150 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/realrtcw/force.tga"
+		visible 0
+	}	
+	
+	
+		// itemDef {
+		// name realrtcw				
+		// type ITEM_TYPE_MULTI
+        // textfont UI_FONT_BIG		
+		// group options
+		// text "Atmospheric effects quality:"
+		// cvar "cg_lowAtmosphericEffects"
+		// cvarFloatList { "High(not recommended)" 0 "Medium(recommended)" 1 "Low" 2 }
+		// textalign ITEM_ALIGN_RIGHT
+		// rect 300 165 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// forecolor 1 1 1 1
+		// visible 0
+	// }
+
+		itemDef {
+		name realrtcw				
+		type ITEM_TYPE_MULTI
+        textfont UI_FONT_BIG		
+		group options
+		text ""
+		cvar "cg_lowAtmosphericEffects"
+		cvarFloatList { "High(not recommended)" 0 "Medium(recommended)" 1 "Low" 2 }
+		textalign ITEM_ALIGN_RIGHT
+		rect 300 165 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/realrtcw/effects.tga"
+		visible 0
+	}	
+
+
+
+		
+		// itemDef {
+		// name realrtcw				
+		// type ITEM_TYPE_MULTI
+        // textfont UI_FONT_BIG		
+		// group options
+		// text "Max FPS:"
+		// cvar "com_maxfps"
+		// cvarFloatList { "30 FPS" 30 "60 FPS" 60 "90 FPS" 90 "100 FPS" 100 "144 FPS" 144 "240 FPS" 240 }
+		// textalign ITEM_ALIGN_RIGHT
+		// rect 300 180 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// forecolor 1 1 1 1
+		// visible 0
+	// }
+	
+		itemDef {
+		name realrtcw				
+		type ITEM_TYPE_MULTI
+        textfont UI_FONT_BIG		
+		group options
+		text ""
+		cvar "com_maxfps"
+		cvarFloatList { "30 FPS" 30 "60 FPS" 60 "90 FPS" 90 "100 FPS" 100 "144 FPS" 144 "240 FPS" 240 }
+		textalign ITEM_ALIGN_RIGHT
+		rect 300 180 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/realrtcw/maxfps.tga"
+		visible 0
+	}	
+	
+	
+	
+	
+		// itemDef {
+		// name realrtcw
+		// group options
+		// type ITEM_TYPE_YESNO
+        // textfont UI_FONT_BIG		
+		// text "Show FPS:"
+		// cvar "cg_drawfps"
+		// rect 300 195 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07        
+      	// forecolor 1 1 1 1
+      	// visible 0
+    // }
+
+		itemDef {
+		name realrtcw
+		group options
+		type ITEM_TYPE_YESNO
+        textfont UI_FONT_BIG		
+		text ""
+		cvar "cg_drawfps"
+		rect 300 195 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07        
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/realrtcw/showfps.tga"
+      	visible 0
+    }	
+	
+	
+	
+	
+		// itemDef {
+		// name realrtcw
+		// group options
+		// type ITEM_TYPE_YESNO
+        // textfont UI_FONT_BIG		
+		// text "Fixed aspect FOV:"
+		// cvar "cg_fixedAspectFOV"
+		// rect 300 210 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07        
+      	// forecolor 1 1 1 1
+      	// visible 0
+    // }
+
+		itemDef {
+		name realrtcw
+		group options
+		type ITEM_TYPE_YESNO
+        textfont UI_FONT_BIG		
+		text ""
+		cvar "cg_fixedAspectFOV"
+		rect 300 210 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07        
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/realrtcw/fixedfov.tga"
+      	visible 0
+    }
+
+
+	
+		// itemDef {
+		// name realrtcw
+		// group options
+		// type ITEM_TYPE_SLIDER
+		// text "Field of view:  "
+		// cvarfloat "cg_fov" 90 65 120
+		// rect 300 225 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+		// textalignx 142
+		// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07            
+		// forecolor 1 1 1 1
+		// visible 0 
+		// mouseenter { show slider_message }
+		// mouseexit { hide slider_message }
+    // }
+
+		itemDef {
+		name realrtcw
+		group options
+		type ITEM_TYPE_SLIDER
+		text ""
+		cvarfloat "cg_fov" 90 65 120
+		rect 300 225 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+		textalignx 142
+		textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07            
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/realrtcw/fov.tga"
+		visible 0 
+		mouseenter { show slider_message }
+		mouseexit { hide slider_message }
+    }
+
+
+	
+		// itemDef {
+		// name realrtcw
+		// group options
+		// type ITEM_TYPE_YESNO
+		// text "Automatic reload:  "
+		// cvar "cg_autoreload"
+		// rect 300 240 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+		// textalignx 142
+		// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07           
+		// forecolor 1 1 1 1
+		// visible 0 
+    // }
+
+		itemDef {
+		name realrtcw
+		group options
+		type ITEM_TYPE_YESNO
+		text ""
+		cvar "cg_autoreload"
+		rect 300 240 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+		textalignx 142
+		textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07           
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/realrtcw/autoreload.tga"
+		visible 0 
+    }
+
+	
+		itemDef {
+		name realrtcw
+		group options
+		type ITEM_TYPE_YESNO
+		text ""
+		cvar "cg_thirdPerson"
+		rect 300 255 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+		textalignx 142
+		textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07           
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/realrtcw/thirdperson.tga"
+		visible 0 
+    }
+	
+		// itemDef {
+		// name realrtcw
+		// group options
+		// type ITEM_TYPE_YESNO
+		// text "Draw2D:  "
+		// cvar "cg_draw2D"
+		// rect 300 270 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+		// textalignx 142
+		// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07           
+		// forecolor 1 1 1 1
+		// visible 0 
+    // }
+
+	itemDef {
+		name realrtcw
+		group options
+		type ITEM_TYPE_YESNO
+		text ""
+		cvar "cg_draw2D"
+		rect 300 270 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+		textalignx 142
+		textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07           
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/realrtcw/draw2d.tga"
+		visible 0 
+    }
+
+	
+		// itemDef {
+		// name realrtcw
+		// group options
+		// type ITEM_TYPE_YESNO
+		// text "Draw gun:  "
+		// cvar "cg_drawGun"
+		// rect 300 285 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textfont UI_FONT_BIG
+		// textalignx 142
+		// textaligny 10
+		// textscale .23 
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07           
+		// forecolor 1 1 1 1
+		// visible 0 
+    // }
+
+	
+		itemDef {
+		name realrtcw
+		group options
+		type ITEM_TYPE_YESNO
+		text ""
+		cvar "cg_drawGun"
+		rect 300 285 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+		textalignx 142
+		textaligny 10
+		textscale .23 
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07           
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/realrtcw/drawgun.tga"
+		visible 0 
+    }
+
+	
+	
+	// itemDef {
+		// name view				
+		// type ITEM_TYPE_MULTI
+        // textfont UI_FONT_BIG		
+		// group options
+		// text "Cursor Hints:"
+		// cvar "cg_cursorHints"
+		// cvarFloatList { "strobe pulse" 2 "alpha pulse" 3 "solid" 4 "off" 0 "size pulse" 1 }
+		// textalign ITEM_ALIGN_RIGHT
+		// rect 300 135 290 12
+		// textalign ITEM_ALIGN_RIGHT
+		// textalignx 142
+		// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07
+		// forecolor 1 1 1 1
+		// visible 0
+	// }
+
+	itemDef {
+		name view				
+		type ITEM_TYPE_MULTI
+        textfont UI_FONT_BIG		
+		group options
+		text ""
+		cvar "cg_cursorHints"
+		cvarFloatList { "strobe pulse" 2 "alpha pulse" 3 "solid" 4 "off" 0 "size pulse" 1 }
+		textalign ITEM_ALIGN_RIGHT
+		rect 300 135 290 12
+		textalign ITEM_ALIGN_RIGHT
+		textalignx 142
+		textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/view/cursorhints.tga"
+		visible 0
+	}
+
+
+
+	// itemDef {
+		// name view
+		// group options
+		// type ITEM_TYPE_MULTI
+        // textfont UI_FONT_BIG		
+		// text "Crosshair Size:"
+		// cvar "cg_crosshairsize"
+		// cvarFloatList { "Small" 24 "Medium" 32 "Large" 48 "Huge" 64 "Tiny" 12 }
+		// rect 300 150 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07        
+      	// forecolor 1 1 1 1
+      	// visible 0
+    // }
+
+	itemDef {
+		name view
+		group options
+		type ITEM_TYPE_MULTI
+        textfont UI_FONT_BIG		
+		text ""
+		cvar "cg_crosshairsize"
+		cvarFloatList { "Small" 24 "Medium" 32 "Large" 48 "Huge" 64 "Tiny" 12 }
+		rect 300 150 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07        
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/view/crosshairsize.tga"
+      	visible 0
+    }
+
+
+	// itemDef {
+		// name view
+		// group options
+		// type ITEM_TYPE_SLIDER
+		// textfont UI_FONT_BIG
+		// text "Crosshair Alpha:"
+		// cvarfloat "cg_crosshairAlpha" .6 .1 1
+		// rect 300 165 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07        
+      	// forecolor 1 1 1 1
+      	// visible 0
+    // }
+
+	itemDef {
+		name view
+		group options
+		type ITEM_TYPE_SLIDER
+		textfont UI_FONT_BIG
+		text ""
+		cvarfloat "cg_crosshairAlpha" .6 .1 1
+		rect 300 165 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07        
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/view/crosshairalpha.tga"
+      	visible 0
+    }
+
+
+
+	// itemDef {
+		// name view
+		// group options
+		// type ITEM_TYPE_SLIDER
+		// textfont UI_FONT_BIG
+		// text "HUD Alpha:"
+		// cvarfloat "cg_hudAlpha" .6 .1 1
+		// rect 300 180 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07        
+      	// forecolor 1 1 1 1
+      	// visible 0
+   	// }
+
+	itemDef {
+		name view
+		group options
+		type ITEM_TYPE_SLIDER
+		textfont UI_FONT_BIG
+		text ""
+		cvarfloat "cg_hudAlpha" .6 .1 1
+		rect 300 180 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07        
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/view/hudalpha.tga"
+      	visible 0
+   	}
+
+
+
+
+	// itemDef {
+		// name view
+		// group options
+		// type ITEM_TYPE_SLIDER
+		// textfont UI_FONT_BIG
+		// text "Screen Size:"
+		// cvarfloat "cg_viewsize" 100 30 100
+		// rect 300 195 290 12
+      	// textalign ITEM_ALIGN_RIGHT
+      	// textalignx 142
+      	// textaligny 10
+		// textscale .23
+		// style WINDOW_STYLE_FILLED
+		// backcolor 1 1 1 .07        
+      	// forecolor 1 1 1 1
+      	// visible 0
+    // } 
+
+	itemDef {
+		name view
+		group options
+		type ITEM_TYPE_SLIDER
+		textfont UI_FONT_BIG
+		text ""
+		cvarfloat "cg_viewsize" 100 30 100
+		rect 300 195 290 12
+      	textalign ITEM_ALIGN_RIGHT
+      	textalignx 142
+      	textaligny 10
+		textscale .23
+		style WINDOW_STYLE_SHADER
+		backcolor 1 1 1 .07        
+      	forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/view/screensize.tga"
+      	visible 0
+    } 
+
+	
+
+	// itemDef {
+		// name view
+		// group options
+		// text "Crosshair:"
+		// textfont UI_FONT_BIG
+ 		// type 1	
+		// rect 410 300 60 12
+		// textalign ITEM_ALIGN_CENTER
+		// textscale .23		
+		// textalignx 30
+		// textaligny 12
+		// forecolor 1 1 1 1
+		// visible 0 
+		// decoration
+	// }
+
+
+	itemDef {
+		name view
+		group options
+		text ""
+		style WINDOW_STYLE_SHADER
+		textfont UI_FONT_BIG
+ 		type 1	
+		rect 410 300 60 12
+		textalign ITEM_ALIGN_CENTER
+		textscale .23		
+		textalignx 30
+		textaligny 12
+		forecolor 1 1 1 1
+		background "text/ChineseCHN/options/gameoptions/view/crosshair.tga"
+		visible 0 
+		decoration
+	}
+
+
+
+
+
+
+
+	itemDef {
+		name view				
+		group options
+		rect 414 250 50 50
+		ownerdraw UI_CROSSHAIR
+		textalign ITEM_ALIGN_RIGHT
+		textfont UI_FONT_BIG
+		textalignx 0 
+		textaligny 50  
+		style WINDOW_STYLE_FILLED
+		backcolor 1 1 1 .07      
+		forecolor 1 1 1 1
+		visible 0
+   	}
+	
+	    }
+	
+}
+
+		
+		
+		

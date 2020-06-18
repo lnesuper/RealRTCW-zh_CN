@@ -1,0 +1,2460 @@
+player
+{  
+  spawn
+{  
+giveweapon weapon_knife
+giveweapon weapon_thompson
+giveweapon weapon_bar
+setammo ammo_barammo 100
+setammo ammo_45cal 150
+selectweapon weapon_bar
+objectivesneeded 1 
+}
+
+playerstart
+{
+}
+
+trigger action2 // soldat hinter frau
+{
+trigger so1 killher
+}
+
+trigger action3 // einer wird aufmerksam
+{
+trigger so2 comein
+} 
+
+trigger action4 // torwache
+{
+trigger so3 guard
+}
+
+trigger action5 // der raucher
+{
+trigger so4 smoke
+}
+
+trigger action6 // durch das tor
+{
+trigger so5 alarmed
+}
+
+trigger action7 // vor dem tunnel
+{
+trigger so6 t_guard
+}
+
+trigger action8 // im tunnel
+{
+trigger so7 tunnel1
+}
+
+trigger action9 // im tunnel2
+{
+trigger so8 tunnel2
+}
+
+trigger action10 // schnupfig am tunnelende
+{
+trigger so9 schnupf
+}
+
+trigger action11 // burgwache
+{
+trigger so10 c_guard
+}
+
+trigger action12 // burgwache2
+{
+trigger so11 c_guard2
+}
+
+trigger action13 // turmwache
+{
+trigger so12 towerguard
+}
+
+trigger action14 // turmunten
+{
+trigger so13 t_base
+}
+
+trigger action15 // turm_unten_so14_no_action_set
+{
+trigger so15 t_up
+}
+
+trigger action16 // um_die_burg
+{
+trigger so16 round
+}
+
+trigger action17 // um_die_burg2
+{
+trigger so17 round2
+}
+
+trigger action18 // in_da_burg
+{
+trigger so18 yard1
+}
+
+trigger action19 // in_da_burg2
+{
+trigger so19 yard2
+}
+
+trigger action20 // am_burgdach
+{
+trigger so20 roof
+}
+
+trigger action21 // maedl_rennt_in_hof
+{
+trigger lady2 totheyard
+} 
+
+trigger action22 // am_schalter
+{
+trigger lady3 lever_g
+}
+
+trigger action23 // im_turmfenster
+{
+trigger so21 window
+}
+
+trigger action24 // finale
+{
+trigger so22 final
+}
+
+trigger action25 // finale2ter
+{
+trigger so23 final2
+}
+
+trigger action26 // okkultist
+{
+trigger so24 okk1
+}
+
+trigger action27 // okkultist
+{
+trigger so24 okk2
+} 
+
+trigger action28 // okkultist
+{
+trigger so24 okk3
+}
+
+trigger endmap
+{
+objectivemet 1
+changelevel gamefinished 250
+}
+
+trigger musicstop
+{
+mu_stop 4000
+}
+
+trigger music1				
+{
+mu_start sound/music/l_briefing_1 2000 
+}
+      
+trigger music2				
+{
+mu_start sound/music/m_drums.wav 1000
+}
+
+trigger music3				
+{
+mu_start sound/music/m_stealth.wav 2000
+}
+
+trigger music4				
+{
+mu_play sound/music/s_query.wav 1000
+}
+
+trigger music5				
+{
+mu_start sound/music/m_action.wav 2000
+}
+
+trigger music6				
+{
+mu_start sound/music/m_drums.wav 2000
+}
+
+trigger music7				
+{
+mu_start sound/music/m_tension.wav 2000
+}                                                                                                                                                                                                                                                                                                                                                                   
+} 
+
+frau
+{  
+  attributes
+{  
+  starting_health 0
+idle_crouch 0.0
+attack_crouch 0.0
+attack_skill 0.0
+aim_accuracy 0.0
+aim_skill 0.0
+agression 0.0 
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger frau quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger frau quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger frau quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger frau quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+}
+
+frau2
+{  
+  attributes
+{  
+starting_health 0
+idle_crouch 0.0
+attack_crouch 0.0
+attack_skill 0.0
+aim_accuracy 0.0
+aim_skill 0.0
+agression 0.0 
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger frau quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger frau quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger frau quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger frau quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+}
+
+so1
+{  
+  attributes
+{  
+  starting_health 60
+idle_crouch 0.0
+attack_crouch 0.2
+attack_skill 0.6
+aim_accuracy 0.4
+aim_skill 0.4
+agression 0.7
+inner_detection_radius 576 
+hearing_scale 0.9
+reaction_time 0.1
+fov 380
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp34
+setammo ammo_9mm 999
+selectweapon weapon_mp34 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so13 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so13 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so13 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so13 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger killher
+{ 
+accum 1 abort_if_not_equal 0 
+walktomarker so1_mov1
+facetargetangles so1_mov1
+wait 3000
+walktomarker so1_mov3
+facetargetangles so1_mov3
+wait 1000
+playanim being_cold both
+wait 1000
+walktomarker so1_mov2
+facetargetangles so1_mov2
+wait 3000
+trigger so1 killher
+}
+}
+
+so2
+{  
+  attributes
+{  
+  starting_health 50
+idle_crouch 0.0
+attack_crouch 0.0
+attack_skill 0.9
+aim_accuracy 0.4
+aim_skill 0.5
+agression 0.7
+inner_detection_radius 258
+hearing_scale 0.3
+reaction_time 0.1
+fov 360 
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so2 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so2 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so2 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so2 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger comein
+{ 
+accum 1 abort_if_not_equal 0 
+runtomarker so2_mov1
+facetargetangles so2_mov1
+runtomarker so2_mov2
+facetargetangles so2_mov2
+wait 3000
+walktomarker so2_mov3
+facetargetangles so2_mov3
+walktomarker so2_mov4
+facetargetangles so2_mov4
+wait 2000
+playanim being_cold both 
+}
+}
+
+so3
+{  
+  attributes
+{  
+  starting_health 50
+idle_crouch 0.0
+attack_crouch 0.2
+attack_skill 0.5
+aim_accuracy 0.4
+aim_skill 0.4
+agression 0.7
+inner_detection_radius 128
+hearing_scale 0.1
+alertness 1500 
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so3 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so3 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so3 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so3 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger guard
+{ 
+accum 1 abort_if_not_equal 0 
+walktomarker so3_mov1
+facetargetangles so3_mov1
+wait 4000
+walktomarker so3_mov2
+facetargetangles so3_mov2
+wait 4000
+trigger so3 guard
+}
+}
+
+so4 //smoker
+{  
+  attributes
+{  
+  starting_health 60
+idle_crouch 0.0
+attack_crouch 0.0
+attack_skill 0.7
+aim_accuracy 0.4
+aim_skill 0.3
+agression 0.6
+inner_detection_radius 256
+hearing_scale 0.6
+reaction_time 0.2 
+}
+
+spawn
+{ 
+accum 1 set 0 
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so4 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so4 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so4 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so4 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger smoke
+{ 
+accum 1 abort_if_not_equal 0 
+cigarette on
+playanim smoking both
+cigarette off
+wait 5000
+trigger so4 smoke
+}
+}
+
+so5
+{  
+  attributes
+{  
+  starting_health 50
+idle_crouch 0.0
+attack_crouch 0.3
+attack_skill 0.6
+aim_accuracy 0.5
+aim_skill 0.4
+agression 0.6
+inner_detection_radius 64
+hearing_scale 0.1
+fov 320 
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so5 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so5 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so5 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so5 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger alarmed
+{ 
+accum 1 abort_if_not_equal 0 
+runtomarker so5_mov
+facetargetangles so5_mov
+wait 10000 
+cigarette on
+playanim smoking both
+cigarette off
+trigger so5 alarmed 
+}
+}
+
+so6
+{  
+  attributes
+{  
+  starting_health 50
+idle_crouch 0.0
+attack_crouch 0.0
+attack_skill 0.5
+aim_accuracy 0.5
+aim_skill 0.5
+agression 0.7 
+inner_detection_radius 128
+hearing_scale 0.4
+fov 300
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so6 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so6 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so6 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so6 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger t_guard
+{ 
+accum 1 abort_if_not_equal 0 
+walktomarker so6_mov1
+facetargetangles so6_mov1
+wait 2000
+walktomarker so6_mov2
+facetargetangles so6_mov2
+wait 2000
+trigger so6 t_guard
+}
+}
+
+so7
+{  
+  attributes
+{  
+  starting_health 60
+idle_crouch 0.0
+attack_crouch 0.1
+attack_skill 0.5
+aim_accuracy 0.4
+aim_skill 0.5
+agression 0.4 
+inner_detection_radius 32
+hearing_scale 0.1
+fov 340
+alertness 3000
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so7 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so7 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so7 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so7 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger tunnel1
+{ 
+accum 1 abort_if_not_equal 0 
+walktomarker so7_mov1
+facetargetangles so7_mov1
+wait 1000
+walktomarker so7_mov2
+facetargetangles so7_mov2
+wait 2000
+trigger so7 tunnel1
+}
+}
+
+so8
+{  
+  attributes
+{  
+  starting_health 50
+idle_crouch 0.0
+attack_crouch 0.8
+attack_skill 0.5
+aim_accuracy 0.5
+aim_skill 0.4
+agression 0.5
+inner_detection_radius 256 
+hearing_scale 0.5
+fov 340
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so8 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so8 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so8 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so8 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger tunnel2
+{ 
+accum 1 abort_if_not_equal 0 
+walktomarker so8_mov1
+facetargetangles so8_mov1
+wait 1000
+walktomarker so8_mov2
+facetargetangles so8_mov2
+wait 2000
+trigger so8 tunnel2
+}
+}
+
+so9 //erkaeltet
+{  
+  attributes
+{  
+  starting_health 60
+idle_crouch 0.0
+attack_crouch 0.3
+attack_skill 0.7
+aim_accuracy 0.4
+aim_skill 0.5
+agression 0.8
+inner_detection_radius 128
+fov 300 
+}
+
+spawn
+{ 
+accum 1 set 0 
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so9 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so9 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so9 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so9 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger schnupf
+{ 
+accum 1 abort_if_not_equal 0 
+playanim shivering_2h both
+wait 3000
+trigger so9 schnupf
+}
+}
+
+so10 //bei der burg
+{  
+  attributes
+{  
+  starting_health 50
+idle_crouch 0.0
+attack_crouch 0.0
+attack_skill 0.6
+aim_accuracy 0.5
+aim_skill 0.6
+agression 0.6
+inner_detection_radius 192 
+hearing_scale 0.4
+alertness 3000
+fov 360
+}
+
+spawn
+{ 
+accum 1 set 0 
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so10 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so10 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so10 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so10 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger c_guard
+{ 
+accum 1 abort_if_not_equal 0 
+playanim butt_scratch_1h both
+wait 5000
+playanim being_cold both
+wait 6000
+trigger so10 c_guard
+}
+}
+
+so11 
+{  
+  attributes
+{  
+  starting_health 50
+idle_crouch 0.0
+attack_crouch 0.5
+attack_skill 0.5
+aim_accuracy 0.4
+aim_skill 0.5
+agression 0.5 
+inner_detection_radius 192
+hearing_scale 0.4
+alertness 3000
+fov 360
+reaction_time 0.2
+}
+
+spawn
+{ 
+accum 1 set 0 
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so11 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so11 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so11 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so11 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger c_guard2
+{ 
+accum 1 abort_if_not_equal 0
+walktomarker so11_mov1
+facetargetangles so11_mov1
+wait 2000
+playanim crotch_grab_2h both
+wait 1000
+walktomarker so11_mov2
+facetargetangles so11_mov2
+wait 4000 
+trigger so11 c_guard2
+}
+}
+
+so12
+{  
+  attributes
+{  
+  starting_health 60
+idle_crouch 0.0
+attack_crouch 0.2
+attack_skill 0.5
+aim_accuracy 0.6
+aim_skill 0.5
+agression 0.7
+inner_detection_radius 96
+hearing_scale 0.2
+alertness 3000
+reaction_time 0.2 
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so12 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so12 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so12 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so12 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger towerguard
+{ 
+accum 1 abort_if_not_equal 0 
+walktomarker so12_mov1
+facetargetangles so12_mov1
+wait 3000
+walktomarker so12_mov2
+facetargetangles so12_mov2
+wait 2000
+walktomarker so12_mov3
+facetargetangles so12_mov3
+wait 4000
+trigger so12 towerguard
+}
+}
+
+so13
+{  
+  attributes
+{  
+  starting_health 60
+idle_crouch 0.0
+attack_crouch 0.2
+attack_skill 0.5
+aim_accuracy 0.5
+aim_skill 0.5
+agression 0.7
+inner_detection_radius 128 
+hearing_scale 0.4
+reaction_time 0.2
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp34
+setammo ammo_9mm 999
+selectweapon weapon_mp34
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so13 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so13 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so13 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so13 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger t_base
+{ 
+accum 1 abort_if_not_equal 0 
+walktomarker so13_mov1
+facetargetangles so13_mov1
+wait 3000
+walktomarker so13_mov2
+facetargetangles so13_mov2
+wait 2000
+cigarette on
+playanim smoking both
+cigarette off 
+trigger so13 t_base
+}
+}
+
+so14
+{  
+  attributes
+{  
+  starting_health 50
+idle_crouch 0.0
+attack_crouch 0.2
+attack_skill 0.5
+aim_accuracy 0.5
+aim_skill 0.4
+agression 0.7
+inner_detection_radius 128 
+hearing_scale 0.3
+reaction_time 0.3
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so13 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so13 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so13 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so13 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+}
+
+so15
+{  
+  attributes
+{  
+  starting_health 60
+idle_crouch 0.0
+attack_crouch 0.2
+attack_skill 0.4
+aim_accuracy 0.5
+aim_skill 0.5
+agression 0.5
+inner_detection_radius 128
+hearing_scale 0.3
+fov 320 
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so15 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so15 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so15 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so15 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger t_up
+{ 
+accum 1 abort_if_not_equal 0 
+playanim scratching_chest both
+wait 5000
+trigger so15 t_up
+}
+}
+
+so16
+{  
+  attributes
+{  
+  starting_health 60
+idle_crouch 0.0
+attack_crouch 0.4
+attack_skill 0.5
+aim_accuracy 0.5
+aim_skill 0.5
+agression 0.7
+inner_detection_radius 64
+hearing_scale 0.2
+alertness 3000
+fov 320 
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so16 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so16 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so16 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger round
+{ 
+accum 1 abort_if_not_equal 0 
+runtomarker so16_mov1
+facetargetangles so16_mov1
+walktomarker so16_mov2
+facetargetangles so16_mov2
+wait 2000
+walktomarker so16_mov3
+facetargetangles so16_mov3
+wait 2000
+walktomarker so16_mov2
+facetargetangles so16_mov2
+trigger so16 round
+}
+}
+
+so17
+{  
+  attributes
+{  
+  starting_health 60
+idle_crouch 0.0
+attack_crouch 0.1
+attack_skill 0.5
+aim_accuracy 0.4
+aim_skill 0.5
+agression 0.7
+inner_detection_radius 64
+hearing_scale 0.1
+alertness 2000
+fov 320 
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so17 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so17 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so17 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+
+trigger round2
+{ 
+accum 1 abort_if_not_equal 0 
+runtomarker so17_mov1
+facetargetangles so17_mov1
+walktomarker so17_mov2
+facetargetangles so17_mov2
+wait 1000
+walktomarker so17_mov3
+facetargetangles so17_mov3
+wait 2000
+walktomarker so17_mov2
+facetargetangles so17_mov2
+wait 2000
+trigger so17 round2
+}
+}
+
+so18
+{  
+  attributes
+{  
+  starting_health 60
+idle_crouch 0.0
+attack_crouch 0.2
+attack_skill 0.6
+aim_accuracy 0.5
+aim_skill 0.5
+agression 0.7
+inner_detection_radius 32
+hearing_scale 0.1
+alertness 2000 
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so18 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so18 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so18 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger yard1
+{ 
+accum 1 abort_if_not_equal 0 
+walktomarker so18_mov1
+facetargetangles so18_mov1
+wait 2000
+walktomarker so18_mov2
+facetargetangles so18_mov2
+wait 2000
+trigger so18 yard1
+}
+}
+
+so19
+{  
+  attributes
+{  
+  starting_health 50
+idle_crouch 0.0
+attack_crouch 0.2
+attack_skill 0.4
+aim_accuracy 0.4
+aim_skill 0.4
+agression 0.3 
+inner_detection_radius 32
+hearing_scale 0.3
+alertness 3000
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so19 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so19 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so19 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger yard2
+{ 
+accum 1 abort_if_not_equal 0
+wait 3000 
+walktomarker so19_mov1
+facetargetangles so19_mov1
+wait 3000
+walktomarker so19_mov2
+facetargetangles so19_mov2
+wait 4000
+trigger so19 yard2
+}
+}
+
+so20
+{  
+  attributes
+{  
+  starting_health 50
+idle_crouch 0.0
+attack_crouch 0.2
+attack_skill 0.5
+aim_accuracy 0.5
+aim_skill 0.6
+agression 0.5 
+inner_detection_radius 32
+hearing_scale 0.2
+alertness 2000
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so20 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so20 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so20 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so20 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger roof
+{ 
+accum 1 abort_if_not_equal 0 
+walktomarker so20_mov1
+facetargetangles so20_mov1
+wait 2000
+walktomarker so20_mov2
+facetargetangles so20_mov2
+wait 2000
+trigger so20 roof
+}
+}
+
+lady1
+{  
+  attributes
+{  
+  starting_health 50
+idle_crouch 0.0
+attack_crouch 0.9
+attack_skill 0.6
+aim_accuracy 0.5
+aim_skill 0.6
+agression 0.9 
+inner_detection_radius 256
+hearing_scale 0.5
+reaction_time 0.1
+fov 360
+alertness 2000
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp34
+setammo ammo_9mm 999
+selectweapon weapon_mp34 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger lady1 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger lady1 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger lady1 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger lady1 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+}
+
+lady2
+{  
+  attributes
+{  
+  starting_health 50
+idle_crouch 0.0
+attack_crouch 0.7
+attack_skill 0.6
+aim_accuracy 0.5
+aim_skill 0.6
+agression 0.5
+inner_detection_radius 96
+hearing_scale 0.0
+alertness 2000
+fov 220 
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp34
+setammo ammo_9mm 999
+selectweapon weapon_mp34 
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger lady2 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger lady2 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger lady2 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger totheyard
+{ 
+accum 1 abort_if_not_equal 0 
+runtomarker lady2_mov1
+facetargetangles lady2_mov1
+runtomarker lady2_mov2
+facetargetangles lady2_mov2
+wait 8000
+trigger lady2 totheyard
+}
+}
+
+lady3
+{  
+  attributes
+{  
+  starting_health 70
+idle_crouch 0.0
+attack_crouch 0.8
+attack_skill 0.5
+aim_accuracy 0.5
+aim_skill 0.5
+agression 0.7
+inner_detection_radius 64 
+hearing_scale 0.3
+fov 320
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp34
+setammo ammo_9mm 999
+selectweapon weapon_mp34
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger lady3 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger lady3 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger lady3 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger lady3 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger lever_g
+{ 
+accum 1 abort_if_not_equal 0 
+walktomarker lady3_mov1
+facetargetangles lady3_mov1
+wait 3000
+walktomarker lady3_mov2
+facetargetangles lady3_mov2
+wait 2000
+walktomarker lady3_mov1
+facetargetangles lady3_mov1
+wait 3000
+walktomarker lady3_mov3
+facetargetangles lady3_mov3
+wait 1000
+trigger lady3 lever_g
+}
+}
+
+so21
+{  
+  attributes
+{  
+  starting_health 60
+idle_crouch 1.0
+attack_crouch 0.9
+attack_skill 0.8
+aim_accuracy 0.3
+aim_skill 0.3
+agression 0.3
+inner_detection_radius 128
+hearing_scale 0.2
+fov 350 
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so21 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so21 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so21 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so21 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger window
+{ 
+accum 1 abort_if_not_equal 0 
+walktomarker so21_mov1
+facetargetangles so21_mov1
+}
+}
+
+so22
+{  
+  attributes
+{  
+  starting_health 40
+idle_crouch 0.0
+attack_crouch 0.8
+attack_skill 0.6
+aim_accuracy 0.5
+aim_skill 0.5
+agression 0.2
+inner_detection_radius 512
+hearing_scale 1.0
+alertness 16000
+fov 360 
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so22 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so22 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so22 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so22 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger final
+{ 
+accum 1 abort_if_not_equal 0 
+runtomarker so22_mov1
+facetargetangles so24_mov1
+}
+}
+
+so23
+{  
+  attributes
+{  
+  starting_health 40
+idle_crouch 0.0
+attack_crouch 0.8
+attack_skill 0.5
+aim_accuracy 0.5
+aim_skill 0.6
+agression 0.7
+inner_detection_radius 128
+hearing_scale 0.2
+alertness 1600 
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so23 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so23 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so23 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so23 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger final2
+{ 
+accum 1 abort_if_not_equal 0 
+runtomarker so23_mov1
+facetargetangles so23_mov1
+}
+}
+
+lady4
+{  
+  attributes
+{  
+  starting_health 40
+idle_crouch 0.8
+attack_crouch 0.8
+attack_skill 0.8
+aim_accuracy 0.5
+aim_skill 0.6
+agression 0.7
+inner_detection_radius 128
+hearing_scale 0.3 
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_mp40
+setammo ammo_9mm 999
+selectweapon weapon_mp40 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger lady4 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger lady4 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger lady4 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger lady4 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+}
+
+so24
+{  
+  attributes
+{  
+  starting_health 40
+idle_crouch 0.0
+attack_crouch 0.0
+attack_skill 0.4
+aim_accuracy 0.4
+aim_skill 0.4
+agression 0.1 
+inner_detection_radius 64
+hearing_scale 0.2
+}
+
+spawn
+{ 
+accum 1 set 0
+  takeweapon all
+giveweapon weapon_luger
+setammo ammo_9mm 999
+selectweapon weapon_luger 
+}
+
+statechange relaxed alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so24 quickdraw
+}
+
+statechange relaxed combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so24 quickdraw
+}
+
+statechange query alert
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so24 quickdraw
+}
+
+statechange query combat
+{
+accum 1 abort_if_not_equal 0
+accum 1 set 1
+trigger so24 quickdraw
+}
+
+death
+{
+accum 1 set 1
+}
+
+trigger quickdraw
+{
+clearanim
+wait 30 player
+resetscript
+}
+
+trigger okk1
+{ 
+accum 1 abort_if_not_equal 0 
+playanim pointing both
+}
+trigger okk2
+{ 
+accum 1 abort_if_not_equal 0 
+playanim giving_orders both
+}
+trigger okk3
+{ 
+accum 1 abort_if_not_equal 0 
+walktomarker so24_mov1
+facetargetangles so24_mov1
+}
+}

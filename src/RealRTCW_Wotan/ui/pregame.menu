@@ -1,0 +1,145 @@
+#include "ui/menudef.h"
+
+
+{
+
+	menuDef {
+    		name "pregame"
+    		background "ui/assets/backscreen"
+      		rect 0 0 640 480
+    		fullScreen MENU_TRUE
+    		visible MENU_TRUE
+      		style WINDOW_STYLE_EMPTY
+
+//
+// levelshot
+//
+
+			itemDef {
+					name background
+					rect 0 0 640 480
+					style WINDOW_STYLE_SHADER
+					ownerdraw UI_LEVELSHOT
+					forecolor 0 0 0 1
+					visible MENU_TRUE
+					decoration
+				}
+
+/////////////// tutorial4 map ////////////////////////////////////
+
+	// itemDef {
+		// name win1
+		// cvarTest "mapname"
+		// showcvar { "wotan" }	// prüft welche map
+		// rect 52 272 280 200
+		// textfile "text/EnglishUSA/wotan_brief.txt"
+		// textfont UI_FONT_SMALL
+		// textscale .2
+		// forecolor .1 .1 .1 1
+		// visible MENU_TRUE
+		// autowrapped
+		// decoration
+	// }
+
+	// itemDef {
+		// name win1
+		// cvarTest "mapname"
+		// showcvar { "wotan" }
+		// rect 52 272 280 200
+		// textfile "text/EnglishUSA/wotan_brief.txt"
+		// textfont UI_FONT_SMALL
+		// textscale .2
+		// forecolor .1 .1 .1 1
+		// visible MENU_TRUE
+		// autowrapped
+		// decoration
+	// }
+
+	itemDef {
+		name win1
+		cvarTest "mapname"
+		showcvar { "wotan" }
+		rect 52 272 280 200
+		style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/wotan_brief.tga"
+		textfont UI_FONT_SMALL
+		textscale .2
+		forecolor .1 .1 .1 1
+		visible MENU_TRUE
+		autowrapped
+		decoration
+	}
+
+
+	// itemDef {
+		// name win2
+		// rect 348 12 254 456
+		// cvarTest "mapname"
+		// showcvar { "wotan" }
+		// textfile "text/EnglishUSA/wotan.txt"
+		// textfont UI_FONT_SMALL
+		// textscale .2
+		// forecolor .1 .1 .1 1
+		// visible MENU_TRUE
+		// autowrapped
+		// decoration
+	// }
+
+	// itemDef {
+		// name win2
+		// rect 348 12 254 456
+		// cvarTest "mapname"
+		// showcvar { "wotan" }
+		// textfile "text/EnglishUSA/wotan.txt"
+		// textfont UI_FONT_SMALL
+		// textscale .2
+		// forecolor .1 .1 .1 1
+		// visible MENU_TRUE
+		// autowrapped
+		// decoration
+	// }
+
+	itemDef {
+		name win2
+		rect 348 12 254 456
+		cvarTest "mapname"
+		showcvar { "wotan" }
+		style WINDOW_STYLE_SHADER
+	    background "text/ChineseCHN/wotan.tga"
+		textfont UI_FONT_SMALL
+		textscale .2
+		forecolor .1 .1 .1 1
+		visible MENU_TRUE
+		autowrapped
+		decoration
+	}
+
+///// tutorial4 map ende
+
+//
+// weiter button
+//
+		itemDef {
+			name but2
+			rect 560 420 80 60
+			style 3
+		  	background "forwardarrow"
+			visible 1
+			mouseEnter { hide but2 ; show but2_alt}
+		}
+
+		itemDef {
+			name but2_alt
+			type ITEM_TYPE_BUTTON
+			rect 560 420 80 60
+			style 3
+			visible 0
+			background "ui/assets/forwardarrow_alt.tga"
+//			action { exec "fade 0 0 0 0 3"; close pregame }
+			action { uiScript playerstart }
+			mouseExit { hide but2_alt ; show but2 }
+		}
+
+}	// menudef
+}	// end
+

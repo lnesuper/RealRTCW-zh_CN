@@ -1,0 +1,149 @@
+#include "ui/menudef.h"
+
+
+{
+
+	menuDef {
+    		name "briefing"
+    		background "ui/assets/backscreen"
+      		rect 0 0 640 480
+    		fullScreen MENU_FALSE
+    		visible MENU_FALSE
+      		style WINDOW_STYLE_EMPTY
+
+//
+// levelshot
+//
+
+		itemDef {
+			name background
+			rect 0 0 640 480
+			style WINDOW_STYLE_SHADER
+			ownerdraw UI_LEVELSHOT
+			forecolor 0 0 0 1
+			visible MENU_TRUE
+			decoration
+		}
+
+
+
+/////////////// tutorial4 map ///////////////////////
+
+
+	// itemDef {
+		// name win1
+		// cvarTest "mapname"
+		// showcvar { "wotan" }	// prüft welche map
+		// rect 52 272 280 200
+		// textfile "text/EnglishUSA/wotan_brief.txt"
+		// textfont UI_FONT_SMALL
+		// textscale .2
+		// forecolor .1 .1 .1 1
+		// visible MENU_TRUE
+		// autowrapped
+		// decoration
+	// }
+
+
+	// itemDef {
+		// name win1
+		// cvarTest "mapname"
+		// showcvar { "wotan" }
+		// rect 52 272 280 200
+		// textfile "text/EnglishUSA/wotan_brief.txt"
+		// textfont UI_FONT_SMALL
+		// textscale .2
+		// forecolor .1 .1 .1 1
+		// visible MENU_TRUE
+		// autowrapped
+		// decoration
+	// }
+
+	itemDef {
+		name win1
+		text ""
+		cvarTest "mapname"
+		showcvar { "wotan" }	// prüft welche map
+		rect 52 272 280 200
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/wotan_brief.tga"
+		textfont UI_FONT_SMALL
+		textscale .2
+		forecolor .1 .1 .1 1
+		visible MENU_TRUE
+		autowrapped
+		decoration
+	}
+
+
+
+
+
+	// itemDef {
+		// name win2
+		// rect 348 30 254 456
+		// cvarTest "mapname"
+		// showcvar { "wotan" }
+		// textfile "text/EnglishUSA/wotan.txt"
+		// textfont UI_FONT_SMALL
+		// textscale .2
+		// forecolor .1 .1 .1 1
+		// visible MENU_TRUE
+		// autowrapped
+		// decoration
+	// }
+
+	// itemDef {
+		// name win2
+		// rect 348 30 254 456
+		// cvarTest "mapname"
+		// showcvar { "wotan" }
+		// textfile "text/EnglishUSA/wotan.txt"
+		// textfont UI_FONT_SMALL
+		// textscale .2
+		// forecolor .1 .1 .1 1
+		// visible MENU_TRUE
+		// autowrapped
+		// decoration
+	// }
+
+	itemDef {
+		name win2
+		rect 348 30 254 456
+		cvarTest "mapname"
+		showcvar { "wotan" }
+		style WINDOW_STYLE_SHADER
+		background "text/ChineseCHN/wotan.tga"
+		textfont UI_FONT_SMALL
+		textscale .2
+		forecolor .1 .1 .1 1
+		visible MENU_TRUE
+		autowrapped
+		decoration
+	}
+
+
+
+
+
+
+
+
+
+/////////// tutorial4 map ende
+
+//
+// lade status anzeige
+//
+	itemDef {
+		name "loadbar"
+		decoration
+		visible MENU_TRUE
+		rect 190 470 260 10
+		align HUD_HORIZONTAL
+//		ownerdraw CG_LOADSTATUSBAR
+		ownerdraw UI_LOADSTATUSBAR	// changed
+	}
+
+}	// menudef
+}	// end

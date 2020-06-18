@@ -1,0 +1,143 @@
+#include "ui/menudef.h"
+
+{
+
+
+menuDef {
+	name "clipboard"
+	visible 0
+	fullscreen 0
+	rect 172 18 320 440
+	focusColor 1 .75 0 1
+	style 1
+	outOfBoundsClick			// this closes the window if it gets a click out of the rectangle
+	border 1
+	onOpen { play "sound/clipboard/pickup.wav"; hide "clip_*"; clipboard }
+
+
+// to use this script with a clipboard entity, use the key/value "popup/clip_alertstatus" in the ent
+
+
+
+/////////////////    default clip that lets you know you need to make a sript for a clipboard entity	//////////////////
+
+
+itemDef {
+	group clip_test
+	name test1_clipboard
+	rect 0 0 340 440
+	style 3
+	background "document1"
+	visible 0
+	decoration
+	}
+
+
+
+// itemDef {
+	// name test1_clipboard
+	// rect 18 78 280 322
+	// group clip_test
+	// text "no 'popup' or bad 'popup' specified in the entity"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// decoration
+	// }
+
+itemDef {
+	name test1_clipboard
+	rect 18 78 280 322
+	group clip_test
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/popup.tga"
+	textscale .18
+	forecolor .1 .1 .1 .9
+	visible 0
+	decoration
+	}
+
+
+// itemDef {
+	// group clip_test
+	// name test1_clipboard
+	// rect 20 95 245 360
+	// text "there is no script set for this clipboard"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// decoration
+	// }
+
+
+itemDef {
+	group clip_test
+	name test1_clipboard
+	rect 20 95 245 360
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/clipboard.tga"
+	textscale .18
+	forecolor .1 .1 .1 .9
+	visible 0
+	decoration
+	}
+
+
+
+
+
+//poem 
+
+
+
+itemDef {			
+	group poem_ah
+	name off1_clib1
+	rect 0 0 320 440
+	style 3
+	background "document1.tga"
+	visible 0
+	decoration
+	}
+
+// itemDef {
+	// name poem_ah
+	// rect 18 78 280 322
+	// group off1_clib1
+	// textfile "text/EnglishUSA/poem_ah.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .9
+	// visible 0
+	// decoration
+	// autowrapped
+// }
+
+// itemDef {
+	// name poem_ah
+	// rect 18 78 280 322
+	// group off1_clib1
+	// textfile "text/EnglishUSA/poem_ah.txt"
+	// textscale .18
+	// forecolor .1 .1 .1 .6
+	// visible 0
+	// decoration
+	// autowrapped
+// }
+
+
+itemDef {
+	name poem_ah
+	rect 18 78 280 322
+	group off1_clib1
+	style WINDOW_STYLE_SHADER
+	background "text/ChineseCHN/poem_ah.tga"
+	textscale .18
+	forecolor .1 .1 .1 .6
+	visible 0
+	decoration
+	autowrapped
+}
+
+
+
+}
